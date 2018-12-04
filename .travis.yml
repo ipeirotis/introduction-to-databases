@@ -1,0 +1,17 @@
+language: python
+python:
+  - "3.6"
+
+# nbformat is needed to run the tests
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y python3-pip
+  - sudo pip3 install -U pip
+
+
+install:
+  - pip3 install -U jupyter
+  - pip3 install -U nbformat
+  - pip3 install -r binder/requirements.txt
+script:
+  - python3 binder/test_notebooks.py notes

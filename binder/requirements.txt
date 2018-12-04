@@ -1,0 +1,21 @@
+# For enabling the Solution extension
+jupyter_contrib_nbextensions
+
+# We want to allow execution of SQL from the notebooks
+# https://github.com/pivotal-legacy/sql_magic
+sql_magic
+
+# Alternatively: https://github.com/catherinedevlin/ipython-sql
+
+# Support for connecting to MySQL from Python3
+# https://github.com/PyMySQL/mysqlclient-python
+mysqlclient
+
+# Used for code-prettify extension
+yapf
+
+# If we use the jupyter-autopep8 extension instead of code-prettify
+# autopep8
+
+# To remove the output from the notebooks
+nbstripout

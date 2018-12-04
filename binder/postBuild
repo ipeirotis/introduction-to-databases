@@ -1,0 +1,22 @@
+jupyter contrib nbextension install --user
+
+# Allow collapsible headers
+jupyter nbextension enable collapsible_headings/main
+
+# Add a code formatter - requires yapf package
+jupyter nbextension enable code_prettify/code_prettify
+
+# Adds the "Solution" hiding option
+jupyter nbextension enable exercise2/main
+
+# Spellchecking
+jupyter nbextension enable spellchecker/main
+
+
+# These are there just to make it easier to commit from anywhere
+git config --global user.email "ipeirotis@gmail.com"
+git config --global user.name "Panos Ipeirotis"
+
+# Install nbstripout on git and clean the notebooks
+nbstripout --install --attributes .gitattributes
+nbstripout notes/*.ipynb
