@@ -8,11 +8,10 @@
 
 * We can have two 1hr15min lectures on modeling. We can compress the ER diagram discussion and cover ER design and translation into tables (foreign keys for 1-1, 1-many; bridge tables for many-many). Then in the second lecture we do the Water Utility Database discussion, together with MySQL workbench, and CREATE TABLE queries.
 
-* Most probably we will need longer for the SELECT statements than a single session. Right now, we get into the SELECT/WHERE queries for IMDB, but do not have time for LIKE, IS NULL.  
+* Perhaps move the "Functions" and "CASE" part earlier (in SELECT). Example: Examine the Birthday of a student (use YEAR(Birthday) as a function example) and then use CASE to flag problematic years CASE YEAR(Birthday) < 1980 AND Status='Undergrad' THEN 'Invalid'). Example for CASE, convert Political Views to Conservative / Liberal / Other)
 
-* To teach GROUP BY, makes sense to first show the same query with ORDER BY, and then explain that we collapse each of the "groups" using COUNT/AVG/MIN/MAX/etc.
+* 
 
-* Ended up needing extra two sessions compared to the planned sessions. We can gain one sessions by compressing ER discussion, but cannot compress more and still cover SQL nicely.
 
 Practice
 
