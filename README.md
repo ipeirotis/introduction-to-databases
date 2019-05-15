@@ -15,6 +15,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 ## Useful Pointers
 
 * [Best practices for SQL](https://data36.com/sql-best-practices-data-analysts/): A set of useful guidelines for writing readable SQL statements.
+* [Kickstarter style guide](https://gist.github.com/fredbenenson/7bb92718e19138c20591)
 
 
 ## Indicative Syllabus
