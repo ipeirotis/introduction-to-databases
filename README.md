@@ -15,28 +15,63 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 ## Useful Pointers
 
 * [Best practices for SQL](https://data36.com/sql-best-practices-data-analysts/): A set of useful guidelines for writing readable SQL statements.
-* [Kickstarter style guide](https://gist.github.com/fredbenenson/7bb92718e19138c20591)
 
 
-## Indicative Syllabus
+## Indicative Schedule
 
-### Entity-Relationship Model
+### Session 1: Entity-Relationship Model and Relational Databases
+
 * Entities, Primary Keys, and Attributes
 * Relations
 * Cardinality: One-to-One, One-to-Many, Many-to-Many
+* From ER Diagram to a Relational Database
+* (Optional) SQL Statements for Creating Tables
+* (Optional) Populating a Database with Data
 
 ##### In class: Artist-Gallery-Painting example
 
-### From ER Diagram to SQL Tables
-* Translating ER Diagrams to Tables
-* SQL Statements for Creating Tables
+##### In class: From Spreadsheet to a Normalized Database
 
-### Querying a Database Using SQL
-* USE, DESCRIBE queries
-* Selection queries: *, column, column AS, DISTINCT, ORDER BY, LIMIT
-* Where clauses: Boolean conditions, IN, BETWEEN, LIKE
-* Aggregation queries: GROUP BY, SUM, AVG, MAX, MIN, ROLLUP
-* Join queries: INNER JOIN, OUTER JOIN
-* Subqueries and Views
+##### In class: Water Utility Company example
+
+
+
+### Session 2: Selection and Filtering Queries
+
+* Understand the design of our example databases
+* Navigating a Database: USE, DESCRIBE queries
+* Selection queries: `SELECT *`, `SELECT column`, `column AS`, `DISTINCT`, `ORDER BY`, `LIMIT`
+* Filtering queries:  `WHERE` clauses: Boolean conditions, `IN`, `BETWEEN`, `LIKE`, NULL values
+
+##### In class: Find People that Live in "New York" (exploration for data cleaning)
+
+
+### Session 3: JOIN queries
+
+* Inner Joins
+* Self Joins
+* Outer Joins
+
+##### In class: Find People that Live in "New York" (exploration for data cleaning)
+
+
+### Session 4: Aggregate queries
+
+* Aggregation functions (COUNT, COUNT DISTINC, SUM, AVG, MAX, MIN, STDEV, CONCAT)
+* GROUP BY on a single attribute
+* GROUP BY on multiple attributes
+* HAVING clause
+* (Optional) ROLLUP
+* Integrated JOIN and GROUP BY queries
+
+### Session 5: Putting it all together and Subqueries
+
+* Views and temporary tables
+* Subqueries
+* Variables
 
 ##### In-class Exercise: Compare Tastes Across Demographic Segments
+
+##### In-class Exercise: Music Recommendation Service
+
+_Note: The activities in this section usually take an additional session_
