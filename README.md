@@ -21,17 +21,26 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 
 
-### Session 2: Selection and Filtering Queries
+### Session 2: Selection Queries
 
 * Understand the design of our example databases
-* Navigating a Database: USE, DESCRIBE queries
-* Selection queries: `SELECT *`, `SELECT column`, `column AS`, `DISTINCT`, `ORDER BY`, `LIMIT`
-* Filtering queries:  `WHERE` clauses: Boolean conditions, `IN`, `BETWEEN`, `LIKE`, NULL values
+* Navigating a Database: `USE`, `SHOW TABLES`, `DESCRIBE`
+* Selection queries: `SELECT *`, `SELECT column`, `column AS`, 
+* Selection queries: `DISTINCT`, `ORDER BY`, `LIMIT`
+
+
+### Session 3: Filtering Queries
+
+* `WHERE` clause
+* Boolean conditions: `AND`, `OR`, `NOT`, `BETWEEN`
+* Containment condition: `IN`, 
+* Approximate matches: `LIKE`
+* `NULL` values
 
 ##### In class: Find People that Live in "New York" (exploration for data cleaning)
 
 
-### Session 3: JOIN queries
+### Session 4: JOIN queries
 
 * Inner Joins
 * Self Joins
@@ -40,18 +49,18 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 ##### In class: Find People that Live in "New York" (exploration for data cleaning)
 
 
-### Session 4: Aggregate queries
+### Session 5: Aggregate queries
 
 * Aggregation functions (COUNT, COUNT DISTINC, SUM, AVG, MAX, MIN, STDEV, CONCAT)
 * GROUP BY on a single attribute
 * GROUP BY on multiple attributes
 * HAVING clause
-* (Optional) ROLLUP
 * Integrated JOIN and GROUP BY queries
 
-### Session 5: Putting it all together and Subqueries
+### Session 6: Subqueries
 
 * Views and temporary tables
+* The `WITH` clause
 * Subqueries
 * Variables
 
@@ -59,8 +68,16 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ##### In-class Exercise: Music Recommendation Service
 
-_Note: The activities in this section usually take an additional session_
+_Note: The in-class activities in this section usually take longer time than planned. I often go faster
+in the prior sessions, so that I can start describing the concept of veiw_
 
+### Misceallaneous
+
+* Functions
+* UNION
+* CASE
+* ANY/ALL
+* ROLLUP
 
 
 
