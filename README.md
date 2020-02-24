@@ -46,8 +46,6 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Self Joins
 * Outer Joins
 
-##### In class: Find People that Live in "New York" (exploration for data cleaning)
-
 
 ### Session 5: Aggregate queries
 
@@ -89,6 +87,8 @@ in the prior sessions, so that I can start describing the concept of veiw_
 * [SQL Tutorial](http://www.w3resource.com/sql/tutorials.php) 
 * [Learning MySQL](http://shop.oreilly.com/product/9780596008642.do): A useful textbook for those interested in learning more about SQL
 * [W3 Resource](https://www.w3resource.com/sql/tutorials.php) and [SQL exercises](https://www.w3resource.com/sql-exercises/)
+* [Become a SELECT Star!](https://gumroad.com/l/sql-zine) by Julia Evans:  A very useful e-zine that summarizes in a cartoonish way most of the SQL concepts that we cover in class. Worth the $12.
+* [How to Teach People SQL](https://dataschool.com/how-to-teach-people-sql/): Great visualizations for the various SQL operations that we learn.
 
 ## Useful Pointers
 

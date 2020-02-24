@@ -10,6 +10,40 @@
 * Move UNION earlier as well?
 
 
+* OVER / PARTITION queries 
+
+FIRST_VALUE()
+LAG()
+LAST_VALUE()
+LEAD()
+
+* PERCENTILE aggregate
+
+CUME_DIST()
+DENSE_RANK()
+NTILE()
+PERCENT_RANK()
+RANK()
+ROW_NUMBER()
+
+* FRAME condition for range within window functions
+
+Syntax
+{ ROWS | RANGE } BETWEEN window_start AND window_end
+window_start
+= { UNBOUNDED PRECEDING
+   | CURRENT ROW
+   | constant-value { PRECEDING | FOLLOWING } }
+window_end
+= { UNBOUNDED FOLLOWING
+   | CURRENT ROW
+   | constant-value { PRECEDING | FOLLOWING } }
+
+* COALESCE
+
+
+
+
 Practice
 
 Read the "Learning MySQL" textbook, chapter 7.
