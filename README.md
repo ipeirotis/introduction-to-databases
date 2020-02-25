@@ -2,6 +2,10 @@
 
 This is a brief introductory module to relational databases and SQL. It mainly targets people that are interested in learning SQL, and does not cover topics such as indexing, transactions, stored procedures, etc.
 
+## Videos for the class 
+
+[NYU Stream](https://stream.nyu.edu/playlist/dedicated/1_d7rxlc57/) (_requires NYU credentials_)
+
 ## Indicative Schedule
 
 ### Session 1: Entity-Relationship Model and Relational Databases
