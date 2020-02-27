@@ -6,7 +6,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ## Videos for the class 
 
-[NYU Stream](https://stream.nyu.edu/playlist/dedicated/1_d7rxlc57/) (_requires NYU credentials_)
+[NYU Stream](https://stream.nyu.edu/channel/SQL+Workshop+-+Panos+Ipeirotis/153873231) (_requires NYU credentials_)
 
 ## Indicative Schedule
 
