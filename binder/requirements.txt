@@ -1,9 +1,11 @@
 requests
+
 sqlalchemy 
 sql_magic
-pandas
 mysqlclient
 
+pandas
+xlwt
 
 # To remove the output from the notebooks
 nbstripout
