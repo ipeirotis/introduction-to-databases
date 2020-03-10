@@ -14,4 +14,5 @@ install:
   - pip3 install -U nbformat
   - pip3 install -r binder/requirements.txt
 script:
-  - python3 binder/test_notebooks.py notes
+  - jupyter nbconvert --to notebook --execute session1/A5-Inserting_Data_in_MySQL_using_Python.ipynb
+  - jupyter nbconvert --to notebook --execute session1/A6-Inserting_Data_in_MySQL_using_PythonPandas.ipynb
