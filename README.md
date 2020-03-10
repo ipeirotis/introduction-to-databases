@@ -1,6 +1,12 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ipeirotis/introduction-to-databases/blob/master/)
+
 # Relational Databases and SQL
 
 This is a brief introductory module to relational databases and SQL. It mainly targets people that are interested in learning SQL, and does not cover topics such as indexing, transactions, stored procedures, etc.
+
+## Videos for the class 
+
+[NYU Stream](https://stream.nyu.edu/channel/SQL+Workshop+-+Panos+Ipeirotis/153873231) (_requires NYU credentials_)
 
 ## Indicative Schedule
 
