@@ -5,7 +5,7 @@ python:
 # nbformat is needed to run the tests
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y python3-pip
+  - sudo apt-get install -y python3-pip python3-mysqldb
   - sudo pip3 install -U pip
 
 
