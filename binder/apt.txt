@@ -4,3 +4,4 @@ cron
 python3-pip
 curl
 
+python3-mysqldb
