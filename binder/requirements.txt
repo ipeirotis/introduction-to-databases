@@ -7,5 +7,4 @@ mysqlclient
 pandas
 xlwt
 
-# To remove the output from the notebooks
 nbstripout
