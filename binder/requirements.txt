@@ -2,6 +2,7 @@ requests
 sqlalchemy 
 sql_magic
 pandas
+mysqlclient
 
 
 # To remove the output from the notebooks
