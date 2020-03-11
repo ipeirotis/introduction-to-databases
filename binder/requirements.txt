@@ -1,6 +1,6 @@
 requests
 
-tdqm
+tqdm
 
 sqlalchemy 
 sql_magic
