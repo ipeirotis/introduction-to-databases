@@ -1,5 +1,7 @@
 requests
 
+tdqm
+
 sqlalchemy 
 sql_magic
 mysqlclient
