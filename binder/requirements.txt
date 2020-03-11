@@ -1,6 +1,7 @@
 requests
 
 tqdm
+matplotlib
 
 sqlalchemy 
 sql_magic
