@@ -4,11 +4,14 @@
 
 
 1. Output the names of the restaurants together with the comments written for these restaurants:
+
     a. Your output should include only those restaurants for which reviews were submitted; do
 not output empty comments (NULL values);
+
     b. Your output should contain the names of all the restaurants from your database; if some
 restaurants are not reviewed or their comments are empty, these restaurants should
 still be included in your output (with NULL values for the comment attribute);
+
     c. Your output should contain the names of all the restaurants from your database; if some
 restaurants are not reviewed or their comments are empty, these restaurants should
 still be included in your output (with NULL values for the comment attribute); make sure
