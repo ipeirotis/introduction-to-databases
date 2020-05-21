@@ -29,7 +29,9 @@ critic to the restaurant for all the reviews where the star rating is greater or
 submitted for these restaurants: the name of the restaurant, its cuisine, the name of the food
 critic, food critic’s affiliation, star rating assigned by the critic, date the review was written and
 the comments:
+
     a. Include in the output only those restaurants for which there are reviews in your DB.
+    
     b. Include in your output all the information about all the Manhattan restaurants. If there
 are Manhattan restaurants for which there are no reviews then the fields for the critic
 and review should be null.
