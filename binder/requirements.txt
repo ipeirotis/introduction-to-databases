@@ -8,12 +8,8 @@ sqlalchemy
 sql_magic
 
 pandas
-xlwt
-
-nbstripout
+openpyxl
 
 flake8 
 flake8-nb 
 jupyter 
-
-nbformat
