@@ -47,3 +47,5 @@ jobs:
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session1/A7-Citibike.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session2/A-Navigation_Queries.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session2/B-Selection_Queries.ipynb
+        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session3/B3-Filtering_Queries.ipynb
+        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session4/C-Join_Queries.ipynb
