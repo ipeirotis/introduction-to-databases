@@ -3,11 +3,17 @@ requests
 tqdm
 matplotlib
 
+PyMySQL
 sqlalchemy 
 sql_magic
-mysqlclient
 
 pandas
 xlwt
 
 nbstripout
+
+flake8 
+flake8-nb 
+jupyter 
+
+nbformat
