@@ -51,12 +51,12 @@ jobs:
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session4/C-Join_Queries.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 sql_assignment_template.ipynb
         
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session2/assignment_selection_queries.ipynb
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session3/assignment_filtering_queries.ipynb
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session4/assignment_join_queries.ipynb
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session5/assignment_aggregate_queries.ipynb
+        # jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session2/assignment_selection_queries.ipynb
+        # jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session3/assignment_filtering_queries.ipynb
+        # jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session4/assignment_join_queries.ipynb
+        # jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session5/assignment_aggregate_queries.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session5/practice_queries_aggregation_solution.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session5/practice_queries_join_and_aggregation_solutions.ipynb
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session6/assignment_combined.ipynb
+        # jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session6/assignment_combined.ipynb
         
         
