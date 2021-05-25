@@ -2,26 +2,17 @@ SELECT PoliticalViews, COUNT(*) AS cnt
 FROM Profiles 
 GROUP BY PoliticalViews;
 
-CREATE TEMPORARY TABLE book_liberals AS 
-	SELECT Book, COUNT(P.ProfileID) AS cnt_liberal, COUNT(P.ProfileID)/6461 AS perc_liberal 
-	FROM FavoriteBooks B INNER JOIN Profiles P ON P.ProfileID = B.ProfileID
-	WHERE P.PoliticalViews = 'Liberal'
-	GROUP BY Book
-	ORDER BY cnt_liberal DESC;
+-- Conservative	936
+-- Liberal	6461
 
-CREATE TEMPORARY TABLE book_conservatives AS 
-	SELECT Book, COUNT(P.ProfileID) AS cnt_conservative, COUNT(P.ProfileID)/936 AS perc_conservative
-	FROM FavoriteBooks B INNER JOIN Profiles P ON P.ProfileID = B.ProfileID
-	WHERE P.PoliticalViews = 'Conservative'
-	GROUP BY Book
-	ORDER BY cnt_conservative DESC;
 
-# Conservative	936
-# Liberal	6461
+-- First the solution with inlined sub-queries
 
 SELECT C.Book, L.cnt_liberal, L.perc_liberal, C.cnt_conservative, C.perc_conservative,
-			L.perc_liberal / C.perc_conservative AS lift_liberal, 
-            C.perc_conservative / L.perc_liberal AS lift_conservatives
+	    L.perc_liberal / C.perc_conservative AS lift_liberal, 
+            C.perc_conservative / L.perc_liberal AS lift_conservatives,
+	    LOG(L.perc_liberal / C.perc_conservative) AS logodds_liberal, 
+	    LOG(C.perc_conservative / L.perc_liberal) AS logodds_conservatives
 FROM (
 	SELECT Book, COUNT(P.ProfileID) AS cnt_liberal, COUNT(P.ProfileID)/6461 AS perc_liberal 
 	FROM FavoriteBooks B INNER JOIN Profiles P ON P.ProfileID = B.ProfileID
@@ -41,9 +32,29 @@ WHERE C.cnt_conservative>5
 ORDER BY lift_conservatives DESC;
 
 
+-- Solution by using temporary tables for subqueries
+
+CREATE TEMPORARY TABLE book_liberals AS 
+	SELECT Book, COUNT(P.ProfileID) AS cnt_liberal, COUNT(P.ProfileID)/6461 AS perc_liberal 
+	FROM FavoriteBooks B INNER JOIN Profiles P ON P.ProfileID = B.ProfileID
+	WHERE P.PoliticalViews = 'Liberal'
+	GROUP BY Book
+	ORDER BY cnt_liberal DESC;
+
+CREATE TEMPORARY TABLE book_conservatives AS 
+	SELECT Book, COUNT(P.ProfileID) AS cnt_conservative, COUNT(P.ProfileID)/936 AS perc_conservative
+	FROM FavoriteBooks B INNER JOIN Profiles P ON P.ProfileID = B.ProfileID
+	WHERE P.PoliticalViews = 'Conservative'
+	GROUP BY Book
+	ORDER BY cnt_conservative DESC;
+
+
+
 SELECT C.Book, L.cnt_liberal, L.perc_liberal, C.cnt_conservative, C.perc_conservative,
 			L.perc_liberal / C.perc_conservative AS lift_liberal, 
-            C.perc_conservative / L.perc_liberal AS lift_conservatives
+            C.perc_conservative / L.perc_liberal AS lift_conservatives,
+	    LOG(L.perc_liberal / C.perc_conservative) AS logodds_liberal, 
+	    LOG(C.perc_conservative / L.perc_liberal) AS logodds_conservatives
 FROM book_liberals L INNER JOIN book_conservatives C ON C.Book = L.Book
 WHERE C.cnt_conservative>5
 ORDER BY lift_conservatives DESC
