@@ -87,8 +87,7 @@ in the prior sessions, so that I can start describing the concept of veiw_
 
 ## Additional Resources for Learning SQL
 
-* [StrataScratch](https://platform.stratascratch.com/coding) SQL Interview questions for data science positions in many tech companies
-* [Leetcode](https://leetcode.com/problemset/database/) SQL Interview questions for data science positions in many tech companies
+* [StrataScratch](https://platform.stratascratch.com/coding) and [Leetcode](https://leetcode.com/problemset/database/): SQL Interview questions for data science positions in many tech companies
 * [Introduction to SQL](https://www.khanacademy.org/computing/computer-programming/sql) from Khan Academy. Introductory course, with videos explaining the various aspects of SQL.
 * [W3Schools SQL](http://www.w3schools.com/sql/): An introduction to SQL with hands-on examples
 * [Learn SQL](https://www.codecademy.com/learn/learn-sql) and [SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics): Two short, self-directed online course from Code Academy
