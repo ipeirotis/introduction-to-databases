@@ -2,8 +2,10 @@
 SELECT COUNT(*)
 FROM Profiles;
 
+SET @allprofiles = (SELECT COUNT(*) FROM Profiles);
 # 25784
 
+SELECT @allprofiles;
 
 # Break down the user by sex
 SELECT Sex,COUNT(*)
@@ -25,25 +27,28 @@ GROUP BY P.Sex;
 # Female	8753
 # Male	5974
 
+SET @males = (SELECT COUNT(DISTINCT B.ProfileID) FROM FavoriteBooks B JOIN Profiles P ON P.ProfileID = B.ProfileID AND P.Sex='Male');
+SET @females = (SELECT COUNT(DISTINCT B.ProfileID) FROM FavoriteBooks B JOIN Profiles P ON P.ProfileID = B.ProfileID AND P.Sex='Female');
+SET @everyone = (SELECT COUNT(DISTINCT B.ProfileID) FROM FavoriteBooks B JOIN Profiles P ON P.ProfileID = B.ProfileID);
+
 
 # We will only consider books that are liked by a reasonable number
 # of users. We will put the threshold at 10, but we we change it
 # We will also save the results in a temporary table.
-# We divide with the total number of people that like books, manually for now
-# We can use variables/subqueries to make this more elegant.
+# We divide with the total number of people that like books
 DROP TABLE IF EXISTS popular_books;
 CREATE TEMPORARY TABLE popular_books AS 
-	SELECT Book, COUNT(*) AS cnt, COUNT(*)/(643+8753+5974) AS perc
+	SELECT Book, COUNT(*) AS cnt, COUNT(*)/@everyone AS perc
 	FROM FavoriteBooks B JOIN Profiles P ON P.ProfileID = B.ProfileID
 	GROUP BY Book
-    HAVING cnt > 10
+    HAVING cnt >= 10
 	ORDER BY cnt DESC;
     
 SELECT * FROM popular_books;
 
-# We now calculate the number of men that like each of the popular books
+# We now calculate the number of men / women that like each of the popular books
 # It is absolutely crucial here to use a LEFT JOIN so that we can keep
-# the list of all popular books, even if no men liked that book.
+# the list of all popular books, even if no men / no women liked that book.
 # 
 # *** There are a lot of nuanced things in this join. ***
 #
@@ -59,33 +64,37 @@ SELECT * FROM popular_books;
 #    the B.ProfileID and the P.ProfileID, which superficially seem to be the same
 #    as we have the equality condition P.ProfileID = B.ProfileID in the JOIN clause
 #
-# c. We use a bit of "smoothing" and add 0.5 to both the nominator and the denominator
-#    when we calculation the percentage "perc_men". That is to avoid zeros, as we
+# c. We use a bit of "smoothing" and add 0.5 to the nominator and 1 to the denominator
+#    when we calculation the percentage. That is to avoid zeros, as we
 #    will be dividing with perc_men and perc_women in the next query
 #
 DROP TABLE IF EXISTS book_men ;
 CREATE TEMPORARY TABLE book_men AS 
-	SELECT PB.Book, PB.cnt, PB.perc, 
+	SELECT B.Book, 
 			COUNT(DISTINCT P.ProfileID) AS cnt_men, 
-            (COUNT(DISTINCT P.ProfileID)+0.5)/5974.5 AS perc_men
-	FROM popular_books PB 
-		LEFT JOIN FavoriteBooks B ON PB.Book = B.Book 
-        LEFT JOIN Profiles P ON P.ProfileID = B.ProfileID AND P.Sex = 'Male'
-	GROUP BY PB.Book,  PB.cnt, PB.perc
+            (COUNT(DISTINCT P.ProfileID)+0.5)/(@males+1) AS perc_men
+	FROM  popular_books B
+		LEFT JOIN FavoriteBooks F ON B.Book = F.Book
+        LEFT JOIN Profiles P ON P.ProfileID = F.ProfileID AND P.Sex = 'Male'
+	GROUP BY B.Book
 	ORDER BY perc_men DESC;
+
+
 
 
 # We repeat the process for women. Same nuances apply here as in the join just above.
 DROP TABLE IF EXISTS book_women;
 CREATE TEMPORARY TABLE book_women AS 
-	SELECT PB.Book, PB.cnt, PB.perc, 
-		COUNT(DISTINCT P.ProfileID) AS cnt_women, 
-        (COUNT(DISTINCT P.ProfileID)+0.5)/8753.5 AS perc_women
-	FROM popular_books PB 
-		LEFT JOIN FavoriteBooks B ON PB.Book = B.Book 
-        LEFT JOIN Profiles P ON P.ProfileID = B.ProfileID AND P.Sex = 'Female'
-	GROUP BY PB.Book,  PB.cnt, PB.perc
+	SELECT B.Book, 
+			COUNT(DISTINCT P.ProfileID) AS cnt_women, 
+            (COUNT(DISTINCT P.ProfileID)+0.5)/(@females+1) AS perc_women
+	FROM  popular_books B
+		LEFT JOIN FavoriteBooks F ON B.Book = F.Book
+        LEFT JOIN Profiles P ON P.ProfileID = F.ProfileID AND P.Sex = 'Female'
+	GROUP BY B.Book
 	ORDER BY perc_women DESC;
+
+
 
 
 # Once we have our subqueries in place, we join the two tables and calculate the 
@@ -101,19 +110,13 @@ CREATE TEMPORARY TABLE book_women AS
 # 
 # Alternatively, we could have done women vs rest; and men vs rest. We leave that 
 # calculation as an exercise for the interested reader.
-SELECT L.Book, L.cnt, L.perc, 
-		L.cnt_men, L.perc_men, 
-		C.cnt_women, C.perc_women, 
+SELECT B.Book, B.cnt, B.perc, 
+		M.cnt_men, M.perc_men, 
+		F.cnt_women, F.perc_women, 
         perc_men /perc_women AS lift_men_vs_women, 
         perc_women / perc_men AS lift_women_vs_men
-FROM book_men L RIGHT JOIN book_women C ON L.Book = C.Book
+FROM popular_books B
+	LEFT JOIN book_men M ON M.Book = B.Book 
+    LEFT JOIN book_women F ON F.Book = B.Book 
 ORDER BY lift_women_vs_men DESC, cnt_women DESC;
 
-# Just doing the same lift analysis but ranking books for men on top.
-SELECT L.Book, L.cnt, L.perc, 
-		L.cnt_men, L.perc_men, 
-		C.cnt_women, C.perc_women, 
-        perc_men /perc_women AS lift_men_vs_women, 
-        perc_women / perc_men AS lift_women_vs_men
-FROM book_men L RIGHT JOIN book_women C ON L.Book = C.Book
-ORDER BY lift_men_vs_women DESC, cnt_men DESC;
