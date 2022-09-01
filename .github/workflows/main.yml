@@ -43,7 +43,6 @@ jobs:
     - name: Run all the notebooks using nbconvert
       run: |
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session1/A5-Inserting_Data_in_MySQL_using_Python.ipynb
-        jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session1/A6-Inserting_Data_in_MySQL_using_PythonPandas.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session1/A7-Citibike.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session2/A-Navigation_Queries.ipynb
         jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 session2/B-Selection_Queries.ipynb
