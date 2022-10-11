@@ -96,6 +96,7 @@ in the prior sessions, so that I can start describing the concept of veiw_
 * [W3 Resource](https://www.w3resource.com/sql/tutorials.php) and [SQL exercises](https://www.w3resource.com/sql-exercises/)
 * [Become a SELECT Star!](https://gumroad.com/l/sql-zine) by Julia Evans:  A very useful e-zine that summarizes in a cartoonish way most of the SQL concepts that we cover in class. Worth the $12.
 * [How to Teach People SQL](https://dataschool.com/how-to-teach-people-sql/): Great visualizations for the various SQL operations that we learn.
+* [SQL Data Manipulation for Data Scientists](https://www.stratascratch.com/guides/): Advanced data manipulation techniques using SQL.
 
 ## Useful Pointers
 
