@@ -38,9 +38,27 @@ CREATE TEMPORARY TABLE BandFans AS
 	GROUP BY Music
 	ORDER BY perc DESC;
 
-# The minimum number of fans required, for a band to be analyzed
+
+# Join the two tables above to compare the percentages of likes 
+# in the overall population (T.perc) vs the percentage of likes
+# across the population of people that like the @band (R.perc)
+# We call the ratio of the percentages to as "lift"
+SELECT T.Music, 
+	R.perc AS perc_focus, R.cnt AS cnt_focus, 
+        T.perc AS perc_total, T.cnt AS cnt_total,
+        R.perc/T.perc AS lift_ratio
+FROM BandFans R JOIN MusicPreferences T ON R.Music = T.Music
+ORDER BY lift_ratio DESC
+
+# Improving the details now.
+# Below we introduce a few fixes to remove noise and 
+# make the results more presentable.
+
+
 # To avoid noise, we keep only bands  that have at least 100 
 # likes in the overall population.
+# The variable  @min_fans is the minimum number of fans 
+# required, for a band to be analyzed
 SET @min_fans = 100;
 
 # Join the two tables above to compare the percentages of likes 
@@ -49,11 +67,12 @@ SET @min_fans = 100;
 # We use an OUTER join to keep all the bands from the overall 
 # population, even if they do not appear in the likes of the 
 # fans of the target artist. 
-# We calculate the lift by dividing the two percentages
+# The COALESCE function replaces NULL values with 0.0
+#
 SELECT T.Music, 
 	COALESCE(R.perc,0.0) AS perc_focus, COALESCE(R.cnt,0) AS cnt_focus, 
         T.perc AS perc_total, T.cnt AS cnt_total,
         COALESCE(R.perc/T.perc,0) AS lift_ratio
-FROM BandFans R RIGHT JOIN MusicPreferences T ON R.Music = T.Music
+FROM MusicPreferences T LEFT JOIN BandFans R ON R.Music = T.Music
 WHERE T.cnt>@min_fans AND (R.Music IS NULL OR R.Music != @band)
 ORDER BY lift_ratio DESC
