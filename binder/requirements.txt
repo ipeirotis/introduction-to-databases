@@ -14,3 +14,4 @@ flake8
 flake8-nb 
 jupyter 
 
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
