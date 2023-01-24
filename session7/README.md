@@ -1,5 +1,7 @@
 # Window Functions
 
+https://antonz.org/sql-window-functions-book/
+
 https://www.mysqltutorial.org/mysql-window-functions/
 
 https://www.stratascratch.com/blog/the-ultimate-guide-to-sql-window-functions/
