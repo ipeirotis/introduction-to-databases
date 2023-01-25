@@ -15,16 +15,12 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Entities, Primary Keys, and Attributes
 * Relations
 * Cardinality: One-to-One, One-to-Many, Many-to-Many
-* From ER Diagram to a Relational Database
+* From ER Diagram to a Relational Schema
 * (Optional) SQL Statements for Creating Tables
 * (Optional) Populating a Database with Data
-
-##### In class: Artist-Gallery-Painting example
-
-##### In class: From Spreadsheet to a Normalized Database
-
-##### In class: Water Utility Company example
-
+* Activity 1: Artist-Gallery-Painting example
+* Activity 2: Creating a relational schema from an ER diagram
+* Activity 3: From Spreadsheet to a Normalized Database
 
 
 ### Session 2: Selection Queries
@@ -42,8 +38,9 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Containment condition: `IN`, 
 * Approximate matches: `LIKE`
 * `NULL` values
-
-##### In class: Find People that Live in "New York" (exploration for data cleaning)
+* CASE WHEN clause
+* Attribute-level functions: NULL functions, date functions, etc.
+* Activity: Find People that Live in "New York" (exploration for data cleaning)
 
 
 ### Session 4: JOIN queries
@@ -51,7 +48,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Inner Joins
 * Self Joins
 * Outer Joins
-
+* Antinoins and Semijoins
 
 ### Session 5: Aggregate queries
 
@@ -63,17 +60,22 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ### Session 6: Subqueries
 
-* Views and temporary tables
-* The `WITH` clause
-* Subqueries
-* Variables
+* Subqueries with single-value results
+* Semijoins and Antijoins using subqueries with the IN clause
+* Subqueries with derived tables
+* Comparison of WITH, temporary tables, views, and tables
+* Activity 1: Music recommendations
+* Activity 2: Compare Tastes Across Demographic Segments
 
-##### In-class Exercise: Compare Tastes Across Demographic Segments
+### Session 7: Window queries
 
-##### In-class Exercise: Music Recommendation Service
+* Window definition: `OVER(ORDER BY)`
+* Ranking window functions: `RANK`, `DENSE_RANK`, etc
+* Aggregation functions and windows `OVER(PARITION BY ORDER BY)`
+* Offset window functions: `LEAD`, `LAG` etc
+* Aggregation functions and windows
+* Frame definitions and rolling aggregations
 
-_Note: The in-class activities in this section usually take longer time than planned. I often go faster
-in the prior sessions, so that I can start describing the concept of veiw_
 
 ### Misceallaneous
 
