@@ -63,6 +63,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Integrated JOIN and GROUP BY queries
 
 * TODO: Add an example for GROUP_CONCAT (e.g. for movie genres)
+* * TODO: In video ["Integrated Queries: Statistics on Directors"](https://www.youtube.com/watch?v=aeXWO4xHsTw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=42) at sec 37 remove the "For movies from the Year 2000"
 
 ### Session 6: Subqueries
 
