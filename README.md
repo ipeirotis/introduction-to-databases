@@ -42,8 +42,9 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Attribute-level functions: NULL functions, date functions, etc.
 * Activity: Find People that Live in "New York" (exploration for data cleaning)
 
-* TODO: Create videos for CASE WHEN, Null Functions, Date Functions
-* TODO: Create separate slides for Null Functions and for Date Functions
+* TODO: Create separate slides for Null Functions, Date Functions, and String functions
+* TODO: Create videos for CASE WHEN, Null Functions, Date Functions, String functions
+
 
 
 ### Session 4: JOIN queries
@@ -60,6 +61,8 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * GROUP BY on multiple attributes
 * HAVING clause
 * Integrated JOIN and GROUP BY queries
+
+* TODO: Add an example for GROUP_CONCAT (e.g. for movie genres)
 
 ### Session 6: Subqueries
 
