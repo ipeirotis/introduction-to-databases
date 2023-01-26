@@ -30,7 +30,6 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Selection queries: `SELECT *`, `SELECT column`, `column AS`, 
 * Selection queries: `DISTINCT`, `ORDER BY`, `LIMIT`
 
-
 ### Session 3: Filtering Queries
 
 * `WHERE` clause
@@ -41,11 +40,8 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * CASE WHEN clause
 * Attribute-level functions: NULL functions, date functions, etc.
 * Activity: Find People that Live in "New York" (exploration for data cleaning)
-
 * TODO: Create separate slides for Null Functions, Date Functions, and String functions
 * TODO: Create videos for CASE WHEN, Null Functions, Date Functions, String functions
-
-
 
 ### Session 4: JOIN queries
 
@@ -61,9 +57,8 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * GROUP BY on multiple attributes
 * HAVING clause
 * Integrated JOIN and GROUP BY queries
-
 * TODO: Add an example for GROUP_CONCAT (e.g. for movie genres)
-* * TODO: In video ["Integrated Queries: Statistics on Directors"](https://www.youtube.com/watch?v=aeXWO4xHsTw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=42) at sec 37 remove the "For movies from the Year 2000"
+* TODO: In video ["Integrated Queries: Statistics on Directors"](https://www.youtube.com/watch?v=aeXWO4xHsTw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=42) at sec 37 remove the "For movies from the Year 2000"
 
 ### Session 6: Subqueries
 
