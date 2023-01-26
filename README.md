@@ -42,6 +42,9 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Attribute-level functions: NULL functions, date functions, etc.
 * Activity: Find People that Live in "New York" (exploration for data cleaning)
 
+* TODO: Create videos for CASE WHEN, Null Functions, Date Functions
+* TODO: Create separate slides for Null Functions and for Date Functions
+
 
 ### Session 4: JOIN queries
 
@@ -79,12 +82,10 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ### Misceallaneous
 
-* Functions
 * UNION
-* CASE
 * ANY/ALL
-* ROLLUP
-
+* ROLLUP / GROUPING
+* EXISTS
 
 
 ## Additional Resources for Learning SQL
