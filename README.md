@@ -88,7 +88,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ### Planned modules
 
-* Temporal data
+* Temporal data (e.g., following https://www.stratascratch.com/guides/sql-time-and-date-skills)
 * Geospatial data
 * String functions
 
