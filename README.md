@@ -86,10 +86,17 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * ROLLUP / GROUPING
 * EXISTS
 
+### Planned modules
+
+* Temporal data
+* Geospatial data
+* String functions
+
 
 ## Additional Resources for Learning SQL
 
 * [StrataScratch](https://platform.stratascratch.com/coding) and [Leetcode](https://leetcode.com/problemset/database/): SQL Interview questions for data science positions in many tech companies
+* [Mode SQL Tutorial](https://mode.com/sql-tutorial/): A well-written and organized tutorial for SQL, with material starting from the very basics up to very advanced.
 * [Introduction to SQL](https://www.khanacademy.org/computing/computer-programming/sql) from Khan Academy. Introductory course, with videos explaining the various aspects of SQL.
 * [W3Schools SQL](http://www.w3schools.com/sql/): An introduction to SQL with hands-on examples
 * [Learn SQL](https://www.codecademy.com/learn/learn-sql) and [SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics): Two short, self-directed online course from Code Academy
@@ -99,9 +106,9 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * [Become a SELECT Star!](https://gumroad.com/l/sql-zine) by Julia Evans:  A very useful e-zine that summarizes in a cartoonish way most of the SQL concepts that we cover in class. Worth the $12.
 * [How to Teach People SQL](https://dataschool.com/how-to-teach-people-sql/): Great visualizations for the various SQL operations that we learn.
 * [SQL Data Manipulation for Data Scientists](https://www.stratascratch.com/guides/): Advanced data manipulation techniques using SQL.
-
-## Useful Pointers
-
 * [Best practices for SQL](https://data36.com/sql-best-practices-data-analysts/): A set of useful guidelines for writing readable SQL statements.
+
+
+
 
 
