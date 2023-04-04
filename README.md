@@ -10,7 +10,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ## Indicative Schedule
 
-### Session 1: Entity-Relationship Model and Relational Databases
+### Module 1: Entity-Relationship Model and Relational Databases
 
 * Entities, Primary Keys, and Attributes
 * Relations
@@ -23,14 +23,14 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Activity 3: From Spreadsheet to a Normalized Database
 
 
-### Session 2: Selection Queries
+### Module 2: Selection Queries
 
 * Understand the design of our example databases
 * Navigating a Database: `USE`, `SHOW TABLES`, `DESCRIBE`
 * Selection queries: `SELECT *`, `SELECT column`, `column AS`, 
 * Selection queries: `DISTINCT`, `ORDER BY`, `LIMIT`
 
-### Session 3: Filtering Queries
+### Module 3: Filtering Queries
 
 * `WHERE` clause
 * Boolean conditions: `AND`, `OR`, `NOT`, `BETWEEN`
@@ -43,14 +43,14 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * TODO: Create separate slides for Null Functions, Date Functions, and String functions
 * TODO: Create videos for CASE WHEN, Null Functions, Date Functions, String functions
 
-### Session 4: JOIN queries
+### Module 4: JOIN queries
 
 * Inner Joins
 * Self Joins
 * Outer Joins
 * Antinoins and Semijoins
 
-### Session 5: Aggregate queries
+### Module 5: Aggregate queries
 
 * Aggregation functions (COUNT, COUNT DISTINC, SUM, AVG, MAX, MIN, STDEV, CONCAT)
 * GROUP BY on a single attribute
@@ -60,7 +60,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * TODO: Add an example for GROUP_CONCAT (e.g. for movie genres)
 * TODO: In video ["Integrated Queries: Statistics on Directors"](https://www.youtube.com/watch?v=aeXWO4xHsTw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=42) at sec 37 remove the "For movies from the Year 2000"
 
-### Session 6: Subqueries
+### Module 6: Subqueries
 
 * Subqueries with single-value results
 * Semijoins and Antijoins using subqueries with the IN clause
@@ -69,7 +69,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Activity 1: Music recommendations
 * Activity 2: Compare Tastes Across Demographic Segments
 
-### Session 7: Window queries
+### Module 7: Window queries
 
 * Window definition: `OVER(ORDER BY)`
 * Ranking window functions: `RANK`, `DENSE_RANK`, etc
@@ -79,18 +79,18 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Frame definitions and rolling aggregations
 
 
-### Misceallaneous
-
-* UNION
-* ANY/ALL
-* ROLLUP / GROUPING
-* EXISTS
 
 ### Planned modules
 
 * Temporal data (e.g., following https://www.stratascratch.com/guides/sql-time-and-date-skills)
 * Geospatial data
 * String functions
+
+* UNION
+* ANY/ALL
+* ROLLUP / GROUPING
+* EXISTS
+
 
 
 ## Additional Resources for Learning SQL
