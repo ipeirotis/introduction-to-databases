@@ -95,7 +95,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 
 ## Additional Resources for Learning SQL
 
-* [StrataScratch](https://platform.stratascratch.com/coding) and [Leetcode](https://leetcode.com/problemset/database/): SQL Interview questions for data science positions in many tech companies
+* [StrataScratch](https://platform.stratascratch.com/coding), [Leetcode](https://leetcode.com/problemset/database/), [DataLemur](https://datalemur.com/): SQL Interview questions for data science positions in many tech companies
 * [Mode SQL Tutorial](https://mode.com/sql-tutorial/): A well-written and organized tutorial for SQL, with material starting from the very basics up to very advanced.
 * [Introduction to SQL](https://www.khanacademy.org/computing/computer-programming/sql) from Khan Academy. Introductory course, with videos explaining the various aspects of SQL.
 * [W3Schools SQL](http://www.w3schools.com/sql/): An introduction to SQL with hands-on examples
