@@ -48,7 +48,7 @@ SELECT T.Music,
         T.perc AS perc_total, T.cnt AS cnt_total,
         R.perc/T.perc AS lift_ratio
 FROM BandFans R JOIN MusicPreferences T ON R.Music = T.Music
-ORDER BY lift_ratio DESC
+ORDER BY lift_ratio DESC;
 
 # Improving the details now.
 # Below we introduce a few fixes to remove noise and 
