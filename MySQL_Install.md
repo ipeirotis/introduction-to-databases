@@ -2,7 +2,7 @@
 
 The instructions below can be used to install MySQL from scratch in any Linux/Ubuntu machine, and to import the databases that we will use as examples. (Most of) these steps have been already completed in the image that is being used for the class, but I keep the instructions here for reference, if a student wants to create a MySQL installation in a new machine.
 
-## Install Software on Ubuntu"
+## Install Software on Ubuntu
 
 Login to the terminal and type:
 
@@ -24,14 +24,15 @@ Inside mysql console you can execute SQL commands, for example, the command:
 
 will show you the databases available. The first that you run the command you will see something like:
 
-+--------------------+
+
 | Database           |
-+--------------------+
+|--------------------|
 | information_schema |
 | mysql              |
 | performance_schema |
-+--------------------+
+```
 3 rows in set (0.00 sec)
+```
 
 For now, let's get out of the command-line interface, by typing the command `QUIT`
 
