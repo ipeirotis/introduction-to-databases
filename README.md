@@ -23,14 +23,12 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Activity 3: From Spreadsheet to a Normalized Database
 
 
-### Module 2: Selection Queries
+### Module 2: Selection & Filtering Queries 
 
 * Understand the design of our example databases
 * Navigating a Database: `USE`, `SHOW TABLES`, `DESCRIBE`
 * Selection queries: `SELECT *`, `SELECT column`, `column AS`, 
 * Selection queries: `DISTINCT`, `ORDER BY`, `LIMIT`
-
-### Module 3: Filtering Queries
 
 * `WHERE` clause
 * Boolean conditions: `AND`, `OR`, `NOT`, `BETWEEN`
@@ -43,14 +41,14 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * TODO: Create separate slides for Null Functions, Date Functions, and String functions
 * TODO: Create videos for CASE WHEN, Null Functions, Date Functions, String functions
 
-### Module 4: JOIN queries
+### Module 3: JOIN queries
 
 * Inner Joins
 * Self Joins
 * Outer Joins
 * Antinoins and Semijoins
 
-### Module 5: Aggregate queries
+### Module 4: Aggregate queries
 
 * Aggregation functions (COUNT, COUNT DISTINC, SUM, AVG, MAX, MIN, STDEV, CONCAT)
 * GROUP BY on a single attribute
@@ -58,9 +56,8 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * HAVING clause
 * Integrated JOIN and GROUP BY queries
 * TODO: Add an example for GROUP_CONCAT (e.g. for movie genres)
-* TODO: In video ["Integrated Queries: Statistics on Directors"](https://www.youtube.com/watch?v=aeXWO4xHsTw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=42) at sec 37 remove the "For movies from the Year 2000"
 
-### Module 6: Subqueries
+### Module 5: Subqueries
 
 * Subqueries with single-value results
 * Semijoins and Antijoins using subqueries with the IN clause
@@ -69,7 +66,7 @@ This is a brief introductory module to relational databases and SQL. It mainly t
 * Activity 1: Music recommendations
 * Activity 2: Compare Tastes Across Demographic Segments
 
-### Module 7: Window queries
+### Module 6: Window queries
 
 * Window definition: `OVER(ORDER BY)`
 * Ranking window functions: `RANK`, `DENSE_RANK`, etc
