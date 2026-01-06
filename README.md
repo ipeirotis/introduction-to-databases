@@ -15,14 +15,14 @@ A brief introductory course to relational databases and SQL, targeting people in
 
 ## Modules
 
-### [Module 1: Entity-Relationship Model and Relational Databases](session1/)
+### [Module 1: Entity-Relationship Model and Relational Databases](module1/)
 
 - Entities, Primary Keys, and Attributes
 - Relations and Cardinality (One-to-One, One-to-Many, Many-to-Many)
 - From ER Diagram to Relational Schema
 - SQL Statements for Creating Tables
 
-### [Module 2: Selection & Filtering Queries](session2/)
+### [Module 2: Selection & Filtering Queries](module2/)
 
 - Navigating a Database
 - Selection queries: `SELECT`, `AS`, `DISTINCT`, `ORDER BY`, `LIMIT`
@@ -31,21 +31,21 @@ A brief introductory course to relational databases and SQL, targeting people in
 - Conditional logic with `CASE WHEN`
 - Attribute-level functions: string, date, and NULL functions
 
-### Module 3: JOIN Queries
+### [Module 3: JOIN Queries](module3/)
 
 - Inner Joins
 - Self Joins
 - Outer Joins (LEFT, RIGHT, FULL)
 - Semi-joins and Anti-joins
 
-### Module 4: Aggregate Queries
+### [Module 4: Aggregate Queries](module4/)
 
 - Aggregation functions: `COUNT`, `SUM`, `AVG`, `MAX`, `MIN`, `STDEV`
 - `GROUP BY` on single and multiple attributes
 - Filtering groups with `HAVING`
 - Combining JOINs and GROUP BY
 
-### Module 5: Subqueries
+### [Module 5: Subqueries](module4/)
 
 - Subqueries with single-value results
 - Semi-joins and Anti-joins using `IN`
@@ -53,7 +53,7 @@ A brief introductory course to relational databases and SQL, targeting people in
 - `WITH` clause (Common Table Expressions)
 - Comparison: CTEs vs. temporary tables vs. views
 
-### Module 6: Window Functions
+### [Module 6: Window Functions](module6/)
 
 - Window definition: `OVER(ORDER BY)`
 - Ranking functions: `RANK`, `DENSE_RANK`, `ROW_NUMBER`
