@@ -1,3 +1,4 @@
+````mermaid
 erDiagram
     movies {
         INT id PK
@@ -41,3 +42,4 @@ erDiagram
     movies ||--o{ movies_directors : "directed_by"
     movies ||--o{ movies_genres : "categorized"
     directors ||--o{ directors_genres : "associated"
+````
