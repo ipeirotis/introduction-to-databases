@@ -32,11 +32,29 @@ By the end of this lesson, you will be able to:
 
 ## Slides
 
-- [SQL: Joins](https://docs.google.com/presentation/d/YOUR_SLIDES_ID/edit?usp=sharing)
+- [SQL: Joins](https://docs.google.com/presentation/d/17CXO2KigqCpWnYhg9a0j65x1M9mbuDdH0LQOngvNc6M/edit?usp=sharing)
 
 ## Notebooks
 
-- [SQL Join Queries](C-Join_Queries.ipynb) — Inner joins, self joins, outer joins, semi-joins, anti-joins
+- [SQL Join Queries](C-Join_Queries.ipynb) — Inner joins, self joins, outer joins, anti-joins
+
+## Topics Covered
+
+### Inner Joins
+- Joining two tables on a common key
+- Joining three or more tables
+- Combining joins with WHERE conditions
+- Step-by-step examples: Spielberg movies, Drama films from 2000, James Bond actors, Brad Pitt filmography
+
+### Self Joins
+- Joining a table to itself
+- Finding movies with multiple genres (Drama AND Comedy)
+- Finding students with multiple concentrations
+
+### Outer Joins
+- LEFT JOIN to find unmatched records
+- Anti-join pattern: `LEFT JOIN ... WHERE key IS NULL`
+- Finding movies without actors, movies without genres, students without concentrations
 
 ## Setup
 
@@ -48,7 +66,7 @@ This notebook uses Google BigQuery. To run it:
 
 The queries use datasets in the `nyu-datasets` project:
 - `nyu-datasets.imdb` — Movies, actors, directors, roles, genres
-- `nyu-datasets.facebook` — Student profiles, hobbies, relationships
+- `nyu-datasets.facebook` — Student profiles, hobbies, relationships, concentrations
 
 ## Resources
 
