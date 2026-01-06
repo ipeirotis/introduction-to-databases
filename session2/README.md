@@ -1,14 +1,17 @@
-# Introduction to Databases
+# Module 2: SQL Selection and Filtering Queries
 
-Course materials for learning SQL using Google BigQuery with IMDb and Facebook datasets.
+## Learning Outcomes
 
-## SQL: Selection Queries
+By the end of this lesson, you will be able to:
 
-Learn the fundamentals of SQL SELECT statements: selecting columns, renaming outputs with AS, de-duplicating with DISTINCT, and sorting/paging results with ORDER BY and LIMIT.
-
-## SQL: Filtering Queries
-
-Filter data using WHERE clauses with equality, inequality, and boolean operators. Use IN for lists, LIKE for pattern matching, handle NULL values correctly, and create conditional logic with CASE statements.
+- Connect to the database that you want to query, see the tables, and discover the attributes for each table
+- Show the contents of the table, select which columns you want to retrieve, rename the columns, and order the results
+- Filter the results of a query to include only rows that satisfy a given condition
+- Express complex conditions using Boolean operators (AND, OR, NOT)
+- Use the LIKE operator in SQL for writing approximate matching conditions
+- Use the IN operator for writing containment queries
+- Understand the NULL mark and how to write conditions that involve NULL
+- Write complex queries that retrieve noisy data, and reformulate your queries iteratively
 
 ---
 
@@ -40,10 +43,8 @@ Filter data using WHERE clauses with equality, inequality, and boolean operators
 
 ## Notebooks
 
-Interactive Jupyter notebooks with all queries demonstrated in the videos and slides:
-
-- [SQL: Selection Queries](session2/B-Selection_Queries.ipynb) — SELECT, AS, DISTINCT, ORDER BY, LIMIT
-- [SQL: Filtering Queries](session3/B3-Filtering_Queries.ipynb) — WHERE, Boolean operators, IN, LIKE, NULL, CASE
+- [SQL: Selection Queries](B-Selection_Queries.ipynb) — SELECT, AS, DISTINCT, ORDER BY, LIMIT
+- [SQL: Filtering Queries](B3-Filtering_Queries.ipynb) — WHERE, Boolean operators, IN, LIKE, NULL, CASE
 
 ## Setup
 
@@ -53,6 +54,6 @@ These notebooks use Google BigQuery. To run them:
 2. Authenticate with your Google account
 3. Replace `'your-project-id'` with your Google Cloud project ID
 
-The queries use publicly available datasets in the `nyu-datasets` project:
+The queries use datasets in the `nyu-datasets` project:
 - `nyu-datasets.imdb` — Movies, actors, directors, roles, genres
 - `nyu-datasets.facebook` — Student profiles, hobbies, relationships
