@@ -1,4 +1,3 @@
-````mermaid
 erDiagram
     movies {
         INT id PK
@@ -30,10 +29,15 @@ erDiagram
         INT movie_id FK
         VARCHAR genre
     }
-    
+    directors_genres {
+        INT director_id FK
+        VARCHAR genre
+        FLOAT prob
+    }
+
     actors ||--o{ roles : "plays"
     movies ||--o{ roles : "has"
     directors ||--o{ movies_directors : "directs"
     movies ||--o{ movies_directors : "directed_by"
-    movies ||--o{ movies_genres : "has"
-```
+    movies ||--o{ movies_genres : "categorized"
+    directors ||--o{ directors_genres : "associated"
