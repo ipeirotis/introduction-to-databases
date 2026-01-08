@@ -2,53 +2,38 @@
 
 ```mermaid
 erDiagram
-    album {
-        INT artist_id PK
-        INT album_id PK
-        VARCHAR album_name
-    }
-
     artist {
         INT artist_id PK
         VARCHAR artist_name
     }
-
+    album {
+        INT artist_id PK "Composite PK (1/2), FK to artist"
+        INT album_id PK "Composite PK (2/2)"
+        VARCHAR album_name
+    }
     track {
-        INT artist_id PK
-        INT album_id PK
-        INT track_id PK
+        INT artist_id PK "Composite PK (1/3), FK to album"
+        INT album_id PK "Composite PK (2/3), FK to album"
+        INT track_id PK "Composite PK (3/3)"
         VARCHAR track_name
         FLOAT time
     }
-
-    tracks_played {
-        INT user_id FK
-        INT artist_id FK
-        INT album_id FK
-        INT track_id FK
-        TIMESTAMP played_on
-    }
-
     users {
         INT user_id PK
         VARCHAR gender
         VARCHAR first_name
         VARCHAR last_name
     }
+    tracks_played {
+        INT user_id PK "Composite PK (1/5), FK to users"
+        INT artist_id PK "Composite PK (2/5), K to track"
+        INT album_id PK "Composite PK (3/5), FK to track"
+        INT track_id PK "Composite PK (4/5), FK to track"
+        TIMESTAMP played_on PK "Composite PK (5/5)"
+    }
 
-    album ||--o{ track : "fk_artist_id"
-    album ||--o{ track : "fk_artist_id"
-    album ||--o{ track : "fk_album_id"
-    album ||--o{ track : "fk_album_id"
-    artist ||--o{ album : "fk_artist_id"
-    users ||--o{ tracks_played : "fk_user_id"
-    track ||--o{ tracks_played : "fk_artist_id"
-    track ||--o{ tracks_played : "fk_artist_id"
-    track ||--o{ tracks_played : "fk_artist_id"
-    track ||--o{ tracks_played : "fk_album_id"
-    track ||--o{ tracks_played : "fk_album_id"
-    track ||--o{ tracks_played : "fk_album_id"
-    track ||--o{ tracks_played : "fk_track_id"
-    track ||--o{ tracks_played : "fk_track_id"
-    track ||--o{ tracks_played : "fk_track_id"
+    artist ||--o{ album : "has"
+    album ||--o{ track : "contains"
+    users ||--o{ tracks_played : "plays"
+    track ||--o{ tracks_played : "played_in"
 ```
