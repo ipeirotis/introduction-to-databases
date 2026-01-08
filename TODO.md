@@ -1,8 +1,4 @@
 
-* Move UNION earlier as well?
-
-* COALESCE
-
 
 
 
@@ -24,6 +20,9 @@ Practice
 * ANY/ALL
 * ROLLUP / GROUPING
 * EXISTS
+* COALESCE and NULL treatment
+
+
 
 
 ### TODO 
@@ -32,4 +31,6 @@ Practice
 
 * Module 2: Create videos for CASE WHEN, Null Functions, Date Functions, 
 
-* Module 4: String functionsModule 4Add an example for GROUP_CONCAT (e.g., for movie genres)
+* Module 4: String functions
+
+* Module 4: Add an example for GROUP_CONCAT (e.g., for movie genres)
