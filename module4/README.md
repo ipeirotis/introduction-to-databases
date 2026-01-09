@@ -4,11 +4,12 @@
 
 By the end of this lesson, you will be able to:
 
-- Use aggregation functions (COUNT, SUM, AVG, MIN, MAX, STDEV) to summarize data
+- Use aggregation functions (COUNT, SUM, AVG, MIN, MAX, STDDEV) to summarize data
 - Understand the difference between COUNT(*), COUNT(column), and COUNT(DISTINCT column)
 - Use GROUP BY to compute aggregates for subgroups of data
 - Use GROUP BY with multiple attributes
 - Use the HAVING clause to filter groups based on aggregate values
+- Understand the difference between WHERE (filters rows) and HAVING (filters groups)
 - Combine JOIN and GROUP BY queries to compute statistics across multiple tables
 
 ---
@@ -43,15 +44,20 @@ By the end of this lesson, you will be able to:
 
 ## Notebooks
 
-- [SQL GROUP BY Queries](D-SQL_Aggregation_Queries.ipynb) — Aggregation functions, GROUP BY, HAVING, integrated queries
+- [SQL GROUP BY Queries](D-SQL_Aggregation_Queries.ipynb) — All aggregation examples from the slides
 
 ## Topics Covered
 
 ### Aggregation Functions
-- `COUNT(*)` — count all rows
-- `COUNT(column)` — count non-NULL values
-- `COUNT(DISTINCT column)` — count unique values
-- `SUM`, `AVG`, `MIN`, `MAX`, `STDEV`
+| Function | Description |
+|----------|-------------|
+| `COUNT(*)` | Count all rows |
+| `COUNT(column)` | Count non-NULL values |
+| `COUNT(DISTINCT column)` | Count unique values |
+| `SUM(column)` | Sum of values |
+| `AVG(column)` | Average of values |
+| `MIN(column)` / `MAX(column)` | Minimum / Maximum value |
+| `STDDEV(column)` | Standard deviation |
 
 ### GROUP BY
 - Grouping by a single attribute
@@ -59,12 +65,21 @@ By the end of this lesson, you will be able to:
 - Combining with ORDER BY and LIMIT
 
 ### HAVING Clause
-- Filtering groups (vs. WHERE which filters rows)
-- Using aggregate conditions
+- Filtering groups after aggregation
+- Difference between WHERE (filters rows) and HAVING (filters groups)
 
-### Integrated Queries
-- Combining JOINs with GROUP BY
-- Statistics across related tables (genres, directors, actors)
+### JOIN + GROUP BY
+- Computing statistics across related tables
+- Genre statistics for movies
+- Director statistics
+- Role analysis
+- Self-joins for finding patterns (double majors, music recommendations)
+
+## BigQuery Notes
+
+- Use `EXTRACT(YEAR FROM date_column)` instead of `YEAR(date_column)` for extracting year from dates
+- In HAVING clauses, you cannot reference column aliases — repeat the aggregate expression instead
+- Column `rank` in MySQL is `rating` in the BigQuery IMDB dataset
 
 ## Setup
 
@@ -76,4 +91,4 @@ This notebook uses Google BigQuery. To run it:
 
 The queries use datasets in the `nyu-datasets` project:
 - `nyu-datasets.imdb` — Movies, actors, directors, roles, genres
-- `nyu-datasets.facebook` — Student profiles, hobbies, relationships
+- `nyu-datasets.facebook` — Student profiles, hobbies, relationships, concentrations
