@@ -1,4 +1,26 @@
 -- ============================================================================
+-- JOIN TUTORIAL: Understanding INNER vs LEFT (OUTER) Joins with GROUP BY
+-- ============================================================================
+--
+-- This tutorial covers three exercises:
+--
+-- 1. Show the number of music likes per ProfileID (no join required)
+--    - Table: `nyu-datasets.facebook.FavoriteMusic`
+--
+-- 2. Show the total number of music likes per PoliticalViews, together with 
+--    the count of distinct ProfileIDs for each political view
+--    - Tables: `nyu-datasets.facebook.FavoriteMusic` 
+--              `nyu-datasets.facebook.Profiles`
+--
+-- 3. Compare the results using INNER JOIN vs LEFT (OUTER) JOIN
+--    - First, examine the raw join results BEFORE aggregating with GROUP BY
+--    - Then, observe how the choice of join affects the final counts
+--
+-- ============================================================================
+
+
+
+-- ============================================================================
 -- QUERY 1: Number of music likes per ProfileID
 -- ============================================================================
 -- This is a simple aggregation - no join required because all the data 
