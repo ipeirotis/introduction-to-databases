@@ -26,7 +26,7 @@ erDiagram
     }
     tracks_played {
         INT user_id PK "Composite PK (1/5), FK to users"
-        INT artist_id PK "Composite PK (2/5), K to track"
+        INT artist_id PK "Composite PK (2/5), FK to track"
         INT album_id PK "Composite PK (3/5), FK to track"
         INT track_id PK "Composite PK (4/5), FK to track"
         TIMESTAMP played_on PK "Composite PK (5/5)"
