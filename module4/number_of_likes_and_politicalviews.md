@@ -150,7 +150,8 @@ Now we GROUP BY PoliticalViews to get totals:
 SELECT 
   P.PoliticalViews,
   COUNT(*) AS total_music_likes,
-  COUNT(DISTINCT P.ProfileID) AS num_people
+  COUNT(DISTINCT P.ProfileID) AS num_people,
+  ROUND(COUNT(*) / COUNT(DISTINCT P.ProfileID), 2) AS likes_per_user
 FROM `nyu-datasets.facebook.Profiles` P
 INNER JOIN `nyu-datasets.facebook.FavoriteMusic` M 
   ON P.ProfileID = M.ProfileID
@@ -160,17 +161,17 @@ ORDER BY total_music_likes DESC;
 
 **Output:**
 
-| PoliticalViews    | total_music_likes | num_people |
-|-------------------|-------------------|------------|
-| Liberal           | 82369             | 5537       |
-| null              | 42874             | 3967       |
-| Very Liberal      | 32909             | 1951       |
-| Moderate          | 30297             | 2435       |
-| Other             | 10074             | 687        |
-| Apathetic         | 8594              | 680        |
-| Conservative      | 8180              | 747        |
-| Libertarian       | 3881              | 284        |
-| Very Conservative | 1064              | 134        |
+| PoliticalViews    | total_music_likes | num_people | likes_per_user |
+|-------------------|-------------------|------------|----------------|
+| Liberal           | 82369             | 5537       | 14.88          |
+| null              | 42874             | 3967       | 10.81          |
+| Very Liberal      | 32909             | 1951       | 16.87          |
+| Moderate          | 30297             | 2435       | 12.44          |
+| Other             | 10074             | 687        | 14.66          |
+| Apathetic         | 8594              | 680        | 12.64          |
+| Conservative      | 8180              | 747        | 10.95          |
+| Libertarian       | 3881              | 284        | 13.67          |
+| Very Conservative | 1064              | 134        | 7.94           |
 
 > **Note:** Only includes people who have BOTH a profile AND music preferences.
 
@@ -184,7 +185,8 @@ This version includes ALL people from Profiles, even those with no music likes.
 SELECT 
   P.PoliticalViews,
   COUNT(M.Music) AS total_music_likes,  -- Count non-NULL music entries
-  COUNT(DISTINCT P.ProfileID) AS num_people
+  COUNT(DISTINCT P.ProfileID) AS num_people,
+  ROUND(COUNT(M.Music) / COUNT(DISTINCT P.ProfileID), 2) AS likes_per_user
 FROM `nyu-datasets.facebook.Profiles` P
 LEFT JOIN `nyu-datasets.facebook.FavoriteMusic` M 
   ON P.ProfileID = M.ProfileID
@@ -194,34 +196,34 @@ ORDER BY total_music_likes DESC;
 
 **Output:**
 
-| PoliticalViews    | total_music_likes | num_people |
-|-------------------|-------------------|------------|
-| Liberal           | 82369             | 6461       |
-| null              | 42874             | 11091      |
-| Very Liberal      | 32909             | 2277       |
-| Moderate          | 30297             | 2898       |
-| Other             | 10074             | 824        |
-| Apathetic         | 8594              | 805        |
-| Conservative      | 8180              | 936        |
-| Libertarian       | 3881              | 325        |
-| Very Conservative | 1064              | 167        |
+| PoliticalViews    | total_music_likes | num_people | likes_per_user |
+|-------------------|-------------------|------------|----------------|
+| Liberal           | 82369             | 6461       | 12.75          |
+| null              | 42874             | 11091      | 3.87           |
+| Very Liberal      | 32909             | 2277       | 14.45          |
+| Moderate          | 30297             | 2898       | 10.45          |
+| Other             | 10074             | 824        | 12.23          |
+| Apathetic         | 8594              | 805        | 10.68          |
+| Conservative      | 8180              | 936        | 8.74           |
+| Libertarian       | 3881              | 325        | 11.94          |
+| Very Conservative | 1064              | 167        | 6.37           |
 
 ---
 
 ## Comparing INNER JOIN vs LEFT JOIN Results
 
-| PoliticalViews    | INNER JOIN |        | LEFT JOIN |         | Difference   |
-|-------------------|------------|--------|-----------|---------|--------------|
-|                   | likes      | people | likes     | people  |              |
-| Liberal           | 82,369     | 5,537  | 82,369    | 6,461   | +924 people  |
-| null              | 42,874     | 3,967  | 42,874    | 11,091  | +7,124 people |
-| Very Liberal      | 32,909     | 1,951  | 32,909    | 2,277   | +326 people  |
-| Moderate          | 30,297     | 2,435  | 30,297    | 2,898   | +463 people  |
-| Other             | 10,074     | 687    | 10,074    | 824     | +137 people  |
-| Apathetic         | 8,594      | 680    | 8,594     | 805     | +125 people  |
-| Conservative      | 8,180      | 747    | 8,180     | 936     | +189 people  |
-| Libertarian       | 3,881      | 284    | 3,881     | 325     | +41 people   |
-| Very Conservative | 1,064      | 134    | 1,064     | 167     | +33 people   |
+| PoliticalViews    | INNER JOIN |        |            | LEFT JOIN |         |            |
+|-------------------|------------|--------|------------|-----------|---------|------------|
+|                   | likes      | people | per user   | likes     | people  | per user   |
+| Liberal           | 82,369     | 5,537  | 14.88      | 82,369    | 6,461   | 12.75      |
+| null              | 42,874     | 3,967  | 10.81      | 42,874    | 11,091  | 3.87       |
+| Very Liberal      | 32,909     | 1,951  | 16.87      | 32,909    | 2,277   | 14.45      |
+| Moderate          | 30,297     | 2,435  | 12.44      | 30,297    | 2,898   | 10.45      |
+| Other             | 10,074     | 687    | 14.66      | 10,074    | 824     | 12.23      |
+| Apathetic         | 8,594      | 680    | 12.64      | 8,594     | 805     | 10.68      |
+| Conservative      | 8,180      | 747    | 10.95      | 8,180     | 936     | 8.74       |
+| Libertarian       | 3,881      | 284    | 13.67      | 3,881     | 325     | 11.94      |
+| Very Conservative | 1,064      | 134    | 7.94       | 1,064     | 167     | 6.37       |
 
 ### Key Insights
 
@@ -229,9 +231,11 @@ ORDER BY total_music_likes DESC;
 
 2. **The num_people is HIGHER in the LEFT JOIN for every group.** These extra people have profiles but NO music preferences.
 
-3. **The biggest difference is in the NULL political views group:** 7,124 additional people (11,091 - 3,967) have profiles but no music likes. Many users create profiles but never fill in their music preferences!
+3. **The likes_per_user is LOWER in the LEFT JOIN for every group.** This makes sense—we're dividing the same number of likes by more people (those with zero likes are now included in the denominator).
 
-4. **Data Quality Insight:** A large portion of users have incomplete profiles (no political view and/or no music preferences).
+4. **The biggest difference is in the NULL political views group:** 7,124 additional people (11,091 - 3,967) have profiles but no music likes. Many users create profiles but never fill in their music preferences!
+
+5. **Data Quality Insight:** A large portion of users have incomplete profiles (no political view and/or no music preferences). The dramatic drop in likes_per_user for the NULL group (10.81 → 3.87) shows that users without a stated political view are also less likely to fill in music preferences.
 
 ---
 
