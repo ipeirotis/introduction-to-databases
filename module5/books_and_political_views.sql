@@ -41,18 +41,21 @@
 -- groups of very different sizes).
 -- ============================================================================
 
-DECLARE all_students INT64 DEFAULT (
+DECLARE all_students INT64;
+SET all_students = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles`
 );
 
-DECLARE liberals INT64 DEFAULT (
+DECLARE liberals INT64;
+SET liberals = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles` 
   WHERE PoliticalViews = 'Liberal'
 );
 
-DECLARE conservatives INT64 DEFAULT (
+DECLARE conservatives INT64;
+SET conservatives = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles` 
   WHERE PoliticalViews = 'Conservative'
@@ -96,7 +99,7 @@ GROUP BY Book;
 -- | The Great Gatsby      | 963   | 3.73%  |
 -- | 1984                  | 725   | 2.81%  |
 -- | Pride And Prejudice   | 602   | 2.33%  |
-SELECT * FROM book_likes ORDER BY cnt DESC LIMIT 20;
+SELECT * FROM book_likes ORDER BY cnt DESC LIMIT 100;
 
 
 -- ============================================================================
@@ -133,7 +136,7 @@ GROUP BY Book;
 -- | Harry Potter          | 555      | 8.59%     |
 -- | Catcher In The Rye    | 452      | 7.00%     |
 -- | The Great Gatsby      | 371      | 5.74%     |
-SELECT * FROM book_liberals ORDER BY cnt_libs DESC LIMIT 20;
+SELECT * FROM book_liberals ORDER BY cnt_libs DESC LIMIT 100;
 
 
 -- ============================================================================
@@ -163,7 +166,7 @@ GROUP BY Book;
 -- | Harry Potter          | 66       | 7.05%     |
 -- | The Great Gatsby      | 59       | 6.30%     |
 -- | The Bible             | 21       | 2.24%     |  <-- Notable!
-SELECT * FROM book_conservatives ORDER BY cnt_cons DESC LIMIT 20;
+SELECT * FROM book_conservatives ORDER BY cnt_cons DESC LIMIT 100;
 
 
 -- ============================================================================
@@ -213,7 +216,7 @@ WHERE
   B.cnt > 5;  -- Filter out rarely-mentioned books (reduces noise)
 
 -- View the combined data:
-SELECT * FROM book_comparison ORDER BY cnt DESC LIMIT 20;
+SELECT * FROM book_comparison ORDER BY cnt DESC;
 
 
 -- ============================================================================
@@ -273,21 +276,21 @@ FROM book_comparison;
 -- | Crime And Punishment | 1.52      | 1.95      | 0.68         | Conservatives over-index   |
 -- | The Fountainhead     | 1.43      | 1.65      | 0.75         | Slight conservative (Rand) |
 -- | Harry Potter         | 2.17      | 1.40      | 1.20         | Popular with both          |
-SELECT * FROM book_scores ORDER BY cnt DESC LIMIT 30;
+SELECT * FROM book_scores ORDER BY cnt DESC ;
 
 -- Books most skewed toward liberals:
 SELECT Book, cnt, lift_libs, libs_vs_cons 
 FROM book_scores 
 WHERE cnt > 50 
 ORDER BY libs_vs_cons DESC 
-LIMIT 10;
+LIMIT 50;
 
 -- Books most skewed toward conservatives:
 SELECT Book, cnt, lift_cons, cons_vs_libs 
 FROM book_scores 
 WHERE cnt > 50 
 ORDER BY cons_vs_libs DESC 
-LIMIT 10;
+LIMIT 50;
 
 
 -- ============================================================================
@@ -341,8 +344,8 @@ GROUP BY
   P.PoliticalViews;
 
 -- View some individual predictions:
-SELECT * FROM user_scores ORDER BY avg_lib DESC LIMIT 20;
-
+SELECT * FROM user_scores ORDER BY avg_lib DESC LIMIT 50;
+SELECT * FROM user_scores ORDER BY avg_cons DESC LIMIT 50;
 
 -- ============================================================================
 -- STEP 8: EVALUATE THE CLASSIFIER (CONFUSION MATRIX)
