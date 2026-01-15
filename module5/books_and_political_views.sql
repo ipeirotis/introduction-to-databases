@@ -50,11 +50,13 @@ SET all_students = (
   FROM `nyu-datasets.facebook.Profiles`
 );
 
+
 SET liberals = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles` 
   WHERE PoliticalViews = 'Liberal'
 );
+
 
 SET conservatives = (
   SELECT COUNT(*) 
@@ -280,16 +282,16 @@ FROM book_comparison;
 SELECT * FROM book_scores ORDER BY cnt DESC ;
 
 -- Books most skewed toward liberals:
-SELECT Book, cnt, lift_libs, libs_vs_cons 
+SELECT Book, cnt, cnt_libs, cnt_cons, perc_libs, perc_cons, lift_libs, libs_vs_cons 
 FROM book_scores 
-WHERE cnt > 50 
+WHERE cnt > 10 
 ORDER BY libs_vs_cons DESC 
 LIMIT 50;
 
 -- Books most skewed toward conservatives:
-SELECT Book, cnt, lift_cons, cons_vs_libs 
+SELECT Book, cnt, cnt_libs, cnt_cons, perc_libs, perc_cons, lift_cons, cons_vs_libs 
 FROM book_scores 
-WHERE cnt > 50 
+WHERE cnt > 10 
 ORDER BY cons_vs_libs DESC 
 LIMIT 50;
 
