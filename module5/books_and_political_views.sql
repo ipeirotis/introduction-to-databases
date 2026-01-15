@@ -42,19 +42,20 @@
 -- ============================================================================
 
 DECLARE all_students INT64;
+DECLARE liberals INT64;
+DECLARE conservatives INT64;
+
 SET all_students = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles`
 );
 
-DECLARE liberals INT64;
 SET liberals = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles` 
   WHERE PoliticalViews = 'Liberal'
 );
 
-DECLARE conservatives INT64;
 SET conservatives = (
   SELECT COUNT(*) 
   FROM `nyu-datasets.facebook.Profiles` 
