@@ -1,16 +1,17 @@
 # Module 5: Subqueries
 
+## Learning Outcomes
+
+By the end of this lesson, you will be able to:
+
+- Understand the notion of a subquery and that we can write queries that reuse the results of other queries
+- Learn about variables and how they can be used to make our code more readable
+- Understand the similarities and differences between views, temporary tables, and common table expressions (CTEs / WITH)
+- Practice creating queries that use subqueries and temporary tables to create advanced analytics solutions
+
+---
+
 ## Videos
-
-### Aggregations across Multiple Tables
-
-| Topic | Link |
-|-------|------|
-| Integrated Queries: Statistics on Movie Genres | [Watch](https://www.youtube.com/watch?v=Pbifh2BHPFM&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=39) |
-| Integrated Queries: Statistics on Directors | [Watch](https://www.youtube.com/watch?v=aeXWO4xHsTw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=41) |
-| Integrated Queries: Role Analysis | [Watch](https://www.youtube.com/watch?v=T0w4uhj5-2c&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=41) |
-
-### Subqueries (Beta, experimental)
 
 | Topic | Link |
 |-------|------|
@@ -18,11 +19,6 @@
 | Subqueries using IN for semijoins and antijoins | [Watch](https://storage.googleapis.com/gslide_videos/F-SQL_Subqueries-7.2--1BgL7sTbfrOa2vSwgDF14pWyx6URWdMqrE1JJrhV9Wjw/panos--z3zYFzY2KtTTLjvOecBO/video/output_video-15245a31e629a277bfb050337b0078d6.mp4) ([alt](https://storage.googleapis.com/gslide_videos/F-SQL_Subqueries-7.2--1BgL7sTbfrOa2vSwgDF14pWyx6URWdMqrE1JJrhV9Wjw/michael--flq6f7yk4E4fJM5XTYuZ/video/output_video-110e4302edba27baeb7728de217bbf8e.mp4)) |
 | Subqueries using derived tables | [Watch](https://drive.google.com/file/d/1-PbSFssoxWxuMc9mNeuTkmWZv51fMZyE/view?usp=drive_link) |
 
-### Conclusion
-
-| Topic | Link |
-|-------|------|
-| Conclusion | [Watch](https://www.youtube.com/watch?v=eUrmYZpRYA0&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=42) |
 
 ## Slides
 
