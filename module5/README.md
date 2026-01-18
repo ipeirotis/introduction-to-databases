@@ -50,4 +50,4 @@ The "books and political views" example shows how we can go from "book likes" to
 
 The books and gender analysis shows how we can correlate gender and book preferences.
 
-- [SQL Code](../session6/book_vs_gender.sql)
+- [SQL Code](book_vs_gender.sql)
