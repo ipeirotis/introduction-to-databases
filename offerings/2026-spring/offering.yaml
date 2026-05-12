@@ -1,0 +1,32 @@
+# Per-offering metadata for Databases for Business Analytics.
+# Edit dates, section, and brightspace.course_id when cloning this directory
+# for a new offering. See offerings/README.md.
+
+course:
+  code: TECH-GB.2336      # adjust if the official course code differs
+  title: Databases for Business Analytics
+  institution: NYU Stern
+
+term:
+  year: 2026
+  season: spring          # spring | summer | fall | winter
+  section: "01"
+
+dates:
+  classes_start: 2026-01-26
+  classes_end:   2026-05-08
+  final_exam:    null     # set when scheduled
+  drop_deadline: null
+
+instructor:
+  name: Panagiotis Ipeirotis
+  email: panos@stern.nyu.edu
+
+# Used by tools/brightspace/ to identify the right Brightspace course shell.
+# Find the course_id in the Brightspace URL when you open the course
+# (the long number after /d2l/home/).
+brightspace:
+  base_url: https://brightspace.nyu.edu
+  course_id: null         # e.g. 123456
+  # Optional: human label shown in audit output.
+  label: Spring 2026 — Section 01

@@ -1,0 +1,21 @@
+{
+  "name": "brightspace-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only Playwright tooling for NYU Brightspace course shells.",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "brightspace": "./bin/brightspace.mjs"
+  },
+  "scripts": {
+    "brightspace": "node ./bin/brightspace.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.47.0",
+    "yaml": "^2.5.1"
+  }
+}

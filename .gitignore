@@ -102,3 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Node / Playwright tooling under tools/
+node_modules/
+# Saved Brightspace login state (NEVER commit).
+tools/brightspace/.auth/
+# Brightspace download outputs.
+**/_downloaded/
