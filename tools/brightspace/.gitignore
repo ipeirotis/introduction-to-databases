@@ -1,0 +1,5 @@
+node_modules/
+.auth/
+.env
+# Default download target for the `download` command.
+**/_downloaded/
