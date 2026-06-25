@@ -67,6 +67,9 @@ Topics that don't yet have a module:
 - [x] `tools/brightspace/`: implement `download` — exports assignments, quizzes
       (with questions), content (files + links), and announcements to Markdown +
       native files under `<offering>/brightspace/`.
+- [x] `tools/brightspace/`: implement `question-bank` — aggregates quizzes and
+      assignments across all matching course shells, dedupes questions across
+      semesters, and groups them by topic (`question-bank/`).
 - [ ] `tools/brightspace/`: add a CI-friendly mode that fails when an
       offering's Brightspace state drifts from the repo's expected state.
 

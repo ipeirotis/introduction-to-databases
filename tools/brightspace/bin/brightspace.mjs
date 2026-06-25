@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const COMMANDS = new Set(['login', 'whoami', 'courses', 'audit', 'download']);
+const COMMANDS = new Set(['login', 'whoami', 'courses', 'audit', 'download', 'question-bank']);
 
 function parseArgs(argv) {
   const args = { _: [], flags: {} };
@@ -50,6 +50,7 @@ Commands:
   courses       List your course shells (to find a course_id).
   audit         Read-only audit of the configured Brightspace shell.
   download      Download assignments/quizzes/announcements.
+  question-bank Aggregate quizzes/assignments across courses into one bank.
 
 Common flags:
   --offering <path>   Path to offering dir (default: offerings/2026-spring)

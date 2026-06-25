@@ -82,6 +82,10 @@ npm run brightspace -- audit --sections assignments,quizzes
 # Export the course content into the repo (Markdown + native files).
 npm run brightspace -- download
 npm run brightspace -- download --kinds assignments,content --out some/dir
+
+# Build a cross-semester question bank from every matching course.
+npm run brightspace -- question-bank --filter databases
+npm run brightspace -- question-bank --course-ids 578630,471597 --out question-bank
 ```
 
 Typical first run: `login`, then `courses` to find your id, set
@@ -89,9 +93,14 @@ Typical first run: `login`, then `courses` to find your id, set
 `audit`. Use `--course-id <id>` to point any command at a shell without editing
 `offering.yaml`.
 
-> **Status.** `login`, `whoami`, `courses`, `audit`, and `download` are
-> implemented and read the live D2L JSON API. `audit` does not yet diff its
-> listing against the repo — see `TASKS.md`.
+> **Status.** `login`, `whoami`, `courses`, `audit`, `download`, and
+> `question-bank` are implemented and read the live D2L JSON API. `audit` does
+> not yet diff its listing against the repo — see `TASKS.md`.
+
+The `question-bank` command pulls quizzes (with questions) and assignments
+across every matching course, dedupes identical questions across semesters,
+tags a topic from the quiz name, and writes `by-topic.md`, `bank.csv`,
+`bank.json`, and `courses.md` to `<out>` (default `question-bank/`).
 
 > **Before committing a `download`:** if the repo is public, review the export
 > first. Quiz questions are live assessment material, and content files can be
@@ -150,6 +159,7 @@ tools/brightspace/
       courses.mjs            List enrolled course shells (find a course_id).
       audit.mjs              Read-only audit via the D2L API.
       download.mjs           Export course content to Markdown + native files.
+      question-bank.mjs      Cross-course question/assignment aggregation.
   .auth/                     Gitignored. Holds storageState.json.
 ```
 
