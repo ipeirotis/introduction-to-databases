@@ -46,9 +46,8 @@ export function loadConfig(flags = {}) {
       label: offering?.brightspace?.label || offeringRel,
     },
     storageStatePath: resolve(__dirname, '..', '.auth', 'storageState.json'),
-    // Where to drop raw page HTML when --debug is set (gitignored .auth dir).
-    debugDir: resolve(__dirname, '..', '.auth', 'debug'),
     headed: Boolean(flags.headed),
-    debug: Boolean(flags.debug),
+    // Skip TLS verification — only needed behind a TLS-intercepting proxy.
+    insecure: Boolean(flags.insecure),
   };
 }

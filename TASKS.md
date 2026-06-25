@@ -57,17 +57,15 @@ Topics that don't yet have a module:
 
 ## Tooling
 
-- [x] `tools/brightspace/`: `whoami` connection check + `audit` command that
-      lists assignments, quizzes, content, and announcements (best-effort grid
-      scrape; needs one validation run against the live course to confirm
-      selectors).
-- [ ] `tools/brightspace/`: validate the `audit` section readers against the
-      live Spring 2026 shell and tighten any selectors that report
-      `"unrecognized"` (use `--debug` HTML dumps).
+- [x] `tools/brightspace/`: read via the D2L (Valence) JSON API instead of
+      scraping — `whoami`, `courses` (enrollment listing), and `audit`
+      (assignments, quizzes, content TOC, announcements). Validated live.
+- [ ] `tools/brightspace/`: set `brightspace.course_id` in the active
+      offering's `offering.yaml` once the target shell is chosen.
 - [ ] `tools/brightspace/`: have `audit` diff its listing against the repo
       (module READMEs, schedule, `offerings/<term>/announcements/`).
-- [ ] `tools/brightspace/`: implement `download` command for assignments,
-      quizzes, and announcements.
+- [ ] `tools/brightspace/`: implement `download` (via the API — folder
+      instructions + attachments, quiz properties, announcement bodies).
 - [ ] `tools/brightspace/`: add a CI-friendly mode that fails when an
       offering's Brightspace state drifts from the repo's expected state.
 
