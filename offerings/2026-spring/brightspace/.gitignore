@@ -1,0 +1,4 @@
+# Native content files (PDFs, images, raw HTML topics) are distributed
+# separately rather than committed to this public repo. Regenerate locally with
+# `npm run brightspace -- download`. toc.md / links.md still index them.
+content/files/

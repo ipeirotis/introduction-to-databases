@@ -1,0 +1,68 @@
+# Content
+
+- **Introduction to the Course**
+  - Syllabus → [files/13221150-Syllabus.html](files/13221150-Syllabus.html)
+  - Assignment 0: Setup → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2424609
+  - **Welcome**
+  - **Class Staff**
+- **Module 1: Entity-Relationship Model and Relational Schemas**
+  - Ask questions about the material → https://notebooklm.google.com/notebook/d1427854-a24a-48b4-9a56-5cd6cb99e7de
+  - Gallery-Painter-Painting → [files/13221176-Gallery-Painter-Painting.png](files/13221176-Gallery-Painter-Painting.png)
+  - Modeling and Designing Databases → [files/13221191-Chapter_4-Modeling_and_Designing_Databases.pdf](files/13221191-Chapter_4-Modeling_and_Designing_Databases.pdf)
+  - Quick Reference → [files/13221190-Untitled_-_Copy.html](files/13221190-Untitled_-_Copy.html)
+  - Module 1 Practice: Cellular Operator Database Questions → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1720213
+  - Assignment 1a: ER Diagrams and Relational Schemas → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2424635
+  - Assignment 1b: Understanding a Database → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2579051
+  - **Resources**
+  - **Indicative Solutions for Assignment 1**
+    - CarConnect ER Diagram → [files/13221197-CarConnect.png](files/13221197-CarConnect.png)
+    - CarConnect-RelationalSchema → [files/13221198-CarConnect-RelationalSchema.png](files/13221198-CarConnect-RelationalSchema.png)
+    - Schema of Music database → [files/13221200-Music-database-schema.png](files/13221200-Music-database-schema.png)
+- **Module 2: Column Selection and Row Filtering**
+  - Ask questions about the material → https://notebooklm.google.com/notebook/885602f5-b71f-4837-a9ab-6c4536047116
+  - Module 2 Practice: Filtering queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1722420
+  - Assignment 2a: Selection Queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2579005
+  - Assignment 2b: Filtering Queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2579644
+  - Assignment 2: Database Navigation, Selection, and Filtering Queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-636105
+  - **Resources**
+  - **Solution for Assignment 2**
+    - **B. Selection Queries**
+    - **C. Filtering Queries**
+- **Module 3: Joins**
+  - Module 3 Practice: Join practice queries. → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1738540
+  - Assignment 3: Joins → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2580453
+  - Assignment 3: Joins → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2434904
+  - **Resources**
+  - **Different types of joins**
+  - **Solution for Assignment 3**
+- **Module 4: Aggregation**
+  - Module 4 Practice: Group by practice queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1726514
+  - Module 4 Practice: Group by together with JOIN queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1737776
+  - Assignment 4: Aggregations → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2580626
+  - **Resources**
+  - **Solution for Assignment 4**
+  - **Additional Aggregation Practice Questions**
+    - Module 4 Practice: Flights Database Questions → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2528895
+    - **Solutions**
+- **Module 5: Subqueries**
+  - Assignment 5: Subqueries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2582295
+  - **Resources**
+  - **Solution for Assignment 5**
+- **Module 6: Window queries**
+  - Assignment 6: Window Queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2442501
+  - Assignment 6: Window queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2587887
+  - **Resources**
+  - **Solution for Assignment 6**
+- **Textbooks and Courses**
+  - Learning MySQL → [files/13221148-Learning_MySQL.pdf](files/13221148-Learning_MySQL.pdf)
+  - SQL Zine: Become a Select Star → [files/13221149-sql-zine.pdf](files/13221149-sql-zine.pdf)
+  - Github repo for class material → https://github.com/ipeirotis/introduction-to-databases/
+  - Pointers to Online SQL Courses → https://github.com/ipeirotis/introduction-to-databases/blob/master/README.md#additional-resources-for-learning-sql
+- **Additional Practice**
+  - General Data Analytics Practice: NYPD Collisions Dataset → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2439816
+  - Restaurants Database: Simple Practice Queries → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1785677
+  - StrataScratch: SQL questions asked in interviews → https://platform.stratascratch.com/coding?code_type=3
+  - Leetcode: Practice SQL questions for interviews → https://leetcode.com/problemset/database/
+- **Mediasite**
+  - Mediasite Channel (Stern) → /d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=lti&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-4610469&srcou=578630
+- **Datasets**
