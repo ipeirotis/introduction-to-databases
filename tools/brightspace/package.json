@@ -16,6 +16,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "playwright": "^1.47.0",
+    "turndown": "^7.2.0",
     "yaml": "^2.5.1"
   }
 }

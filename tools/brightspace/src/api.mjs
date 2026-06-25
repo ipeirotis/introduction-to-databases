@@ -129,3 +129,29 @@ export async function news(ctx, ou) {
   const { le } = await versions(ctx);
   return getJson(ctx, `/d2l/api/le/${le}/${ou}/news/`);
 }
+
+export async function quizQuestions(ctx, ou, quizId) {
+  const { le } = await versions(ctx);
+  const out = [];
+  let url = `/d2l/api/le/${le}/${ou}/quizzes/${quizId}/questions/`;
+  for (let i = 0; i < 100 && url; i++) {
+    const page = await getJson(ctx, url);
+    out.push(...(Array.isArray(page) ? page : page.Objects || []));
+    url = (!Array.isArray(page) && page.Next) || null;
+  }
+  return out;
+}
+
+// Raw bytes of a content topic's file (HTML page, PDF, image, notebook, ...).
+// Not JSON, so it bypasses getJson. Returns { body: Buffer, contentType }.
+export async function topicFile(ctx, ou, topicId) {
+  const { le } = await versions(ctx);
+  const res = await ctx.get(`/d2l/api/le/${le}/${ou}/content/topics/${topicId}/file`);
+  if (res.status() === 401 || res.status() === 403) {
+    throw new AuthExpiredError(
+      `Brightspace rejected the file request (HTTP ${res.status()}). Re-run "brightspace login".`
+    );
+  }
+  if (!res.ok()) throw new Error(`topic ${topicId} file -> HTTP ${res.status()}`);
+  return { body: await res.body(), contentType: res.headers()['content-type'] || '' };
+}

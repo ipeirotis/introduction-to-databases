@@ -64,8 +64,9 @@ Topics that don't yet have a module:
       offering's `offering.yaml` (578630 — TechMBA, May 2026).
 - [ ] `tools/brightspace/`: have `audit` diff its listing against the repo
       (module READMEs, schedule, `offerings/<term>/announcements/`).
-- [ ] `tools/brightspace/`: implement `download` (via the API — folder
-      instructions + attachments, quiz properties, announcement bodies).
+- [x] `tools/brightspace/`: implement `download` — exports assignments, quizzes
+      (with questions), content (files + links), and announcements to Markdown +
+      native files under `<offering>/brightspace/`.
 - [ ] `tools/brightspace/`: add a CI-friendly mode that fails when an
       offering's Brightspace state drifts from the repo's expected state.
 

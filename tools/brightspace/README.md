@@ -78,6 +78,10 @@ npm run brightspace -- audit --offering offerings/2026-spring
 
 # Limit to some sections.
 npm run brightspace -- audit --sections assignments,quizzes
+
+# Export the course content into the repo (Markdown + native files).
+npm run brightspace -- download
+npm run brightspace -- download --kinds assignments,content --out some/dir
 ```
 
 Typical first run: `login`, then `courses` to find your id, set
@@ -85,9 +89,14 @@ Typical first run: `login`, then `courses` to find your id, set
 `audit`. Use `--course-id <id>` to point any command at a shell without editing
 `offering.yaml`.
 
-> **Status.** `login`, `whoami`, `courses`, and `audit` are implemented and
-> read the live D2L JSON API. `download` is still a scaffold, and `audit` does
-> not yet diff its listing against the repo — see `TASKS.md`.
+> **Status.** `login`, `whoami`, `courses`, `audit`, and `download` are
+> implemented and read the live D2L JSON API. `audit` does not yet diff its
+> listing against the repo — see `TASKS.md`.
+
+> **Before committing a `download`:** if the repo is public, review the export
+> first. Quiz questions are live assessment material, and content files can be
+> large binaries (PDFs, images) — `CLAUDE.md` says to ask before committing
+> those. Consider `.gitignore`-ing `quizzes/` and/or `content/files/`.
 
 ## What "audit" reports
 
@@ -101,6 +110,27 @@ For the configured course, `audit` emits a JSON report with:
 
 Diffing this listing against the repo (module READMEs, schedule,
 `offerings/<term>/announcements/`) is planned but not yet implemented.
+
+## What "download" writes
+
+`download` exports the course into `<offering>/brightspace/` (override with
+`--out`):
+
+```
+brightspace/
+  README.md          Human-readable index.
+  manifest.json      Machine-readable index (ids, titles, dates, file paths).
+  assignments/<id>-<slug>.md
+  quizzes/<id>-<slug>.md          Properties + questions.
+  announcements/<date>-<slug>.md
+  content/
+    toc.md           Module/topic tree with links.
+    links.md         External (Link-type) topics.
+    files/           Native content files (HTML, PDF, images, ...).
+```
+
+HTML (instructions, announcement bodies, questions) is converted to Markdown
+with Turndown; content files are saved in their original format.
 
 ## Layout
 
@@ -119,7 +149,7 @@ tools/brightspace/
       whoami.mjs             Connection check against the saved session.
       courses.mjs            List enrolled course shells (find a course_id).
       audit.mjs              Read-only audit via the D2L API.
-      download.mjs           Read-only download (stubbed; see TASKS.md).
+      download.mjs           Export course content to Markdown + native files.
   .auth/                     Gitignored. Holds storageState.json.
 ```
 
