@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const COMMANDS = new Set(['login', 'audit', 'download']);
+const COMMANDS = new Set(['login', 'whoami', 'audit', 'download']);
 
 function parseArgs(argv) {
   const args = { _: [], flags: {} };
@@ -46,12 +46,14 @@ function usage() {
 
 Commands:
   login         Interactive SSO login; saves storageState.
+  whoami        Verify the saved session is still valid (connection check).
   audit         Read-only audit of the configured Brightspace shell.
   download      Download assignments/quizzes/announcements.
 
 Common flags:
   --offering <path>   Path to offering dir (default: offerings/2026-spring)
   --headed            Show the browser window.
+  --debug             Dump raw page HTML to .auth/debug/ on unrecognized pages.
   --course-id <id>    Override brightspace.course_id from offering.yaml.
   --base-url <url>    Override brightspace.base_url from offering.yaml.
 

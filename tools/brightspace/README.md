@@ -54,11 +54,26 @@ npm run brightspace -- login
 After that, subsequent commands run headlessly until the session expires;
 re-run `login` when they start failing.
 
+> **Run `login` on your own machine.** It opens a visible browser and waits
+> for you to complete NYU SSO + MFA by hand, so it can't be done in a
+> headless/CI/cloud session. Once `storageState.json` exists locally the
+> read-only commands work headlessly. Confirm the session any time with:
+>
+> ```bash
+> npm run brightspace -- whoami
+> ```
+
 ## Commands
 
 ```bash
-# Audit Brightspace state against the repo (read-only, prints a report).
+# Verify the saved session is still valid (connection check).
+npm run brightspace -- whoami --offering offerings/2026-spring
+
+# List what's posted on Brightspace (read-only, prints a JSON report).
 npm run brightspace -- audit --offering offerings/2026-spring
+
+# Limit to some sections; dump raw HTML when a page isn't recognized.
+npm run brightspace -- audit --sections assignments,quizzes --debug
 
 # Download assignments, quizzes, announcements not present in the repo.
 npm run brightspace -- download \
@@ -68,6 +83,13 @@ npm run brightspace -- download \
 ```
 
 Add `--headed` to any command to watch the browser.
+
+> **Status.** `login`, `whoami`, and `audit` are implemented; `download` is
+> still a scaffold (prints `not_implemented`). The `audit` section readers are
+> a best-effort first pass that scrape D2L's grid pages generically by column
+> header. Validate the counts against the live course on first run; if a
+> section reports `"unrecognized"`, re-run with `--debug` and the raw HTML
+> saved under `.auth/debug/` can be used to tighten the selectors.
 
 ## What "audit" reports
 
@@ -93,15 +115,17 @@ tools/brightspace/
   package.json
   .env.example
   .gitignore                 Ignores .auth/ and downloaded artifacts.
-  bin/brightspace.mjs        CLI entry (login | audit | download).
+  bin/brightspace.mjs        CLI entry (login | whoami | audit | download).
   src/
     config.mjs               Loads offering.yaml + env + flags.
     auth.mjs                 Playwright login + storageState helpers.
+    d2l.mjs                  D2L URLs, auth-state detection, grid scraping.
     commands/
       login.mjs              Interactive SSO login, saves storageState.
-      audit.mjs              Read-only audit (stubbed; see TASKS.md).
+      whoami.mjs             Connection check against the saved session.
+      audit.mjs              Read-only audit (best-effort readers).
       download.mjs           Read-only download (stubbed; see TASKS.md).
-  .auth/                     Gitignored. Holds storageState.json.
+  .auth/                     Gitignored. storageState.json + debug/ HTML dumps.
 ```
 
 ## Adding write capabilities

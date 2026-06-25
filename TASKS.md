@@ -57,8 +57,15 @@ Topics that don't yet have a module:
 
 ## Tooling
 
-- [ ] `tools/brightspace/`: implement `audit` command to list Brightspace
-      content and diff against the repo.
+- [x] `tools/brightspace/`: `whoami` connection check + `audit` command that
+      lists assignments, quizzes, content, and announcements (best-effort grid
+      scrape; needs one validation run against the live course to confirm
+      selectors).
+- [ ] `tools/brightspace/`: validate the `audit` section readers against the
+      live Spring 2026 shell and tighten any selectors that report
+      `"unrecognized"` (use `--debug` HTML dumps).
+- [ ] `tools/brightspace/`: have `audit` diff its listing against the repo
+      (module READMEs, schedule, `offerings/<term>/announcements/`).
 - [ ] `tools/brightspace/`: implement `download` command for assignments,
       quizzes, and announcements.
 - [ ] `tools/brightspace/`: add a CI-friendly mode that fails when an
