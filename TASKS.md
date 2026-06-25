@@ -60,8 +60,8 @@ Topics that don't yet have a module:
 - [x] `tools/brightspace/`: read via the D2L (Valence) JSON API instead of
       scraping — `whoami`, `courses` (enrollment listing), and `audit`
       (assignments, quizzes, content TOC, announcements). Validated live.
-- [ ] `tools/brightspace/`: set `brightspace.course_id` in the active
-      offering's `offering.yaml` once the target shell is chosen.
+- [x] `tools/brightspace/`: set `brightspace.course_id` in the active
+      offering's `offering.yaml` (578630 — TechMBA, May 2026).
 - [ ] `tools/brightspace/`: have `audit` diff its listing against the repo
       (module READMEs, schedule, `offerings/<term>/announcements/`).
 - [ ] `tools/brightspace/`: implement `download` (via the API — folder

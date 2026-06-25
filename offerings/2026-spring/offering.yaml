@@ -27,6 +27,6 @@ instructor:
 # (the long number after /d2l/home/).
 brightspace:
   base_url: https://brightspace.nyu.edu
-  course_id: null         # e.g. 123456
+  course_id: 578630       # SU26_TECH-GB_2147_DU1_52
   # Optional: human label shown in audit output.
-  label: Spring 2026 — Section 01
+  label: Databases for Business Analytics — TechMBA, May 2026
