@@ -1,16 +1,16 @@
 {
   "stats": {
     "total": 196,
-    "confirmed": 152,
-    "flagged": 44,
+    "confirmed": 142,
+    "flagged": 54,
     "byDataset": {
       "collisions": 10,
-      "facebook": 26,
-      "flights": 21,
+      "facebook": 21,
+      "flights": 17,
       "imdb": 13,
       "music": 31,
       "northwind": 17,
-      "restaurants": 34
+      "restaurants": 33
     }
   },
   "questions": [
@@ -28,7 +28,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 1,
@@ -44,7 +46,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 2,
@@ -60,7 +64,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 3,
@@ -76,7 +82,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 4,
@@ -92,7 +100,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 5,
@@ -108,7 +118,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 6,
@@ -124,7 +136,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 7,
@@ -140,7 +154,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 8,
@@ -156,7 +172,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER-modeling cardinality question (max cardinality of Customer-Plan in a cellular-operator model). No Plan entity exists in northwind or any of the 7 datasets; the 'northwind' hint is spurious. The placeholder SELECT runs and returns one literal string but does not answer the prompt, which can only be answered by reading the ER diagram. No SQL can answer it.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 9,
@@ -172,7 +190,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER optionality question (can a Customer exist with min cardinality 0 to Plan). No such Customer-Plan relationship/Plan entity exists in northwind or any dataset; hint is spurious. Placeholder SELECT returns a literal string only; the answer comes from the diagram's min-cardinality marking, not data.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 10,
@@ -188,7 +208,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER optionality question on the Plan side (can a Plan exist without a known Customer). No Plan entity exists in any dataset; northwind hint is spurious. Placeholder SELECT returns a literal string only and does not answer the prompt.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 11,
@@ -204,7 +226,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER business-rule/max-cardinality question about limiting which Plans a Handset can link to. No Handset or Plan entity exists in any of the 7 datasets ('unknown' hint correctly reflects no match). Placeholder SELECT returns a literal string only.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 12,
@@ -220,7 +244,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER optionality question (can a Handset be stored with min cardinality 0 to Plan). No Handset/Plan entity exists in any dataset. Placeholder SELECT returns a literal string only; decided by the diagram, not queryable.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 13,
@@ -236,7 +262,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER max-cardinality question (can one Handset link to many Plans). No Handset/Plan entity exists in any dataset. Placeholder SELECT returns a literal string only and does not answer the prompt.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 14,
@@ -252,7 +280,9 @@
       "correct": false,
       "issue": "Not a SQL task. Explicit textbook ER-diagram question referencing 'Figure 2-24' (Hoffer, Modern Database Management): whether the HandsetModel-OperatingSystem relationship supports many-to-many. No such entities exist in any dataset. Placeholder SELECT returns a literal string only; answerable only from the diagram.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 15,
@@ -268,7 +298,9 @@
       "correct": false,
       "issue": "Not a SQL task. Conceptual ER optionality question (can a Manufacturer be tracked with min cardinality 0 to Handset). No Manufacturer/Handset entity exists in any dataset; the 'music' hint is spurious (music has artist/album/track/users). Placeholder SELECT returns a literal string only.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 16,
@@ -284,7 +316,9 @@
       "correct": false,
       "issue": "Not an executable SQL task. This is a conceptual ER-modeling question (can one OS run on many handset types -> one-to-many cardinality). The cellular_operator dataset does not exist in nyu-datasets (404; absent from the dataset list), so no Handset table exists and the proposed query cannot run. Correctly flagged verified:false; answer is conceptual, no SQL fix possible.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 17,
@@ -300,7 +334,9 @@
       "correct": false,
       "issue": "Not an executable SQL task. Conceptual ER question about two distinct relationships between Customer and Plan. No cellular_operator/Plan tables exist; the 'northwind' dataset hint is wrong (Northwind has no Plan entity). Solution is a placeholder SELECT. No SQL fix possible.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 18,
@@ -316,7 +352,9 @@
       "correct": false,
       "issue": "Not an executable SQL task. Conceptual ER question (linking a handset to a specific customer within a multi-customer plan -> needs a Handset->Customer FK). No telecom tables exist; 'northwind' hint is wrong. Placeholder SELECT, not a real query. No SQL fix possible.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 19,
@@ -332,7 +370,9 @@
       "correct": false,
       "issue": "Not an executable SQL task. Conceptual ER question about optional (partial) participation: can a handset exist without an OS. cellular_operator dataset/Handset table do not exist; 'music' hint is wrong. Proposed query cannot run. No SQL fix possible.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 20,
@@ -348,7 +388,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 21,
@@ -364,7 +406,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 22,
@@ -380,7 +424,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 23,
@@ -396,7 +442,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 24,
@@ -412,7 +460,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 25,
@@ -428,7 +478,9 @@
       "correct": false,
       "issue": "Prompt asks for AUTHORS whose last name starts with 'A', but the solution queries imdb.actors (actors, not authors). No authors/writers table (nor any books table with name columns) exists in any in-scope nyu-datasets dataset; only facebook.FavoriteBooks exists and it has no person-name columns. The question belongs to a books/library dataset that is not provisioned, so the solution does not faithfully answer the prompt and no correct query is possible against available data.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 26,
@@ -444,7 +496,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 27,
@@ -460,7 +514,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 28,
@@ -476,7 +532,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "data-drift",
+      "review": "WHERE cID=2 returns 0 rows — this data has critics 201–210 (no cID 2). SQL matches the prompt literally; empty result reflects a data-version difference."
     },
     {
       "id": 29,
@@ -492,7 +550,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 30,
@@ -508,7 +568,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 31,
@@ -524,7 +586,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": "0 rows — correctly empty (no Bronx restaurant exceeds the threshold)."
     },
     {
       "id": 32,
@@ -540,7 +604,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 33,
@@ -556,7 +622,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 34,
@@ -572,7 +640,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 35,
@@ -588,7 +658,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 36,
@@ -604,7 +676,9 @@
       "correct": true,
       "issue": "Minor over-match: 'P% I%' also returns 2 multi-token names whose second token does not start with I ('Pope John Paul II', 'Pedro Escobar III'). Acceptable for the intro-level LIKE intent; the example Panos Ipeirotis is correctly returned.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 37,
@@ -620,7 +694,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 38,
@@ -636,7 +712,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 39,
@@ -652,7 +730,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 40,
@@ -668,7 +748,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 41,
@@ -684,7 +766,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 42,
@@ -700,7 +784,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 43,
@@ -716,7 +802,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 44,
@@ -732,7 +820,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 45,
@@ -748,7 +838,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 46,
@@ -764,7 +856,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 47,
@@ -780,7 +874,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 48,
@@ -796,7 +892,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 49,
@@ -812,7 +910,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 50,
@@ -828,7 +928,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 51,
@@ -844,7 +946,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 52,
@@ -860,7 +964,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 53,
@@ -876,7 +982,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 54,
@@ -892,7 +1000,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 55,
@@ -908,7 +1018,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 56,
@@ -924,7 +1036,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 57,
@@ -940,7 +1054,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 58,
@@ -956,7 +1072,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 59,
@@ -972,7 +1090,9 @@
       "correct": true,
       "issue": "SQL is correct; only a metadata note discrepancy: the result has 56 distinct causes, not 60 as the notes claim. The dedup to DISTINCT(UNIQUE_KEY,CAUSE) before AVG correctly keeps the per-accident unit and avoids within-cause double-counting across vehicles. Verified avg_causes_per_accident=1.495 and all 1.95M collision keys join.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 60,
@@ -988,7 +1108,9 @@
       "correct": true,
       "issue": "SQL is correct; minor metadata discrepancy only: result has 279 borough-cause groups, not 280 as noted. COUNT(DISTINCT UNIQUE_KEY) correctly avoids multi-vehicle inflation; INNER JOIN drops nothing (all 1,949,490 collision keys have cause records).",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 61,
@@ -1004,7 +1126,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 62,
@@ -1020,7 +1144,9 @@
       "correct": true,
       "issue": "SQL is correct and the 365-day rolling average is calendar-accurate (verified windowed AVG at 2014-01-01 = 469.4356 matches manual calc over the 365-day range, window_size=365). Only a metadata discrepancy: query returns 4938 daily rows (2012-07-01 to 2026-01-06, no calendar gaps), not 2557 as the notes claim. The 'plot' is correctly out of scope for SQL.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 63,
@@ -1036,7 +1162,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 64,
@@ -1052,7 +1180,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 65,
@@ -1068,7 +1198,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 66,
@@ -1084,7 +1216,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 67,
@@ -1100,7 +1234,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 68,
@@ -1116,7 +1252,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 69,
@@ -1132,7 +1270,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 70,
@@ -1148,7 +1288,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 71,
@@ -1164,7 +1306,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 72,
@@ -1180,7 +1324,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 73,
@@ -1196,7 +1342,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 74,
@@ -1212,7 +1360,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 75,
@@ -1228,7 +1378,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 76,
@@ -1244,7 +1396,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 77,
@@ -1260,7 +1414,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 78,
@@ -1276,7 +1432,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 79,
@@ -1292,7 +1450,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 80,
@@ -1308,7 +1468,9 @@
       "correct": false,
       "issue": "Question requires filtering on the FIRST CHARACTER of the title ('begins with a character greater than E ... not inclusive of albums that start with E'). The solution compares the whole string (album_name > 'E'), so 'Exile On Main Street' — which begins with 'E' — evaluates as > 'E' and is wrongly INCLUDED. The hint's claim that titles starting with 'E' are excluded automatically is false. Correct result has 8 rows, not 9.",
       "corrected_sql": "SELECT album_id, album_name\nFROM `nyu-datasets.music.album`\nWHERE SUBSTR(album_name, 1, 1) > 'E' AND SUBSTR(album_name, 1, 1) < 'S'\nORDER BY album_name",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 81,
@@ -1324,7 +1486,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 82,
@@ -1340,7 +1504,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 83,
@@ -1356,7 +1522,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 84,
@@ -1372,7 +1540,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 85,
@@ -1388,7 +1558,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 86,
@@ -1404,7 +1576,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 87,
@@ -1420,7 +1594,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 88,
@@ -1436,7 +1612,9 @@
       "correct": false,
       "issue": "Wrong join key causes ~10x fan-out. The `track` table is keyed by (track_id, album_id, artist_id) — it has 153 rows but only 18 distinct track_id values (track_id is just a within-album position). Joining tracks_played to track on track_id alone matches each play to every track row sharing that track_id, inflating both COUNT and SUM(time) ~10x. E.g. user 3 (Genevie Williams) has 178 real plays / 847.84 time but the solution reports 1893 / 10060.6. It also changes the ORDER BY total_tracks DESC ranking (users 10 and 2 swap). LEFT JOIN/IFNULL logic is fine; only the join condition is wrong.",
       "corrected_sql": "SELECT u.user_id, u.first_name, u.last_name, COUNT(tp.track_id) AS total_tracks, IFNULL(SUM(t.time), 0) AS total_time\nFROM `nyu-datasets.music.users` u\nLEFT JOIN `nyu-datasets.music.tracks_played` tp ON u.user_id = tp.user_id\nLEFT JOIN `nyu-datasets.music.track` t ON tp.track_id = t.track_id AND tp.album_id = t.album_id AND tp.artist_id = t.artist_id\nGROUP BY u.user_id, u.first_name, u.last_name\nORDER BY total_tracks DESC",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 89,
@@ -1452,7 +1630,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 90,
@@ -1468,7 +1648,9 @@
       "correct": false,
       "issue": "Same composite-key bug. Tracks are identified by (track_id, album_id, artist_id); track_id alone is non-unique (153 rows, 18 distinct track_id, up to 13 different track_names per track_id). Joining/grouping on track_id alone collapses the 153 real tracks into name-based groups (152 rows) and matches each track's plays to ALL plays sharing that track_id regardless of album/artist, so MIN/MAX are wrong. E.g. the real 'Elegia' (track_id 0, album 1, artist 1) has 3 plays with first=1.67033942E9/last=1.671923469E9, but the solution reports its first/last as the global span over 91 plays. With the correct join there are 153 tracks and 16 were never played (NULL first/last), contradicting the claim that all 153 have a play.",
       "corrected_sql": "SELECT t.track_name, MIN(tp.played_on) AS first_played, MAX(tp.played_on) AS last_played\nFROM `nyu-datasets.music.track` t\nLEFT JOIN `nyu-datasets.music.tracks_played` tp ON t.track_id = tp.track_id AND t.album_id = tp.album_id AND t.artist_id = tp.artist_id\nGROUP BY t.track_id, t.album_id, t.artist_id, t.track_name\nORDER BY first_played",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 91,
@@ -1484,7 +1666,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 92,
@@ -1500,7 +1684,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 93,
@@ -1516,7 +1702,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 94,
@@ -1532,7 +1720,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 95,
@@ -1548,7 +1738,9 @@
       "correct": false,
       "issue": "Result does not match the prompt's explicit 'Hint: 11 rows'. The technique (GROUP BY carrier; COUNT(DISTINCT route), COUNT(DISTINCT origin), AVG(fare_per_mile); HAVING SUM(passengers_estimated) > threshold) is correct, but the literal threshold 20000 returns 44 rows, not 11. Per-carrier passenger totals in the current data are in the hundreds of millions (11th carrier NW ~221.5M, 12th G4 ~184.5M), so exactly 11 carriers qualify only at a threshold around 200,000,000 — the authored data is ~10,000x larger than the 20,000 in the prompt. As written the deliverable row count is wrong.",
       "corrected_sql": "SELECT ticketing_carrier AS carrier,\n       COUNT(DISTINCT route) AS num_routes,\n       COUNT(DISTINCT origin) AS num_airports_departed,\n       AVG(fare_per_mile) AS avg_fare_per_mile\nFROM `nyu-datasets.flights.m_ticket_prices`\nGROUP BY ticketing_carrier\nHAVING SUM(passengers_estimated) > 200000000\nORDER BY carrier",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 96,
@@ -1564,7 +1756,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 98,
@@ -1580,7 +1774,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 99,
@@ -1596,7 +1792,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 101,
@@ -1612,7 +1810,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 102,
@@ -1628,7 +1828,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 103,
@@ -1644,7 +1846,9 @@
       "correct": false,
       "issue": "Not a single-query deliverable: the task is to IDENTIFY the primary key of each table (an explanation), but this query only returns 4 booleans empirically testing candidate keys. It also omits the 5th table, tracks_played, which has a valid composite PK (user_id, artist_id, album_id, track_id, played_on) -- verified all 1176 rows are unique on that tuple. The query is fine as supporting evidence but does not by itself answer 'identify the PK for each table.'",
       "corrected_sql": "SELECT\n  (SELECT COUNT(*) = COUNT(DISTINCT artist_id) FROM `nyu-datasets.music.artist`) AS artist_pk_artist_id,\n  (SELECT COUNT(*) = COUNT(DISTINCT FORMAT('%d-%d', artist_id, album_id)) FROM `nyu-datasets.music.album`) AS album_pk_artistid_albumid,\n  (SELECT COUNT(*) = COUNT(DISTINCT FORMAT('%d-%d-%d', artist_id, album_id, track_id)) FROM `nyu-datasets.music.track`) AS track_pk_artistid_albumid_trackid,\n  (SELECT COUNT(*) = COUNT(DISTINCT user_id) FROM `nyu-datasets.music.users`) AS users_pk_user_id,\n  (SELECT COUNT(*) = COUNT(DISTINCT FORMAT('%d-%d-%d-%d-%t', user_id, artist_id, album_id, track_id, played_on)) FROM `nyu-datasets.music.tracks_played`) AS tracksplayed_pk_full_tuple",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 106,
@@ -1660,7 +1864,9 @@
       "correct": true,
       "issue": "Returns exactly 52 rows as the hint requires and computes all four requested metrics correctly. Two minor, acceptable ambiguities: (1) the NOT IN ('TT','VI') filter is a slightly arbitrary device to reach 52 -- it drops the non-state territories TT (6 airports) and VI (2 airports) but keeps PR, which is also a territory, so the '50 states + DC + PR' set is what lands on 52; (2) 'average fare per mile' is read as a simple unweighted AVG(fare_per_mile) over route rows rather than a passenger-weighted average. Both are defensible given the explicit 52-row hint.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 107,
@@ -1676,7 +1882,9 @@
       "correct": false,
       "issue": "Not a SQL task. The prompt 'A customer can have one or more rates.' is an ER-diagram cardinality statement (1-to-many Customer->Rate), to be expressed in crow's-foot notation, not a query. The proposed SQL only echoes the constraint as string literals; it queries no data. There is no real query that can answer it: no cellular_operator dataset exists in nyu-datasets (confirmed via INFORMATION_SCHEMA.SCHEMATA), and zero tables anywhere match meter/rate/reading/bill (confirmed via region-US INFORMATION_SCHEMA.TABLES, 0 rows). The dataset hint 'northwind' is wrong (northwind is order-management, no Rate entity).",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 108,
@@ -1692,7 +1900,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'A meter belongs to one and only one customer.' is an ER cardinality (many-to-one, mandatory NOT NULL FK Meter.customer_id), not a query. The SQL just echoes the constraint string and touches no data. Unanswerable as SQL: no cellular_operator dataset and zero 'meter'/'customer'(telecom) tables exist in nyu-datasets. Dataset hint 'northwind' is wrong.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 109,
@@ -1708,7 +1918,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'A meter has one or more rates.' is a one-to-many ER cardinality (mandatory on the many side), not a query. The SQL only echoes the constraint as literals. Unanswerable: no meter/rate tables anywhere in the project (verified 0 matching tables); no cellular_operator dataset. Dataset is 'unknown', confirming it could not be placed.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 110,
@@ -1724,7 +1936,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'Each reading can be performed by zero, one, or more employees.' describes an optional many-to-many (Reading<->Employee via a junction table), an ER-diagram statement, not a query. The SQL echoes the constraint and queries nothing. Unanswerable: zero 'reading' tables anywhere; no cellular_operator dataset. (northwind has Employees but no Reading/Meter, wrong domain.)",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 111,
@@ -1740,7 +1954,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'Each bill is associated with zero or more customers.' is an ER cardinality statement (and a semantically dubious one - a bill normally has exactly one customer), not a query. The SQL merely restates it as literals; it neither queries data nor critiques the odd cardinality. Unanswerable: no 'bill' table anywhere (verified 0 matches); no cellular_operator dataset. Dataset hint 'northwind' is wrong.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 112,
@@ -1756,7 +1972,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'Each bill contains one or more readings.' is a one-to-many ER cardinality (Bill->Reading, mandatory), not a query. The SQL echoes the constraint and touches no data. Unanswerable: neither 'bill' nor 'reading' exists as a table anywhere in nyu-datasets (verified 0 matches); no cellular_operator dataset.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 113,
@@ -1772,7 +1990,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'The employee name is a unique identifier of the employee.' is a candidate-key/uniqueness modeling claim (and a deliberately dubious one - names are rarely unique), suited to a true/false or critique answer, not a SELECT. The echo SQL neither tests uniqueness nor flags the bad key choice. If a real telecom employee table existed, a uniqueness check would be GROUP BY name HAVING COUNT(*)>1, but no such table exists; northwind.Employees is the wrong domain. Dataset 'unknown'.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 114,
@@ -1788,7 +2008,9 @@
       "correct": false,
       "issue": "Not a SQL task. 'A set of customers can be associated with the same rate_id.' restates the many side of the Customer-Rate relationship (many-to-one; Customer.rate_id is a non-unique FK) - the inverse reading of item 107. It is an ER cardinality statement, not a query. The SQL only echoes it as literals. Unanswerable: no customer(telecom)/rate tables anywhere (verified 0 'rate' matches); no cellular_operator dataset. Dataset hint 'northwind' is wrong.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 115,
@@ -1804,7 +2026,9 @@
       "correct": false,
       "issue": "Not a SQL task and not actually answered. The item is a conceptual ER true/false statement ('Customer-Rate is one-to-one'); the submitted solution_sql is only a placeholder SELECT of a prose string, which does not return a TRUE/FALSE verdict. Cannot be verified against data: the named dataset 'northwind' has no Rate table (only the 8 standard Northwind tables), and Customer/Rate belong to the cellular_operator ER example which is not a loaded BigQuery dataset. Conceptually the statement is FALSE (a rate plan applies to many customers -> one-to-many), but the placeholder is not a verifiable solution.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 116,
@@ -1820,7 +2044,9 @@
       "correct": false,
       "issue": "Not a SQL task and not actually answered. Conceptual ER true/false ('Customer-Meter is one-to-one'); solution_sql is a placeholder SELECT of a prose string, not a TRUE/FALSE answer. Unverifiable against data: 'northwind' has no Meter table, and Customer/Meter come from the cellular_operator example (not a loaded dataset). Conceptually FALSE (a customer can own several meters -> one-to-many), but the placeholder is not a verifiable solution.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 117,
@@ -1836,7 +2062,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "multi-step",
+      "review": "Creates/uses a temporary table and chains into later questions; cannot be validated standalone with a read-only account."
     },
     {
       "id": 118,
@@ -1852,7 +2080,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "multi-step",
+      "review": "Creates/uses a temporary table and chains into later questions; cannot be validated standalone with a read-only account."
     },
     {
       "id": 119,
@@ -1868,7 +2098,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "multi-step",
+      "review": "Creates/uses a temporary table and chains into later questions; cannot be validated standalone with a read-only account."
     },
     {
       "id": 120,
@@ -1884,7 +2116,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "multi-step",
+      "review": "Creates/uses a temporary table and chains into later questions; cannot be validated standalone with a read-only account."
     },
     {
       "id": 121,
@@ -1900,7 +2134,9 @@
       "correct": false,
       "issue": "Wrong join key/grain produces an incorrect total_inactive. SignUpsAsOf and InactiveAsOf are joined on exact date equality (i.LastUpdate = s.MemberSince), but InactiveAsOf is a cumulative running total along the inactivity-date axis. On any reporting date that is NOT also a date on which someone went inactive, i.total_inactive is NULL -> IFNULL forces it to 0, so total_inactive collapses to 0 and total_active wrongly equals total_signups for that date. Verified: e.g. 2004-07-01/03/04 report total_inactive=0 (so active=signups) when the true cumulative inactive is 2/3/3. The prompt requires 'total users inactive UP TO that date', i.e. a running total that must carry forward on every date, not just on inactive-event dates.",
       "corrected_sql": "WITH SignUpsOn AS (\n  SELECT DATE(MemberSince) AS the_day, COUNT(*) AS signups\n  FROM `nyu-datasets.facebook.Profiles`\n  WHERE MemberSince IS NOT NULL\n  GROUP BY the_day\n),\nInactiveOn AS (\n  SELECT DATE(LastUpdate) AS the_day, COUNT(*) AS inactives\n  FROM `nyu-datasets.facebook.Profiles`\n  WHERE LastUpdate IS NOT NULL\n  GROUP BY the_day\n),\nDays AS (\n  SELECT the_day FROM SignUpsOn\n  UNION DISTINCT\n  SELECT the_day FROM InactiveOn\n),\nJoined AS (\n  SELECT\n    d.the_day,\n    IFNULL(s.signups, 0) AS signups,\n    IFNULL(i.inactives, 0) AS inactives\n  FROM Days d\n  LEFT JOIN SignUpsOn s ON s.the_day = d.the_day\n  LEFT JOIN InactiveOn i ON i.the_day = d.the_day\n)\nSELECT\n  the_day,\n  SUM(signups) OVER (ORDER BY the_day) AS total_signups,\n  SUM(inactives) OVER (ORDER BY the_day) AS total_inactive,\n  SUM(signups) OVER (ORDER BY the_day)\n    - SUM(inactives) OVER (ORDER BY the_day) AS total_active\nFROM Joined\nORDER BY the_day;",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 122,
@@ -1916,7 +2152,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "multi-step",
+      "review": "Creates/uses a temporary table and chains into later questions; cannot be validated standalone with a read-only account."
     },
     {
       "id": 123,
@@ -1932,7 +2170,9 @@
       "correct": true,
       "issue": "Logic is correct: RANK() OVER (ORDER BY total_passengers DESC) for national rank and RANK() OVER (PARTITION BY state ORDER BY ...) for state rank, joined to m_airports for state. Headline result matches the prompt (LAX #1 nationally and #1 in CA). Minor source-data wrinkle: m_airports contains a duplicate airport code XWA (listed under both AK and ND), and XWA is present in the passenger data, so it yields two output rows (one per bogus state). This is a defect in the reference m_airports table, not in the query logic, and XWA is a tiny airport that never reaches the ranked top, so it does not change the question's intended answer.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 124,
@@ -1948,7 +2188,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 125,
@@ -1964,7 +2206,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 126,
@@ -1980,7 +2224,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 127,
@@ -1996,7 +2242,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 128,
@@ -2012,7 +2260,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 129,
@@ -2028,7 +2278,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 130,
@@ -2044,7 +2296,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 131,
@@ -2060,7 +2314,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 132,
@@ -2076,7 +2332,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 133,
@@ -2092,7 +2350,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 134,
@@ -2108,7 +2368,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 135,
@@ -2124,7 +2386,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 136,
@@ -2140,7 +2404,9 @@
       "correct": false,
       "issue": "Not a SQL exercise. It is an ER-modeling true/false statement ('An Agent can only list one house at a time', a max-cardinality constraint) about a real-estate domain. Confirmed via schemas.md that no Agent/House/Lot/Building/Dwelling/real-estate tables exist in any dataset (only restaurants, flights, music, facebook, collisions, imdb, northwind). The 'northwind' dataset hint is incorrect and the placeholder SELECT does not answer the conceptual question. Cannot be validated against BigQuery.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 137,
@@ -2156,7 +2422,9 @@
       "correct": false,
       "issue": "Not a SQL exercise. ER-modeling true/false statement about the HasBuilding relationship (a participation/cardinality constraint, Lot-to-Building). No real-estate schema (Lot/Building/HasBuilding) exists in the provided datasets, confirmed via schemas.md. The 'northwind' dataset hint is wrong; the placeholder SELECT is not an answer. Not verifiable via SQL.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 138,
@@ -2172,7 +2440,9 @@
       "correct": false,
       "issue": "Not a SQL exercise. ER-modeling true/false statement about whether UnitNumber alone uniquely identifies the Dwelling entity (an identifier/weak-key question). No real-estate dataset (Dwelling/UnitNumber) exists in the provided schemas, confirmed via schemas.md. The 'northwind' dataset hint is incorrect; placeholder SELECT does not answer the prompt. Not verifiable via SQL.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 139,
@@ -2188,7 +2458,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER true/false statement ('SaleTransaction must always have a corresponding Listing'). The solution_sql is a placeholder SELECT that echoes a paraphrase string; it does not return a true/false verdict and cannot be validated against data. No SaleTransaction/Listing tables exist in any nyu-datasets dataset (confirmed against schemas.md). Cannot be confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 140,
@@ -2204,7 +2476,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER cardinality statement (SaleTransaction many-to-many Owner). The solution_sql only echoes a paraphrase string and cannot be validated; no SaleTransaction/Owner/Dwelling tables exist in any nyu-datasets dataset. Cannot be confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 141,
@@ -2220,7 +2494,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER cardinality statement (Contains between Building and Dwelling is 1:1). The solution_sql only echoes a paraphrase string; no Building/Dwelling/Contains tables exist in any nyu-datasets dataset, so it cannot be validated against data. Cannot be confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 142,
@@ -2236,7 +2512,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER participation statement (not all Listings result in SaleTransactions). The solution_sql only echoes a paraphrase string; no SaleTransaction/Listing/ListingSold tables exist in any nyu-datasets dataset, so it cannot be validated. Cannot be confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 143,
@@ -2252,7 +2530,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER weak/associative-entity statement (SaleTransactionOwner must have >=1 Owner). The solution_sql only echoes a paraphrase string; no SaleTransactionOwner/Owner tables exist in any nyu-datasets dataset. Cannot be validated or confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 144,
@@ -2268,7 +2548,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER cardinality statement (Agent one-to-many SaleTransaction for buyer agent). The solution_sql only echoes a paraphrase string; no Agent/SaleTransaction tables exist in any nyu-datasets dataset. Cannot be validated or confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 145,
@@ -2284,7 +2566,9 @@
       "correct": false,
       "issue": "Not a SQL data task: original is a conceptual ER identifier/key statement (use LotID to identify a Building). The solution_sql only echoes a paraphrase string; no Building/Lot tables exist in any nyu-datasets dataset, so it cannot be validated against data. Cannot be confirmed correct.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 146,
@@ -2300,7 +2584,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 147,
@@ -2316,7 +2602,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 148,
@@ -2332,7 +2620,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 149,
@@ -2348,7 +2638,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 150,
@@ -2364,7 +2656,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 151,
@@ -2380,7 +2674,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 152,
@@ -2396,7 +2692,9 @@
       "correct": false,
       "issue": "Bad NULL handling: AVG(b.cnt) silently excludes members who list zero favorite books (their cnt is NULL after the LEFT JOIN, and AVG ignores NULLs). The prompt asks for 'the average number of favorite books its members list' over all members of each PoliticalViews group, so members with no books must count as 0. As written the query averages only over book-listing members, materially inflating every group (e.g. Liberal 5.87 vs correct 4.83). The LEFT JOIN is pointless if NULLs are then dropped by AVG.",
       "corrected_sql": "SELECT p.PoliticalViews, AVG(IFNULL(b.cnt, 0)) AS AvgFavoriteBooks\nFROM `nyu-datasets.facebook.Profiles` p\nLEFT JOIN (\n  SELECT ProfileID, COUNT(*) AS cnt\n  FROM `nyu-datasets.facebook.FavoriteBooks`\n  GROUP BY ProfileID\n) b ON p.ProfileID = b.ProfileID\nGROUP BY p.PoliticalViews\nORDER BY p.PoliticalViews",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 153,
@@ -2412,7 +2710,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 154,
@@ -2428,7 +2728,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 157,
@@ -2444,7 +2746,9 @@
       "correct": false,
       "issue": "Not a SQL question. The prompt asks the student to DRAW the relational schema of nyu-datasets.music (e.g. in ERD Plus). The provided SQL is only a surrogate that lists 19 columns across the 5 tables via INFORMATION_SCHEMA.COLUMNS; it runs cleanly but does not 'answer' a diagramming task. Verified it returns 19 rows, but there is no SQL that satisfies a draw-the-ERD prompt.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 158,
@@ -2460,7 +2764,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 159,
@@ -2476,7 +2782,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 160,
@@ -2492,7 +2800,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 161,
@@ -2508,7 +2818,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 162,
@@ -2524,7 +2836,9 @@
       "correct": false,
       "issue": "Not a SQL question. The prompt asks the student to identify the primary key (possibly composite) of each table in a schema shown 'above' in the exercise, which is not part of this input, and the dataset is 'unknown'. Identifying a PK is a design/constraint fact; BigQuery does not store or enforce PK metadata, so no query can answer it. The surrogate (lists music columns) does not answer the prompt.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 164,
@@ -2540,7 +2854,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 165,
@@ -2556,7 +2872,9 @@
       "correct": false,
       "issue": "Fan-out bug: track_id is NOT unique in the track table (153 rows but only 18 distinct track_id; the real key is the composite artist_id+album_id+track_id, 153 distinct). Joining tracks_played to track ON track_id ALONE multiplies each play by ~12 matching track rows, so SUM(t.time) (total_listen_time) is inflated ~12x: the query's grand total is 65880.72 vs the correct 5564.87, and every per-row total_listen_time value is wrong. num_users (COUNT DISTINCT) and the date/artist grouping are fine. (Side note: the result actually has 116 date-by-artist rows, not the claimed 81.) Fix by joining on the full composite key.",
       "corrected_sql": "SELECT\n  DATE(tp.played_on)            AS play_date,\n  ar.artist_name,\n  ar.artist_id,\n  COUNT(DISTINCT tp.user_id)   AS num_users,\n  SUM(t.time)                  AS total_listen_time\nFROM `nyu-datasets.music.tracks_played` tp\nJOIN `nyu-datasets.music.track`  t\n  ON tp.track_id = t.track_id\n AND tp.album_id = t.album_id\n AND tp.artist_id = t.artist_id\nJOIN `nyu-datasets.music.artist` ar ON tp.artist_id = ar.artist_id\nGROUP BY play_date, ar.artist_name, ar.artist_id\nORDER BY play_date, ar.artist_id",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "verifier-rejected",
+      "review": ""
     },
     {
       "id": 166,
@@ -2572,7 +2890,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 167,
@@ -2588,7 +2908,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 168,
@@ -2604,7 +2926,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 169,
@@ -2620,7 +2944,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 170,
@@ -2636,7 +2962,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 171,
@@ -2652,7 +2980,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 172,
@@ -2668,7 +2998,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 173,
@@ -2684,7 +3016,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 174,
@@ -2700,7 +3034,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 175,
@@ -2716,7 +3052,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 176,
@@ -2732,7 +3070,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 177,
@@ -2748,7 +3088,9 @@
       "correct": false,
       "issue": "Not a SQL task: this is a conceptual True/False ER-diagram exercise (water_utility) answered by reading crow's-foot cardinalities on an external image. The placeholder SELECT does not and cannot answer the prompt; no query maps to any table. Correctly flagged unverifiable.",
       "corrected_sql": "",
-      "confirmed": false
+      "confirmed": false,
+      "flag_reason": "conceptual",
+      "review": ""
     },
     {
       "id": 178,
@@ -2764,7 +3106,9 @@
       "correct": true,
       "issue": "Logic is correct and returns 913 distinct male profiles (Sex='Male', InterestedIn='Women', LookingFor='Whatever I can get' all confirmed exact values). Minor: the accompanying note's claim that ProfileID is unique in LookingFor is wrong (16897 rows vs 9273 distinct ProfileIDs), but the filtered result has no join inflation (913 rows = 913 distinct), so the answer is unaffected. Hint of 1003 reflects data drift.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "row-count",
+      "review": "Returns 913 distinct profiles; prompt states 1003. Exact-match query looks correct, so likely an older data snapshot — verify against the intended data."
     },
     {
       "id": 179,
@@ -2780,7 +3124,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 180,
@@ -2796,7 +3142,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 181,
@@ -2812,7 +3160,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 182,
@@ -2828,7 +3178,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 183,
@@ -2844,7 +3196,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 184,
@@ -2860,7 +3214,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 185,
@@ -2876,7 +3232,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 186,
@@ -2892,7 +3250,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 187,
@@ -2908,7 +3268,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 188,
@@ -2924,7 +3286,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 189,
@@ -2940,7 +3304,9 @@
       "correct": true,
       "issue": "Query logic correctly answers the prompt as written (distinct ordered origin-destination pairs within the same state, output origin/dest/state = 1358 rows). However the hint's '597 rows' is NOT reproducible against current data under any standard interpretation: ordered pairs=1358, unordered (LEAST/GREATEST) pairs=710. The route column equals origin-dest (ordered) and confirms 1358. The duplicate airport XWA (listed under both AK and ND in m_airports) is harmless here - it produces zero same-state output rows. The 597 mismatch is almost certainly a different/older data snapshot, not a query defect. Flag for instructor: hint row count is stale.",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "row-count",
+      "review": "Returns 1358 distinct same-state routes; prompt states 597. Excluding self-routes and the one duplicate airport does not reconcile it — different interpretation (unordered pairs?) or data version."
     },
     {
       "id": 190,
@@ -2956,7 +3322,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "row-count",
+      "review": "Returns 14229 routes; prompt states 147. m_ticket_prices spans many years/quarters, so SUM(passengers) over all time inflates the >10,000 filter. The question likely scopes to a single period — needs that scope."
     },
     {
       "id": 191,
@@ -2972,7 +3340,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": false,
+      "flag_reason": "row-count",
+      "review": "Returns 54 origin states; prompt states 52. Data includes territories (PR, VI, TT); the expected 52 likely excludes some. Decide which territories count as a state."
     },
     {
       "id": 192,
@@ -2988,7 +3358,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 193,
@@ -3004,7 +3376,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 194,
@@ -3020,7 +3394,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 195,
@@ -3036,7 +3412,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 196,
@@ -3052,7 +3430,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 197,
@@ -3068,7 +3448,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 198,
@@ -3084,7 +3466,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 199,
@@ -3100,7 +3484,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 200,
@@ -3116,7 +3502,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 201,
@@ -3132,7 +3520,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     },
     {
       "id": 202,
@@ -3148,7 +3538,9 @@
       "correct": true,
       "issue": "",
       "corrected_sql": "",
-      "confirmed": true
+      "confirmed": true,
+      "flag_reason": "",
+      "review": ""
     }
   ]
 }

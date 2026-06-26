@@ -1,23 +1,8 @@
 # flights — validated solutions
 
-21 questions, each solved and verified against `nyu-datasets.flights` on BigQuery.
+17 questions, each solved and verified against `nyu-datasets.flights` on BigQuery.
 
 ## Window functions
-
-### Create the **passengers\_per\_airport** temporary table, which contains  the total number of passengers departing from each airport.  Use the m\_ticket\_prices table; we are interested in the origin and the passengers attributes.
-
-_used in 13 semester(s) · ✓ verified (0 rows)_
-
-```sql
-SELECT
-  origin,
-  SUM(passengers_estimated) AS total_passengers
-FROM `nyu-datasets.flights.m_ticket_prices`
-GROUP BY origin
-ORDER BY total_passengers DESC;
-```
-
-**Hint:** GROUP BY origin and SUM the passenger column. The 'passengers' attribute is stored as m_ticket_prices.passengers_estimated.
 
 ### Using the `passengers_per_airport` table from the previous question, calculate each airport's **national rank** and **state rank** in terms of departing passengers. The **m\_airports** table contains the state of each airport. (Note: The number 1 airport nationally will have the most passengers nationwide, while the number 1 per state will have the most passengers within the state.)
 
@@ -265,76 +250,6 @@ SELECT ticketing_carrier, COUNT(DISTINCT origin) AS num_airports, COUNT(DISTINCT
 ```
 
 **Hint:** Filter Year = 2024, GROUP BY ticketing_carrier. Use the precomputed estimated_total_revenue column: SUM it and divide by 1e6 (ROUND to 2) for revenue in millions, same for passengers_estimated. revenue_per_passenger = SUM(revenue)/SUM(passengers). ORDER BY revenue DESC.
-
-### Using the flights.m\_ticket\_prices and the m\_airports table, find the _distinct_ routes (origin-destination pairs) where the origin and the destination are part of the same state; in the output show the origin, dest, and the state of the airports.
-
-Hint: 597 rows in the output
-
-_used in 1 semester(s) · ✓ verified (1358 rows)_
-
-```sql
-SELECT DISTINCT t.origin, t.dest, ao.state
-FROM `nyu-datasets.flights.m_ticket_prices` t
-JOIN `nyu-datasets.flights.m_airports` ao ON t.origin = ao.airport
-JOIN `nyu-datasets.flights.m_airports` ad ON t.dest = ad.airport
-WHERE ao.state = ad.state
-```
-
-**Hint:** Self-join m_airports onto m_ticket_prices twice (once for origin, once for dest), keep rows where the two states match, and SELECT DISTINCT origin, dest, state to dedupe routes.
-
-### For each route (origin-destination pair), list the following statistics:
-
-*   cheapest fare
-*   most expensive fare
-*   the average fare
-*   number of carriers serving the route
-*   total number of passengers for the route
-
-Report results only for routes with at least 3 carriers and more than  10,000 total passengers. Use the table flights.m\_ticket\_prices.
-
-Hint: 147 rows in the output
-
-_used in 1 semester(s) · ✓ verified (14229 rows)_
-
-```sql
-SELECT
-  origin,
-  dest,
-  MIN(min_fare) AS cheapest_fare,
-  MAX(max_fare) AS most_expensive_fare,
-  AVG(fare) AS average_fare,
-  COUNT(DISTINCT operating_carrier) AS num_carriers,
-  SUM(passengers_estimated) AS total_passengers
-FROM `nyu-datasets.flights.m_ticket_prices`
-GROUP BY origin, dest
-HAVING COUNT(DISTINCT operating_carrier) >= 3
-   AND SUM(passengers_estimated) > 10000
-ORDER BY origin, dest
-```
-
-**Hint:** GROUP BY origin, dest with MIN/MAX/AVG/SUM and COUNT(DISTINCT carrier), then filter the groups with HAVING (>=3 carriers AND >10000 passengers).
-
-### Flights: For each state of the origin airport calculate the following metrics: the number of airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
-
-Hint: 52 rows
-
-_used in 1 semester(s) · ✓ verified (54 rows)_
-
-```sql
-SELECT
-  a.state,
-  COUNT(DISTINCT t.origin) AS num_airports,
-  COUNT(DISTINCT t.operating_carrier) AS num_carriers,
-  SUM(t.passengers_estimated) AS total_passengers,
-  AVG(t.fare_per_mile) AS avg_fare_per_mile
-FROM `nyu-datasets.flights.m_ticket_prices` t
-JOIN `nyu-datasets.flights.m_airports` a
-  ON t.origin = a.airport
-GROUP BY a.state
-ORDER BY a.state
-```
-
-**Hint:** JOIN m_ticket_prices to m_airports on the origin airport code, then GROUP BY state with COUNT(DISTINCT origin) for airports, COUNT(DISTINCT operating_carrier) for carriers, SUM(passengers) and AVG(fare_per_mile).
 
 ### Use the table **nyu-datasets.flights.m\_ticket\_prices**. For each route (origin-destination pair), list the following statistics:
 

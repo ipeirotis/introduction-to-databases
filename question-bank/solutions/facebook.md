@@ -1,6 +1,6 @@
 # facebook — validated solutions
 
-26 questions, each solved and verified against `nyu-datasets.facebook` on BigQuery.
+21 questions, each solved and verified against `nyu-datasets.facebook` on BigQuery.
 
 ## Filtering
 
@@ -63,82 +63,6 @@ WHERE Name LIKE 'P% I%'
 ```
 
 **Hint:** Two LIKE conditions on the single Name field combined in one pattern: 'P% I%' (starts with P, then a space followed by I). Correctly returns the example 'Panos Ipeirotis'.
-
-## Window functions
-
-### Setup: Create a **temporary table SignUpsOn**, that shows the number of people that signed up on that day (using the MemberSince attribute)
-
-_used in 13 semester(s) · ✓ verified (0 rows)_
-
-```sql
-SELECT
-  DATE(MemberSince) AS MemberSince,
-  COUNT(*) AS signups
-FROM `nyu-datasets.facebook.Profiles`
-WHERE MemberSince IS NOT NULL
-GROUP BY MemberSince
-ORDER BY MemberSince;
-```
-
-**Hint:** Group rows by the signup date and COUNT(*). Cast the MemberSince TIMESTAMP to a DATE so all sign-ups on the same day collapse into one row. (CREATE TEMP TABLE SignUpsOn AS <this SELECT>.)
-
-### Setup: Create a **temporary table InactiveOn**, that shows the number of people that became inactive that day (using the LastUpdate attribute)
-
-_used in 13 semester(s) · ✓ verified (0 rows)_
-
-```sql
-SELECT
-  DATE(LastUpdate) AS LastUpdate,
-  COUNT(*) AS inactives
-FROM `nyu-datasets.facebook.Profiles`
-WHERE LastUpdate IS NOT NULL
-GROUP BY LastUpdate
-ORDER BY LastUpdate;
-```
-
-**Hint:** Same shape as SignUpsOn but group by DATE(LastUpdate): COUNT(*) of profiles whose last update fell on each day. (CREATE TEMP TABLE InactiveOn AS <this SELECT>.)
-
-### **SingUpsAsOf**: Using the SignUpsOn table, calculate the total number of users signed up for Facebook up to each date listed in the MemberSince column. (In other words, calculate the cumulative sum of users from the SignUpsOn table.) Use a SUM() function together with a window specification.
-
-_used in 13 semester(s) · ✓ verified (0 rows)_
-
-```sql
-WITH SignUpsOn AS (
-  SELECT DATE(MemberSince) AS MemberSince, COUNT(*) AS signups
-  FROM `nyu-datasets.facebook.Profiles`
-  WHERE MemberSince IS NOT NULL
-  GROUP BY MemberSince
-)
-SELECT
-  MemberSince,
-  signups,
-  SUM(signups) OVER (ORDER BY MemberSince) AS SignUpsAsOf
-FROM SignUpsOn
-ORDER BY MemberSince;
-```
-
-**Hint:** Running total: SUM(signups) OVER (ORDER BY MemberSince). With ORDER BY and no explicit frame, the window defaults to RANGE between unbounded preceding and current row, giving the cumulative sum up to each date.
-
-### **InactiveAsOf**: Using the InactiveOn table, calculate the total number of users who are inactive as of a given date (again,  up to each date in the MemberSince. Use a SUM() function together with a window specification.
-
-_used in 13 semester(s) · ✓ verified (0 rows)_
-
-```sql
-WITH InactiveOn AS (
-  SELECT DATE(LastUpdate) AS LastUpdate, COUNT(*) AS inactives
-  FROM `nyu-datasets.facebook.Profiles`
-  WHERE LastUpdate IS NOT NULL
-  GROUP BY LastUpdate
-)
-SELECT
-  LastUpdate,
-  inactives,
-  SUM(inactives) OVER (ORDER BY LastUpdate) AS InactiveAsOf
-FROM InactiveOn
-ORDER BY LastUpdate;
-```
-
-**Hint:** Mirror of SignUpsAsOf: running total SUM(inactives) OVER (ORDER BY LastUpdate) over the InactiveOn table to get cumulative inactive users up to each date.
 
 ## Final exam
 
@@ -243,24 +167,6 @@ SELECT c1.Concentration AS conc1, c2.Concentration AS conc2, COUNT(*) AS num_stu
 ```
 
 **Hint:** Self-join the Concentrations table on ProfileID to pair up two concentrations of the same student. Use the asymmetric condition c1.Concentration < c2.Concentration to force the two majors to differ AND to count each unordered pair once (avoids Finance-Finance and duplicate Finance-Accounting/Accounting-Finance). GROUP BY the pair, HAVING COUNT(*) >= 50.
-
-### In the Facebook database, find the Male students, who are "InterestedIn" Women, and are "LookingFor" "Whatever I can get".
-
-Hint: 1003 rows
-
-_used in 2 semester(s) · ✓ verified (913 rows)_
-
-```sql
-SELECT p.ProfileID, p.Name
-FROM `nyu-datasets.facebook.Profiles` p
-JOIN `nyu-datasets.facebook.Orientation` o ON p.ProfileID = o.ProfileID
-JOIN `nyu-datasets.facebook.LookingFor` l ON p.ProfileID = l.ProfileID
-WHERE p.Sex = 'Male'
-  AND o.InterestedIn = 'Women'
-  AND l.LookingFor = 'Whatever I can get'
-```
-
-**Hint:** Join Profiles to Orientation and to LookingFor on ProfileID, then filter with three exact-string conditions: Sex='Male', InterestedIn='Women', LookingFor='Whatever I can get'. The string values must match the data exactly (e.g. 'Women', not 'Female').
 
 ### In the Facebook database, for each book, list the number of women that like the book. Limit the list to books that have at least 100 likes from women.
 

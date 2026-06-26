@@ -1,6 +1,6 @@
 # restaurants — validated solutions
 
-34 questions, each solved and verified against `nyu-datasets.restaurants` on BigQuery.
+33 questions, each solved and verified against `nyu-datasets.restaurants` on BigQuery.
 
 ## Filtering
 
@@ -93,18 +93,6 @@ WHERE cID = 202
 
 **Hint:** Simple equality filter: WHERE cID = 202 on the Rating table.
 
-### Output all the records from the Rating table for the reviews made by the critic with cID 210.
-
-_used in 21 semester(s) · ✓ verified (0 rows)_
-
-```sql
-SELECT *
-FROM `nyu-datasets.restaurants.Rating`
-WHERE cID = 210
-```
-
-**Hint:** Simple equality filter: WHERE cID = 210 on the Rating table.
-
 ### Output all the records from the Rating table for the reviews with the starRating greater than 3
 
 _used in 21 semester(s) · ✓ verified (5 rows)_
@@ -140,6 +128,8 @@ SELECT restName
 FROM `nyu-datasets.restaurants.Restaurant`
 WHERE borough = "Bronx" AND avgPrice > 100.00
 ```
+
+> Note: 0 rows — correctly empty (no Bronx restaurant exceeds the threshold).
 
 **Hint:** Filter on borough = 'Bronx' AND avgPrice > 100 using AND in the WHERE clause.
 
