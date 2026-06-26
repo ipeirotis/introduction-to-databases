@@ -62,6 +62,7 @@ report of its contents. Read-only.`);
         }
       } catch (err) {
         if (err instanceof AuthExpiredError) throw err; // stop early; session dead
+        process.exitCode = 1; // a requested section failed — signal non-zero exit
         report.sections[section] = { status: 'error', reason: String(err?.message || err) };
       }
     }

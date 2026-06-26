@@ -180,7 +180,12 @@ async function dlQuizzes(ctx, ou, outDir) {
     const qmd = questions
       .map((qq, i) => `### Q${i + 1}${qq.Name ? ` — ${qq.Name}` : ''}\n\n${richToMd(qq.QuestionText) || '_(no text)_'}`)
       .join('\n\n');
-    // Quiz Description is { Text: <RichText>, IsDisplayed }, so unwrap one level.
+    // Quiz Description/Instructions/Header/Footer are { Text: <RichText>, IsDisplayed }.
+    const block = (label, f) => {
+      if (!f || f.IsDisplayed === false) return '';
+      const md = richToMd(f.Text && typeof f.Text === 'object' ? f.Text : f);
+      return md ? `## ${label}\n\n${md}\n\n` : '';
+    };
     const descMd = q.Description ? richToMd(q.Description.Text) : '';
     const file = `quizzes/${q.QuizId}-${slug(q.Name)}.md`;
     const md =
@@ -196,6 +201,9 @@ async function dlQuizzes(ctx, ou, outDir) {
       }) +
       '\n\n' +
       (descMd ? `## Description\n\n${descMd}\n\n` : '') +
+      block('Instructions', q.Instructions) +
+      block('Header', q.Header) +
+      block('Footer', q.Footer) +
       `## Questions (${questions.length})\n\n${qmd || '_(no questions retrieved)_'}\n`;
     writeFileSync(resolve(outDir, file), md);
     items.push({ id: q.QuizId, title: q.Name, dueDate: q.DueDate || null, questions: questions.length, file });
@@ -246,6 +254,7 @@ async function dlContent(ctx, ou, outDir, base) {
             counts.files++;
             lines.push(`${indent}- ${t.Title} → [files/${fname}](files/${fname})`);
           } catch (err) {
+            if (err instanceof AuthExpiredError) throw err; // expired session ≠ a missing file
             lines.push(`${indent}- ${t.Title} _(file download failed: ${err.message})_`);
           }
         } else if (/link/i.test(t.TypeIdentifier || '')) {
