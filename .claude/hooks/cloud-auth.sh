@@ -5,6 +5,9 @@ set -e
 # Installed by the cloud-bootstrap skill (references/gcp.md), with one local
 # addition: a single-user fallback for the credential filename (see below).
 
+# Hooks may run from any cwd; resolve repo-relative paths from the project root.
+if [ -n "$CLAUDE_PROJECT_DIR" ]; then cd "$CLAUDE_PROJECT_DIR" || exit 0; fi
+
 CONFIG=".cloud-config.json"
 if [ ! -f "$CONFIG" ]; then exit 0; fi
 

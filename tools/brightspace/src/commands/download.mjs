@@ -81,12 +81,12 @@ Exports the configured course's content into <out> (default:
       announcements: dlAnnouncements,
     };
     const base = config.brightspace.baseUrl;
+    const unknown = kinds.filter((k) => !runners[k]);
+    if (unknown.length) {
+      throw new Error(`Unknown --kinds: ${unknown.join(', ')}. Valid: ${Object.keys(runners).join(', ')}`);
+    }
     for (const kind of kinds) {
       const runner = runners[kind];
-      if (!runner) {
-        console.warn(`Skipping unknown kind: ${kind}`);
-        continue;
-      }
       // Clear any prior export of this kind so renamed/deleted items don't linger.
       rmSync(resolve(outDir, kind), { recursive: true, force: true });
       manifest.kinds[kind] = await runner(ctx, ou, outDir, base);
@@ -186,7 +186,7 @@ async function dlQuizzes(ctx, ou, outDir) {
       const md = richToMd(f.Text && typeof f.Text === 'object' ? f.Text : f);
       return md ? `## ${label}\n\n${md}\n\n` : '';
     };
-    const descMd = q.Description ? richToMd(q.Description.Text) : '';
+    const descMd = q.Description && q.Description.IsDisplayed !== false ? richToMd(q.Description.Text) : '';
     const file = `quizzes/${q.QuizId}-${slug(q.Name)}.md`;
     const md =
       `# ${q.Name}\n\n` +
@@ -242,17 +242,18 @@ async function dlContent(ctx, ou, outDir, base) {
   const walk = async (m, depth) => {
     for (const sub of m.Modules || []) {
       counts.modules++;
-      lines.push(`${'  '.repeat(depth)}- **${sub.Title}**`);
+      lines.push(`${'  '.repeat(depth)}- **${sub.Title}**${sub.IsHidden ? ' _(hidden)_' : ''}`);
       for (const t of sub.Topics || []) {
         counts.topics++;
         const indent = '  '.repeat(depth + 1);
+        const hid = t.IsHidden ? ' _(hidden)_' : '';
         if (/file/i.test(t.TypeIdentifier || '')) {
           try {
             const { body } = await topicFile(ctx, ou, t.TopicId);
             const fname = `${t.TopicId}-${basename(t.Url || slug(t.Title))}`.replace(/[^\w.\-]/g, '_');
             writeFileSync(resolve(filesDir, fname), body);
             counts.files++;
-            lines.push(`${indent}- ${t.Title} → [files/${fname}](files/${fname})`);
+            lines.push(`${indent}- ${t.Title}${hid} → [files/${fname}](files/${fname})`);
           } catch (err) {
             if (err instanceof AuthExpiredError) throw err; // expired session ≠ a missing file
             lines.push(`${indent}- ${t.Title} _(file download failed: ${err.message})_`);
@@ -260,10 +261,10 @@ async function dlContent(ctx, ou, outDir, base) {
         } else if (/link/i.test(t.TypeIdentifier || '')) {
           counts.links++;
           const url = absUrl(t.Url, base);
-          links.push({ title: t.Title, url });
-          lines.push(`${indent}- ${t.Title} → ${url}`);
+          links.push({ title: t.Title, url, hidden: !!t.IsHidden });
+          lines.push(`${indent}- ${t.Title}${hid} → ${url}`);
         } else {
-          lines.push(`${indent}- ${t.Title} _(${t.TypeIdentifier})_`);
+          lines.push(`${indent}- ${t.Title}${hid} _(${t.TypeIdentifier})_`);
         }
       }
       await walk(sub, depth + 1);
