@@ -10,7 +10,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import TurndownService from 'turndown';
 import { loadConfig } from '../config.mjs';
-import { openApi, enrollments, quizzes, quizQuestions, assignments, AuthExpiredError } from '../api.mjs';
+import { openApi, enrollments, quizzes, quizQuestions, assignments } from '../api.mjs';
 
 const td = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
 
@@ -36,19 +36,11 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
     const aOccur = [];
     for (const c of courses) {
       const term = termInfo(c.code);
-      let qs = [];
-      try {
-        qs = await quizzes(ctx, c.id);
-      } catch (err) {
-        if (err instanceof AuthExpiredError) throw err;
-        console.warn(`  ! ${c.id} quizzes failed: ${err.message}`);
-      }
+      // Let auth/API failures propagate — folding them into empty lists would
+      // silently commit a corrupted bank (Codex review).
+      const qs = await quizzes(ctx, c.id);
       const fetched = await Promise.all(
-        qs.map((q) =>
-          quizQuestions(ctx, c.id, q.QuizId)
-            .then((list) => ({ q, list }))
-            .catch(() => ({ q, list: [] }))
-        )
+        qs.map((q) => quizQuestions(ctx, c.id, q.QuizId).then((list) => ({ q, list })))
       );
       let nq = 0;
       for (const { q, list } of fetched) {
@@ -60,12 +52,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
           qOccur.push({ key: normKey(text), text, type: qType(qq.QuestionTypeId), topic, course: c, term, quiz: q.Name });
         }
       }
-      let asg = [];
-      try {
-        asg = await assignments(ctx, c.id);
-      } catch {
-        /* ignore per-course assignment errors */
-      }
+      const asg = await assignments(ctx, c.id);
       for (const f of asg) {
         const text = plain(f.CustomInstructions);
         aOccur.push({ key: normKey(f.Name + ' :: ' + text), title: f.Name, text, topic: topicFor(f.Name), course: c, term });
@@ -173,7 +160,8 @@ const TOPIC_ORDER = [
   'Subqueries', 'Window functions', 'General / other', 'Midterm', 'Final exam',
 ];
 
-const QTYPES = { 1: 'True/False', 2: 'Multiple Choice', 3: 'Multi-Select', 4: 'Written Response', 5: 'Short Answer', 6: 'Multi-Short Answer', 7: 'Matching', 8: 'Ordering', 9: 'Arithmetic', 11: 'Likert' };
+// D2L QUESTION_T enum (https://docs.valence.desire2learn.com/res/quiz.html).
+const QTYPES = { 1: 'Multiple Choice', 2: 'True/False', 3: 'Fill in the Blank', 4: 'Multi-Select', 5: 'Matching', 6: 'Ordering', 7: 'Long Answer', 8: 'Short Answer', 9: 'Likert', 10: 'Image', 11: 'Text', 12: 'Arithmetic', 13: 'Significant Figures', 14: 'Multi-Short Answer' };
 function qType(id) {
   return QTYPES[id] || `Type ${id}`;
 }

@@ -8,7 +8,7 @@
 // NOTE: if the repo is public, review before committing — quiz questions in
 // particular are live assessment material.
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { resolve, basename } from 'node:path';
 import TurndownService from 'turndown';
 import { loadConfig } from '../config.mjs';
@@ -80,13 +80,16 @@ Exports the configured course's content into <out> (default:
       content: dlContent,
       announcements: dlAnnouncements,
     };
+    const base = config.brightspace.baseUrl;
     for (const kind of kinds) {
       const runner = runners[kind];
       if (!runner) {
         console.warn(`Skipping unknown kind: ${kind}`);
         continue;
       }
-      manifest.kinds[kind] = await runner(ctx, ou, outDir);
+      // Clear any prior export of this kind so renamed/deleted items don't linger.
+      rmSync(resolve(outDir, kind), { recursive: true, force: true });
+      manifest.kinds[kind] = await runner(ctx, ou, outDir, base);
       const k = manifest.kinds[kind];
       console.log(`  ${kind}: ${summaryLine(kind, k)}`);
     }
@@ -125,6 +128,12 @@ function richToMd(rt) {
     }
   }
   return String(rt.Text || '').trim();
+}
+
+// Root-relative D2L URLs (e.g. quicklinks "/d2l/...") only resolve on the live
+// Brightspace host, so qualify them with the base URL for the exported Markdown.
+function absUrl(url, base) {
+  return url && /^\/(?!\/)/.test(url) ? base + url : url;
 }
 
 function metaList(obj) {
@@ -166,12 +175,8 @@ async function dlQuizzes(ctx, ou, outDir) {
   const list = await quizzes(ctx, ou);
   const items = [];
   for (const q of list) {
-    let questions = [];
-    try {
-      questions = await quizQuestions(ctx, ou, q.QuizId);
-    } catch {
-      /* leave empty; noted in the file */
-    }
+    // Let fetch failures propagate rather than committing a "0 questions" quiz.
+    const questions = await quizQuestions(ctx, ou, q.QuizId);
     const qmd = questions
       .map((qq, i) => `### Q${i + 1}${qq.Name ? ` — ${qq.Name}` : ''}\n\n${richToMd(qq.QuestionText) || '_(no text)_'}`)
       .join('\n\n');
@@ -205,7 +210,7 @@ async function dlAnnouncements(ctx, ou, outDir) {
   const items = [];
   for (const n of list) {
     const date = String(n.StartDate || n.CreatedDate || '').slice(0, 10) || 'undated';
-    const file = `announcements/${date}-${slug(n.Title)}.md`;
+    const file = `announcements/${date}-${n.Id}-${slug(n.Title)}.md`;
     const md =
       `# ${n.Title}\n\n` +
       metaList({ 'Brightspace id': n.Id, Posted: n.StartDate || n.CreatedDate, Hidden: n.IsHidden }) +
@@ -216,7 +221,7 @@ async function dlAnnouncements(ctx, ou, outDir) {
   return { count: items.length, items };
 }
 
-async function dlContent(ctx, ou, outDir) {
+async function dlContent(ctx, ou, outDir, base) {
   const dir = resolve(outDir, 'content');
   const filesDir = resolve(dir, 'files');
   mkdirSync(filesDir, { recursive: true });
@@ -245,8 +250,9 @@ async function dlContent(ctx, ou, outDir) {
           }
         } else if (/link/i.test(t.TypeIdentifier || '')) {
           counts.links++;
-          links.push({ title: t.Title, url: t.Url });
-          lines.push(`${indent}- ${t.Title} → ${t.Url}`);
+          const url = absUrl(t.Url, base);
+          links.push({ title: t.Title, url });
+          lines.push(`${indent}- ${t.Title} → ${url}`);
         } else {
           lines.push(`${indent}- ${t.Title} _(${t.TypeIdentifier})_`);
         }

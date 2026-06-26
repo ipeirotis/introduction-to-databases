@@ -72,6 +72,19 @@ Topics that don't yet have a module:
       semesters, and groups them by topic (`question-bank/`).
 - [ ] `tools/brightspace/`: add a CI-friendly mode that fails when an
       offering's Brightspace state drifts from the repo's expected state.
+- [ ] `tools/brightspace/`: `download` should fetch (or explicitly report)
+      assignment and announcement **attachments**, not just `CustomInstructions`
+      / body text — D2L exposes folder `Attachments` and news attachments with
+      download routes. (Codex review; no impact on 578630, which has none.)
+- [ ] `tools/brightspace/`: `question-bank` dedup keys only on `QuestionText`;
+      for MC / multi-select / fill-in / short-answer, fold the relevant
+      `QuestionInfo` (choices / accepted answers) into the rendered text and the
+      dedup key so same-stem-different-options questions don't collapse.
+      (Codex review.)
+- [ ] `offerings/2026-spring/`: the configured Brightspace shell is the **SU26 /
+      TechMBA May 2026** course, but this offering is labelled `spring` with
+      Jan–May dates. Decide: rename/move to a summer offering, or relabel the
+      metadata. (Codex review + flagged earlier — instructor decision.)
 
 ## Practice resources to recommend to students
 
