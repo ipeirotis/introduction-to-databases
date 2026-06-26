@@ -127,3 +127,33 @@ See `tools/brightspace/README.md` for usage.
 - Adding any Brightspace write capability.
 - Touching `offerings/<term>/` for a term that is currently running — those
   changes are visible to students.
+
+## Cloud credentials
+
+This repo is connected to **Google BigQuery** for the course datasets via the
+`cloud-bootstrap` skill (`.claude/skills/cloud-bootstrap/`).
+
+- **Provider / project:** GCP, project `nyu-datasets` (the shared project that
+  hosts `nyu-datasets.imdb`, `nyu-datasets.facebook`, etc.).
+- **Service account:** `claude-databases-class@nyu-datasets.iam.gserviceaccount.com`
+  — named to show it's scoped to this class, since `nyu-datasets` is shared by
+  several repos.
+- **Roles (read-only, least privilege):**
+  - `roles/bigquery.dataViewer` — read the course datasets.
+  - `roles/bigquery.jobUser` — run query jobs (billed to `nyu-datasets`).
+  - To create/modify tables, escalate to `roles/bigquery.dataEditor` — see the
+    skill's `workflows/permission-escalation.md`.
+- **How auth works:** each user has their own encrypted key
+  `.cloud-credentials.<email>.enc` in the repo (decrypted only with that user's
+  `GCP_CREDENTIALS_KEY` passphrase, which is never committed). The
+  `SessionStart` hook `.claude/hooks/cloud-auth.sh` decrypts it and activates
+  both the `gcloud` CLI and Python ADC automatically each session.
+- **Filename note:** the credential is filed under `ipeirotis@gmail.com`. The
+  hook falls back to the sole `.cloud-credentials.*.enc` when `git user.email`
+  differs (e.g. the sandbox's `noreply@anthropic.com`), so a single-user setup
+  auto-authenticates regardless.
+- **Adding a teammate / rotating a key:** ask the agent — it runs the skill's
+  `add-team-member` / `credential-rotation` workflows.
+- **Security:** this repo is public, so the encrypted key is world-readable;
+  its safety rests entirely on the passphrase. Keep `GCP_CREDENTIALS_KEY` long
+  and random, and the service account read-only.

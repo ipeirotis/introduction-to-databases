@@ -1,3 +1,4 @@
+# Cloud — never commit plaintext credentials
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -109,3 +110,6 @@ node_modules/
 tools/brightspace/.auth/
 # Brightspace download outputs.
 **/_downloaded/
+credentials.json
+credentials_clean.json
+/tmp/gcp-adc-credentials.json
