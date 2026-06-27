@@ -81,6 +81,15 @@ Topics that don't yet have a module:
       `QuestionInfo` (choices / accepted answers) into the rendered text and the
       dedup key so same-stem-different-options questions don't collapse.
       (Codex review.)
+- [x] `question-bank`: split public/private — questions stay here
+      (`question-bank/`), while solution SQL, validated row counts, and
+      `FLAGGED.md` live only in the private companion repo
+      `ipeirotis/introduction-to-databases-private` (see `CLAUDE.md`).
+- [ ] `question-bank`: re-validate flights questions 189–191 against live
+      BigQuery after scoping to `Year = 2025 AND Quarter = 2`, then flip them
+      from flagged to confirmed in the private repo. `m_ticket_prices` now spans
+      100+ quarters, so all-time aggregates overcount (the old single-quarter
+      hints — 597 / 147 / 52 — predate that).
 - [ ] `offerings/2026-spring/`: the configured Brightspace shell is the **SU26 /
       TechMBA May 2026** course, but this offering is labelled `spring` with
       Jan–May dates. Decide: rename/move to a summer offering, or relabel the

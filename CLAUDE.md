@@ -119,6 +119,34 @@ default and require an explicit `--apply` flag.
 
 See `tools/brightspace/README.md` for usage.
 
+## Question bank and private answers
+
+`question-bank/` holds the cross-semester practice bank built by
+`tools/brightspace question-bank` (questions deduplicated across course
+shells, grouped by topic). **This repo is public, so it carries the
+questions only** — `README.md`, `by-topic.md`, `courses.md`, `bank.json`,
+`bank.csv`. Students are meant to see these.
+
+**Answers never live here.** Solutions, graded answer keys, BigQuery-validated
+row counts, instructor notes, and the flagged/needs-review list live in a
+separate **private** repo:
+
+- **<https://github.com/ipeirotis/introduction-to-databases-private>**
+
+That repo holds the answer-side artifacts — `solutions/<dataset>.md`,
+`bank-validated.json` (each question's solution SQL, verified row count, and
+status), and `FLAGGED.md` (questions whose stated answer disagrees with the
+live data). Keep this split intact:
+
+- Never commit answer keys, solution SQL, validated row counts,
+  `bank-validated.json`, `FLAGGED.md`, or anything under `solutions/` to this
+  public repo. When the `question-bank` command emits answer-side files, move
+  them to the private repo and leave only the questions here.
+- When publishing a question that was previously assessed, scrub any embedded
+  solution or answer-key text first.
+- If you need to reconcile a solution against the data (e.g. a stale row-count
+  hint), do that work in the private repo.
+
 ## Things to ask before doing
 
 - Adding a new module or renumbering existing ones.
@@ -127,6 +155,10 @@ See `tools/brightspace/README.md` for usage.
 - Adding any Brightspace write capability.
 - Touching `offerings/<term>/` for a term that is currently running — those
   changes are visible to students.
+- Publishing answer-side material (solution SQL, validated row counts,
+  `bank-validated.json`, `FLAGGED.md`, `solutions/`) to this public repo —
+  it belongs in the private answers repo (see "Question bank and private
+  answers").
 
 ## Cloud credentials
 
