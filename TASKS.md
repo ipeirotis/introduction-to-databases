@@ -85,11 +85,18 @@ Topics that don't yet have a module:
       (`question-bank/`), while solution SQL, validated row counts, and
       `FLAGGED.md` live only in the private companion repo
       `ipeirotis/introduction-to-databases-private` (see `CLAUDE.md`).
-- [ ] `question-bank`: re-validate flights questions 189–191 against live
-      BigQuery after scoping to `Year = 2025 AND Quarter = 2`, then flip them
-      from flagged to confirmed in the private repo. `m_ticket_prices` now spans
-      100+ quarters, so all-time aggregates overcount (the old single-quarter
-      hints — 597 / 147 / 52 — predate that).
+- [x] `question-bank`: scope the student-facing flights prompts to a single
+      quarter (`Year = 2025`, `Quarter = 2`). Applied to the 17 single-snapshot
+      flights questions in `bank.json` / `by-topic.md` / `bank.csv`; left the
+      time-series question (per year-quarter) and the ones already scoped to a
+      year (2024) untouched.
+- [ ] `question-bank`: reconcile the flights **answer side** in the private repo
+      to match the now-quarter-scoped prompts — add `WHERE Year = 2025 AND
+      Quarter = 2` to each flights solution, re-validate row counts against live
+      BigQuery, set the hints, and flip 189–191 from flagged to confirmed.
+      `m_ticket_prices` now spans 100+ quarters, so all-time aggregates overcount
+      (the old single-quarter hints — 597 / 147 / 52 — predate that). Needs the
+      BigQuery credential restored.
 - [ ] `offerings/2026-spring/`: the configured Brightspace shell is the **SU26 /
       TechMBA May 2026** course, but this offering is labelled `spring` with
       Jan–May dates. Decide: rename/move to a summer offering, or relabel the

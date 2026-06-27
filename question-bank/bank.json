@@ -894,7 +894,7 @@
     {
       "topic": "General / other",
       "type": "Matching",
-      "text": "For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination.",
+      "text": "For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 20,
       "usedIn": [
         "Spring 2023 · Module 4 Practice: Flights Database Questions",
@@ -910,7 +910,7 @@
     {
       "topic": "General / other",
       "type": "Matching",
-      "text": "For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination. However, when calculating the average fare, weight each fare according to the number of passengers.",
+      "text": "For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination. However, when calculating the average fare, weight each fare according to the number of passengers.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 20,
       "usedIn": [
         "Spring 2023 · Module 4 Practice: Flights Database Questions",
@@ -926,7 +926,7 @@
     {
       "topic": "General / other",
       "type": "Matching",
-      "text": "Which origin-dest pair has the highest number of passengers?",
+      "text": "Which origin-dest pair has the highest number of passengers?\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 20,
       "usedIn": [
         "Spring 2023 · Module 4 Practice: Flights Database Questions",
@@ -942,7 +942,7 @@
     {
       "topic": "General / other",
       "type": "Matching",
-      "text": "For each origin-dest pair, list the number of carriers, the max fare, min fare, the difference between the highest and the lowest fare offered by the various carriers, and the ratio of the minimum to the maximum fare. Limit the results only to origin-dest pairs with at least 3 carriers.",
+      "text": "For each origin-dest pair, list the number of carriers, the max fare, min fare, the difference between the highest and the lowest fare offered by the various carriers, and the ratio of the minimum to the maximum fare. Limit the results only to origin-dest pairs with at least 3 carriers.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 20,
       "usedIn": [
         "Spring 2023 · Module 4 Practice: Flights Database Questions",
@@ -958,7 +958,7 @@
     {
       "topic": "General / other",
       "type": "Matching",
-      "text": "For each origin airport, list the number of carriers that have flights departing from that airport and the total number of destinations served by the origin airport.",
+      "text": "For each origin airport, list the number of carriers that have flights departing from that airport and the total number of destinations served by the origin airport.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 20,
       "usedIn": [
         "Spring 2023 · Module 4 Practice: Flights Database Questions",
@@ -974,7 +974,7 @@
     {
       "topic": "General / other",
       "type": "Matching",
-      "text": "For each origin airport, calculate the average fare across all destinations, the average fare per mile, and the average distance from the other airports.",
+      "text": "For each origin airport, calculate the average fare across all destinations, the average fare per mile, and the average distance from the other airports.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 20,
       "usedIn": [
         "Spring 2023 · Module 4 Practice: Flights Database Questions",
@@ -1664,7 +1664,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Flights: Using the table **flights.m\\_ticket\\_prices**, for each carrier, report the number of routes they maintain, the number of airports their flights leave from, and their average fare per mile. Report results only for carriers having more than 20,000 passengers across all their flights.\n\n_Hint: 11 rows in the outcome_",
+      "text": "Flights: Using the table **flights.m\\_ticket\\_prices**, for each carrier, report the number of routes they maintain, the number of airports their flights leave from, and their average fare per mile. Report results only for carriers having more than 20,000 passengers across all their flights.\n\n_Hint: 11 rows in the outcome_\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 15,
       "usedIn": [
         "Summer 2022 · Final Exam",
@@ -1812,7 +1812,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\nHint: 52 rows",
+      "text": "Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\nHint: 52 rows\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 14,
       "usedIn": [
         "Spring 2023 · Final Exam",
@@ -2051,7 +2051,7 @@
     {
       "topic": "Window functions",
       "type": "Matching",
-      "text": "Create the **passengers\\_per\\_airport** temporary table, which contains  the total number of passengers departing from each airport.  Use the m\\_ticket\\_prices table; we are interested in the origin and the passengers attributes.",
+      "text": "Create the **passengers\\_per\\_airport** temporary table, which contains  the total number of passengers departing from each airport.  Use the m\\_ticket\\_prices table; we are interested in the origin and the passengers attributes.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 13,
       "usedIn": [
         "Spring 2023 · Assignment 6: Window queries",
@@ -2085,7 +2085,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Using the flights.m\\_ticket\\_prices and the m\\_airports table, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.",
+      "text": "Using the flights.m\\_ticket\\_prices and the m\\_airports table, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 13,
       "usedIn": [
         "Spring 2023 · Final Exam",
@@ -2098,7 +2098,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Use the table flights.m\\_ticket\\_prices. For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for routes with at least 3 carriers and more than  10,000 total passengers.",
+      "text": "Use the table flights.m\\_ticket\\_prices. For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for routes with at least 3 carriers and more than  10,000 total passengers.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 13,
       "usedIn": [
         "Spring 2023 · Final Exam",
@@ -2629,7 +2629,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.",
+      "text": "Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 4,
       "usedIn": [
         "Winter 2025 · Final Exam",
@@ -2840,7 +2840,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Using the flights.m\\_ticket\\_prices and the m\\_airports table, find the _distinct_ routes (origin-destination pairs) where the origin and the destination are part of the same state; in the output show the origin, dest, and the state of the airports.\n\nHint: 597 rows in the output",
+      "text": "Using the flights.m\\_ticket\\_prices and the m\\_airports table, find the _distinct_ routes (origin-destination pairs) where the origin and the destination are part of the same state; in the output show the origin, dest, and the state of the airports.\n\nHint: 597 rows in the output\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 1,
       "usedIn": [
         "Summer 2022 · Final Exam"
@@ -2849,7 +2849,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for routes with at least 3 carriers and more than  10,000 total passengers. Use the table flights.m\\_ticket\\_prices.\n\nHint: 147 rows in the output",
+      "text": "For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for routes with at least 3 carriers and more than  10,000 total passengers. Use the table flights.m\\_ticket\\_prices.\n\nHint: 147 rows in the output\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 1,
       "usedIn": [
         "Summer 2022 · Final Exam"
@@ -2858,7 +2858,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Flights: For each state of the origin airport calculate the following metrics: the number of airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\nHint: 52 rows",
+      "text": "Flights: For each state of the origin airport calculate the following metrics: the number of airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\nHint: 52 rows\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 1,
       "usedIn": [
         "Summer 2022 · Final Exam"
@@ -2939,7 +2939,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Use the table **nyu-datasets.flights.m\\_ticket\\_prices**. For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for **routes with at least 3 carriers** and **more than  10,000 total passengers**.",
+      "text": "Use the table **nyu-datasets.flights.m\\_ticket\\_prices**. For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for **routes with at least 3 carriers** and **more than  10,000 total passengers**.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 1,
       "usedIn": [
         "Fall 2025 · Final Exam"
@@ -2948,7 +2948,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "Using the **nyu-datasets.flights.m\\_ticket\\_prices** and the **nyu-datasets.flights.m\\_airports** tables, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.",
+      "text": "Using the **nyu-datasets.flights.m\\_ticket\\_prices** and the **nyu-datasets.flights.m\\_airports** tables, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
       "occurrences": 1,
       "usedIn": [
         "Fall 2025 · Final Exam"

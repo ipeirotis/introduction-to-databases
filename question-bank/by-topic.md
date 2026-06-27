@@ -623,6 +623,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 **6.** _(13× · Matching)_
 
 > Create the **passengers\_per\_airport** temporary table, which contains  the total number of passengers departing from each airport.  Use the m\_ticket\_prices table; we are interested in the origin and the passengers attributes.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
@@ -709,36 +711,48 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 **13.** _(20× · Matching)_
 
 > For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
 **14.** _(20× · Matching)_
 
 > For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination. However, when calculating the average fare, weight each fare according to the number of passengers.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
 **15.** _(20× · Matching)_
 
 > Which origin-dest pair has the highest number of passengers?
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
 **16.** _(20× · Matching)_
 
 > For each origin-dest pair, list the number of carriers, the max fare, min fare, the difference between the highest and the lowest fare offered by the various carriers, and the ratio of the minimum to the maximum fare. Limit the results only to origin-dest pairs with at least 3 carriers.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
 **17.** _(20× · Matching)_
 
 > For each origin airport, list the number of carriers that have flights departing from that airport and the total number of destinations served by the origin airport.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
 **18.** _(20× · Matching)_
 
 > For each origin airport, calculate the average fare across all destinations, the average fare per mile, and the average distance from the other airports.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
@@ -869,6 +883,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > Flights: Using the table **flights.m\_ticket\_prices**, for each carrier, report the number of routes they maintain, the number of airports their flights leave from, and their average fare per mile. Report results only for carriers having more than 20,000 passengers across all their flights.
 > 
 > _Hint: 11 rows in the outcome_
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam</sub>
 
@@ -877,6 +893,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
 > 
 > Hint: 52 rows
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam</sub>
 
@@ -943,6 +961,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 **15.** _(13× · Matching)_
 
 > Using the flights.m\_ticket\_prices and the m\_airports table, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
@@ -957,6 +977,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   total number of passengers for the route
 > 
 > Report results only for routes with at least 3 carriers and more than  10,000 total passengers.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
@@ -1125,6 +1147,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 **40.** _(4× · Matching)_
 
 > Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
@@ -1270,6 +1294,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > Using the flights.m\_ticket\_prices and the m\_airports table, find the _distinct_ routes (origin-destination pairs) where the origin and the destination are part of the same state; in the output show the origin, dest, and the state of the airports.
 > 
 > Hint: 597 rows in the output
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
@@ -1286,6 +1312,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > Report results only for routes with at least 3 carriers and more than  10,000 total passengers. Use the table flights.m\_ticket\_prices.
 > 
 > Hint: 147 rows in the output
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
@@ -1294,6 +1322,8 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > Flights: For each state of the origin airport calculate the following metrics: the number of airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
 > 
 > Hint: 52 rows
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
@@ -1502,12 +1532,16 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   total number of passengers for the route
 > 
 > Report results only for **routes with at least 3 carriers** and **more than  10,000 total passengers**.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Fall 2025 · Final Exam</sub>
 
 **69.** _(1× · Matching)_
 
 > Using the **nyu-datasets.flights.m\_ticket\_prices** and the **nyu-datasets.flights.m\_airports** tables, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.
+> 
+> _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Fall 2025 · Final Exam</sub>
 
