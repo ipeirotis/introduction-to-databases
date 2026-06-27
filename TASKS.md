@@ -76,11 +76,22 @@ Topics that don't yet have a module:
       assignment and announcement **attachments**, not just `CustomInstructions`
       / body text — D2L exposes folder `Attachments` and news attachments with
       download routes. (Codex review; no impact on 578630, which has none.)
+- [ ] `tools/brightspace/`: `download`/`audit` capture only a subset of D2L
+      metadata. Also surface, where present: quiz time limits and special-access
+      restrictions (`SubmissionTimeLimit`, `AllowOnlyUsersWithSpecialAccess`),
+      assignment availability windows (`Availability` start/end, special access),
+      content-module hidden/date-restriction flags, and announcement
+      `IsPublished`. (Codex review; none apply to 578630 today.)
 - [ ] `tools/brightspace/`: `question-bank` dedup keys only on `QuestionText`;
       for MC / multi-select / fill-in / short-answer, fold the relevant
       `QuestionInfo` (choices / accepted answers) into the rendered text and the
       dedup key so same-stem-different-options questions don't collapse.
       (Codex review.)
+- [x] `question-bank`: scrub embedded answer keys (expected-result tables) from
+      the public bank — `scrubAnswerKey` in `question-bank.mjs` strips them on
+      generation, and the two committed leaks (the Music "most popular entries"
+      and the Facebook "average hobbies by Sex" final-exam prompts) are cleaned.
+      Row-count hints are left intact. (Codex review.)
 - [x] `question-bank`: split public/private — questions stay here
       (`question-bank/`), while solution SQL, validated row counts, and
       `FLAGGED.md` live only in the private companion repo

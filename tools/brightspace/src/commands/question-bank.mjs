@@ -46,7 +46,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       for (const { q, list } of fetched) {
         const topic = topicFor(q.Name);
         for (const qq of list) {
-          const text = plain(qq.QuestionText);
+          const text = scrubAnswerKey(plain(qq.QuestionText));
           if (!text) continue;
           nq++;
           qOccur.push({ key: normKey(text), text, type: qType(qq.QuestionTypeId), topic, course: c, term, quiz: q.Name });
@@ -120,6 +120,22 @@ function safeTurndown(html) {
     return String(html).replace(/<[^>]+>/g, ' ');
   }
 }
+// Strip an embedded answer key (an expected-result table) from a question stem
+// so the public bank stays "questions only" (see CLAUDE.md). Only triggers when
+// a "the results/answer are|is|will be" preamble is followed by result data
+// (>=2 standalone numbers, or a high-precision decimal), so ordinary row-count
+// hints ("Hint: 52 rows") and spec text ("... should be null") are left intact.
+// Hand-curated hints may need re-adding after a regeneration.
+function scrubAnswerKey(text) {
+  const s = String(text || '');
+  const m = s.match(/\n+\s*(?:Hint:\s*)?(?:the\s+)?(?:correct\s+)?(?:results?|answer)(?:\s+of\s+the\s+query)?\s+(?:are|is|will\s+be)\b/i);
+  if (!m) return s;
+  const tail = s.slice(m.index);
+  const numlines = (tail.match(/^\s*\$?\d[\d,.]*\s*$/gm) || []).length;
+  if (numlines >= 2 || /\d+\.\d{3,}/.test(tail)) return s.slice(0, m.index).trim();
+  return s;
+}
+
 // Dedup key: collapse whitespace, drop markdown punctuation, lowercase.
 function normKey(s) {
   return String(s).replace(/\s+/g, ' ').replace(/[`*_>#~]/g, '').trim().toLowerCase().replace(/[.,;:!?]+$/, '');

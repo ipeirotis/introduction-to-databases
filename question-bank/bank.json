@@ -2867,7 +2867,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "List the 10 most popular Music entries and the number of students that like them, across students that are concentrating in Finance.\n\nHint: The results are the\n\nColdplay\n\n151\n\nHip Hop\n\n93\n\nJay Z\n\n86\n\nU2\n\n78\n\nGreen Day\n\n73\n\nMaroon 5\n\n72\n\nR And B\n\n71\n\nRadiohead\n\n69\n\nThe Killers\n\n65\n\nJack Johnson\n\n63",
+      "text": "List the 10 most popular Music entries and the number of students that like them, across students that are concentrating in Finance.",
       "occurrences": 1,
       "usedIn": [
         "Summer 2022 · Final Exam"
@@ -2876,7 +2876,7 @@
     {
       "topic": "Final exam",
       "type": "Matching",
-      "text": "**(This is a hard question)**\n\nIn the Facebook database, calculate the average number of hobbies listed by each person in the database, and report the average number of hobbies broken down by \"Sex\".\n\nYou will need the Profiles table to get the Sex of each person, and the Hobbies table to get the hobbies. You will probably need to use a subquery to compute the averages.\n\nHint: The correct result of the query will be\n\nFemale\n\n7.2005\n\nMale\n\n5.5941\n\n_NULL_\n\n1.1225\n\nIf you get that Females have 9.577 hobbies on average and males have 7.6512 hobbies on average, then you need to remember that there are people that have listed no hobbies.",
+      "text": "**(This is a hard question)**\n\nIn the Facebook database, calculate the average number of hobbies listed by each person in the database, and report the average number of hobbies broken down by \"Sex\".\n\nYou will need the Profiles table to get the Sex of each person, and the Hobbies table to get the hobbies. You will probably need to use a subquery to compute the averages.\n\nHint: Remember that some people have listed no hobbies — your average must account for those zero-hobby profiles (and for the profiles with a NULL Sex), otherwise the per-Sex averages come out too high.",
       "occurrences": 1,
       "usedIn": [
         "Summer 2022 · Final Exam"

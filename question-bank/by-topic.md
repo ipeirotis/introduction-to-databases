@@ -1330,48 +1330,6 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 **61.** _(1× · Matching)_
 
 > List the 10 most popular Music entries and the number of students that like them, across students that are concentrating in Finance.
-> 
-> Hint: The results are the
-> 
-> Coldplay
-> 
-> 151
-> 
-> Hip Hop
-> 
-> 93
-> 
-> Jay Z
-> 
-> 86
-> 
-> U2
-> 
-> 78
-> 
-> Green Day
-> 
-> 73
-> 
-> Maroon 5
-> 
-> 72
-> 
-> R And B
-> 
-> 71
-> 
-> Radiohead
-> 
-> 69
-> 
-> The Killers
-> 
-> 65
-> 
-> Jack Johnson
-> 
-> 63
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
@@ -1383,21 +1341,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > 
 > You will need the Profiles table to get the Sex of each person, and the Hobbies table to get the hobbies. You will probably need to use a subquery to compute the averages.
 > 
-> Hint: The correct result of the query will be
-> 
-> Female
-> 
-> 7.2005
-> 
-> Male
-> 
-> 5.5941
-> 
-> _NULL_
-> 
-> 1.1225
-> 
-> If you get that Females have 9.577 hobbies on average and males have 7.6512 hobbies on average, then you need to remember that there are people that have listed no hobbies.
+> Hint: Remember that some people have listed no hobbies — your average must account for those zero-hobby profiles (and for the profiles with a NULL Sex), otherwise the per-Sex averages come out too high.
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
