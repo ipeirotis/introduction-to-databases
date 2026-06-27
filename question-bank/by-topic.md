@@ -1493,129 +1493,1707 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Setup & basics — 20 unique
 
-**Assignment 0: Setup** _(2×)_ — used in: ~2021 · Assignment 0: Setup
+**Assignment 0: Setup** _(2×)_
 
-**Assignment 0: Setup MySQL Workbench and Slack** _(2×)_ — used in: Spring 2023 · Assignment 0: Setup MySQL Workbench and Slack
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments. There are two things to setup:
+> 
+> **a. MySQL Workbench**
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**" and "**imdb**".
+> 
+> **Deliverable: Take a screenshot showing that you were able to connect to the server using MySQL Workbench and see the databases.**
+> 
+> **b. Google Colab**
+> 
+> *   Go to https://colab.research.google.com/
+> *   Select "Sign In" from the top right button.
+> *   When presented with the option of opening a file, select "Github" from the tabs available.
+> *   Type [https://github.com/ipeirotis/introduction-to-databases/blob/master/sql\_assignment\_template.ipynb](https://github.com/ipeirotis/introduction-to-databases/blob/master/sql_assignment_template.ipynb) as the URL and then press the magnifying glass button.
+> *   Select "Runtime => Run all"; you will get a "Warning: This notebook was not authored by Google."; press "Run anyway".
+> *   You should see a few databases listed, including "**facebook**" and "**imdb**".
+> *   **Save the notebook on your Google Drive! (File -> Save a Copy in Drive)**
+> 
+> **Deliverable: Share the Colab notebook with me (panos@stern.nyu.edu) and Nora (npd271@stern.nyu.edu); also, paste the shared link in the assignment submission.** _(This will be the way that you will be submitting your SQL assignments.)_
 
-**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(2×)_ — used in: Summer 2023 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos · Summer 2024 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos
+<sub>Used in: ~2021 · Assignment 0: Setup</sub>
 
-**Assignment 0: Setup** _(2×)_ — used in: Winter 2025 · Assignment 0: Setup · Fall 2025 · Assignment 0: Setup
+**Assignment 0: Setup MySQL Workbench and Slack** _(2×)_
 
-**Assignment 0: Setup** _(2×)_ — used in: Summer 2026 · Assignment 0: Setup
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://db4ba-w2023.slack.com/ "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
 
-**Assignment 0: Setup** _(1×)_ — used in: ~2021 · Assignment 0: Setup
+<sub>Used in: Spring 2023 · Assignment 0: Setup MySQL Workbench and Slack</sub>
 
-**Assignment 0: Setup** _(1×)_ — used in: Summer 2022 · Assignment 0: Setup
+**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(2×)_
 
-**Assignment 2: Database Navigation, Selection, and Filtering Queries** _(1×)_ — used in: Spring 2023 · Assignment 2: Database Navigation, Selection, and Filtering Queries
+> This assignment ensures that you are all set up and ready to follow the material presented in the course and able to submit assignments. I will also ask you to watch the videos from Module 1 and some videos from Module 2, so that we can have more time to focus on in-person activities.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://nyustern-msba.slack.com "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+> 
+> ### Part 3: Watch videos
+> 
+> Please watch the videos from Module 1 (also available under Content > Module 1 > Resources)
+> 
+> *   [Entity-Relationship Model, Entities, Attributes, and Primary Keys](https://www.youtube.com/watch?v=m2i4KVXrrEQ&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=3)
+> *   [Relationships and Cardinalities](https://www.youtube.com/watch?v=ecDKgZ9giWs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=4)
+> *   [Entity Relationship Diagrams](https://www.youtube.com/watch?v=MXd1yzEwVYg&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=5)
+> 
+> and the following videos from Module 2 (also available under Content > Module 2 > Resources)
+> 
+> *   [Intro to SQL](https://www.youtube.com/watch?v=XqGKb235IVs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=6)
+> *   [Navigating a Database](https://www.youtube.com/watch?v=pyBN57RvmBE&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=7)
+> *   [SELECT \* Statement](https://www.youtube.com/watch?v=rgWZ51xb3mw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=8)
+> *   [SELECT \* Statement EXTRA](https://www.youtube.com/watch?v=QMfCxGnTTws&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=9)
+> *   [SELECT Attributes & SELECT Attributes As](https://www.youtube.com/watch?v=9vvcCcMcJS4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=10)
+> *   [SELECT DISTINCT](https://www.youtube.com/watch?v=Q38lmyjZPK8&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=11)
+> *   [ORDER BY / LIMIT](https://www.youtube.com/watch?v=UkY1YFi_MT4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=12)
+> 
+> **Deliverable: Please state that you have watched the videos and could follow along**
 
-**(Pre-module) Assignment 0: Setup MySQL Workbench** _(1×)_ — used in: Summer 2023 · (Pre-module) Assignment 0: Setup MySQL Workbench
+<sub>Used in: Summer 2023 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos · Summer 2024 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos</sub>
 
-**Assignment 0: Setup MySQL Workbench** _(1×)_ — used in: Summer 2023 · Assignment 0: Setup MySQL Workbench
+**Assignment 0: Setup** _(2×)_
 
-**Assignment 0: Setup MySQL Workbench and Slack** _(1×)_ — used in: Summer 2023 · Assignment 0: Setup MySQL Workbench and Slack
+> This assignment ensures that you are all set up and ready to follow the material presented in the course.
+> 
+> ### Access BigQuery
+> 
+> *   Go to [https://console.cloud.google.com](https://console.cloud.google.com) and log in using your NYU account
+> *   Click on the **upper left corner** and create a "New Project"
+> *   Pick any name for your project and select "nyu.edu" as your organization
+> *   Go to [https://console.cloud.google.com/bigquery?project=nyu-datasets](https://console.cloud.google.com/bigquery?project=nyu-datasets)
+> *   **Press the "star" button next to "nyu-datasets" to bookmark it**
+> *   When you open the "nyu-datasets", you should be able to see a few databases like "citibike", "facebook", "imdb", "google\_trends", "prosper\_data", "weather", etc.
+> *   Select "citibike" to open; select "dataset" and press the three vertical dots next to it; then select "Query"
+> *   Type the query below
+> 
+>     **SELECT \* FROM \`nyu-datasets.citibike.m\_dataset\` LIMIT 1000
+>     **and execute it by pressing the "Run" button.
+> 
+> **Deliverable**: Submit a screenshot of **your query and the results**, demonstrating that:
+> 
+> *   You could run the query and access the datasets under "nyu-datasets".
+> *   You have starred the nyu-projects project, so you can access it and see it from other projects.
+> 
+> If you face problems:
+> 
+> *   **If your "Run" button is grayed out, ensure that you have set up billing. You may want to enable the free $300 trial for 90 days as a billing setup, even though we will never query BigQuery enough to exceed the monthly free tier.**
+> *   **Make sure that you have selected your own project from the top-left corner.**
+> *   **Make sure to add the star (\*) character after SELECT**
 
-**Assignment 0: Setup MySQL Workbench and Slack** _(1×)_ — used in: Spring 2024 · Assignment 0: Setup MySQL Workbench and Slack
+<sub>Used in: Winter 2025 · Assignment 0: Setup · Fall 2025 · Assignment 0: Setup</sub>
 
-**Assignment 0: Setup MySQL Workbench** _(1×)_ — used in: Summer 2024 · Assignment 0: Setup MySQL Workbench
+**Assignment 0: Setup** _(2×)_
 
-**(Pre-module) Assignment 0: Setup MySQL Workbench and Slack** _(1×)_ — used in: Summer 2024 · (Pre-module) Assignment 0: Setup MySQL Workbench and Slack
+> This assignment ensures that you are all set up and ready to follow the material presented in the course.
+> 
+> ### Access BigQuery
+> 
+> *   Go to [https://console.cloud.google.com](https://console.cloud.google.com) and log in using your NYU account
+> *   Click on the **upper left corner** and create a "New Project"
+> *   Pick any name for your project and select "nyu.edu" as your organization
+> *   Go to [https://console.cloud.google.com/bigquery?project=nyu-datasets](https://console.cloud.google.com/bigquery?project=nyu-datasets)
+> *   **Press the "star" button next to "nyu-datasets" to bookmark it**
+> *   When you open the "nyu-datasets", you should be able to see a few databases like "citibike", "facebook", "imdb", "google\_trends", "prosper\_data", "weather", etc.
+> *   Select "**citibike**" to open; select "**m\_dataset**" and press the three vertical dots next to it; then select "Query"
+> *   Type the query below
+> 
+>     **SELECT \* FROM \`nyu-datasets.citibike.m\_dataset\` LIMIT 1000
+>     **and execute it by pressing the "Run" button.
+> 
+> **Deliverable**: Submit a screenshot of **your query and the results**, demonstrating that:
+> 
+> *   You could run the query and access the datasets under "nyu-datasets".
+> *   You have starred the nyu-projects project, so you can access it and see it from other projects.
+> 
+> If you face problems:
+> 
+> *   **If your "Run" button is grayed out, ensure that you have set up billing. You may want to enable the free $300 trial for 90 days as a billing setup, even though we will never query BigQuery enough to exceed the monthly free tier.**
+> *   **Make sure that you have selected your own project from the top-left corner.**
+> *   **Make sure to add the star (\*) character after SELECT**
 
-**Assignment 0: Setup** _(1×)_ — used in: Summer 2024 · Assignment 0: Setup
+<sub>Used in: Summer 2026 · Assignment 0: Setup</sub>
 
-**(Pre-module) Assignment 0: Setup MySQL Workbench** _(1×)_ — used in: Summer 2025 · (Pre-module) Assignment 0: Setup MySQL Workbench
+**Assignment 0: Setup** _(1×)_
 
-**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(1×)_ — used in: Summer 2025 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments. There are two things to setup:
+> 
+> **a. MySQL Workbench**
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**" and "**imdb**".
+> 
+> **Deliverable: Take a screenshot showing that you were able to connect to the server using MySQL Workbench and see the databases.**
+> 
+> **b. Google Colab**
+> 
+> *   Go to https://colab.research.google.com/
+> *   Select "Sign In" from the top right button.
+> *   When presented with the option of opening a file, select "Github" from the tabs available.
+> *   Type \[[https://github.com/ipeirotis/introduction-to-databases/blob/master/sql\_assignment\_template.ipynb](https://github.com/ipeirotis/introduction-to-databases/blob/master/sql_assignment_template.ipynb)\] as the URL and then press the magnifying glass button.
+> *   Remove the characters "# " in front of the line !sudo pip install.... It should look as:
+> 
+>     !sudo pip install PyMySQL sqlalchemy sql\_magic
+> 
+> *   Select "Runtime => Run all"; you will get a "Warning: This notebook was not authored by Google."; press "Run anyway".
+> *   You should see a few databases listed, including "**facebook**" and "**imdb**".
+> *   **Save the notebook on your Google Drive! (File -> Save a Copy in Drive)**
+> 
+> **Deliverable: Share the Colab notebook with me (panos@stern.nyu.edu) and Joe (jeb877@stern.nyu.edu ); also, paste the shared link in the assignment submission.** _(This will be the way that you will be submitting your SQL assignments.)_
 
-**Assignment 0: Setup MySQL Workbench** _(1×)_ — used in: Summer 2025 · Assignment 0: Setup MySQL Workbench
+<sub>Used in: ~2021 · Assignment 0: Setup</sub>
 
-**Assignment 0: Setup** _(1×)_ — used in: Summer 2025 · Assignment 0: Setup
+**Assignment 0: Setup** _(1×)_
 
-**Pre-Module Assignment 1: Setup** _(1×)_ — used in: Summer 2026 · Pre-Module Assignment 1: Setup
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments. There are two things to setup and submit:
+> 
+> **1\. MySQL Workbench**
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**" and "**imdb**".
+> 
+> **Deliverable: Take a screenshot showing that you were able to connect to the server using MySQL Workbench and see the databases.**
+> 
+> **2\. Google Colab**
+> 
+> *   Go to https://colab.research.google.com/
+> *   Select "Sign In" from the top right button.
+> *   When presented with the option of opening a file, select "Github" from the tabs available.
+> *   Type \[[https://github.com/ipeirotis/introduction-to-databases/blob/master/sql\_assignment\_template.ipynb](https://github.com/ipeirotis/introduction-to-databases/blob/master/sql_assignment_template.ipynb)\] as the URL and then press the magnifying glass button.
+> *   Remove the characters "# " in front of the line !sudo pip install.... It should look as:
+> 
+>     !sudo pip install PyMySQL sqlalchemy sql\_magic
+> 
+> *   Select "Runtime => Run all"; you will get a "Warning: This notebook was not authored by Google."; press "Run anyway".
+> *   You should see a few databases listed, including "**facebook**" and "**imdb**".
+> *   **Save the notebook on your Google Drive! (File -> Save a Copy in Drive)**
+> 
+> **Deliverable: Share the Colab notebook with me (panos@stern.nyu.edu) and Manoj (mj2706@stern.nyu.edu ); also, paste the shared link in the assignment submission.** _(This will be the way that you will be submitting your SQL assignments.)_
+
+<sub>Used in: Summer 2022 · Assignment 0: Setup</sub>
+
+**Assignment 2: Database Navigation, Selection, and Filtering Queries** _(1×)_
+
+> ### A. Database Navigation
+> 
+> 1.  Connect to the "Music" database.
+> 2.  Show all the tables that appear in the Music database.
+> 3.  Using the DESCRIBE command, show the attributes of each table.
+> 4.  Using the results from step 3, identify the primary key for each table above.
+> 5.  Using the "Database > Reverse Engineer" of MySQL workbench, extract the relational schema of the Music database. Save a screenshot of the graphical representation of the schema.
+> 6.  Write a short paragraph describing the entities stored in the database and their relationships. Explain which are the foreign keys used to implement the relationships. (You will need this understanding for later assignments, especially for joining tables correctly).
+> 
+> ### B. Selection Queries
+> 
+> 1.  Show all the artists.
+> 2.  Show all the albums.
+> 3.  Show all the tracks.
+> 4.  List all the names of the artists, without the artist ids, sorted alphabetically.
+> 5.  Show all the album names and the corresponding artist id, but do not show the album\_id. Rename the album\_name attribute to album\_title.
+> 6.  List the ten shortest tracks in terms of playing time.
+> 
+> ### C. Filtering Queries
+> 
+> 1.  Show the entry for the artist with id equal to 5.
+> 2.  Show the entry for the artist named The Rolling Stones.
+> 3.  Using the id of Rolling Stones from Question C.2, list all the albums of The Rolling Stones.
+> 4.  Find the tracks for the artist with id 3, from the artist's album with id 2.
+> 5.  Find the tracts with names that are earlier alphabetically than (is less than) M.
+>     Note that inequality queries can be used with text and not only with numbers.
+> 6.  Find all albums with a title that begins with a character greater than E (not inclusive of albums that start with E) but less than S (again, not inclusive of albums that start with S).
+> 7.  List all the tracts for the artists with ids 1, 3, and 5. Show two variations of the query:  one using the OR Boolean condition and one using the IN operation.
+> 8.  Find all the tracks that include the word "Love" anywhere in the title. It is fine to include tracks where love is part of a bigger word (e.g., lovebird).
+> 
+> **DELIVERABLES: For Part A, for Steps 1-3, we want to see the SQL commands you use.  For Steps 4-6, we want a brief write-up and a screenshot of the database schema that you created. For Parts B and C, we only want to see the SQL commands, not the actual data returned.**
+
+<sub>Used in: Spring 2023 · Assignment 2: Database Navigation, Selection, and Filtering Queries</sub>
+
+**(Pre-module) Assignment 0: Setup MySQL Workbench** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
+> 
+> ### Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+
+<sub>Used in: Summer 2023 · (Pre-module) Assignment 0: Setup MySQL Workbench</sub>
+
+**Assignment 0: Setup MySQL Workbench** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
+> 
+> ### Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+
+<sub>Used in: Summer 2023 · Assignment 0: Setup MySQL Workbench</sub>
+
+**Assignment 0: Setup MySQL Workbench and Slack** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://nyusterntechmba24.slack.com "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+
+<sub>Used in: Summer 2023 · Assignment 0: Setup MySQL Workbench and Slack</sub>
+
+**Assignment 0: Setup MySQL Workbench and Slack** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://tech-gb-2147-w1-s2024.slack.com/ "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+
+<sub>Used in: Spring 2024 · Assignment 0: Setup MySQL Workbench and Slack</sub>
+
+**Assignment 0: Setup MySQL Workbench** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
+> 
+> ### Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Setting to avoid time-out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds.
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+
+<sub>Used in: Summer 2024 · Assignment 0: Setup MySQL Workbench</sub>
+
+**(Pre-module) Assignment 0: Setup MySQL Workbench and Slack** _(1×)_
+
+> This assignment ensures that you are all set up and ready to follow the material presented in the course.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you registered before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Setting to avoid time out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
+> **Deliverable: Take a screenshot showing you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://xfn1-gb-8103-83-u2024.slack.com/ "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+
+<sub>Used in: Summer 2024 · (Pre-module) Assignment 0: Setup MySQL Workbench and Slack</sub>
+
+**Assignment 0: Setup** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Setting to avoid time out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://tech-gb-2147-w1-s2024.slack.com/ "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+
+<sub>Used in: Summer 2024 · Assignment 0: Setup</sub>
+
+**(Pre-module) Assignment 0: Setup MySQL Workbench** _(1×)_
+
+> ### Install MySQL Workbench
+> 
+> This assignment ensures that you are all set up and ready to follow the material presented in the course.
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you registered before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Setting to avoid time out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
+> **Deliverable: Take a screenshot showing you could connect to the server using MySQL Workbench and see the databases.**
+
+<sub>Used in: Summer 2025 · (Pre-module) Assignment 0: Setup MySQL Workbench</sub>
+
+**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(1×)_
+
+> This assignment ensures that you are all set up and ready to follow the material presented in the course and able to submit assignments. I will also ask you to watch the videos from Module 1 and some videos from Module 2, so that we can have more time to focus on in-person activities.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://nyustern-msba.slack.com "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+> 
+> ### Part 3: Watch videos
+> 
+> Please watch the videos from Module 1 (also available under Content > Module 1 > Resources)
+> 
+> *   [Entity-Relationship Model, Entities, Attributes, and Primary Keys](https://www.youtube.com/watch?v=m2i4KVXrrEQ&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=3)
+> *   [Relationships and Cardinalities](https://www.youtube.com/watch?v=ecDKgZ9giWs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=4)
+> *   [Entity Relationship Diagrams](https://www.youtube.com/watch?v=MXd1yzEwVYg&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=5)
+> 
+> and the following videos from Module 2 (also available under Content > Module 2 > Resources)
+> 
+> *   [Intro to SQL](https://www.youtube.com/watch?v=XqGKb235IVs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=6)
+> *   [Navigating a Database](https://www.youtube.com/watch?v=pyBN57RvmBE&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=7)
+> *   [SELECT \* Statement](https://www.youtube.com/watch?v=rgWZ51xb3mw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=8)
+> *   [SELECT \* Statement EXTRA](https://www.youtube.com/watch?v=QMfCxGnTTws&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=9)
+> *   [SELECT Attributes & SELECT Attributes As](https://www.youtube.com/watch?v=9vvcCcMcJS4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=10)
+> *   [SELECT DISTINCT](https://www.youtube.com/watch?v=Q38lmyjZPK8&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=11)
+> *   [ORDER BY / LIMIT](https://www.youtube.com/watch?v=UkY1YFi_MT4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=12)
+> 
+> **Deliverable: Please state that you have watched the videos and could follow along**
+
+<sub>Used in: Summer 2025 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos</sub>
+
+**Assignment 0: Setup MySQL Workbench** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
+> 
+> ### Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Setting to avoid time-out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds.
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+
+<sub>Used in: Summer 2025 · Assignment 0: Setup MySQL Workbench</sub>
+
+**Assignment 0: Setup** _(1×)_
+
+> This assignment ensures that you are all setup and ready to follow the material presented in the course.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Setting to avoid time out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: (Experimental) Access BigQuery
+> 
+> _We will try to use these databases in later parts of the course. This is the first time that I am trying to give access to substantially big datasets through BigQuery (the data warehouse solution by Google), and I am_
+> 
+> *   Go to [https://console.cloud.google.com](https://console.cloud.google.com) and login using your NYU account
+> *    Click on the **upper left corner** and create a "New Project"
+> *   Pick any name for your project and select "nyu.edu" as your organization
+> *   Go to [https://console.cloud.google.com/bigquery?project=nyu-datasets](https://console.cloud.google.com/bigquery?project=nyu-datasets)
+> *   Press the "star" button next to "nyu-datasets" to bookmark it
+> *   When you open the "nyu-datasets" you should be able to see a few databases like "citibike", "google\_trends", "prosper\_data", "weather" etc.
+> *   Select "citibike" to open; select "dataset" and press the three vertical dots next to it; then select "Query"
+> *   Execute the query
+> 
+>     **SELECT \* FROM \`nyu-datasets.citibike.dataset\` LIMIT 1000**
+> 
+>     *   **Make sure that you have selected your own project from the top-left corner**
+>     *   **Make sure to add the star (\*) character after SELECT**
+> 
+> **_Even if you fail to access the data, you get full credit. Just report the issue that you faced._**
+
+<sub>Used in: Summer 2025 · Assignment 0: Setup</sub>
+
+**Pre-Module Assignment 1: Setup** _(1×)_
+
+> This assignment ensures that you are all set up and ready to follow the material presented in the course.
+> 
+> ### Access BigQuery
+> 
+> *   Go to [https://console.cloud.google.com](https://console.cloud.google.com) and log in using your NYU account
+> *   Click on the **upper left corner** and create a "New Project"
+> *   Pick any name for your project and select "nyu.edu" as your organization
+> *   Go to [https://console.cloud.google.com/bigquery?project=nyu-datasets](https://console.cloud.google.com/bigquery?project=nyu-datasets)
+> *   **Press the "star" button next to "nyu-datasets" to bookmark it**
+> *   When you open the "nyu-datasets", you should be able to see a few databases like "citibike", "facebook", "imdb", "google\_trends", "prosper\_data", "weather", etc.
+> *   Select "**citibike**" to open; select "**m\_dataset**" and press the three vertical dots next to it; then select "Query"
+> *   Type the query below
+> 
+>     **SELECT \* FROM \`nyu-datasets.citibike.m\_dataset\` LIMIT 1000
+>     **and execute it by pressing the "Run" button.
+> 
+> **Deliverable**: Submit a screenshot of **your query and the results**, demonstrating that:
+> 
+> *   You could run the query and access the datasets under "nyu-datasets".
+> *   You have starred the nyu-projects project, so you can access it and see it from other projects.
+> 
+> If you face problems:
+> 
+> *   **If your "Run" button is grayed out, ensure that you have set up billing. You may want to enable the free $300 trial for 90 days as a billing setup, even though we will never query BigQuery enough to exceed the monthly free tier.**
+> *   **Make sure that you have selected your own project from the top-left corner.**
+> *   **Make sure to add the star (\*) character after SELECT**
+
+<sub>Used in: Summer 2026 · Pre-Module Assignment 1: Setup</sub>
 
 ### ER & schemas — 10 unique
 
-**Assignment 1: ER Diagrams and Relational Schemas** _(6×)_ — used in: Spring 2023 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2023 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas
+**Assignment 1: ER Diagrams and Relational Schemas** _(6×)_
 
-**Assignment 1: ER Diagrams and Relational Schemas** _(4×)_ — used in: Spring 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas
+> You are asked to design an ER diagram for a system that keeps track of real estate properties and listings. Below you can find the specifications given by a domain expert.
+> 
+> *   We have a set of lots in an area. Each **lot** has an id that is unique and does not change over time. It also has an address and square footage that are stable and do not change over time.
+> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.)
+> *   The building can contain one or more **dwellings**. For example, a single-family house contains one dwelling, and a multi-family building contains multiple dwellings (i.e., multiple condo housing units).
+> *   Each **dwelling** has a property type (single-family house, condo, coop, etc.), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it that is unique for that particular multi-family building. In single-family units, the unit number is not as useful, but we assume that the unit number exists and always gets a default value.  We assume that the number of bedrooms, bathrooms and square footage remain unchanged over the life of the dwelling.
+> *   Each dwelling has one or more **owners.** The owners buy the dwelling through a **sales transaction**. (Correspondingly, sell the unit when they transfer ownership to new owners.) We want to keep the historic ownership information, so the design should allow keeping the information for both the past and the current owners without confusion.
+> *   The dwelling can be bought and sold, which transfers ownership from the sellers to the buyers. Each sale is stored as a transaction with a unique transaction id, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property is always the person(s) that were the owner(s) of the property at that time_. The buyer(s) correspondingly become the new owners of the house/unit.
+> *   When an owner wants to sell a dwelling, they often (but not always) work with a **real estate agent** so that the agent creates a **sale listing** for their dwelling, advertising the dwelling and the asking price.  The agent acts as a seller's agent. Sometimes, the listing results in a sale (and a corresponding sale transaction), and sometimes the listing does not result in a sale (and the ownership remains with the current owners).
+> *   The buyers may also have an agent who helps them find a dwelling and complete the transaction. The agent acts as a buyer's agent.
+> *   Note that a buyer's agent is associated with a sale transaction, as we only want to record information for the buyer agent only when the buyer buys a dwelling. On the other hand, a seller's agent is associated with a listing, which may or may not end up in a transaction.
+> 
+> Your goal is to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into relational tables using the correct primary and foreign keys to implement the relationships.
+> 
+> Remember that the goal of a good design is to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appearing in two lots, the same building having conflicting ownership information, and so on.) In this scenario, the earlier parts are pretty easy to model, but things become more complex once you get to modeling and storing the transactions.
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema: Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well but is not always perfect.
 
-**Post-module Assignment 1: ER Diagrams and Relational Schemas** _(3×)_ — used in: Summer 2023 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Post-module Assignment 1: ER Diagrams and Relational Schemas
+<sub>Used in: Spring 2023 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2023 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas</sub>
 
-**Assignment 1a: ER Diagrams and Relational Schemas** _(3×)_ — used in: Winter 2025 · Assignment 1a: ER Diagrams and Relational Schemas · Summer 2026 · Assignment 1a: ER Diagrams and Relational Schemas
+**Assignment 1: ER Diagrams and Relational Schemas** _(4×)_
 
-**Assignment 1: ER Diagram and Database Design for Time Card Application** _(2×)_ — used in: ~2021 · Assignment 1: ER Diagram and Database Design for Time Card Application
+> You are asked to design an ER diagram for a system that keeps track of real estate properties and listings. Below, you can find the specifications given by a domain expert.
+> 
+> *   We have a set of lots in an area. Each **lot** has a unique ID that does not change over time. It also has an address and square footage that are stable and do not change over time.
+> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.)
+> *   The building can contain one or more **dwellings**. For example, a single-family house contains one dwelling, and a multi-family building contains multiple dwellings (i.e., multiple condo housing units).
+> *   Each **dwelling** has a property type (single-family house, condo, coop, etc.), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it that is unique for that particular multi-family building. In single-family units, the unit number is not as useful, but we assume that the unit number exists and always gets a default value.  We assume that the property type, number of bedrooms, bathrooms, and square footage remain unchanged over the life of the dwelling.
+> *   Each dwelling has one or more **owners.** The owners buy the dwelling through a **sales transaction**. (Correspondingly, sell the unit when they transfer ownership to new owners.) We want to keep the historic ownership information, so the design should allow the information to be kept for both the past and the current owners without confusion.
+> *   The dwelling can be bought and sold, which transfers ownership from the sellers to the buyers. Each sale is stored as a transaction with a unique transaction ID, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property is always the person(s) that were the owner(s) of the property at that time_. The buyer(s) correspondingly become the new owners of the house/unit.
+> *   When an owner wants to sell a dwelling, they often (but not always) work with a **real estate agent** so that the agent creates a **sale listing** for their dwelling, advertising the dwelling and the asking price.  The agent acts as a seller's agent. Sometimes, the listing results in a sale (and a corresponding sale transaction); sometimes, the listing does not result in a sale (and the ownership remains with the current owners).
+> *   The buyers may also have an agent who helps them find a dwelling and complete the transaction. The agent acts as a buyer's agent.
+> *   Note that a buyer's agent is associated with a sale transaction, as we want to record information for the buyer agent only when the buyer buys a dwelling. On the other hand, a seller's agent is associated with a listing, which may or may not end up in a transaction.
+> 
+> You aim to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into relational tables using the correct primary and foreign keys to implement the relationships.
+> 
+> Remember that a good design aims to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appears in two lots, the same building has conflicting ownership information, and so on.) In this scenario, the earlier parts are pretty easy to model, but things become more complex once you get to modeling and storing the transactions.
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema: Once you create the ER Diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well but is not always perfect.
 
-**Assignment 1: ER Diagram and Database Design** _(2×)_ — used in: ~2021 · Assignment 1: ER Diagram and Database Design · Summer 2022 · Assignment 1: ER Diagram and Database Design
+<sub>Used in: Spring 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas</sub>
 
-**Assignment 1: ER Diagrams and Relational Schemas** _(1×)_ — used in: Spring 2023 · Assignment 1: ER Diagrams and Relational Schemas
+**Post-module Assignment 1: ER Diagrams and Relational Schemas** _(3×)_
 
-**Assignment 1: ER Diagrams and Relational Schemas** _(1×)_ — used in: Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas
+> You are asked to design an ER diagram for a system that keeps track of real estate properties and listings. Below you can find the specifications given by a domain expert.
+> 
+> *   We have a set of lots in an area. Each **lot** has an id that is unique and does not change over time. It also has an address and square footage that are stable and do not change over time.
+> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.)
+> *   The building can contain one or more **dwellings**. For example, a single-family house contains one dwelling, and a multi-family building contains multiple dwellings (i.e., multiple condo housing units).
+> *   Each **dwelling** has a property type (single-family house, condo, coop, etc.), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it that is unique for that particular multi-family building. In single-family units, the unit number is not as useful, but we assume that the unit number exists and always gets a default value.  We assume that the number of bedrooms, bathrooms and square footage remain unchanged over the life of the dwelling.
+> *   Each dwelling has one or more **owners.** The owners buy the dwelling through a **sales transaction**. (Correspondingly, sell the unit when they transfer ownership to new owners.) We want to keep the historic ownership information, so the design should allow keeping the information for both the past and the current owners without confusion.
+> *   The dwelling can be bought and sold, which transfers ownership from the sellers to the buyers. Each sale is stored as a transaction with a unique transaction id, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property is always the person(s) that were the owner(s) of the property at that time_. The buyer(s) correspondingly become the new owners of the house/unit.
+> *   When an owner wants to sell a dwelling, they often (but not always) work with a **real estate agent** so that the agent creates a **sale listing** for their dwelling, advertising the dwelling and the asking price.  The agent acts as a seller's agent. Sometimes, the listing results in a sale (and a corresponding sale transaction), and sometimes the listing does not result in a sale (and the ownership remains with the current owners).
+> *   The buyers may also have an agent who helps them find a dwelling and complete the transaction. The agent acts as a buyer's agent.
+> *   Note that a buyer's agent is associated with a sale transaction, as we only want to record information for the buyer agent only when the buyer buys a dwelling. On the other hand, a seller's agent is associated with a listing, which may or may not end up in a transaction.
+> 
+> Your goal is to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into relational tables using the correct primary and foreign keys to implement the relationships.
+> 
+> Remember that the goal of a good design is to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appearing in two lots, the same building having conflicting ownership information, and so on.) In this scenario, the earlier parts are pretty easy to model, but things become more complex once you get to modeling and storing the transactions.
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema: Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well but is not always perfect.
 
-**Assignment 1a: ER Diagrams and Relational Schemas** _(1×)_ — used in: Fall 2025 · Assignment 1a: ER Diagrams and Relational Schemas
+<sub>Used in: Summer 2023 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Post-module Assignment 1: ER Diagrams and Relational Schemas</sub>
 
-**Post-Module Assignment 1: ER Diagrams and Relational Schemas** _(1×)_ — used in: Summer 2026 · Post-Module Assignment 1: ER Diagrams and Relational Schemas
+**Assignment 1a: ER Diagrams and Relational Schemas** _(3×)_
+
+> #### Business Scenario
+> 
+> You have been hired by **CarConnect**, an online marketplace that links private vehicle owners, franchised dealers, and buyers nationwide. The data team needs an operational database that:
+> 
+> *   preserves the complete ownership history of every vehicle,
+> 
+> *   supports listings that may or may not convert into sales, and
+> 
+> *   captures the roles of professionals (“agents”) who assist the parties.
+> 
+> The domain expert supplied the following specifications.
+> 
+> 1.  **Vehicle**
+> 
+>     *   Every car is identified by its **VIN** (Vehicle Identification Number) — globally unique and immutable.
+> 
+>     *   Fixed attributes: make, model, model-year, factory color, factory trim.
+> 
+>     *   Each vehicle is physically stored at one **Dealership** lot at any point in time. (A dealership may store zero or many vehicles; a vehicle is always stored at exactly one lot.)
+> 
+> 2.  **Ownership & Transfers**
+> 
+>     *   At any moment a vehicle has one or more **Owner**(s).
+> 
+>     *   A change of ownership occurs exclusively through a **SaleTransaction**.
+> 
+>     *   A sale records `TransactionID`, `SaleDate`, and `SalePrice`.
+> 
+>     *   Each sale lists the **buyer**(s) only; the seller(s) are inferred from the immediately preceding sale.
+> 
+>     *   Multiple buyers may purchase jointly, and a buyer may participate in many transactions over time (collectors, leasing companies, etc.).
+> 
+> 3.  **Listings**
+> 
+>     *   Before selling, an owner can create a **Listing** that advertises the vehicle.
+> 
+>     *   A vehicle may have zero, one, or many listings over its life.
+> 
+>     *   A listing stores `ListingID`, `DatePosted`, `AskingPrice`, and a status flag (`Active`, `Withdrawn`, `Expired`, `Sold`).
+> 
+>     *   Exactly one **seller-side Agent** (a licensed dealer or private broker) manages each listing.
+> 
+>     *   A listing may, optionally, lead to a SaleTransaction. If it does, there is a one-to-one link between that listing and the resulting sale.
+> 
+> 4.  **Agents**
+> 
+>     *   **Buyer-side Agent**: an (optional) professional who assists buyers; recorded only when a sale is completed.
+> 
+>     *   **Seller-side Agent**: described above; tied to listings, never directly to transactions.
+> 
+>     *   A single person or firm may take both roles in different deals, but never both roles in the same sale.
+> 
+> 5.  **Dealership**
+> 
+>     *   Identified by `DealershipID`, with static attributes: legal name, lot address, and franchise brand (if any).
+> 
+> **Design objectives**
+> 
+> *   Produce an **ER diagram** that shows all entities, attributes, and relationship cardinalities.
+> 
+> *   Translate the diagram into relational tables with primary keys and foreign keys that enforce those cardinalities.
+> 
+> *   Ensure the design eliminates redundancy and guards against anomalies (e.g., a vehicle simultaneously stored in two lots, conflicting owner histories, orphan listings).
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationships among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file, or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus-old.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema. Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well, but is not always perfect.
+
+<sub>Used in: Winter 2025 · Assignment 1a: ER Diagrams and Relational Schemas · Summer 2026 · Assignment 1a: ER Diagrams and Relational Schemas</sub>
+
+**Assignment 1: ER Diagram and Database Design for Time Card Application** _(2×)_
+
+> The company you work for wants to digitize their time cards. You are asked to design the database for submitting and approving time cards.
+> 
+> *   Each timecard should have a unique id, hours worked, date submitted, and status, which is either approved, not approved, or pending.
+> *   Each employee has a unique id, name and address, and method of payment: either direct deposit or physical check.
+> *   Each employee submits a time card every pay period (i.e., in 1 year, they will submit multiple time cards).
+> *   Each manager has a unique id and a name.
+> *   Each employee is associated with exactly one manager; each manager is in charge of multiple employees.
+> *   Each manager approves time cards. The manager may approve also timecards for employees that are not necessarily managed by him/her.
+> *   _Trickier part_: How would you handle the case when each manager is also an employee?
+> 
+> **Deliverable**
+> 
+> *   Create an ER diagram, illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities
+> *   You can submit your diagram and SQL queries as a Word or PDF file, or any format that we can easily read.
+
+<sub>Used in: ~2021 · Assignment 1: ER Diagram and Database Design for Time Card Application</sub>
+
+**Assignment 1: ER Diagram and Database Design** _(2×)_
+
+> You have to design an ER diagram for a system that keeps track of real estate properties and listings. Below you can find the specifications given by a domain expert.
+> 
+> *   We have a set of lots in an area. Each **lot** has an id that is unique and does not change over time. It also has an address and square footage that are stable and do not change over time.
+> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.) The building can be a single-family house or a multi-family building. A multi-family building will have multiple condo housing units in it.
+> *   Each **dwelling** has a property type (single-family house or condo housing unit), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it, that is unique for that particular multi-family building. We assume that the number of bedrooms, bathrooms, and square footage remain unchanged over the life of the dwelling.
+> *   Each dwelling has one or more **owners**, which buy the dwelling through a **sales transaction**. (And correspondingly, sell the unit when they transfer ownership to new owners.)
+> *   The dwelling can be bought and sold, an action that transfers ownership from the sellers to the buyers. Each sale is stored as a transaction that has a unique transaction id, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property are always the person(s) that were the owner(s) of the property at that time (\*\*\*)_. The buyer(s), correspondingly become the new owners of the house/unit.
+> *   When an owner wants to sell a house, they often (but not always) work with a **real estate agent**, and create a **sale listing** for their property, listing the asking price for the house. Sometimes, the listing results in a sale (and a corresponding sale transaction), and sometimes the listing does not result in a sale (and the ownership remains with the current owners).
+> *   The buyers may also have an agent, who helps them find the house and complete the transaction. Note that a buyer's agent is associated with a sale transaction, while a seller agent is associated with a listing, which may or may not end up in a transaction.
+> 
+> Your goal is to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into a set of relational tables using the right primary and foreign keys to implement the relationships. Remember that the goal of a good design is to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appearing in two lots, the same building having conflicting ownership information, and so on.)
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> **Deliverable**
+> 
+> *   Create an ER diagram, illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities
+> *   You can submit your diagram and the tables as a Word or PDF file, or any format that we can easily read.
+
+<sub>Used in: ~2021 · Assignment 1: ER Diagram and Database Design · Summer 2022 · Assignment 1: ER Diagram and Database Design</sub>
+
+**Assignment 1: ER Diagrams and Relational Schemas** _(1×)_
+
+> You are asked to design an ER diagram for a system that keeps track of real estate properties and listings. Below you can find the specifications given by a domain expert.
+> 
+> *   We have a set of lots in an area. Each **lot** has an id that is unique and does not change over time. It also has an address and square footage that are stable and do not change over time.
+> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.)
+> *   The building can contain one or more **dwellings**. For example, a single-family house contains one dwelling, and a multi-family building contains multiple dwellings (i.e., multiple condo housing units).
+> *   Each **dwelling** has a property type (single-family house, condo, coop, etc.), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it that is unique for that particular multi-family building. In single-family units, the unit number is not as useful, but we assume that the unit number exists and always gets a default value.  We assume that the number of bedrooms, bathrooms and square footage remain unchanged over the life of the dwelling.
+> *   Each dwelling has one or more **owners.** The owners buy the dwelling through a **sales transaction**. (Correspondingly, sell the unit when they transfer ownership to new owners.) We want to keep the historic ownership information, so the design should allow keeping the information for both the past and the current owners without confusion.
+> *   The dwelling can be bought and sold, which transfers ownership from the sellers to the buyers. Each sale is stored as a transaction with a unique transaction id, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property is always the person(s) that were the owner(s) of the property at that time_. The buyer(s) correspondingly become the new owners of the house/unit.
+> *   When an owner wants to sell a dwelling, they often (but not always) work with a **real estate agent** so that the agent creates a **sale listing** for their dwelling, advertising the dwelling and the asking price.  The agent acts as a seller's agent. Sometimes, the listing results in a sale (and a corresponding sale transaction), and sometimes the listing does not result in a sale (and the ownership remains with the current owners).
+> *   The buyers may also have an agent who helps them find a dwelling and complete the transaction. The agent acts as a buyer's agent.
+> *   Note that a buyer's agent is associated with a sale transaction, as we only want to record information for the buyer agent only when the buyer buys a dwelling. On the other hand, a seller's agent is associated with a listing, which may or may not end up in a transaction.
+> 
+> Your goal is to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into relational tables using the correct primary and foreign keys to implement the relationships.
+> 
+> Remember that the goal of a good design is to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appearing in two lots, the same building having conflicting ownership information, and so on.) In this scenario, the earlier parts are pretty easy to model, but things become more complex once you get to modeling and storing the transactions.
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   Show the corresponding SQL queries that create the tables for your relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema: Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well but is not always perfect.
+> 
+> Once you have a relational schema and are happy with it, you can click on "options" for the relational schema and "Generate SQL." Again, please ensure that the generated SQL is correct; ERD Plus works well but is not always perfect.
+
+<sub>Used in: Spring 2023 · Assignment 1: ER Diagrams and Relational Schemas</sub>
+
+**Assignment 1: ER Diagrams and Relational Schemas** _(1×)_
+
+> #### Business Scenario
+> 
+> You have been hired by **CarConnect**, an online marketplace that links private vehicle owners, franchised dealers, and buyers nationwide. The data team needs an operational database that:
+> 
+> *   preserves the complete ownership history of every vehicle,
+> 
+> *   supports listings that may or may not convert into sales, and
+> 
+> *   captures the roles of professionals (“agents”) who assist the parties.
+> 
+> The domain expert supplied the following specifications.
+> 
+> 1.  **Vehicle**
+> 
+>     *   Every car is identified by its **VIN** (Vehicle Identification Number) — globally unique and immutable.
+> 
+>     *   Fixed attributes: make, model, model-year, factory color, factory trim.
+> 
+>     *   Each vehicle is physically stored at one **Dealership** lot at any point in time. (A dealership may store zero or many vehicles; a vehicle is always stored at exactly one lot.)
+> 
+> 2.  **Ownership & Transfers**
+> 
+>     *   At any moment a vehicle has one or more **Owner**(s).
+> 
+>     *   A change of ownership occurs exclusively through a **SaleTransaction**.
+> 
+>     *   A sale records `TransactionID`, `SaleDate`, and `SalePrice`.
+> 
+>     *   Each sale lists the **buyer**(s) only; the seller(s) are inferred from the immediately preceding sale.
+> 
+>     *   Multiple buyers may purchase jointly, and a buyer may participate in many transactions over time (collectors, leasing companies, etc.).
+> 
+> 3.  **Listings**
+> 
+>     *   Before selling, an owner can create a **Listing** that advertises the vehicle.
+> 
+>     *   A vehicle may have zero, one, or many listings over its life.
+> 
+>     *   A listing stores `ListingID`, `DatePosted`, `AskingPrice`, and a status flag (`Active`, `Withdrawn`, `Expired`, `Sold`).
+> 
+>     *   Exactly one **seller-side Agent** (a licensed dealer or private broker) manages each listing.
+> 
+>     *   A listing may, optionally, lead to a SaleTransaction. If it does, there is a one-to-one link between that listing and the resulting sale.
+> 
+> 4.  **Agents**
+> 
+>     *   **Buyer-side Agent**: an (optional) professional who assists buyers; recorded only when a sale is completed.
+> 
+>     *   **Seller-side Agent**: described above; tied to listings, never directly to transactions.
+> 
+>     *   A single person or firm may take both roles in different deals, but never both roles in the same sale.
+> 
+> 5.  **Dealership**
+> 
+>     *   Identified by `DealershipID`, with static attributes: legal name, lot address, and franchise brand (if any).
+> 
+> **Design objectives**
+> 
+> *   Produce an **ER diagram** that shows all entities, attributes, and relationship cardinalities.
+> 
+> *   Translate the diagram into relational tables with primary keys and foreign keys that enforce those cardinalities.
+> 
+> *   Ensure the design eliminates redundancy and guards against anomalies (e.g., a vehicle simultaneously stored in two lots, conflicting owner histories, orphan listings).
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationships among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file, or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema. Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well, but is not always perfect.
+
+<sub>Used in: Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas</sub>
+
+**Assignment 1a: ER Diagrams and Relational Schemas** _(1×)_
+
+> #### Business Scenario
+> 
+> You have been hired by **CarConnect**, an online marketplace that links private vehicle owners, franchised dealers, and buyers nationwide. The data team needs an operational database that:
+> 
+> *   preserves the complete ownership history of every vehicle,
+> 
+> *   supports listings that may or may not convert into sales, and
+> 
+> *   captures the roles of professionals (“agents”) who assist the parties.
+> 
+> The domain expert supplied the following specifications.
+> 
+> 1.  **Vehicle**
+> 
+>     *   Every car is identified by its **VIN** (Vehicle Identification Number) — globally unique and immutable.
+> 
+>     *   Fixed attributes: make, model, model-year, factory color, factory trim.
+> 
+>     *   Each vehicle is physically stored at one **Dealership** lot at any point in time. (A dealership may store zero or many vehicles; a vehicle is always stored at exactly one lot.)
+> 
+> 2.  **Ownership & Transfers**
+> 
+>     *   At any moment a vehicle has one or more **Owner**(s).
+> 
+>     *   A change of ownership occurs exclusively through a **SaleTransaction**.
+> 
+>     *   A sale records `TransactionID`, `SaleDate`, and `SalePrice`.
+> 
+>     *   Each sale lists the **buyer**(s) only; the seller(s) are inferred from the immediately preceding sale.
+> 
+>     *   Multiple buyers may purchase jointly, and a buyer may participate in many transactions over time (collectors, leasing companies, etc.).
+> 
+> 3.  **Listings**
+> 
+>     *   Before selling, an owner can create a **Listing** that advertises the vehicle.
+> 
+>     *   A vehicle may have zero, one, or many listings over its life.
+> 
+>     *   A listing stores `ListingID`, `DatePosted`, `AskingPrice`, and a status flag (`Active`, `Withdrawn`, `Expired`, `Sold`).
+> 
+>     *   Exactly one **seller-side Agent** (a licensed dealer or private broker) manages each listing.
+> 
+>     *   A listing may, optionally, lead to a SaleTransaction. If it does, there is a one-to-one link between that listing and the resulting sale.
+> 
+> 4.  **Agents**
+> 
+>     *   **Buyer-side Agent**: an (optional) professional who assists buyers; recorded only when a sale is completed.
+> 
+>     *   **Seller-side Agent**: described above; tied to listings, never directly to transactions.
+> 
+>     *   A single person or firm may take both roles in different deals, but never both roles in the same sale.
+> 
+> 5.  **Dealership**
+> 
+>     *   Identified by `DealershipID`, with static attributes: legal name, lot address, and franchise brand (if any).
+> 
+> **Design objectives**
+> 
+> *   Produce an **ER diagram** that shows all entities, attributes, and relationship cardinalities.
+> 
+> *   Translate the diagram into relational tables with primary keys and foreign keys that enforce those cardinalities.
+> 
+> *   Ensure the design eliminates redundancy and guards against anomalies (e.g., a vehicle simultaneously stored in two lots, conflicting owner histories, orphan listings).
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationships among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file, or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema. Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well, but is not always perfect.
+
+<sub>Used in: Fall 2025 · Assignment 1a: ER Diagrams and Relational Schemas</sub>
+
+**Post-Module Assignment 1: ER Diagrams and Relational Schemas** _(1×)_
+
+> #### Business Scenario
+> 
+> You have been hired by **CarConnect**, an online marketplace that links private vehicle owners, franchised dealers, and buyers nationwide. The data team needs an operational database that:
+> 
+> *   preserves the complete ownership history of every vehicle,
+> 
+> *   supports listings that may or may not convert into sales, and
+> 
+> *   captures the roles of professionals (“agents”) who assist the parties.
+> 
+> The domain expert supplied the following specifications.
+> 
+> 1.  **Vehicle**
+> 
+>     *   Every car is identified by its **VIN** (Vehicle Identification Number) — globally unique and immutable.
+> 
+>     *   Fixed attributes: make, model, model-year, factory color, factory trim.
+> 
+>     *   Each vehicle is physically stored at one **Dealership** lot at any point in time. (A dealership may store zero or many vehicles; a vehicle is always stored at exactly one lot.)
+> 
+> 2.  **Ownership & Transfers**
+> 
+>     *   At any moment a vehicle has one or more **Owner**(s).
+> 
+>     *   A change of ownership occurs exclusively through a **SaleTransaction**.
+> 
+>     *   A sale records `TransactionID`, `SaleDate`, and `SalePrice`.
+> 
+>     *   Each sale lists the **buyer**(s) only; the seller(s) are inferred from the immediately preceding sale.
+> 
+>     *   Multiple buyers may purchase jointly, and a buyer may participate in many transactions over time (collectors, leasing companies, etc.).
+> 
+> 3.  **Listings**
+> 
+>     *   Before selling, an owner can create a **Listing** that advertises the vehicle.
+> 
+>     *   A vehicle may have zero, one, or many listings over its life.
+> 
+>     *   A listing stores `ListingID`, `DatePosted`, `AskingPrice`, and a status flag (`Active`, `Withdrawn`, `Expired`, `Sold`).
+> 
+>     *   Exactly one **seller-side Agent** (a licensed dealer or private broker) manages each listing.
+> 
+>     *   A listing may, optionally, lead to a SaleTransaction. If it does, there is a one-to-one link between that listing and the resulting sale.
+> 
+> 4.  **Agents**
+> 
+>     *   **Buyer-side Agent**: an (optional) professional who assists buyers; recorded only when a sale is completed.
+> 
+>     *   **Seller-side Agent**: described above; tied to listings, never directly to transactions.
+> 
+>     *   A single person or firm may take both roles in different deals, but never both roles in the same sale.
+> 
+> 5.  **Dealership**
+> 
+>     *   Identified by `DealershipID`, with static attributes: legal name, lot address, and franchise brand (if any).
+> 
+> **Design objectives**
+> 
+> *   Produce an **ER diagram** that shows all entities, attributes, and relationship cardinalities.
+> 
+> *   Translate the diagram into relational tables with primary keys and foreign keys that enforce those cardinalities.
+> 
+> *   Ensure the design eliminates redundancy and guards against anomalies (e.g., a vehicle simultaneously stored in two lots, conflicting owner histories, orphan listings).
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationships among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file, or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus-old.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema. Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well, but is not always perfect.
+
+<sub>Used in: Summer 2026 · Post-Module Assignment 1: ER Diagrams and Relational Schemas</sub>
 
 ### Selection — 2 unique
 
-**Assignment 2: Navigating a database and selection queries** _(2×)_ — used in: ~2021 · Assignment 2: Navigating a database and selection queries
+**Assignment 2: Navigating a database and selection queries** _(2×)_
 
-**Assignment 2: Navigating a database and selection queries** _(2×)_ — used in: ~2021 · Assignment 2: Navigating a database and selection queries · Summer 2022 · Assignment 2: Navigating a database and selection queries
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session2/assignment_selection_queries.ipynb)
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 2: Navigating a database and selection queries</sub>
+
+**Assignment 2: Navigating a database and selection queries** _(2×)_
+
+> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session2/assignment_selection_queries.ipynb)\]
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 2: Navigating a database and selection queries · Summer 2022 · Assignment 2: Navigating a database and selection queries</sub>
 
 ### Filtering — 4 unique
 
-**Post-module Assignment 2: Selection and Filtering Queries** _(3×)_ — used in: Summer 2023 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2024 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2025 · Post-module Assignment 2: Selection and Filtering Queries
+**Post-module Assignment 2: Selection and Filtering Queries** _(3×)_
 
-**Assignment 3: Filtering Queries** _(2×)_ — used in: ~2021 · Assignment 3: Filtering Queries
+> Complete Assignment 2A, Assignment 2B, and Assignment 2C under "Quizzes".
 
-**Assignment 3: Filtering Queries** _(2×)_ — used in: ~2021 · Assignment 3: Filtering Queries · Summer 2022 · Assignment 3: Filtering Queries
+<sub>Used in: Summer 2023 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2024 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2025 · Post-module Assignment 2: Selection and Filtering Queries</sub>
 
-**Assignment 2: Selection and Filtering Queries** _(2×)_ — used in: Summer 2025 · Assignment 2: Selection and Filtering Queries
+**Assignment 3: Filtering Queries** _(2×)_
+
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session3/assignment_filtering_queries.ipynb)
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 3: Filtering Queries</sub>
+
+**Assignment 3: Filtering Queries** _(2×)_
+
+> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session3/assignment_filtering_queries.ipynb)\]
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 3: Filtering Queries · Summer 2022 · Assignment 3: Filtering Queries</sub>
+
+**Assignment 2: Selection and Filtering Queries** _(2×)_
+
+> Complete Assignment 2A, Assignment 2B, and Assignment 2C under "Quizzes".
+
+<sub>Used in: Summer 2025 · Assignment 2: Selection and Filtering Queries</sub>
 
 ### Joins — 5 unique
 
-**Post-module Assignment 3: Joins** _(3×)_ — used in: Summer 2023 · Post-module Assignment 3: Joins · Summer 2024 · Post-module Assignment 3: Joins · Summer 2025 · Post-module Assignment 3: Joins
+**Post-module Assignment 3: Joins** _(3×)_
 
-**Assignment 4: Join queries** _(2×)_ — used in: ~2021 · Assignment 4: Join queries
+> Complete Assignment 3 under "Quizzes".
 
-**Assignment 4: Join queries** _(2×)_ — used in: ~2021 · Assignment 4: Join queries · Summer 2022 · Assignment 4: Join queries
+<sub>Used in: Summer 2023 · Post-module Assignment 3: Joins · Summer 2024 · Post-module Assignment 3: Joins · Summer 2025 · Post-module Assignment 3: Joins</sub>
 
-**Assignment 3: Joins** _(2×)_ — used in: Summer 2025 · Assignment 3: Joins
+**Assignment 4: Join queries** _(2×)_
 
-**Assignment 3: Joins** _(1×)_ — used in: Spring 2023 · Assignment 3: Joins
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session4/assignment_join_queries.ipynb)
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 4: Join queries</sub>
+
+**Assignment 4: Join queries** _(2×)_
+
+> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session4/assignment_join_queries.ipynb)\]
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 4: Join queries · Summer 2022 · Assignment 4: Join queries</sub>
+
+**Assignment 3: Joins** _(2×)_
+
+> Complete Assignment 3 under "Quizzes".
+
+<sub>Used in: Summer 2025 · Assignment 3: Joins</sub>
+
+**Assignment 3: Joins** _(1×)_
+
+> 1.  List all the album names by the band `New Order`
+> 2.  List the tracks for the album `Second Coming`
+> 3.  List all the track names, the corresponding album name, and the corresponding artist name
+> 4.  List all the tracks by the artist `The Stone Roses` and rank them by time length, from shortest to longest
+> 5.  The table `tracks_played` contains the tracks the users listened to and the time they listened to the songs. Show the user's first and last name, the user id, the album name, the track name, and the date/time it was played.
+> 6.  List the first and last names of the users that have not listened to any tracks.
+
+<sub>Used in: Spring 2023 · Assignment 3: Joins</sub>
 
 ### Aggregations — 6 unique
 
-**Post-module Assignment 4: Aggregations** _(3×)_ — used in: Summer 2023 · Post-module Assignment 4: Aggregations · Summer 2024 · Post-module Assignment 4: Aggregations · Summer 2025 · Post-module Assignment 4: Aggregations
+**Post-module Assignment 4: Aggregations** _(3×)_
 
-**Assignment 5: Aggregation Queries** _(2×)_ — used in: ~2021 · Assignment 5: Aggregation Queries
+> Complete Assignment 4 under "Quizzes".
 
-**Assignment 5: Aggregation Queries** _(2×)_ — used in: ~2021 · Assignment 5: Aggregation Queries · Summer 2022 · Assignment 5: Aggregation Queries
+<sub>Used in: Summer 2023 · Post-module Assignment 4: Aggregations · Summer 2024 · Post-module Assignment 4: Aggregations · Summer 2025 · Post-module Assignment 4: Aggregations</sub>
 
-**Assignment 4: Aggregations** _(1×)_ — used in: Spring 2023 · Assignment 4: Aggregations
+**Assignment 5: Aggregation Queries** _(2×)_
 
-**Assignment 4: Aggregations** _(1×)_ — used in: Summer 2025 · Assignment 4: Aggregations
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session5/assignment_aggregate_queries.ipynb).
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
 
-**Assignment 4: Aggregations** _(1×)_ — used in: Summer 2025 · Assignment 4: Aggregations
+<sub>Used in: ~2021 · Assignment 5: Aggregation Queries</sub>
+
+**Assignment 5: Aggregation Queries** _(2×)_
+
+> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session5/assignment_aggregate_queries.ipynb)\] .
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 5: Aggregation Queries · Summer 2022 · Assignment 5: Aggregation Queries</sub>
+
+**Assignment 4: Aggregations** _(1×)_
+
+> 1.  Count the number of artists in the database
+> 2.  Count the number of tracks in the database
+> 3.  Show the average and standard deviation of the track length
+> 4.  For each artist, count the number of albums in the database. You only need to show the id of the artist, not the name of the artist.
+> 5.  For each album, count the number of tracks for that album and the total length of all the tracks in the album. You only need to show the id of the album, not its name.
+> 6.  List the IDs of the albums, where the total album length (across all the album's tracks) is longer than 60 minutes.
+> 7.  For each user, show the total tracks they played and the total amount of time they listened. Assume that each track is played fully.
+> 8.  For every _date_ listed in the tracked\_played table, show the artist's name, the artist id, the number of users that listened to the artist, and the total amount of time users listened to the artist. Assume that each track is played fully.
+> 9.  Show the name of the artist and the number of albums for each artist in the database. Name the column that shows the number of albums as num\_albums.
+> 10.  Show the name of each track and the first and last time it was played. Include tracks that were not played at all. (Hint: You need an outer join.)
+
+<sub>Used in: Spring 2023 · Assignment 4: Aggregations</sub>
+
+**Assignment 4: Aggregations** _(1×)_
+
+> Complete Assignment 4 under "Quizzes".
+
+<sub>Used in: Summer 2025 · Assignment 4: Aggregations</sub>
+
+**Assignment 4: Aggregations** _(1×)_
+
+<sub>Used in: Summer 2025 · Assignment 4: Aggregations</sub>
 
 ### Subqueries — 3 unique
 
-**Post-module Assignment 5: Subqueries** _(3×)_ — used in: Summer 2023 · Post-module Assignment 5: Subqueries · Summer 2024 · Post-module Assignment 5: Subqueries · Summer 2025 · Post-module Assignment 5: Subqueries
+**Post-module Assignment 5: Subqueries** _(3×)_
 
-**Assignment 5: Subqueries** _(2×)_ — used in: Summer 2025 · Assignment 5: Subqueries
+> Complete Assignment 5 under "Quizzes".
 
-**Assignment 5: Subqueries** _(1×)_ — used in: Spring 2023 · Assignment 5: Subqueries
+<sub>Used in: Summer 2023 · Post-module Assignment 5: Subqueries · Summer 2024 · Post-module Assignment 5: Subqueries · Summer 2025 · Post-module Assignment 5: Subqueries</sub>
+
+**Assignment 5: Subqueries** _(2×)_
+
+> Complete Assignment 5 under "Quizzes".
+
+<sub>Used in: Summer 2025 · Assignment 5: Subqueries</sub>
+
+**Assignment 5: Subqueries** _(1×)_
+
+> In the IMDb database, you are asked to analyze the first names of the actors and how they correlate to gender.
+> 
+> Limit your analysis only to first names that do not include a dot "." or parentheses (i.e., ignore "A.", "J.B.", "Alfred (I)" etc.), and only consider first names that appear at least 50 times in the actors table (across both genders).
+> 
+> 1.  Find the names that appear only for male actors but for no female actresses, and report the corresponding frequencies (Hint: the results start with "Richard, 2403", "Mark, 2086", etc).
+> 2.  Find the names that appear only for female actors but for no male actresses, and report the corresponding frequencies.
+> 3.  For names that appear for both males and females, report the names and the frequencies for males and females. Rank on top the most ambiguous names. We will consider as the most ambiguous names are the ones where the formula **log( male\_freq /female\_freq )** is close to 0.
+>     1.  Hint: Mika, Dany, Devon, Toni are the most ambiguous.
+>     2.  Hint: Remember that the log can be both positive and negative; ranking by absolute value (using the [ABS() function](https://www.w3schools.com/sql/func_mysql_abs.asp)) will allow you to rank the smallest numbers first.
+
+<sub>Used in: Spring 2023 · Assignment 5: Subqueries</sub>
 
 ### Window functions — 1 unique
 
-**Assignment 6: Window Queries (OPTIONAL: We did not cover the material)** _(1×)_ — used in: Spring 2023 · Assignment 6: Window Queries (OPTIONAL: We did not cover the material)
+**Assignment 6: Window Queries (OPTIONAL: We did not cover the material)** _(1×)_
+
+> Facebook Database:
+> 
+> 1.  Setup:
+>     *   Create a **temporary table SignUpsOn**, that shows the number of people that signed up on that day (using the MemberSince attribute)
+>     *   Create a **temporary table InactiveOn**, that shows the number of people that became inactive that day (using the LastUpdate attribute)
+> 2.  **SingUpsAsOf**: sing the SignUpsOn table, calculate the total number of users signed up for Facebook up to each date listed in the MemberSince column. (In other words, calculate the cumulative sum of users from the SignUpsOn table.) Use a SUM() function together with a window specification.
+> 3.  **InactiveAsOf**: Using the InactiveOn table, calculate the total number of users who are inactive as of a given date (again,  up to each date in the MemberSince. Use a SUM() function together with a window specification.
+> 4.  Using the results of Steps 2 and 3, calculate the total\_active users for each date. We define total active users as the total signups up to that date, minus the total users that have been inactive up to that date.
+> 
+> Flights Database:
+> 
+> _Note: these are all domestic flights; no international flights in the database._
+> 
+> 1.  **Setup**: Calculate the total number of passengers departing from each airport.  Use the m\_ticket\_prices table; we are interested in the origin and the passengers attributes.
+> 2.  Using the results from Step 1, calculate each airport's **national rank** and **state rank** in terms of departing passengers. The m\_airports table contains the state of each airport. (Note: The number 1 airport nationally will have the most passengers nationwide, while the number 1 per state will have the most passengers within the state.)
+
+<sub>Used in: Spring 2023 · Assignment 6: Window Queries (OPTIONAL: We did not cover the material)</sub>
 
 ### General / other — 2 unique
 
-**Assignment 6: Putting everything together** _(2×)_ — used in: ~2021 · Assignment 6: Putting everything together
+**Assignment 6: Putting everything together** _(2×)_
 
-**Assignment 6: Putting everything together** _(2×)_ — used in: ~2021 · Assignment 6: Putting everything together · Summer 2022 · Assignment 6: Putting everything together
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session6/assignment_combined.ipynb).
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 6: Putting everything together</sub>
+
+**Assignment 6: Putting everything together** _(2×)_
+
+> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session6/assignment_combined.ipynb)\] .
+> 
+> **Deliverables**
+> 
+> *   Open the template notebook on Google Colab.
+> *   Write your SQL queries that answer the questions
+> *   Save the notebook on your Google Drive and share it with me and the TA
+> *   Paste the shared link also here
+
+<sub>Used in: ~2021 · Assignment 6: Putting everything together · Summer 2022 · Assignment 6: Putting everything together</sub>
 
 ### Final exam — 1 unique
 
-**Final Exam** _(1×)_ — used in: Summer 2025 · Final Exam
+**Final Exam** _(1×)_
+
+> You can access the Final Exam under Quizzes.
+> 
+> It is a 90-min exam after you start. You will need the Facebook database and the Flights database.
+
+<sub>Used in: Summer 2025 · Final Exam</sub>
 

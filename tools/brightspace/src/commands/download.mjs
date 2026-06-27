@@ -196,7 +196,10 @@ async function dlQuizzes(ctx, ou, outDir) {
         Due: q.DueDate,
         End: q.EndDate,
         Active: q.IsActive,
-        Attempts: q.AttemptsAllowed && q.AttemptsAllowed.NumberOfAttemptsAllowed,
+        Attempts:
+          q.AttemptsAllowed && q.AttemptsAllowed.IsUnlimited
+            ? 'Unlimited'
+            : q.AttemptsAllowed && q.AttemptsAllowed.NumberOfAttemptsAllowed,
         Questions: questions.length,
       }) +
       '\n\n' +

@@ -66,8 +66,14 @@ let _versions = null;
 export async function versions(ctx) {
   if (_versions) return _versions;
   const pick = (v) => {
+    // D2L's ProductVersions block carries an authoritative LatestVersion; prefer
+    // it over inferring from SupportedVersions (which can include non-numeric
+    // contracts like "unstable" that would otherwise sort to the top).
+    if (v && !Array.isArray(v) && v.LatestVersion) return v.LatestVersion;
     const arr = Array.isArray(v) ? v : v.SupportedVersions || [];
-    const list = arr.map((x) => x.LatestVersion || x.Version || x).filter(Boolean);
+    const list = arr
+      .map((x) => (typeof x === 'string' ? x : x.LatestVersion || x.Version))
+      .filter((s) => /^\d+(\.\d+)*$/.test(String(s))); // stable numeric versions only
     return list.sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true })).pop();
   };
   const le = pick(await getJson(ctx, '/d2l/api/le/versions/'));

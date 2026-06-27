@@ -54,7 +54,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       }
       const asg = await assignments(ctx, c.id);
       for (const f of asg) {
-        const text = plain(f.CustomInstructions);
+        const text = scrubAnswerKey(plain(f.CustomInstructions));
         aOccur.push({ key: normKey(f.Name + ' :: ' + text), title: f.Name, text, topic: topicFor(f.Name), course: c, term });
       }
       console.log(
@@ -241,7 +241,9 @@ function renderByTopic(uniqueQ, uniqueA, courses, stats) {
   for (const [topic, items] of topicSections(uniqueA)) {
     out += `\n### ${topic} — ${items.length} unique\n`;
     items.forEach((g) => {
-      out += `\n**${g.title || '(untitled)'}** _(${g.count}×)_ — used in: ${occLabels(g.occ).join(' · ')}\n`;
+      out += `\n**${g.title || '(untitled)'}** _(${g.count}×)_\n\n`;
+      out += (g.text ? indentBlock(g.text) + '\n\n' : '');
+      out += `<sub>Used in: ${occLabels(g.occ).join(' · ')}</sub>\n`;
     });
   }
   return out + '\n';

@@ -82,6 +82,11 @@ Topics that don't yet have a module:
       assignment availability windows (`Availability` start/end, special access),
       content-module hidden/date-restriction flags, and announcement
       `IsPublished`. (Codex review; none apply to 578630 today.)
+- [x] `tools/brightspace/`: pin API calls to D2L's advertised `LatestVersion`
+      and ignore non-numeric contracts like `unstable` when inferring the
+      version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping
+      the line (`download.mjs`); render assignment bodies (not just titles) in
+      `by-topic.md` so it works as an assignment bank. (Codex review.)
 - [ ] `tools/brightspace/`: `question-bank` dedup keys only on `QuestionText`;
       for MC / multi-select / fill-in / short-answer, fold the relevant
       `QuestionInfo` (choices / accepted answers) into the rendered text and the
