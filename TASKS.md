@@ -92,6 +92,12 @@ Topics that don't yet have a module:
       generation, and the two committed leaks (the Music "most popular entries"
       and the Facebook "average hobbies by Sex" final-exam prompts) are cleaned.
       Row-count hints are left intact. (Codex review.)
+- [ ] `question-bank`: **regenerate the committed bank** — the checked-in
+      `bank.json` / `by-topic.md` / `bank.csv` were built before the `qType`
+      fix, so 183/203 questions are mislabelled `Matching` (open-response SQL
+      prompts should be Written/Long-Answer). A fresh `question-bank` run picks
+      up the corrected type IDs, the `scrubAnswerKey` step, and any QuestionInfo
+      work above — but needs a current Brightspace login. (Codex review.)
 - [x] `question-bank`: split public/private — questions stay here
       (`question-bank/`), while solution SQL, validated row counts, and
       `FLAGGED.md` live only in the private companion repo
