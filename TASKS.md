@@ -97,12 +97,11 @@ Topics that don't yet have a module:
       generation, and the two committed leaks (the Music "most popular entries"
       and the Facebook "average hobbies by Sex" final-exam prompts) are cleaned.
       Row-count hints are left intact. (Codex review.)
-- [ ] `question-bank`: **regenerate the committed bank** — the checked-in
-      `bank.json` / `by-topic.md` / `bank.csv` were built before the `qType`
-      fix, so 183/203 questions are mislabelled `Matching` (open-response SQL
-      prompts should be Written/Long-Answer). A fresh `question-bank` run picks
-      up the corrected type IDs, the `scrubAnswerKey` step, and any QuestionInfo
-      work above — but needs a current Brightspace login. (Codex review.)
+- [x] `question-bank`: **regenerate the committed bank** — re-ran `question-bank`
+      against a fresh Brightspace session, so the checked-in `bank.json` /
+      `by-topic.md` / `bank.csv` now carry the corrected type labels (Long
+      Answer 183 / True-False 20, not `Matching`), the `scrubAnswerKey` step, and
+      rendered assignment bodies. (Codex review.)
 - [x] `question-bank`: split public/private — questions stay here
       (`question-bank/`), while solution SQL, validated row counts, and
       `FLAGGED.md` live only in the private companion repo
@@ -112,13 +111,15 @@ Topics that don't yet have a module:
       flights questions in `bank.json` / `by-topic.md` / `bank.csv`; left the
       time-series question (per year-quarter) and the ones already scoped to a
       year (2024) untouched.
-- [ ] `question-bank`: reconcile the flights **answer side** in the private repo
-      to match the now-quarter-scoped prompts — add `WHERE Year = 2025 AND
-      Quarter = 2` to each flights solution, re-validate row counts against live
-      BigQuery, set the hints, and flip 189–191 from flagged to confirmed.
-      `m_ticket_prices` now spans 100+ quarters, so all-time aggregates overcount
-      (the old single-quarter hints — 597 / 147 / 52 — predate that). Needs the
-      BigQuery credential restored.
+- [x] `question-bank`: reconcile the flights **answer side** in the private repo
+      to match the quarter-scoped prompts — scoped every single-snapshot flights
+      solution to `Year = 2025, Quarter = 2`, re-validated the counts against
+      live BigQuery, updated the public hints (189→637, 191→53, 95→14), and
+      flipped 95/189/191 from flagged to confirmed.
+- [ ] `question-bank`: flights q190 (route stats with `>10,000` passengers) still
+      returns 2336 rows even scoped to one quarter (vs the old 147 hint) — the
+      passenger threshold no longer fits the current data volume. Raise the
+      threshold or otherwise rework the question. (Instructor decision.)
 - [x] `offerings/`: the configured Brightspace shell is the **SU26 / TechMBA
       May 2026** course; the offering was mislabelled `2026-spring` with Jan–May
       dates. Renamed it to `offerings/2026-summer`, set `season: summer`, and
