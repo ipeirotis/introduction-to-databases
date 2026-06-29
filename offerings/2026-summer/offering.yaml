@@ -9,13 +9,16 @@ course:
 
 term:
   year: 2026
-  season: spring          # spring | summer | fall | winter
+  season: summer          # spring | summer | fall | winter
   section: "01"
 
+# Dates below are inferred from the SU26 Brightspace shell (welcome
+# announcement 2026-05-14; final exam window ends 2026-06-08). Adjust if the
+# official term calendar differs.
 dates:
-  classes_start: 2026-01-26
-  classes_end:   2026-05-08
-  final_exam:    null     # set when scheduled
+  classes_start: 2026-05-14
+  classes_end:   2026-06-08
+  final_exam:    2026-06-08
   drop_deadline: null
 
 instructor:

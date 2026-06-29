@@ -28,7 +28,7 @@ npx playwright install chromium
 ## Configure
 
 Point the tool at an offering by passing `--offering` (path relative to the
-repo root, default `offerings/2026-spring`). The offering's
+repo root, default `offerings/2026-summer`). The offering's
 `brightspace.course_id` and `brightspace.base_url` are read from
 `offering.yaml`.
 
@@ -74,7 +74,7 @@ npm run brightspace -- whoami
 npm run brightspace -- courses --filter databases
 
 # List what's posted on Brightspace (read-only, prints a JSON report).
-npm run brightspace -- audit --offering offerings/2026-spring
+npm run brightspace -- audit --offering offerings/2026-summer
 
 # Limit to some sections.
 npm run brightspace -- audit --sections assignments,quizzes

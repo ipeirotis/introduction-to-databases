@@ -1,4 +1,4 @@
-# Syllabus — Databases for Business Analytics (Spring 2026)
+# Syllabus — Databases for Business Analytics (Summer 2026)
 
 > Per-offering syllabus. Stable course content lives under `../../module*/`;
 > only material that changes from semester to semester belongs here.
@@ -6,7 +6,7 @@
 ## Logistics
 
 - **Instructor:** Panagiotis Ipeirotis
-- **Term:** Spring 2026, Section 01
+- **Term:** Summer 2026, Section 01
 - **Format:** *fill in — in-person / hybrid / online*
 - **Meeting time:** *fill in*
 - **Room:** *fill in*

@@ -119,10 +119,13 @@ Topics that don't yet have a module:
       `m_ticket_prices` now spans 100+ quarters, so all-time aggregates overcount
       (the old single-quarter hints — 597 / 147 / 52 — predate that). Needs the
       BigQuery credential restored.
-- [ ] `offerings/2026-spring/`: the configured Brightspace shell is the **SU26 /
-      TechMBA May 2026** course, but this offering is labelled `spring` with
-      Jan–May dates. Decide: rename/move to a summer offering, or relabel the
-      metadata. (Codex review + flagged earlier — instructor decision.)
+- [x] `offerings/`: the configured Brightspace shell is the **SU26 / TechMBA
+      May 2026** course; the offering was mislabelled `2026-spring` with Jan–May
+      dates. Renamed it to `offerings/2026-summer`, set `season: summer`, and
+      fixed the dates to the shell's span (classes 2026-05-14 → 06-08, final
+      exam 2026-06-08). Updated the default-offering path in `config.mjs`,
+      `bin/brightspace.mjs`, and the README. (Codex review; instructor confirmed
+      it's a summer course.)
 
 ## Practice resources to recommend to students
 

@@ -1,6 +1,6 @@
 # Databases for Business Analytics, TechMBA, May 2026
 
-Brightspace export for `offerings/2026-spring` (course id 578630, SU26_TECH-GB_2147_DU1_52_crse).
+Brightspace export for `offerings/2026-summer` (course id 578630, SU26_TECH-GB_2147_DU1_52_crse).
 
 ## Contents
 

@@ -9,7 +9,7 @@ import 'dotenv/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '..', '..', '..');
-const DEFAULT_OFFERING = 'offerings/2026-spring';
+const DEFAULT_OFFERING = 'offerings/2026-summer';
 
 export function loadConfig(flags = {}) {
   const offeringRel = flags.offering || DEFAULT_OFFERING;

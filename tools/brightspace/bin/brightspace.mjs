@@ -53,7 +53,7 @@ Commands:
   question-bank Aggregate quizzes/assignments across courses into one bank.
 
 Common flags:
-  --offering <path>   Path to offering dir (default: offerings/2026-spring)
+  --offering <path>   Path to offering dir (default: offerings/2026-summer)
   --course-id <id>    Override brightspace.course_id from offering.yaml.
   --base-url <url>    Override brightspace.base_url from offering.yaml.
   --insecure          Skip TLS verification (only for a TLS-intercepting proxy).
