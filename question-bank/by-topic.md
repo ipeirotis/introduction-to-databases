@@ -1,6 +1,6 @@
 # Databases — Question Bank
 
-Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz questions** (from 2774 occurrences) and **35 unique assignments**, organized by topic. Each item lists every semester/quiz it appears in. See `courses.md` for provenance, `bank.csv` for a spreadsheet view.
+Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz questions** (from 2774 occurrences) and **35 unique assignments**, organized by topic. Each item lists every semester/quiz it appears in. See `courses.md` for provenance, `bank.csv` for a spreadsheet view.
 
 ## Quiz questions by topic
 

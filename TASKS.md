@@ -112,6 +112,13 @@ Topics that don't yet have a module:
       `student@db.ipeirotis.org` connection block, not practice material, and
       tripped GitGuardian's MySQL-credentials detector even with the password
       redacted. Bank now has 35 unique assignments (was 52). (GitGuardian.)
+- [x] `tools/brightspace/`: scope the inline answer-value redaction to the hint
+      context so quoted input literals (`"Alice, 100"`) survive; drop
+      zero-contribution shells from the advertised coverage (the bank no longer
+      claims a term an empty future shell added nothing to — now 23 shells,
+      ~2021–Summer 2026); reject login-page bounces in `topicFile` so an expired
+      session can't save login HTML as a content file; dedupe `--course-ids`.
+      (Codex review.)
 - [ ] **Instructor decision:** the same shared password also appears, by design,
       in the course notebooks (`module2/3/4`, `unsorted/`) as the student DB
       connection instructions. If it should be private, rotate it and read it

@@ -1,10 +1,9 @@
 # Source courses
 
-24 shells fed the bank:
+23 shells fed the bank:
 
 | id | term | course | quiz Qs | assignments |
 |---|---|---|---|---|
-| 600663 | Fall 2026 | Databases for Business Analytics | 0 | 0 |
 | 578624 | Summer 2026 | Databases for Business Analytics - MSQM - May 2026 | 141 | 1 |
 | 578630 | Summer 2026 | Databases for Business Analytics, TechMBA, May 2026 | 141 | 1 |
 | 579750 | Summer 2026 | Databases for Business Analytics - MSBAi June 2026 | 141 | 1 |

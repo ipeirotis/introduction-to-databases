@@ -92,9 +92,15 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
     const uniqueQ = groupBy(qOccur);
     const uniqueA = groupBy(aOccur);
 
+    // Only count shells that actually contributed material, so the advertised
+    // coverage (count + term span) doesn't claim a term an empty shell added
+    // nothing to (e.g. a not-yet-populated future-semester shell).
+    const contributed = new Set([...qOccur, ...aOccur].map((o) => String(o.course.id)));
+    const sourceCourses = courses.filter((c) => contributed.has(String(c.id)));
+
     mkdirSync(outDir, { recursive: true });
     const stats = {
-      courses: courses.length,
+      courses: sourceCourses.length,
       quizOccurrences: qOccur.length,
       uniqueQuestions: uniqueQ.length,
       assignmentOccurrences: aOccur.length,
@@ -105,11 +111,11 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
         console.warn(`  ⚠ flights overlay entry matched no question (text changed?): "${e.match.slice(0, 60)}…"`);
       }
     }
-    writeFileSync(resolve(outDir, 'by-topic.md'), renderByTopic(uniqueQ, uniqueA, courses, stats));
-    writeFileSync(resolve(outDir, 'courses.md'), renderCourses(courses, qOccur, aOccur));
+    writeFileSync(resolve(outDir, 'by-topic.md'), renderByTopic(uniqueQ, uniqueA, sourceCourses, stats));
+    writeFileSync(resolve(outDir, 'courses.md'), renderCourses(sourceCourses, qOccur, aOccur));
     writeFileSync(resolve(outDir, 'bank.json'), JSON.stringify({ stats, questions: uniqueQ.map(toJson), assignments: uniqueA.map(toJson) }, null, 2) + '\n');
     writeFileSync(resolve(outDir, 'bank.csv'), renderCsv(uniqueQ, uniqueA));
-    writeFileSync(resolve(outDir, 'README.md'), renderReadme(stats, courses));
+    writeFileSync(resolve(outDir, 'README.md'), renderReadme(stats, sourceCourses));
 
     console.log(
       `\nDone: ${stats.uniqueQuestions} unique questions (from ${stats.quizOccurrences} occurrences), ` +
@@ -126,7 +132,9 @@ async function resolveCourses(ctx, flags) {
   const all = await enrollments(ctx);
   const rows = all.map((it) => ({ id: it.OrgUnit.Id, name: it.OrgUnit.Name, code: it.OrgUnit.Code || '' }));
   if (flags['course-ids']) {
-    const ids = String(flags['course-ids']).split(',').map((s) => s.trim()).filter(Boolean);
+    // Dedupe so a repeated id (e.g. `--course-ids 578630,578630`) isn't fetched
+    // twice and doesn't inflate occurrence/coverage counts.
+    const ids = [...new Set(String(flags['course-ids']).split(',').map((s) => s.trim()).filter(Boolean))];
     const byId = new Map(rows.map((r) => [String(r.id), r]));
     return ids.map((id) => byId.get(String(id)) || { id, name: `course ${id}`, code: '' });
   }
@@ -159,19 +167,20 @@ function safeTurndown(html) {
 // hints ("Hint: 52 rows") and spec text ("... should be null") are left intact.
 // Hand-curated hints may need re-adding after a regeneration.
 function scrubAnswerKey(text) {
-  let s = String(text || '');
-  // Inline answer-value examples — e.g. 'the results start with "Name, 1234",
-  // "Other, 567"' — keep the question/hint phrasing but drop the values.
-  s = s.replace(/"[A-Z][A-Za-z .'’-]*,\s?\$?\d[\d,]*"/g, '"…"');
-  // Trailing answer key: a "(the )(correct )results/answer (are|is|will be|start
-  // with)" preamble followed by result data (numbers) — cut from there to the end.
-  const m = s.match(/\n+\s*(?:Hint:\s*)?(?:the\s+)?(?:correct\s+)?(?:results?|answer)(?:\s+of\s+the\s+query)?\s+(?:are|is|will\s+be|starts?\s+with|begins?\s+with)\b/i);
-  if (m) {
-    const tail = s.slice(m.index);
-    const numlines = (tail.match(/^\s*\$?\d[\d,.]*\s*$/gm) || []).length;
-    if (numlines >= 2 || /\d+\.\d{3,}/.test(tail)) return s.slice(0, m.index).trim();
-  }
-  return s;
+  const s = String(text || '');
+  // Find an answer/hint preamble — "(the )(correct )results/answer
+  // are|is|will be|start with". Without one, leave quoted literals alone: a
+  // legitimate prompt may quote CSV-like INPUT data such as "Alice, 100".
+  const m = s.match(/(?:Hint:?\s*)?(?:the\s+)?(?:correct\s+)?(?:results?|answer)(?:\s+of\s+the\s+query)?\s+(?:are|is|will\s+be|starts?\s+with|begins?\s+with)\b/i);
+  if (!m) return s;
+  const head = s.slice(0, m.index);
+  const tail = s.slice(m.index);
+  // Trailing result table (numbers on their own lines / high-precision decimals)
+  // → drop the whole answer block.
+  const numlines = (tail.match(/^\s*\$?\d[\d,.]*\s*$/gm) || []).length;
+  if (numlines >= 2 || /\d+\.\d{3,}/.test(tail)) return head.trim();
+  // Otherwise redact inline answer-value examples, but ONLY within the hint tail.
+  return head + tail.replace(/"[A-Z][A-Za-z .'’-]*,\s?\$?\d[\d,]*"/g, '"…"');
 }
 
 // Strip secrets that appear in course content so the public bank stays clean:

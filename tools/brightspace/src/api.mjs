@@ -155,11 +155,18 @@ export async function quizQuestions(ctx, ou, quizId) {
 export async function topicFile(ctx, ou, topicId) {
   const { le } = await versions(ctx);
   const res = await ctx.get(`/d2l/api/le/${le}/${ou}/content/topics/${topicId}/file`);
-  if (res.status() === 401 || res.status() === 403) {
+  if (res.status() === 401) {
     throw new AuthExpiredError(
       `Brightspace rejected the file request (HTTP ${res.status()}). Re-run "brightspace login".`
     );
   }
   if (!res.ok()) throw new Error(`topic ${topicId} file -> HTTP ${res.status()}`);
+  // An expired session can 200-redirect the file endpoint to an SSO/login page;
+  // detect that by the final URL so we don't save login HTML as the course file.
+  if (/\/d2l\/login|shibboleth|samlsso|\/saml|login\.microsoftonline\.com/i.test(res.url())) {
+    throw new AuthExpiredError(
+      `The file request for topic ${topicId} was bounced to a login page. Re-run "brightspace login".`
+    );
+  }
   return { body: await res.body(), contentType: res.headers()['content-type'] || '' };
 }
