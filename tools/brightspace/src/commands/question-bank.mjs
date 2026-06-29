@@ -46,7 +46,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       for (const { q, list } of fetched) {
         const topic = topicFor(q.Name);
         for (const qq of list) {
-          const text = scrubAnswerKey(plain(qq.QuestionText));
+          const text = redactSecrets(scrubAnswerKey(plain(qq.QuestionText)));
           if (!text) continue;
           nq++;
           qOccur.push({ key: normKey(text), text, type: qType(qq.QuestionTypeId), topic, course: c, term, quiz: q.Name });
@@ -54,7 +54,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       }
       const asg = await assignments(ctx, c.id);
       for (const f of asg) {
-        const text = scrubAnswerKey(plain(f.CustomInstructions));
+        const text = redactSecrets(scrubAnswerKey(plain(f.CustomInstructions)));
         aOccur.push({ key: normKey(f.Name + ' :: ' + text), title: f.Name, text, topic: topicFor(f.Name), course: c, term });
       }
       console.log(
@@ -134,6 +134,19 @@ function scrubAnswerKey(text) {
   const numlines = (tail.match(/^\s*\$?\d[\d,.]*\s*$/gm) || []).length;
   if (numlines >= 2 || /\d+\.\d{3,}/.test(tail)) return s.slice(0, m.index).trim();
   return s;
+}
+
+// Strip secrets that appear in course content so the public bank stays clean:
+// live group-chat invite links and the shared practice-DB password from the
+// setup assignments. Students get both via Brightspace. (See CLAUDE.md.)
+const INVITE_HOSTS = 'chat\\.whatsapp\\.com|wa\\.me|t\\.me|discord\\.gg|signal\\.group';
+const REDACTED_PW = '[redacted — connect per the instructions on Brightspace]';
+function redactSecrets(text) {
+  return String(text || '')
+    .replace(new RegExp(`\\[[^\\]]*\\]\\(https?:\\/\\/[^)]*?(?:${INVITE_HOSTS})[^)]*\\)`, 'gi'), '_(invite link redacted — public repo)_')
+    .replace(new RegExp(`https?:\\/\\/[^\\s)]*(?:${INVITE_HOSTS})[^\\s)]*`, 'gi'), '_(invite link redacted — public repo)_')
+    .replace(/dwdstudent\d{4}/gi, REDACTED_PW)
+    .replace(/(password,?\s+enter\s+")[^"]{1,40}(")/gi, `$1${REDACTED_PW}$2`);
 }
 
 // Dedup key: collapse whitespace, drop markdown punctuation, lowercase.

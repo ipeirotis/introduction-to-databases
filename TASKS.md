@@ -91,6 +91,20 @@ Topics that don't yet have a module:
       export with these fixes. (Codex review.)
 - [x] `offerings/2026-summer/`: corrected `course.code` to `TECH-GB.2147` to
       match the `SU26_TECH-GB_2147` shell (was `TECH-GB.2336`). (Codex review.)
+- [x] `question-bank`: scrub the shared practice-DB password from the public
+      bank — the setup-assignment connection details (`student@db.ipeirotis.org`
+      / `dwdstudent20xx`) leaked into `bank.json` / `by-topic.md` / `bank.csv`
+      via the rendered assignment bodies. Redacted them and added `redactSecrets`
+      to both `question-bank` and `download` so regenerations stay clean.
+      (Codex review, P1.)
+- [ ] **Instructor decision:** the same shared password also appears, by design,
+      in the course notebooks (`module2/3/4`, `unsorted/`) as the student DB
+      connection instructions. If it should be private, rotate it and read it
+      from a parameter/secret instead of hardcoding; otherwise it's an
+      intentionally-public read-only teaching credential and can stay.
+- [x] `tools/brightspace/`: `download` seeds `manifest.kinds` from the prior
+      manifest so a `--kinds` subset refresh doesn't drop the untouched kinds
+      from the index. (Codex review.)
 - [x] `tools/brightspace/`: pin API calls to D2L's advertised `LatestVersion`
       and ignore non-numeric contracts like `unstable` when inferring the
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping

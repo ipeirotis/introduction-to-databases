@@ -8,7 +8,7 @@
 // NOTE: if the repo is public, review before committing — quiz questions in
 // particular are live assessment material.
 
-import { mkdirSync, writeFileSync, rmSync, existsSync, renameSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync, rmSync, existsSync, renameSync } from 'node:fs';
 import { resolve, basename } from 'node:path';
 import TurndownService from 'turndown';
 import { loadConfig } from '../config.mjs';
@@ -68,10 +68,21 @@ Exports the configured course's content into <out> (default:
     }
     console.log(`Exporting ${course.Name} (${ou}) -> ${outDir}`);
 
+    // Seed from any existing manifest so a `--kinds` subset refresh preserves
+    // the index entries for kinds it doesn't touch (their directories stay too).
+    let priorKinds = {};
+    const manifestPath = resolve(outDir, 'manifest.json');
+    if (existsSync(manifestPath)) {
+      try {
+        priorKinds = JSON.parse(readFileSync(manifestPath, 'utf8')).kinds || {};
+      } catch {
+        /* ignore an unreadable prior manifest */
+      }
+    }
     const manifest = {
       course: { id: ou, name: course.Name, code: course.Code },
       offering: config.offeringRel,
-      kinds: {},
+      kinds: { ...priorKinds },
     };
 
     const runners = {
@@ -151,18 +162,23 @@ function richToMd(rt, base) {
   }
   if (md == null) md = String(rt.Text || '').trim();
   if (base) md = md.replace(/(\]\()\/(?!\/)([^)]*\))/g, `$1${base}/$2`);
-  return redactInvites(md);
+  return redactSecrets(md);
 }
 
-// This export lives in a public repo, so a working group-chat invite would let
-// anyone join the class channel (and the WhatsApp announcement asks students to
-// post their names + NetIDs). Replace live invite links with a placeholder.
+// This export lives in a public repo, so strip two kinds of secrets that show up
+// in course content: (1) live group-chat invite links (anyone could join the
+// class channel — the WhatsApp announcement also asks for names + NetIDs); and
+// (2) the shared practice-DB password from the setup assignments. Students get
+// both via Brightspace; they should not be committed here.
 const INVITE_HOSTS = 'chat\\.whatsapp\\.com|wa\\.me|t\\.me|discord\\.gg|signal\\.group';
-const REDACTED = '_(invite link redacted — this export is public; the live link is on Brightspace)_';
-function redactInvites(md) {
+const REDACTED_INVITE = '_(invite link redacted — this export is public; the live link is on Brightspace)_';
+const REDACTED_PW = '[redacted — connect per the instructions on Brightspace]';
+function redactSecrets(md) {
   return md
-    .replace(new RegExp(`\\[[^\\]]*\\]\\(https?:\\/\\/[^)]*?(?:${INVITE_HOSTS})[^)]*\\)`, 'gi'), REDACTED)
-    .replace(new RegExp(`https?:\\/\\/[^\\s)]*(?:${INVITE_HOSTS})[^\\s)]*`, 'gi'), REDACTED);
+    .replace(new RegExp(`\\[[^\\]]*\\]\\(https?:\\/\\/[^)]*?(?:${INVITE_HOSTS})[^)]*\\)`, 'gi'), REDACTED_INVITE)
+    .replace(new RegExp(`https?:\\/\\/[^\\s)]*(?:${INVITE_HOSTS})[^\\s)]*`, 'gi'), REDACTED_INVITE)
+    .replace(/dwdstudent\d{4}/gi, REDACTED_PW)
+    .replace(/(password,?\s+enter\s+")[^"]{1,40}(")/gi, `$1${REDACTED_PW}$2`);
 }
 
 // Root-relative D2L URLs (e.g. quicklinks "/d2l/...") only resolve on the live

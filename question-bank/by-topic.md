@@ -1507,7 +1507,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1557,7 +1557,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1601,7 +1601,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1727,7 +1727,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1781,7 +1781,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1871,7 +1871,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1909,7 +1909,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1947,7 +1947,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -1991,7 +1991,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2035,7 +2035,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2083,7 +2083,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2137,7 +2137,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2015".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2191,7 +2191,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2239,7 +2239,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2303,7 +2303,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
@@ -2351,7 +2351,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "dwdstudent2025".
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
 > *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
 > *   Close the dialog
 > 
