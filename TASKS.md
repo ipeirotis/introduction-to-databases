@@ -146,6 +146,32 @@ Topics that don't yet have a module:
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping
       the line (`download.mjs`); render assignment bodies (not just titles) in
       `by-topic.md` so it works as an assignment bank. (Codex review.)
+- [x] `tools/brightspace/`: apply the `session<N>/` → `module<N>/` link rewrite in
+      the **export** path too, not just `question-bank`. A regenerated quiz
+      (`499807-module-2-practice-filtering-queries.md`) shipped a `session3/…` link
+      that 404s. Extracted `buildRepoFileIndex` + `fixTemplateLinks` into a shared
+      `src/repo-links.mjs` used by both `question-bank` and `download` (applied in
+      `richToMd`); regenerated the export — 0 surviving `session*/` links. (Codex.)
+- [x] `tools/brightspace/`: include assignment hidden state in the manifest. The
+      Markdown recorded `Hidden` but the manifest item dropped `f.IsHidden`; each
+      assignment item now carries `hidden`, matching the quiz `active` flag, so a
+      manifest-only consumer can tell hidden/private folders from available work.
+      (Codex review, P2.)
+- [x] `.claude/skills/cloud-bootstrap/`: two more correctness fixes in the portable
+      skill docs. `references/azure.md` read the subscription from top-level
+      `.project_id`, so in a multi-provider repo `SUBSCRIPTION_ID` became `null` and
+      `az role assignment` targeted `/subscriptions/null`; switched both occurrences
+      to the provider-aware `jq` lookup `gcp.md` already uses. `workflows/add-team-member.md`
+      Step 3.1 said "create a key for the existing service account (do NOT create a
+      new identity)", which contradicts AWS's model (a separate IAM user per member
+      in the shared `claude-agents` group, since an IAM user allows only 2 keys);
+      split the step per provider so AWS creates the per-user IAM user while GCP/Azure
+      add a key to the existing identity. (Codex review, P2.)
+- [ ] `tools/brightspace/`: `download` still exports only `CustomInstructions`, not
+      Dropbox-folder **attachments** (`Attachments`/`LinkAttachments`). Re-raised by
+      Codex; confirmed **no impact on 578630** (both its assignments have
+      `Attachments=0`, `Links=0`). Tracked above under the metadata/attachments TODO;
+      implement when a shell with attachments is in scope.
 - [x] `offerings/2026-summer/schedule.md`: convert the published deadlines from
       raw UTC to the course timezone. Brightspace stores each deadline at 11:59 PM
       Eastern, which is the next calendar day in UTC (`2026-05-19T03:59:59Z` =

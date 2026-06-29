@@ -30,7 +30,16 @@ Tell them the specific permission needed from the provider reference file (see "
 
 Using the bootstrap token and provider-specific commands:
 
-1. Create a **new key** for the **existing** service account (do NOT create a new service account). See the "Add Key for Existing Service Account" section in the provider reference.
+1. Add credentials for this team member by following the **"Add Key for Existing
+   Service Account"** section in the provider reference — it encodes the right
+   per-provider identity model:
+   - **GCP / Azure:** create a **new key** on the **existing** service account /
+     service principal. Do NOT create a new service account/principal.
+   - **AWS:** create a **new IAM user for this member inside the existing
+     `claude-agents` group** (an IAM user allows only 2 access keys, so members
+     must not share one), then create that user's access key. Do NOT create a new
+     group or reuse another member's user. `.cloud-config.json`'s
+     `service_account` holds the **group** name, not a user.
 2. Resolve the encryption key for the current user.
 3. Encrypt with the user's email in the filename. Use the multi-provider naming convention if the config has a `providers` array:
    ```bash

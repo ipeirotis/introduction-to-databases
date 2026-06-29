@@ -55,7 +55,7 @@ Output the names of all the Italian Manhattan restaurants.
 
 Output all the names of all the Bronx restaurants with the average prices greater than $100.00
 
-## [](https://github.com/ipeirotis/introduction-to-databases/blob/master/session3/practice_questions_filtering.md#facebook-database)
+## [practice_questions_filtering.md](https://github.com/ipeirotis/introduction-to-databases/blob/master/module2/practice_questions_filtering.md#facebook-database)
 
 ### Q13
 

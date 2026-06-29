@@ -6,11 +6,12 @@
 // ones across semesters, tags a topic from the quiz name, and writes Markdown +
 // JSON + CSV. Read-only against Brightspace.
 
-import { mkdirSync, writeFileSync, readFileSync, readdirSync } from 'node:fs';
-import { resolve, relative, sep } from 'node:path';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import TurndownService from 'turndown';
 import { loadConfig, flagBool } from '../config.mjs';
 import { openApi, enrollments, quizzes, quizQuestions, assignments } from '../api.mjs';
+import { buildRepoFileIndex, fixTemplateLinks } from '../repo-links.mjs';
 
 // Instructor overlay (committed beside this tool): scopes the single-snapshot
 // flights prompts to one quarter and applies BigQuery-validated hint counts, so
@@ -204,55 +205,6 @@ function redactSecrets(text) {
     .replace(new RegExp(`https?:\\/\\/[^\\s)]*(?:${INVITE_HOSTS})[^\\s)]*`, 'gi'), '_(invite link redacted — public repo)_')
     .replace(/dwdstudent\d{4}/gi, REDACTED_PW)
     .replace(/(password,?\s+enter\s+")[^"]{1,40}(")/gi, `$1${REDACTED_PW}$2`);
-}
-
-// Index every repo file basename -> repo-relative path(s). Old assignment and
-// question bodies link to files (notebooks, practice .md) under the repo's former
-// session<N>/ layout (now module<N>/); we use this to relocate or de-link those
-// URLs at generation time. A basename that resolves ambiguously (e.g. README.md)
-// gets de-linked rather than guessed.
-function buildRepoFileIndex(repoRoot) {
-  const index = new Map();
-  const SKIP = new Set(['node_modules', '.git']);
-  const walk = (dir) => {
-    let entries = [];
-    try {
-      entries = readdirSync(dir, { withFileTypes: true });
-    } catch {
-      return;
-    }
-    for (const e of entries) {
-      if (e.isDirectory()) {
-        if (!SKIP.has(e.name)) walk(resolve(dir, e.name));
-      } else {
-        const rel = relative(repoRoot, resolve(dir, e.name)).split(sep).join('/');
-        const arr = index.get(e.name) || [];
-        arr.push(rel);
-        index.set(e.name, arr);
-      }
-    }
-  };
-  walk(repoRoot);
-  return index;
-}
-
-// Rewrite links into the repo's removed session<N>/ paths: point them at the
-// file's current location if its basename still exists exactly once (preserving
-// any #fragment), otherwise de-link (keep the text) so the public bank never
-// ships a 404. Current module<N>/ links don't match and are left untouched.
-// (Codex review.)
-const REPO_SESSION_BLOB =
-  /\[([^\]]*)\]\(https?:\/\/github\.com\/ipeirotis\/introduction-to-databases\/blob\/[^/]+\/session\d+\/([^)\s#]+)(#[^)\s]*)?\)/gi;
-function fixTemplateLinks(text, index) {
-  return String(text || '').replace(REPO_SESSION_BLOB, (_m, label, rest, frag) => {
-    const base = rest.split('/').pop();
-    const shown = label || base; // some links have an empty anchor (e.g. a heading)
-    const hits = index.get(base) || [];
-    if (hits.length === 1) {
-      return `[${shown}](https://github.com/ipeirotis/introduction-to-databases/blob/master/${hits[0]}${frag || ''})`;
-    }
-    return `${shown} _(template moved — see the module folders)_`;
-  });
 }
 
 // Dedup key: collapse whitespace, undo markdown escaping/link punctuation, drop

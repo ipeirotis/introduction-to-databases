@@ -212,7 +212,7 @@ Roles are assigned to the **service principal**, so they apply to all team membe
 APP_ID="${APP_ID:-$(jq -r '.appId // .service_account' credentials.json 2>/dev/null)}"
 [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ] && APP_ID=$(jq -r .service_account .cloud-config.json)
 
-SUBSCRIPTION_ID=$(jq -r .project_id .cloud-config.json)
+SUBSCRIPTION_ID=$(jq -r '(if .providers then (.providers[] | select(.provider=="azure") | .project_id) else .project_id end)' .cloud-config.json)
 SP_OBJECT_ID=$(az ad sp show --id "$APP_ID" --query id -o tsv)
 
 az role assignment create \
@@ -230,7 +230,7 @@ Or via REST API (requires `$ARM_TOKEN` and `$GRAPH_TOKEN`):
 # appId, or the assignment is created against an empty/incorrect principal.
 APP_ID="${APP_ID:-$(jq -r '.appId // .service_account' credentials.json 2>/dev/null)}"
 [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ] && APP_ID=$(jq -r .service_account .cloud-config.json)
-SUBSCRIPTION_ID=$(jq -r .project_id .cloud-config.json)
+SUBSCRIPTION_ID=$(jq -r '(if .providers then (.providers[] | select(.provider=="azure") | .project_id) else .project_id end)' .cloud-config.json)
 SP_OBJECT_ID=$(curl -s "https://graph.microsoft.com/v1.0/servicePrincipals?\$filter=appId eq '$APP_ID'" \
   -H "Authorization: Bearer $GRAPH_TOKEN" | jq -r '.value[0].id')
 

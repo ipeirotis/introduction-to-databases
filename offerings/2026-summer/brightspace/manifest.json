@@ -36,12 +36,14 @@
           "id": 1177596,
           "title": "Assignment 0: Setup",
           "dueDate": "2026-05-19T03:59:59.000Z",
+          "hidden": false,
           "file": "assignments/1177596-assignment-0-setup.md"
         },
         {
           "id": 1177597,
           "title": "Assignment 1a: ER Diagrams and Relational Schemas",
           "dueDate": "2026-05-19T03:59:59.000Z",
+          "hidden": false,
           "file": "assignments/1177597-assignment-1a-er-diagrams-and-relational-schemas.md"
         }
       ]

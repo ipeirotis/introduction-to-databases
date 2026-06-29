@@ -23,8 +23,14 @@ import {
   topicFile,
   AuthExpiredError,
 } from '../api.mjs';
+import { buildRepoFileIndex, fixTemplateLinks } from '../repo-links.mjs';
 
 const td = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
+
+// Index of the repo's files, built once per run from config.repoRoot. Used by
+// richToMd to relocate/de-link stale `session<N>/` links in exported bodies so
+// the committed export never ships a 404. Empty until run() populates it.
+let repoFileIndex = new Map();
 
 const DEFAULT_KINDS = 'assignments,quizzes,content,announcements';
 
@@ -63,6 +69,8 @@ Exports the configured course's content into <out> (default:
     ? resolve(config.repoRoot, flags.out)
     : resolve(config.offeringDir, 'brightspace');
   mkdirSync(outDir, { recursive: true });
+
+  repoFileIndex = buildRepoFileIndex(config.repoRoot);
 
   const ctx = await openApi(config);
   try {
@@ -176,6 +184,7 @@ function richToMd(rt, base) {
   }
   if (md == null) md = String(rt.Text || '').trim();
   if (base) md = md.replace(/(\]\()\/(?!\/)([^)]*\))/g, `$1${base}/$2`);
+  md = fixTemplateLinks(md, repoFileIndex);
   return redactSecrets(md);
 }
 
@@ -229,7 +238,7 @@ async function dlAssignments(ctx, ou, outDir, base) {
       metaList({ 'Brightspace id': f.Id, Due: f.DueDate, Hidden: f.IsHidden }) +
       `\n\n## Instructions\n\n${richToMd(f.CustomInstructions, base) || '_(no instructions)_'}\n`;
     writeFileSync(resolve(outDir, file), md);
-    items.push({ id: f.Id, title: f.Name, dueDate: f.DueDate || null, file });
+    items.push({ id: f.Id, title: f.Name, dueDate: f.DueDate || null, hidden: f.IsHidden ?? null, file });
   }
   return { count: items.length, items };
 }
