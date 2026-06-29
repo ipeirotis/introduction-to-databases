@@ -8,7 +8,7 @@
 // NOTE: if the repo is public, review before committing — quiz questions in
 // particular are live assessment material.
 
-import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync, existsSync, renameSync } from 'node:fs';
 import { resolve, basename } from 'node:path';
 import TurndownService from 'turndown';
 import { loadConfig } from '../config.mjs';
@@ -85,18 +85,36 @@ Exports the configured course's content into <out> (default:
     if (unknown.length) {
       throw new Error(`Unknown --kinds: ${unknown.join(', ')}. Valid: ${Object.keys(runners).join(', ')}`);
     }
-    for (const kind of kinds) {
-      const runner = runners[kind];
-      // Clear any prior export of this kind so renamed/deleted items don't linger.
-      rmSync(resolve(outDir, kind), { recursive: true, force: true });
-      manifest.kinds[kind] = await runner(ctx, ou, outDir, base);
-      const k = manifest.kinds[kind];
-      console.log(`  ${kind}: ${summaryLine(kind, k)}`);
+    // Regenerate each kind atomically: stash the prior export, write a fresh
+    // copy, and restore the stash if any fetch/render fails — so a transient API
+    // error can't replace a complete export with a partial one. Only the
+    // requested kinds are touched, so a `--kinds` subset leaves the rest intact.
+    const stashed = [];
+    try {
+      for (const kind of kinds) {
+        const runner = runners[kind];
+        const kdir = resolve(outDir, kind);
+        const bak = resolve(outDir, `.${kind}.bak`);
+        rmSync(bak, { recursive: true, force: true });
+        if (existsSync(kdir)) {
+          renameSync(kdir, bak);
+          stashed.push([kdir, bak]);
+        }
+        manifest.kinds[kind] = await runner(ctx, ou, outDir, base);
+        console.log(`  ${kind}: ${summaryLine(kind, manifest.kinds[kind])}`);
+      }
+      writeFileSync(resolve(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+      writeFileSync(resolve(outDir, 'README.md'), renderIndex(manifest));
+      console.log(`Wrote manifest.json and README.md to ${outDir}`);
+      for (const [, bak] of stashed) rmSync(bak, { recursive: true, force: true });
+    } catch (err) {
+      // Roll back to the previously complete export.
+      for (const [kdir, bak] of stashed) {
+        rmSync(kdir, { recursive: true, force: true });
+        if (existsSync(bak)) renameSync(bak, kdir);
+      }
+      throw err;
     }
-
-    writeFileSync(resolve(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-    writeFileSync(resolve(outDir, 'README.md'), renderIndex(manifest));
-    console.log(`Wrote manifest.json and README.md to ${outDir}`);
   } finally {
     await ctx.dispose();
   }
@@ -118,16 +136,33 @@ function slug(s) {
 }
 
 // D2L RichText is { Text, Html }. Prefer converting the HTML; fall back to Text.
-function richToMd(rt) {
+// RichText bodies can embed D2L quicklinks as root-relative hrefs (`/d2l/...`)
+// that only resolve on the Brightspace host, so qualify them with the base URL
+// (same rule as absUrl, but applied to the links inside the rendered Markdown).
+function richToMd(rt, base) {
   if (!rt) return '';
+  let md = null;
   if (rt.Html) {
     try {
-      return td.turndown(rt.Html).trim();
+      md = td.turndown(rt.Html).trim();
     } catch {
       /* fall through to Text */
     }
   }
-  return String(rt.Text || '').trim();
+  if (md == null) md = String(rt.Text || '').trim();
+  if (base) md = md.replace(/(\]\()\/(?!\/)([^)]*\))/g, `$1${base}/$2`);
+  return redactInvites(md);
+}
+
+// This export lives in a public repo, so a working group-chat invite would let
+// anyone join the class channel (and the WhatsApp announcement asks students to
+// post their names + NetIDs). Replace live invite links with a placeholder.
+const INVITE_HOSTS = 'chat\\.whatsapp\\.com|wa\\.me|t\\.me|discord\\.gg|signal\\.group';
+const REDACTED = '_(invite link redacted — this export is public; the live link is on Brightspace)_';
+function redactInvites(md) {
+  return md
+    .replace(new RegExp(`\\[[^\\]]*\\]\\(https?:\\/\\/[^)]*?(?:${INVITE_HOSTS})[^)]*\\)`, 'gi'), REDACTED)
+    .replace(new RegExp(`https?:\\/\\/[^\\s)]*(?:${INVITE_HOSTS})[^\\s)]*`, 'gi'), REDACTED);
 }
 
 // Root-relative D2L URLs (e.g. quicklinks "/d2l/...") only resolve on the live
@@ -152,7 +187,7 @@ function summaryLine(kind, k) {
 
 // --- per-kind exporters -----------------------------------------------------
 
-async function dlAssignments(ctx, ou, outDir) {
+async function dlAssignments(ctx, ou, outDir, base) {
   const dir = resolve(outDir, 'assignments');
   mkdirSync(dir, { recursive: true });
   const folders = await assignments(ctx, ou);
@@ -162,14 +197,14 @@ async function dlAssignments(ctx, ou, outDir) {
     const md =
       `# ${f.Name}\n\n` +
       metaList({ 'Brightspace id': f.Id, Due: f.DueDate, Hidden: f.IsHidden }) +
-      `\n\n## Instructions\n\n${richToMd(f.CustomInstructions) || '_(no instructions)_'}\n`;
+      `\n\n## Instructions\n\n${richToMd(f.CustomInstructions, base) || '_(no instructions)_'}\n`;
     writeFileSync(resolve(outDir, file), md);
     items.push({ id: f.Id, title: f.Name, dueDate: f.DueDate || null, file });
   }
   return { count: items.length, items };
 }
 
-async function dlQuizzes(ctx, ou, outDir) {
+async function dlQuizzes(ctx, ou, outDir, base) {
   const dir = resolve(outDir, 'quizzes');
   mkdirSync(dir, { recursive: true });
   const list = await quizzes(ctx, ou);
@@ -178,15 +213,15 @@ async function dlQuizzes(ctx, ou, outDir) {
     // Let fetch failures propagate rather than committing a "0 questions" quiz.
     const questions = await quizQuestions(ctx, ou, q.QuizId);
     const qmd = questions
-      .map((qq, i) => `### Q${i + 1}${qq.Name ? ` — ${qq.Name}` : ''}\n\n${richToMd(qq.QuestionText) || '_(no text)_'}`)
+      .map((qq, i) => `### Q${i + 1}${qq.Name ? ` — ${qq.Name}` : ''}\n\n${richToMd(qq.QuestionText, base) || '_(no text)_'}`)
       .join('\n\n');
     // Quiz Description/Instructions/Header/Footer are { Text: <RichText>, IsDisplayed }.
     const block = (label, f) => {
       if (!f || f.IsDisplayed === false) return '';
-      const md = richToMd(f.Text && typeof f.Text === 'object' ? f.Text : f);
+      const md = richToMd(f.Text && typeof f.Text === 'object' ? f.Text : f, base);
       return md ? `## ${label}\n\n${md}\n\n` : '';
     };
-    const descMd = q.Description && q.Description.IsDisplayed !== false ? richToMd(q.Description.Text) : '';
+    const descMd = q.Description && q.Description.IsDisplayed !== false ? richToMd(q.Description.Text, base) : '';
     const file = `quizzes/${q.QuizId}-${slug(q.Name)}.md`;
     const md =
       `# ${q.Name}\n\n` +
@@ -214,7 +249,7 @@ async function dlQuizzes(ctx, ou, outDir) {
   return { count: items.length, items };
 }
 
-async function dlAnnouncements(ctx, ou, outDir) {
+async function dlAnnouncements(ctx, ou, outDir, base) {
   const dir = resolve(outDir, 'announcements');
   mkdirSync(dir, { recursive: true });
   const list = await news(ctx, ou);
@@ -225,7 +260,7 @@ async function dlAnnouncements(ctx, ou, outDir) {
     const md =
       `# ${n.Title}\n\n` +
       metaList({ 'Brightspace id': n.Id, Posted: n.StartDate || n.CreatedDate, Hidden: n.IsHidden }) +
-      `\n\n${richToMd(n.Body) || '_(no body)_'}\n`;
+      `\n\n${richToMd(n.Body, base) || '_(no body)_'}\n`;
     writeFileSync(resolve(outDir, file), md);
     items.push({ id: n.Id, title: n.Title, posted: n.StartDate || n.CreatedDate || null, file });
   }

@@ -82,6 +82,15 @@ Topics that don't yet have a module:
       assignment availability windows (`Availability` start/end, special access),
       content-module hidden/date-restriction flags, and announcement
       `IsPublished`. (Codex review; none apply to 578630 today.)
+- [x] `tools/brightspace/`: qualify root-relative D2L links (`/d2l/...`) inside
+      RichText (assignment/quiz/announcement bodies), not just content links;
+      auto-redact live group-chat invite links from the public export (so a
+      regeneration can't re-expose the WhatsApp invite); write each export kind
+      atomically (stash + restore on failure) so a transient API error can't
+      replace a complete export with a partial one. Regenerated the 578630
+      export with these fixes. (Codex review.)
+- [x] `offerings/2026-summer/`: corrected `course.code` to `TECH-GB.2147` to
+      match the `SU26_TECH-GB_2147` shell (was `TECH-GB.2336`). (Codex review.)
 - [x] `tools/brightspace/`: pin API calls to D2L's advertised `LatestVersion`
       and ignore non-numeric contracts like `unstable` when inferring the
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping

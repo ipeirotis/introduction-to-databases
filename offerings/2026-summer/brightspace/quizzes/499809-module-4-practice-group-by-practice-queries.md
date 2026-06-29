@@ -2,11 +2,8 @@
 
 - **Brightspace id:** 499809
 - **Active:** true
+- **Attempts:** Unlimited
 - **Questions:** 7
-
-## Description
-
-GROUP BY, aggregation functions (MAX, MIN, COUNT, etc.) Review also HAVING (condition for the GROUP BY) and ORDER
 
 ## Questions (7)
 

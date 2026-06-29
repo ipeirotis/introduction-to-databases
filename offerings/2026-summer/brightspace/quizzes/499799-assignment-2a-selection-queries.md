@@ -3,6 +3,7 @@
 - **Brightspace id:** 499799
 - **Due:** 2026-05-23T03:59:59.000Z
 - **Active:** true
+- **Attempts:** Unlimited
 - **Questions:** 6
 
 ## Description

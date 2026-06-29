@@ -6,7 +6,7 @@
 
 I have set up a WhatsApp group for our TechMBA database class. This is the channel where I can answer your questions and discuss assignments with you; your help in answering questions before I do (if you know the answer) will be appreciated.
 
-Join here: _(WhatsApp invite link redacted — this export lives in a public repo. The live link is on Brightspace.)_
+Join here: _(invite link redacted — this export is public; the live link is on Brightspace)_
 
 Two quick things:
 

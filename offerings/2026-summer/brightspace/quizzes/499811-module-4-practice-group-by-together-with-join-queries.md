@@ -2,6 +2,7 @@
 
 - **Brightspace id:** 499811
 - **Active:** true
+- **Attempts:** Unlimited
 - **Questions:** 7
 
 ## Questions (7)

@@ -3,7 +3,7 @@
 # for a new offering. See offerings/README.md.
 
 course:
-  code: TECH-GB.2336      # adjust if the official course code differs
+  code: TECH-GB.2147      # matches the SU26_TECH-GB_2147 Brightspace shell
   title: Databases for Business Analytics
   institution: NYU Stern
 

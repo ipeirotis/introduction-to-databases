@@ -6,146 +6,6 @@
   },
   "offering": "offerings/2026-summer",
   "kinds": {
-    "assignments": {
-      "count": 2,
-      "items": [
-        {
-          "id": 1177596,
-          "title": "Assignment 0: Setup",
-          "dueDate": "2026-05-19T03:59:59.000Z",
-          "file": "assignments/1177596-assignment-0-setup.md"
-        },
-        {
-          "id": 1177597,
-          "title": "Assignment 1a: ER Diagrams and Relational Schemas",
-          "dueDate": "2026-05-19T03:59:59.000Z",
-          "file": "assignments/1177597-assignment-1a-er-diagrams-and-relational-schemas.md"
-        }
-      ]
-    },
-    "quizzes": {
-      "count": 16,
-      "items": [
-        {
-          "id": 499798,
-          "title": "Assignment 1b: Understanding a Database",
-          "dueDate": "2026-05-19T03:59:59.000Z",
-          "questions": 5,
-          "file": "quizzes/499798-assignment-1b-understanding-a-database.md"
-        },
-        {
-          "id": 499799,
-          "title": "Assignment 2a: Selection Queries",
-          "dueDate": "2026-05-23T03:59:59.000Z",
-          "questions": 6,
-          "file": "quizzes/499799-assignment-2a-selection-queries.md"
-        },
-        {
-          "id": 499800,
-          "title": "Assignment 2b: Filtering Queries",
-          "dueDate": "2026-05-25T03:59:59.000Z",
-          "questions": 8,
-          "file": "quizzes/499800-assignment-2b-filtering-queries.md"
-        },
-        {
-          "id": 499801,
-          "title": "Assignment 3: Joins",
-          "dueDate": "2026-05-28T03:59:59.000Z",
-          "questions": 6,
-          "file": "quizzes/499801-assignment-3-joins.md"
-        },
-        {
-          "id": 499802,
-          "title": "Assignment 4: Aggregations",
-          "dueDate": "2026-06-01T03:59:59.000Z",
-          "questions": 10,
-          "file": "quizzes/499802-assignment-4-aggregations.md"
-        },
-        {
-          "id": 499803,
-          "title": "Assignment 5: Subqueries",
-          "dueDate": "2026-06-05T03:59:59.000Z",
-          "questions": 4,
-          "file": "quizzes/499803-assignment-5-subqueries.md"
-        },
-        {
-          "id": 499804,
-          "title": "Assignment 6: Window queries",
-          "dueDate": "2026-01-21T04:59:59.000Z",
-          "questions": 7,
-          "file": "quizzes/499804-assignment-6-window-queries.md"
-        },
-        {
-          "id": 499805,
-          "title": "Final Exam",
-          "dueDate": "2026-06-08T03:59:59.000Z",
-          "questions": 22,
-          "file": "quizzes/499805-final-exam.md"
-        },
-        {
-          "id": 499806,
-          "title": "Module 1 Practice: Cellular Operator Database Questions",
-          "dueDate": null,
-          "questions": 12,
-          "file": "quizzes/499806-module-1-practice-cellular-operator-database-questions.md"
-        },
-        {
-          "id": 499807,
-          "title": "Module 2 Practice: Filtering queries",
-          "dueDate": null,
-          "questions": 17,
-          "file": "quizzes/499807-module-2-practice-filtering-queries.md"
-        },
-        {
-          "id": 499808,
-          "title": "Module 3 Practice: Join practice queries.",
-          "dueDate": null,
-          "questions": 7,
-          "file": "quizzes/499808-module-3-practice-join-practice-queries.md"
-        },
-        {
-          "id": 499809,
-          "title": "Module 4 Practice: Group by practice queries",
-          "dueDate": null,
-          "questions": 7,
-          "file": "quizzes/499809-module-4-practice-group-by-practice-queries.md"
-        },
-        {
-          "id": 499810,
-          "title": "Module 4 Practice: Flights Database Questions",
-          "dueDate": null,
-          "questions": 6,
-          "file": "quizzes/499810-module-4-practice-flights-database-questions.md"
-        },
-        {
-          "id": 499811,
-          "title": "Module 4 Practice: Group by together with JOIN queries",
-          "dueDate": null,
-          "questions": 7,
-          "file": "quizzes/499811-module-4-practice-group-by-together-with-join-queries.md"
-        },
-        {
-          "id": 499812,
-          "title": "General Data Analytics Practice: NYPD Collisions Dataset",
-          "dueDate": null,
-          "questions": 9,
-          "file": "quizzes/499812-general-data-analytics-practice-nypd-collisions-dataset.md"
-        },
-        {
-          "id": 499813,
-          "title": "General Practice: Northwind Dataset",
-          "dueDate": null,
-          "questions": 8,
-          "file": "quizzes/499813-general-practice-northwind-dataset.md"
-        }
-      ]
-    },
-    "content": {
-      "modules": 30,
-      "topics": 36,
-      "files": 9,
-      "links": 27
-    },
     "announcements": {
       "count": 3,
       "items": [
@@ -153,19 +13,19 @@
           "id": 2032939,
           "title": "TA Openings for AY2026-27",
           "posted": "2026-06-11T18:25:00.000Z",
-          "file": "announcements/2026-06-11-ta-openings-for-ay2026-27.md"
+          "file": "announcements/2026-06-11-2032939-ta-openings-for-ay2026-27.md"
         },
         {
           "id": 2023688,
           "title": "WhatsApp group for the class",
           "posted": "2026-05-16T19:44:00.000Z",
-          "file": "announcements/2026-05-16-whatsapp-group-for-the-class.md"
+          "file": "announcements/2026-05-16-2023688-whatsapp-group-for-the-class.md"
         },
         {
           "id": 1987658,
           "title": "Welcome to the \"Databases for Business Analytics\" class!",
           "posted": "2026-05-14T16:00:00.000Z",
-          "file": "announcements/2026-05-14-welcome-to-the-databases-for-business-analytics-class.md"
+          "file": "announcements/2026-05-14-1987658-welcome-to-the-databases-for-business-analytics-class.md"
         }
       ]
     }
