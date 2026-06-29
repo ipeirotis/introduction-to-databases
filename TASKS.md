@@ -119,6 +119,9 @@ Topics that don't yet have a module:
       ~2021–Summer 2026); reject login-page bounces in `topicFile` so an expired
       session can't save login HTML as a content file; dedupe `--course-ids`.
       (Codex review.)
+- [x] `tools/brightspace/`: `--course-ids` fetches the named shells directly and
+      no longer aborts when `MyEnrollments` is restricted/failing (enrollments is
+      now an optional name/code lookup on that path). (Codex review.)
 - [ ] **Instructor decision:** the same shared password also appears, by design,
       in the course notebooks (`module2/3/4`, `unsorted/`) as the student DB
       connection instructions. If it should be private, rotate it and read it

@@ -129,15 +129,24 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
 // --- course resolution ------------------------------------------------------
 
 async function resolveCourses(ctx, flags) {
-  const all = await enrollments(ctx);
-  const rows = all.map((it) => ({ id: it.OrgUnit.Id, name: it.OrgUnit.Name, code: it.OrgUnit.Code || '' }));
   if (flags['course-ids']) {
     // Dedupe so a repeated id (e.g. `--course-ids 578630,578630`) isn't fetched
     // twice and doesn't inflate occurrence/coverage counts.
     const ids = [...new Set(String(flags['course-ids']).split(',').map((s) => s.trim()).filter(Boolean))];
-    const byId = new Map(rows.map((r) => [String(r.id), r]));
+    // The caller named the shells; enrollments is only a nicety for names/codes
+    // here, so don't let a restricted or failing MyEnrollments route block the
+    // explicit-ID fetch — fall back to bare ids.
+    let byId = new Map();
+    try {
+      const all = await enrollments(ctx);
+      byId = new Map(all.map((it) => [String(it.OrgUnit.Id), { id: it.OrgUnit.Id, name: it.OrgUnit.Name, code: it.OrgUnit.Code || '' }]));
+    } catch {
+      /* explicit IDs don't require enrollments */
+    }
     return ids.map((id) => byId.get(String(id)) || { id, name: `course ${id}`, code: '' });
   }
+  const all = await enrollments(ctx);
+  const rows = all.map((it) => ({ id: it.OrgUnit.Id, name: it.OrgUnit.Name, code: it.OrgUnit.Code || '' }));
   if (flags.filter) {
     const f = String(flags.filter).toLowerCase();
     return rows.filter((r) => `${r.name} ${r.code}`.toLowerCase().includes(f));
