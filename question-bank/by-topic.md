@@ -6,61 +6,61 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Setup & basics — 12 unique
 
-**1.** _(15× · Matching)_
+**1.** _(15× · Long Answer)_
 
 > Write a short paragraph describing the entities stored in the database and their relationships. Explain which are the foreign keys used to implement the relationships. (You will need this understanding for later assignments, especially for joining tables correctly).
 
 <sub>Used in: Spring 2023 · Assignment 2A: Database Navigation · Summer 2023 · Assignment 2A: Database Navigation · Spring 2024 · Assignment 2A: Database Navigation · Summer 2024 · Assignment 2A: Database Navigation · Summer 2025 · Assignment 2A: Database Navigation · Fall 2025 · Assignment 1b: Understanding a Database</sub>
 
-**2.** _(14× · Matching)_
+**2.** _(14× · Long Answer)_
 
 > Connect to the "Music" database. Show the SQL command used to connect to the music database.
 
 <sub>Used in: Spring 2023 · Assignment 2A: Database Navigation · Summer 2023 · Assignment 2A: Database Navigation · Spring 2024 · Assignment 2A: Database Navigation · Summer 2024 · Assignment 2A: Database Navigation · Summer 2025 · Assignment 2A: Database Navigation</sub>
 
-**3.** _(14× · Matching)_
+**3.** _(14× · Long Answer)_
 
 > Type the SQL command used to show all the tables that appear in the Music database.
 
 <sub>Used in: Spring 2023 · Assignment 2A: Database Navigation · Summer 2023 · Assignment 2A: Database Navigation · Spring 2024 · Assignment 2A: Database Navigation · Summer 2024 · Assignment 2A: Database Navigation · Summer 2025 · Assignment 2A: Database Navigation</sub>
 
-**4.** _(14× · Matching)_
+**4.** _(14× · Long Answer)_
 
 > Using the DESCRIBE command, show the attributes of each table. Show the commands used to retrieve the information from each table.
 
 <sub>Used in: Spring 2023 · Assignment 2A: Database Navigation · Summer 2023 · Assignment 2A: Database Navigation · Spring 2024 · Assignment 2A: Database Navigation · Summer 2024 · Assignment 2A: Database Navigation · Summer 2025 · Assignment 2A: Database Navigation</sub>
 
-**5.** _(14× · Matching)_
+**5.** _(14× · Long Answer)_
 
 > Using the results from step 3, identify the primary key for each table above.
 
 <sub>Used in: Spring 2023 · Assignment 2A: Database Navigation · Summer 2023 · Assignment 2A: Database Navigation · Spring 2024 · Assignment 2A: Database Navigation · Summer 2024 · Assignment 2A: Database Navigation · Summer 2025 · Assignment 2A: Database Navigation</sub>
 
-**6.** _(14× · Matching)_
+**6.** _(14× · Long Answer)_
 
 > Using the "Database > Reverse Engineer" of MySQL workbench, extract the relational schema of the Music database. Save a screenshot of the graphical representation of the schema.
 
 <sub>Used in: Spring 2023 · Assignment 2A: Database Navigation · Summer 2023 · Assignment 2A: Database Navigation · Spring 2024 · Assignment 2A: Database Navigation · Summer 2024 · Assignment 2A: Database Navigation · Summer 2025 · Assignment 2A: Database Navigation</sub>
 
-**7.** _(5× · Matching)_
+**7.** _(5× · Long Answer)_
 
 > Connect to the "nyu-datasets.music" database. Submit a screenshot of the tables under the "nyu-datasets.music" dataset in BigQuery
 
 <sub>Used in: Winter 2025 · Assignment 1b: Understanding a Database · Fall 2025 · Assignment 1b: Understanding a Database · Summer 2026 · Assignment 1b: Understanding a Database · Summer 2026 · Post-Module Quiz 1: Understanding a Database</sub>
 
-**8.** _(5× · Matching)_
+**8.** _(5× · Long Answer)_
 
 > Show the attributes of each table. Submit a screenshot for each table.
 
 <sub>Used in: Winter 2025 · Assignment 1b: Understanding a Database · Fall 2025 · Assignment 1b: Understanding a Database · Summer 2026 · Assignment 1b: Understanding a Database · Summer 2026 · Post-Module Quiz 1: Understanding a Database</sub>
 
-**9.** _(5× · Matching)_
+**9.** _(5× · Long Answer)_
 
 > Draw the relational schema of the nyu-datasets.music database (e.g., using ERD Plus).
 
 <sub>Used in: Winter 2025 · Assignment 1b: Understanding a Database · Fall 2025 · Assignment 1b: Understanding a Database · Summer 2026 · Assignment 1b: Understanding a Database · Summer 2026 · Post-Module Quiz 1: Understanding a Database</sub>
 
-**10.** _(4× · Matching)_
+**10.** _(4× · Long Answer)_
 
 > Identify the primary key for each table above.
 > 
@@ -68,13 +68,13 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Winter 2025 · Assignment 1b: Understanding a Database · Fall 2025 · Assignment 1b: Understanding a Database · Summer 2026 · Assignment 1b: Understanding a Database · Summer 2026 · Post-Module Quiz 1: Understanding a Database</sub>
 
-**11.** _(4× · Matching)_
+**11.** _(4× · Long Answer)_
 
 > Write a short paragraph describing the entities stored in the database and their relationships (one-to-one, one-to-many, many-to-many). Explain which foreign keys and tables are used to implement the relationships. Remember that the many-to-many relationships are implemented using a table in a relational database.
 
 <sub>Used in: Winter 2025 · Assignment 1b: Understanding a Database · Summer 2026 · Assignment 1b: Understanding a Database · Summer 2026 · Post-Module Quiz 1: Understanding a Database</sub>
 
-**12.** _(1× · Matching)_
+**12.** _(1× · Long Answer)_
 
 > Identify the primary key for each table above.
 > 
@@ -86,43 +86,43 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Selection — 7 unique
 
-**1.** _(20× · Matching)_
+**1.** _(20× · Long Answer)_
 
 > Show all the albums.
 
 <sub>Used in: Spring 2023 · Assignment: Selection Queries · Spring 2023 · Assignment 2B: Selection Queries · Summer 2023 · Assignment 2B: Selection Queries · Spring 2024 · Assignment 2B: Selection Queries · Summer 2024 · Assignment 2B: Selection Queries · Winter 2025 · Assignment 2a: Selection Queries · Summer 2025 · Assignment 2B: Selection Queries · Fall 2025 · Assignment 2a: Selection Queries · Summer 2026 · Assignment 2a: Selection Queries · Summer 2026 · Pre-Module Quiz 1: Selection Queries</sub>
 
-**2.** _(20× · Matching)_
+**2.** _(20× · Long Answer)_
 
 > Show all the tracks.
 
 <sub>Used in: Spring 2023 · Assignment: Selection Queries · Spring 2023 · Assignment 2B: Selection Queries · Summer 2023 · Assignment 2B: Selection Queries · Spring 2024 · Assignment 2B: Selection Queries · Summer 2024 · Assignment 2B: Selection Queries · Winter 2025 · Assignment 2a: Selection Queries · Summer 2025 · Assignment 2B: Selection Queries · Fall 2025 · Assignment 2a: Selection Queries · Summer 2026 · Assignment 2a: Selection Queries · Summer 2026 · Pre-Module Quiz 1: Selection Queries</sub>
 
-**3.** _(20× · Matching)_
+**3.** _(20× · Long Answer)_
 
 > List all the names of the artists, without the artist ids, sorted alphabetically.
 
 <sub>Used in: Spring 2023 · Assignment: Selection Queries · Spring 2023 · Assignment 2B: Selection Queries · Summer 2023 · Assignment 2B: Selection Queries · Spring 2024 · Assignment 2B: Selection Queries · Summer 2024 · Assignment 2B: Selection Queries · Winter 2025 · Assignment 2a: Selection Queries · Summer 2025 · Assignment 2B: Selection Queries · Fall 2025 · Assignment 2a: Selection Queries · Summer 2026 · Assignment 2a: Selection Queries · Summer 2026 · Pre-Module Quiz 1: Selection Queries</sub>
 
-**4.** _(20× · Matching)_
+**4.** _(20× · Long Answer)_
 
 > Show all the album names and the corresponding artist id, but do not show the album\_id. Rename the album\_name attribute to album\_title.
 
 <sub>Used in: Spring 2023 · Assignment: Selection Queries · Spring 2023 · Assignment 2B: Selection Queries · Summer 2023 · Assignment 2B: Selection Queries · Spring 2024 · Assignment 2B: Selection Queries · Summer 2024 · Assignment 2B: Selection Queries · Winter 2025 · Assignment 2a: Selection Queries · Summer 2025 · Assignment 2B: Selection Queries · Fall 2025 · Assignment 2a: Selection Queries · Summer 2026 · Assignment 2a: Selection Queries · Summer 2026 · Pre-Module Quiz 1: Selection Queries</sub>
 
-**5.** _(20× · Matching)_
+**5.** _(20× · Long Answer)_
 
 > List the ten shortest tracks in terms of playing time.
 
 <sub>Used in: Spring 2023 · Assignment: Selection Queries · Spring 2023 · Assignment 2B: Selection Queries · Summer 2023 · Assignment 2B: Selection Queries · Spring 2024 · Assignment 2B: Selection Queries · Summer 2024 · Assignment 2B: Selection Queries · Winter 2025 · Assignment 2a: Selection Queries · Summer 2025 · Assignment 2B: Selection Queries · Fall 2025 · Assignment 2a: Selection Queries · Summer 2026 · Assignment 2a: Selection Queries · Summer 2026 · Pre-Module Quiz 1: Selection Queries</sub>
 
-**6.** _(19× · Matching)_
+**6.** _(19× · Long Answer)_
 
 > Show all the artists.
 
 <sub>Used in: Spring 2023 · Assignment 2B: Selection Queries · Summer 2023 · Assignment 2B: Selection Queries · Spring 2024 · Assignment 2B: Selection Queries · Summer 2024 · Assignment 2B: Selection Queries · Winter 2025 · Assignment 2a: Selection Queries · Summer 2025 · Assignment 2B: Selection Queries · Fall 2025 · Assignment 2a: Selection Queries · Summer 2026 · Assignment 2a: Selection Queries · Summer 2026 · Pre-Module Quiz 1: Selection Queries</sub>
 
-**7.** _(1× · Matching)_
+**7.** _(1× · Long Answer)_
 
 > Show all the artists.
 > 
@@ -136,73 +136,73 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Filtering — 26 unique
 
-**1.** _(21× · Matching)_
+**1.** _(21× · Long Answer)_
 
 > Output the names of all the Thai restaurants stored in your DB.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**2.** _(21× · Matching)_
+**2.** _(21× · Long Answer)_
 
 > Output the names of all the Brooklyn restaurants stored in your DB there were established prior to 2012.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**3.** _(21× · Matching)_
+**3.** _(21× · Long Answer)_
 
 > Show the list of restaurants together with their cuisine and location with the average price higher than $120.00
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**4.** _(21× · Matching)_
+**4.** _(21× · Long Answer)_
 
 > Show the names of all the food critics who work in NYT or NYP together with the corresponding affiliation.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**5.** _(21× · Matching)_
+**5.** _(21× · Long Answer)_
 
 > Output the first and last names of the reviewers who are freelancers and to not have any affiliation.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**6.** _(21× · Matching)_
+**6.** _(21× · Long Answer)_
 
 > Output the first and last names of authors whose last name starts with the letter 'A'.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**7.** _(21× · Matching)_
+**7.** _(21× · Long Answer)_
 
 > Show all the restaurant names whose length is less than 10 characters.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**8.** _(21× · Matching)_
+**8.** _(21× · Long Answer)_
 
 > Output all the records from the Rating table for the reviews made by the critic with cID 202.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**9.** _(21× · Matching)_
+**9.** _(21× · Long Answer)_
 
 > Output all the records from the Rating table for the reviews made by the critic with cID 210.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**10.** _(21× · Matching)_
+**10.** _(21× · Long Answer)_
 
 > Output all the records from the Rating table for the reviews with the starRating greater than 3
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**11.** _(21× · Matching)_
+**11.** _(21× · Long Answer)_
 
 > Output the names of all the Italian Manhattan restaurants.
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**12.** _(21× · Matching)_
+**12.** _(21× · Long Answer)_
 
 > Output all the names of all the Bronx restaurants with the average prices greater than $100.00
 > 
@@ -210,85 +210,85 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**13.** _(21× · Matching)_
+**13.** _(21× · Long Answer)_
 
 > Get the names and sex of all liberal students
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**14.** _(21× · Matching)_
+**14.** _(21× · Long Answer)_
 
 > Get the names, sex, and political views of liberal and very liberal students
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**15.** _(21× · Matching)_
+**15.** _(21× · Long Answer)_
 
 > Find all students who live in "Weinstein Hall", independent of their room number
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**16.** _(21× · Matching)_
+**16.** _(21× · Long Answer)_
 
 > Find all students with first name "Richard"
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**17.** _(21× · Matching)_
+**17.** _(21× · Long Answer)_
 
 > Find all students with first names starting with P and last names starting with I (e.g. Panos Ipeirotis)
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
-**18.** _(19× · Matching)_
+**18.** _(19× · Long Answer)_
 
 > Show the entry for the artist with id equal to 5.
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**19.** _(19× · Matching)_
+**19.** _(19× · Long Answer)_
 
 > Show the entry for the artist named The Rolling Stones.
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**20.** _(19× · Matching)_
+**20.** _(19× · Long Answer)_
 
 > Find the tracks for the artist with id 3, from the _artist's_ album with id 2.
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**21.** _(19× · Matching)_
+**21.** _(19× · Long Answer)_
 
 > Find the tracks with names that are earlier alphabetically than (is less than) M. Note that inequality queries can be used with text and not only with numbers.
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**22.** _(19× · Matching)_
+**22.** _(19× · Long Answer)_
 
 > Find all albums with a title that begins with a character greater than E (not inclusive of albums that start with E) but less than S (again, not inclusive of albums that start with S).
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**23.** _(19× · Matching)_
+**23.** _(19× · Long Answer)_
 
 > List all the tracts for the artists with ids 1, 3, and 5. Show two variations of the query:  one using the OR Boolean condition and one using the IN operation.
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**24.** _(19× · Matching)_
+**24.** _(19× · Long Answer)_
 
 > Find all the tracks that include the word "Love" anywhere in the title. It is fine to include tracks where love is part of a bigger word (e.g., lovebird).
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Winter 2025 · Assignment 2b: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries · Fall 2025 · Assignment 2b: Filtering Queries · Summer 2026 · Assignment 2b: Filtering Queries · Summer 2026 · Pre-Module Quiz 2: Filtering Queries</sub>
 
-**25.** _(14× · Matching)_
+**25.** _(14× · Long Answer)_
 
 > Using the id of Rolling Stones from Question C.2, list all the albums of The Rolling Stones.
 
 <sub>Used in: Spring 2023 · Assignment 2C: Filtering Queries · Summer 2023 · Assignment 2C: Filtering Queries · Spring 2024 · Assignment 2C: Filtering Queries · Summer 2024 · Assignment 2C: Filtering Queries · Summer 2025 · Assignment 2C: Filtering Queries</sub>
 
-**26.** _(5× · Matching)_
+**26.** _(5× · Long Answer)_
 
 > Using the id of Rolling Stones from Question 2, list all the albums of The Rolling Stones.
 
@@ -296,85 +296,85 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Joins — 14 unique
 
-**1.** _(21× · Matching)_
+**1.** _(21× · Long Answer)_
 
 > Output the names of the restaurants together with the comments written for these restaurants.  Your output should include only those restaurants for which reviews were submitted; do not output empty comments (NULL values)
 
 <sub>Used in: Summer 2022 · Lesson 4 Practice: Join practice queries. · Spring 2023 · Module 3 Practice: Join practice queries. · Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**2.** _(21× · Matching)_
+**2.** _(21× · Long Answer)_
 
 > Output the names of the restaurants together with the star rating and the comments written for these restaurants.  Your output should contain the names of all the restaurants from your database; if some restaurants are not reviewed or their comments are empty, these restaurants should still be included in your output (with NULL values for the star and/or comments attribute);
 
 <sub>Used in: Summer 2022 · Lesson 4 Practice: Join practice queries. · Spring 2023 · Module 3 Practice: Join practice queries. · Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**3.** _(21× · Matching)_
+**3.** _(21× · Long Answer)_
 
 > For every review stored in the database output the review id, first and last names of the critic together with the comments left by this critic for each of the reviews.
 
 <sub>Used in: Summer 2022 · Lesson 4 Practice: Join practice queries. · Spring 2023 · Module 3 Practice: Join practice queries. · Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**4.** _(21× · Matching)_
+**4.** _(21× · Long Answer)_
 
 > Output the critic's first and last names, restaurant name, and the star rating assigned by the critic to the restaurant for all the reviews where the star rating is greater or equal to 3.
 
 <sub>Used in: Summer 2022 · Lesson 4 Practice: Join practice queries. · Spring 2023 · Module 3 Practice: Join practice queries. · Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**5.** _(21× · Matching)_
+**5.** _(21× · Long Answer)_
 
 > For all the Manhattan restaurants output the following information regarding all the reviews submitted for these restaurants: the name of the restaurant, its cuisine, the name of the food critic, food critic's affiliation, star rating assigned by the critic, date the review was written and the comments. Include in the output only those restaurants for which there are reviews in your DB.
 
 <sub>Used in: Summer 2022 · Lesson 4 Practice: Join practice queries. · Spring 2023 · Module 3 Practice: Join practice queries. · Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**6.** _(21× · Matching)_
+**6.** _(21× · Long Answer)_
 
 > For all the Manhattan restaurants output the following information regarding all the reviews submitted for these restaurants: the name of the restaurant, its cuisine, the name of the food critic, food critic's affiliation, star rating assigned by the critic, date the review was written and the comments. Include in your output all the information about all the Manhattan restaurants. If there are Manhattan restaurants for which there are no reviews then the fields for the critic and review should be null.
 
 <sub>Used in: Summer 2022 · Lesson 4 Practice: Join practice queries. · Spring 2023 · Module 3 Practice: Join practice queries. · Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**7.** _(20× · Matching)_
+**7.** _(20× · Long Answer)_
 
 > List all the album names by the band `New Order`
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins · Summer 2023 · Assignment 3: Joins · Spring 2024 · Assignment 3: Joins · Summer 2024 · Assignment 3: Joins · Winter 2025 · Assignment 3: Joins · Summer 2025 · Assignment 3: Joins · Fall 2025 · Assignment 3: Joins · Fall 2025 · Copy of Assignment 3: Joins · Summer 2026 · Assignment 3: Joins · Summer 2026 · Post-Module Quiz 2: Joins</sub>
 
-**8.** _(20× · Matching)_
+**8.** _(20× · Long Answer)_
 
 > List the tracks for the album `Second Coming`
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins · Summer 2023 · Assignment 3: Joins · Spring 2024 · Assignment 3: Joins · Summer 2024 · Assignment 3: Joins · Winter 2025 · Assignment 3: Joins · Summer 2025 · Assignment 3: Joins · Fall 2025 · Assignment 3: Joins · Fall 2025 · Copy of Assignment 3: Joins · Summer 2026 · Assignment 3: Joins · Summer 2026 · Post-Module Quiz 2: Joins</sub>
 
-**9.** _(20× · Matching)_
+**9.** _(20× · Long Answer)_
 
 > List all the track names, the corresponding album name, and the corresponding artist name
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins · Summer 2023 · Assignment 3: Joins · Spring 2024 · Assignment 3: Joins · Summer 2024 · Assignment 3: Joins · Winter 2025 · Assignment 3: Joins · Summer 2025 · Assignment 3: Joins · Fall 2025 · Assignment 3: Joins · Fall 2025 · Copy of Assignment 3: Joins · Summer 2026 · Assignment 3: Joins · Summer 2026 · Post-Module Quiz 2: Joins</sub>
 
-**10.** _(20× · Matching)_
+**10.** _(20× · Long Answer)_
 
 > List all the tracks by the artist `The Stone Roses` and rank them by time length, from shortest to longest
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins · Summer 2023 · Assignment 3: Joins · Spring 2024 · Assignment 3: Joins · Summer 2024 · Assignment 3: Joins · Winter 2025 · Assignment 3: Joins · Summer 2025 · Assignment 3: Joins · Fall 2025 · Assignment 3: Joins · Fall 2025 · Copy of Assignment 3: Joins · Summer 2026 · Assignment 3: Joins · Summer 2026 · Post-Module Quiz 2: Joins</sub>
 
-**11.** _(20× · Matching)_
+**11.** _(20× · Long Answer)_
 
 > The table `tracks_played` contains the tracks the users listened to and the time they listened to the songs. For every track listed in the tracks\_played table, show the user's first and last name, the user id, the album name, the track name, and the date/time it was played.
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins · Summer 2023 · Assignment 3: Joins · Spring 2024 · Assignment 3: Joins · Summer 2024 · Assignment 3: Joins · Winter 2025 · Assignment 3: Joins · Summer 2025 · Assignment 3: Joins · Fall 2025 · Assignment 3: Joins · Fall 2025 · Copy of Assignment 3: Joins · Summer 2026 · Assignment 3: Joins · Summer 2026 · Post-Module Quiz 2: Joins</sub>
 
-**12.** _(20× · Matching)_
+**12.** _(20× · Long Answer)_
 
 > List the first and last names of the users that have not listened to any tracks.
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins · Summer 2023 · Assignment 3: Joins · Spring 2024 · Assignment 3: Joins · Summer 2024 · Assignment 3: Joins · Winter 2025 · Assignment 3: Joins · Summer 2025 · Assignment 3: Joins · Fall 2025 · Assignment 3: Joins · Fall 2025 · Copy of Assignment 3: Joins · Summer 2026 · Assignment 3: Joins · Summer 2026 · Post-Module Quiz 2: Joins</sub>
 
-**13.** _(11× · Matching)_
+**13.** _(11× · Long Answer)_
 
 > Output the rating code, the critic's name who submitted this rating, the borough of the restaurant for which the rating was given, and the star rating for all the ratings submitted on or after January 1, 2010.
 
 <sub>Used in: Summer 2023 · Module 3 Practice: Join practice queries. · Spring 2024 · Module 3 Practice: Join practice queries. · Summer 2024 · Module 3 Practice: Join practice queries. · Winter 2025 · Module 3 Practice: Join practice queries. · Summer 2025 · Module 3 Practice: Join practice queries. · Fall 2025 · Module 3 Practice: Join practice queries. · Summer 2026 · Module 3 Practice: Join practice queries.</sub>
 
-**14.** _(10× · Matching)_
+**14.** _(10× · Long Answer)_
 
 > Output the rating code, the critic's name who submitted this rating, the borough of the restaurant for which the rating was given, and the star rating for all the ratings submitted after January 1, 2010.
 
@@ -382,163 +382,163 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Aggregations — 27 unique
 
-**1.** _(31× · Matching)_
+**1.** _(31× · Long Answer)_
 
 > How many Manhattan restaurants are listed in your database?
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**2.** _(31× · Matching)_
+**2.** _(31× · Long Answer)_
 
 > Output the affiliation (or '-' for freelancers) and how many critics are associated with this affiliation?
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**3.** _(31× · Matching)_
+**3.** _(31× · Long Answer)_
 
 > Output the critic id together with the maximal star rating ever issued by this critic;
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**4.** _(31× · Matching)_
+**4.** _(31× · Long Answer)_
 
 > Output the critic id and the restaurant code together with the maximal star rating ever issued by this critic for this restaurant
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**5.** _(31× · Matching)_
+**5.** _(31× · Long Answer)_
 
 > For every borough, cuisine pair output the minimal price and order the output by borough in the ascending order (consider only the restaurants outside of Manhattan)
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**6.** _(31× · Matching)_
+**6.** _(31× · Long Answer)_
 
 > For every borough, cuisine pair output the minimal price where the minimal price is greater than 100
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**7.** _(31× · Matching)_
+**7.** _(31× · Long Answer)_
 
 > For every borough, cuisine pair output the minimal price where the minimal price is greater than 100 and order the output by the price value in the descending order.
 
 <sub>Used in: Summer 2022 · Lesson 5 Practice: Group by practice queries · Summer 2022 · Practice and Aggregate · Spring 2023 · Module 4 Practice: Group by practice queries · Spring 2023 · Restaurants Database: Simple Practice Queries · Summer 2023 · Module 4 Practice: Group by practice queries · Summer 2023 · Restaurants Database: Simple Practice Queries · Spring 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Module 4 Practice: Group by practice queries · Summer 2024 · Restaurants Database: Simple Practice Queries · Winter 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Module 4 Practice: Group by practice queries · Summer 2025 · Restaurants Database: Simple Practice Queries · Fall 2025 · Module 4 Practice: Group by practice queries · Summer 2026 · Module 4 Practice: Group by practice queries</sub>
 
-**8.** _(21× · Matching)_
+**8.** _(21× · Long Answer)_
 
 > Output the restaurant name together with the number of reviews submitted for this restaurant.
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**9.** _(21× · Matching)_
+**9.** _(21× · Long Answer)_
 
 > For every Manhattan restaurant output its name and the number of reviews submitted for this restaurant.
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**10.** _(21× · Matching)_
+**10.** _(21× · Long Answer)_
 
 > For every restaurant that was reviewed more than once output it name and the number or reviews submitted for this restaurant.
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**11.** _(21× · Matching)_
+**11.** _(21× · Long Answer)_
 
 > Output the critic's last name and the restaurant name together with the maximal star rating ever issued by this critic for this restaurant.
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**12.** _(21× · Matching)_
+**12.** _(21× · Long Answer)_
 
 > For each NYT reporter, output the number of distinct restaurants this reporter reviewed.
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**13.** _(21× · Matching)_
+**13.** _(21× · Long Answer)_
 
 > For every news outlet, output the average star rating submitted by all the reviewers of this outlet. a. consider only Italian restaurants b. consider only Italian restaurants outside of Manhattan
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**14.** _(21× · Matching)_
+**14.** _(21× · Long Answer)_
 
 > For every borough output the max star rating submitted for any restaurant within this borough (in which borough do you have the best restaurant)
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Spring 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Winter 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries · Fall 2025 · Module 4 Practice: Group by together with JOIN queries · Summer 2026 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**15.** _(19× · Matching)_
+**15.** _(19× · Long Answer)_
 
 > Count the number of artists in the database
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**16.** _(19× · Matching)_
+**16.** _(19× · Long Answer)_
 
 > Count the number of tracks in the database
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**17.** _(19× · Matching)_
+**17.** _(19× · Long Answer)_
 
 > For each artist, count the number of albums in the database. You only need to show the id of the artist, not the name of the artist.
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**18.** _(19× · Matching)_
+**18.** _(19× · Long Answer)_
 
 > For each album, count the number of tracks for that album and the total length of all the tracks in the album. You only need to show the primary key of the album, not its name.
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**19.** _(19× · Matching)_
+**19.** _(19× · Long Answer)_
 
 > List the IDs of the albums, where the total album length (across all the album's tracks) is longer than 60 minutes.
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**20.** _(19× · Matching)_
+**20.** _(19× · Long Answer)_
 
 > For every user, show the total tracks they played and the total amount of time they listened. Assume that each track is played fully. List also the users that have not played any track
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**21.** _(19× · Matching)_
+**21.** _(19× · Long Answer)_
 
 > Show the name of the artist and the number of albums for each artist in the database. Name the column that shows the number of albums as num\_albums.
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**22.** _(19× · Matching)_
+**22.** _(19× · Long Answer)_
 
 > Show the name of each track and the first and last time it was played. Include tracks that were not played at all.
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Winter 2025 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**23.** _(15× · Matching)_
+**23.** _(15× · Long Answer)_
 
 > Show the average and standard deviation of the track length
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations</sub>
 
-**24.** _(15× · Matching)_
+**24.** _(15× · Long Answer)_
 
 > For every _date_ listed in the tracked\_played table, show the artist's name, the artist id, the number of users that listened to the artist, and the total amount of time users listened to the artist. Assume that each track is played fully.
 
 <sub>Used in: Spring 2023 · Assignment 4: Aggregations · Summer 2023 · Assignment 4: Aggregations · Spring 2024 · Assignment 4: Aggregations · Summer 2024 · Assignment 4: Aggregations · Summer 2025 · Assignment 4: Aggregations · Fall 2025 · Assignment 4: Aggregations</sub>
 
-**25.** _(10× · Matching)_
+**25.** _(10× · Long Answer)_
 
 > For each cuisine-borough pair, output the number of the corresponding restaurants.
 
 <sub>Used in: Summer 2022 · Lesson 6 Practice: Group by together with JOIN queries · Spring 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2023 · Module 4 Practice: Group by together with JOIN queries · Summer 2024 · Module 4 Practice: Group by together with JOIN queries · Summer 2025 · Module 4 Practice: Group by together with JOIN queries</sub>
 
-**26.** _(4× · Matching)_
+**26.** _(4× · Long Answer)_
 
 > Show the average and standard deviation of the track length; round both to two decimal digits
 
 <sub>Used in: Winter 2025 · Assignment 4: Aggregations · Summer 2026 · Assignment 4: Aggregations · Summer 2026 · Post-Module Quiz 3: Aggregations</sub>
 
-**27.** _(4× · Matching)_
+**27.** _(4× · Long Answer)_
 
 > For every _date_ listed in the tracked\_played table (_**not**_ date _\+ time_), show the artist's name, the artist id, the number of users that listened to the artist, and the total amount of time users listened to the artist. Assume that each track is played fully.
 
@@ -546,43 +546,43 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Subqueries — 7 unique
 
-**1.** _(19× · Matching)_
+**1.** _(19× · Long Answer)_
 
 > For _**eligible**_ names that appear for _**both**_ males and females, report the names and the frequencies for males and females. Rank the most ambiguous names on top. We consider as most ambiguous names the ones where the formula **log( male\_freq / female\_freq )** is close to 0. Remember that the log can be positive and negative; ranking by absolute value (using the [ABS() function](https://www.w3schools.com/sql/func_mysql_abs.asp)) will allow you to rank the smallest numbers first.
 
 <sub>Used in: Spring 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Advanced Queries · Spring 2024 · Assignment 5: Subqueries · Summer 2024 · Assignment 5: Advanced Queries · Summer 2024 · Assignment 5: Subqueries · Winter 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Advanced Queries · Fall 2025 · Assignment 5: Subqueries · Summer 2026 · Assignment 5: Subqueries · Summer 2026 · Post-Module Quiz 4: Subqueries</sub>
 
-**2.** _(16× · Matching)_
+**2.** _(16× · Long Answer)_
 
 > Find the eligible names that appear only for male actors but for no female actresses, and report the corresponding frequencies.
 
 <sub>Used in: Spring 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Advanced Queries · Spring 2024 · Assignment 5: Subqueries · Summer 2024 · Assignment 5: Advanced Queries · Summer 2024 · Assignment 5: Subqueries · Winter 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Advanced Queries · Fall 2025 · Assignment 5: Subqueries · Summer 2026 · Assignment 5: Subqueries · Summer 2026 · Post-Module Quiz 4: Subqueries</sub>
 
-**3.** _(16× · Matching)_
+**3.** _(16× · Long Answer)_
 
 > Find the eligible names that appear only for female actors but for no male actresses, and report the corresponding frequencies.
 
 <sub>Used in: Spring 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Advanced Queries · Spring 2024 · Assignment 5: Subqueries · Summer 2024 · Assignment 5: Advanced Queries · Summer 2024 · Assignment 5: Subqueries · Winter 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Advanced Queries · Fall 2025 · Assignment 5: Subqueries · Summer 2026 · Assignment 5: Subqueries · Summer 2026 · Post-Module Quiz 4: Subqueries</sub>
 
-**4.** _(11× · Matching)_
+**4.** _(11× · Long Answer)_
 
 > As a first step, limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc); also only consider first names that appear at least 50 times in the actors table (across both genders; ie., a name that appears in 35 males and 20 females qualifies as eligible). Create a temporary table with the results, called "eligible\_names". (You will use the table in later questions)
 
 <sub>Used in: Summer 2023 · Assignment 5: Subqueries · Spring 2024 · Assignment 5: Subqueries · Summer 2024 · Assignment 5: Subqueries · Winter 2025 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Subqueries · Fall 2025 · Assignment 5: Subqueries · Summer 2026 · Assignment 5: Subqueries · Summer 2026 · Post-Module Quiz 4: Subqueries</sub>
 
-**5.** _(3× · Matching)_
+**5.** _(3× · Long Answer)_
 
 > As a first step, limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc); also only consider first names that appear at least 50 times in the actors table (across both genders, ie a name with 35 males and 20 females qualifies). Create a temporary table with the results, called "**eligible\_names**". (You will use the table in later questions)
 
 <sub>Used in: Summer 2023 · Assignment 5: Subqueries · Summer 2024 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Subqueries</sub>
 
-**6.** _(3× · Matching)_
+**6.** _(3× · Long Answer)_
 
 > Find the eligible names (see definition of eligible names from Q1) that appear only for male actors but for no female actresses, and report the corresponding frequencies.
 
 <sub>Used in: Summer 2023 · Assignment 5: Subqueries · Summer 2024 · Assignment 5: Subqueries · Summer 2025 · Assignment 5: Subqueries</sub>
 
-**7.** _(3× · Matching)_
+**7.** _(3× · Long Answer)_
 
 > Find the eligible names (see definition of eligible names from Q1) that appear only for female actors but for no male actresses, and report the corresponding frequencies.
 
@@ -590,37 +590,37 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Window functions — 7 unique
 
-**1.** _(13× · Matching)_
+**1.** _(13× · Long Answer)_
 
 > Setup: Create a **temporary table SignUpsOn**, that shows the number of people that signed up on that day (using the MemberSince attribute)
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
-**2.** _(13× · Matching)_
+**2.** _(13× · Long Answer)_
 
 > Setup: Create a **temporary table InactiveOn**, that shows the number of people that became inactive that day (using the LastUpdate attribute)
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
-**3.** _(13× · Matching)_
+**3.** _(13× · Long Answer)_
 
 > **SingUpsAsOf**: Using the SignUpsOn table, calculate the total number of users signed up for Facebook up to each date listed in the MemberSince column. (In other words, calculate the cumulative sum of users from the SignUpsOn table.) Use a SUM() function together with a window specification.
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
-**4.** _(13× · Matching)_
+**4.** _(13× · Long Answer)_
 
 > **InactiveAsOf**: Using the InactiveOn table, calculate the total number of users who are inactive as of a given date (again,  up to each date in the MemberSince. Use a SUM() function together with a window specification.
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
-**5.** _(13× · Matching)_
+**5.** _(13× · Long Answer)_
 
 > Using the **SingUpsAsOf** and **InactiveAsOf**, calculate the total\_active users for each date. We define total active users as the total signups up to that date, minus the total users that have been inactive up to that date.
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
-**6.** _(13× · Matching)_
+**6.** _(13× · Long Answer)_
 
 > Create the **passengers\_per\_airport** temporary table, which contains  the total number of passengers departing from each airport.  Use the m\_ticket\_prices table; we are interested in the origin and the passengers attributes.
 > 
@@ -628,7 +628,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Assignment 6: Window queries · Spring 2023 · Copy of Assignment 6: Window queries · Summer 2023 · Assignment 6: Window queries · Spring 2024 · Assignment 6: Window queries · Summer 2024 · Assignment 6: Window queries · Winter 2025 · Assignment 6: Window queries · Summer 2025 · Assignment 6: Window queries · Fall 2025 · Assignment 6: Window queries · Summer 2026 · Assignment 6: Window queries</sub>
 
-**7.** _(13× · Matching)_
+**7.** _(13× · Long Answer)_
 
 > Using the `passengers_per_airport` table from the previous question, calculate each airport's **national rank** and **state rank** in terms of departing passengers. The **m\_airports** table contains the state of each airport. (Note: The number 1 airport nationally will have the most passengers nationwide, while the number 1 per state will have the most passengers within the state.)
 
@@ -636,79 +636,79 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### General / other — 34 unique
 
-**1.** _(21× · Matching)_
+**1.** _(21× · Long Answer)_
 
 > Can a customer have an unlimited number of plans?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**2.** _(21× · Matching)_
+**2.** _(21× · Long Answer)_
 
 > Can a customer exist without a plan?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**3.** _(21× · Matching)_
+**3.** _(21× · Long Answer)_
 
 > Is it possible to create a plan without knowing who the customer is?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**4.** _(21× · Matching)_
+**4.** _(21× · Long Answer)_
 
 > Does the operator want to limit the plans that each handset can be linked to?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**5.** _(21× · Matching)_
+**5.** _(21× · Long Answer)_
 
 > Is it possible to maintain data regarding a handset without connecting it to a plan?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**6.** _(21× · Matching)_
+**6.** _(21× · Long Answer)_
 
 > Can a handset be associated with multiple plans?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**7.** _(21× · Matching)_
+**7.** _(21× · Long Answer)_
 
 > Assume a handset type exists that can utilize multiple operating systems. Could this situation be accommodated within the model included in Figure 2-24?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**8.** _(21× · Matching)_
+**8.** _(21× · Long Answer)_
 
 > Is the company able to track a manufacturer without maintaining information about its handsets?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**9.** _(21× · Matching)_
+**9.** _(21× · Long Answer)_
 
 > Can the same operating system be used on multiple handset types?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**10.** _(21× · Matching)_
+**10.** _(21× · Long Answer)_
 
 > There are two relationships between Customer and Plan. Explain how they differ.
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**11.** _(21× · Matching)_
+**11.** _(21× · Long Answer)_
 
 > Is it possible to link a handset to a specific customer in a plan with multiple customers?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**12.** _(21× · Matching)_
+**12.** _(21× · Long Answer)_
 
 > Can the company track a handset without identifying its operating system?
 
 <sub>Used in: Summer 2022 · Lesson 1 Practice: Cellular Operator Database Questions · Spring 2023 · Module 1 Practice: Cellular Operator Database Questions · Summer 2023 · Module 1 Practice: Cellular Operator Database Questions · Spring 2024 · Module 1 Practice: Cellular Operator Database Questions · Summer 2024 · Module 1 Practice: Cellular Operator Database Questions · Winter 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2025 · Module 1 Practice: Cellular Operator Database Questions · Fall 2025 · Module 1 Practice: Cellular Operator Database Questions · Summer 2026 · Module 1 Practice: Cellular Operator Database Questions</sub>
 
-**13.** _(20× · Matching)_
+**13.** _(20× · Long Answer)_
 
 > For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination.
 > 
@@ -716,7 +716,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
-**14.** _(20× · Matching)_
+**14.** _(20× · Long Answer)_
 
 > For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination. However, when calculating the average fare, weight each fare according to the number of passengers.
 > 
@@ -724,7 +724,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
-**15.** _(20× · Matching)_
+**15.** _(20× · Long Answer)_
 
 > Which origin-dest pair has the highest number of passengers?
 > 
@@ -732,7 +732,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
-**16.** _(20× · Matching)_
+**16.** _(20× · Long Answer)_
 
 > For each origin-dest pair, list the number of carriers, the max fare, min fare, the difference between the highest and the lowest fare offered by the various carriers, and the ratio of the minimum to the maximum fare. Limit the results only to origin-dest pairs with at least 3 carriers.
 > 
@@ -740,7 +740,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
-**17.** _(20× · Matching)_
+**17.** _(20× · Long Answer)_
 
 > For each origin airport, list the number of carriers that have flights departing from that airport and the total number of destinations served by the origin airport.
 > 
@@ -748,7 +748,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
-**18.** _(20× · Matching)_
+**18.** _(20× · Long Answer)_
 
 > For each origin airport, calculate the average fare across all destinations, the average fare per mile, and the average distance from the other airports.
 > 
@@ -756,79 +756,79 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Module 4 Practice: Flights Database Questions · Summer 2023 · Module 4 Practice: Flights Database Questions · Spring 2024 · Module 4 Practice: Flights Database Questions · Summer 2024 · Module 4 Practice: Flights Database Questions · Winter 2025 · Module 4 Practice: Flights Database Questions · Summer 2025 · Module 4 Practice: Flights Database Questions · Fall 2025 · Module 4 Practice: Flights Database Questions · Summer 2026 · Module 4 Practice: Flights Database Questions</sub>
 
-**19.** _(20× · Matching)_
+**19.** _(20× · Long Answer)_
 
 > Break down the number of collisions by borough.
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**20.** _(20× · Matching)_
+**20.** _(20× · Long Answer)_
 
 > Find out the how many collisions had 0 persons injured, 1 persons injured, etc. persons injured in each accident.
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**21.** _(20× · Matching)_
+**21.** _(20× · Long Answer)_
 
 > Compute the average number of injuries and deaths per accident, broken down by borough.
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**22.** _(20× · Matching)_
+**22.** _(20× · Long Answer)_
 
 > Compute the average number of injuries and deaths per accident, broken down by  the cause for the accident
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**23.** _(20× · Matching)_
+**23.** _(20× · Long Answer)_
 
 > Break down the number of accidents by borough and cause.
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**24.** _(20× · Matching)_
+**24.** _(20× · Long Answer)_
 
 > Find the dates with the most accidents. Can you figure out what happened on these days?
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**25.** _(20× · Matching)_
+**25.** _(20× · Long Answer)_
 
 > Plot the number of accidents per day. Try to eliminate the effects of seasonality by resampling and calculating average daily values using a rolling window of a year for the calculation of the daily averages.
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**26.** _(20× · Matching)_
+**26.** _(20× · Long Answer)_
 
 > We want to analyze the timing patterns of accidents that lead to death or injury. Calculate the probability of an accident resulting in an injury (one or more injured people) and the probability of an accident resulting in one or more deaths, broken down the by the hour of the day. Also list the total number of collisions for the given hour of the day.
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**27.** _(15× · Matching)_
+**27.** _(15× · Long Answer)_
 
 > Find out the most common contributing factors to the collisions, for all accidents after Jan-1-2020. The causes are listed in the `vehicles_involved` table
 
 <sub>Used in: Spring 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2023 · General Data Analytics Practice: NYPD Collisions Dataset · Spring 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2024 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2025 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**28.** _(6× · Matching)_
+**28.** _(6× · Long Answer)_
 
 > Retrieve the names of products along with the category name they belong to. Display the ProductID, ProductName, and CategoryName. Sort the results by CategoryName and then by ProductName.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · General Practice: Northwind Dataset · Fall 2025 · General Practice: Northwind Dataset · Summer 2026 · General Practice: Northwind Dataset</sub>
 
-**29.** _(6× · Matching)_
+**29.** _(6× · Long Answer)_
 
 > Find the customers who have placed more than 10 orders. Display the CustomerID, CompanyName, and the total number of orders they have placed
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · General Practice: Northwind Dataset · Fall 2025 · General Practice: Northwind Dataset · Summer 2026 · General Practice: Northwind Dataset</sub>
 
-**30.** _(6× · Matching)_
+**30.** _(6× · Long Answer)_
 
 > List the names and id of customers who have never placed an order. Display the CustomerID and ContactName.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · General Practice: Northwind Dataset · Fall 2025 · General Practice: Northwind Dataset · Summer 2026 · General Practice: Northwind Dataset</sub>
 
-**31.** _(6× · Matching)_
+**31.** _(6× · Long Answer)_
 
 > For each supplier, we want to calculate how much revenue they generated from product sales in 2014, and display suppliers who generated more than $10,000 in revenue.
 > 
@@ -844,19 +844,19 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · General Practice: Northwind Dataset · Fall 2025 · General Practice: Northwind Dataset · Summer 2026 · General Practice: Northwind Dataset</sub>
 
-**32.** _(5× · Matching)_
+**32.** _(5× · Long Answer)_
 
 > As a first step, limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc); also only consider first names that appear at least 50 times in the actors table (across both genders). Create a temporary table with the results, called "eligible\_names". (You will use the table in later questions)
 
 <sub>Used in: Spring 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Subqueries · Summer 2023 · Assignment 5: Advanced Queries · Summer 2024 · Assignment 5: Advanced Queries · Summer 2025 · Assignment 5: Advanced Queries</sub>
 
-**33.** _(5× · Matching)_
+**33.** _(5× · Long Answer)_
 
 > Collisions: Find out the most common contributing factors to the collisions, for all accidents after Jan-1-2020. The causes are listed in the `vehicles_involved` table
 
 <sub>Used in: Winter 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Fall 2025 · General Data Analytics Practice: NYPD Collisions Dataset · Summer 2026 · General Data Analytics Practice: NYPD Collisions Dataset</sub>
 
-**34.** _(5× · Matching)_
+**34.** _(5× · Long Answer)_
 
 > For each supplier, list the total number of products they supply and the total quantity of these products that have been ordered. Display the SupplierID, CompanyName, TotalProducts, and TotalQuantityOrdered.
 
@@ -864,7 +864,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ### Final exam — 69 unique
 
-**1.** _(22× · Matching)_
+**1.** _(22× · Long Answer)_
 
 > For each order, show the **customerID** who placed the order, and list the **number of products** in the order, the t**otal units in the order** (each order may contain multiple units of a product as reported in the "Quantity" field or OrderDetails), and the **total order price** for all the products (using the Quantity and UnitPrice fields in the OrderDetails table; ignore the Discount field).
 > 
@@ -872,23 +872,23 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Winter 2025 · General Practice: Northwind Dataset · Summer 2025 · Final Exam · Fall 2025 · General Practice: Northwind Dataset · Summer 2026 · General Practice: Northwind Dataset</sub>
 
-**2.** _(17× · Matching)_
+**2.** _(17× · Long Answer)_
 
 > We want to identify the **ship countries** with the highest average freight charges. Return the **top-three** ship countries with the highest average freight overall, in descending order by average **freight**. _You only need the Orders table._
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Winter 2025 · General Practice: Northwind Dataset · Summer 2025 · Final Exam · Fall 2025 · General Practice: Northwind Dataset · Summer 2026 · General Practice: Northwind Dataset</sub>
 
-**3.** _(15× · Matching)_
+**3.** _(15× · Long Answer)_
 
 > Flights: Using the table **flights.m\_ticket\_prices**, for each carrier, report the number of routes they maintain, the number of airports their flights leave from, and their average fare per mile. Report results only for carriers having more than 20,000 passengers across all their flights.
 > 
-> _Hint: 11 rows in the outcome_
+> _Hint: 14 rows in the outcome_
 > 
 > _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam</sub>
 
-**4.** _(14× · Matching)_
+**4.** _(14× · Long Answer)_
 
 > Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
 > 
@@ -898,67 +898,67 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam</sub>
 
-**5.** _(13× · Multiple Choice)_
+**5.** _(13× · True/False)_
 
 > A customer can have one or more rates.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**6.** _(13× · Multiple Choice)_
+**6.** _(13× · True/False)_
 
 > A meter belongs to one and only one customer.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**7.** _(13× · Multiple Choice)_
+**7.** _(13× · True/False)_
 
 > A meter has one or more rates.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**8.** _(13× · Multiple Choice)_
+**8.** _(13× · True/False)_
 
 > Each reading can be performed by zero, one, or more employees.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**9.** _(13× · Multiple Choice)_
+**9.** _(13× · True/False)_
 
 > Each bill is associated with zero or more customers.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**10.** _(13× · Multiple Choice)_
+**10.** _(13× · True/False)_
 
 > Each bill contains one or more readings.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**11.** _(13× · Multiple Choice)_
+**11.** _(13× · True/False)_
 
 > The employee name is a unique identifier of the employee.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**12.** _(13× · Multiple Choice)_
+**12.** _(13× · True/False)_
 
 > A set of customers can be associated with the same rate\_id.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**13.** _(13× · Multiple Choice)_
+**13.** _(13× · True/False)_
 
 > The Customer-Rate relationship is a one-to-one relationship.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**14.** _(13× · Multiple Choice)_
+**14.** _(13× · True/False)_
 
 > The Customer-Meter relationship is a one-to-one relationship.
 
 <sub>Used in: Summer 2022 · Final Exam · Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**15.** _(13× · Matching)_
+**15.** _(13× · Long Answer)_
 
 > Using the flights.m\_ticket\_prices and the m\_airports table, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.
 > 
@@ -966,7 +966,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**16.** _(13× · Matching)_
+**16.** _(13× · Long Answer)_
 
 > Use the table flights.m\_ticket\_prices. For each route (origin-destination pair), list the following statistics:
 > 
@@ -982,31 +982,31 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**17.** _(11× · Matching)_
+**17.** _(11× · Long Answer)_
 
 > We would like to see just the FirstName, LastName, and HireDate of all the employees with the title of Sales Representative who are also in the United States
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**18.** _(11× · Matching)_
+**18.** _(11× · Long Answer)_
 
 > From the Products table, we want to see the ProductID and ProductName for those products where the ProductName includes the string "queso"
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**19.** _(11× · Matching)_
+**19.** _(11× · Long Answer)_
 
 > We would like to know, for each product, the associated Supplier. Show the ProductID, ProductName, and the CompanyName of the Supplier. Sort the results by ProductID.
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**20.** _(11× · Matching)_
+**20.** _(11× · Long Answer)_
 
 > For every customer in the database list the number of orders they have placed.
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**21.** _(11× · Matching)_
+**21.** _(11× · Long Answer)_
 
 > For each customer, we want to calculate how much they spent within 2016.
 > 
@@ -1022,7 +1022,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**22.** _(11× · Matching)_
+**22.** _(11× · Long Answer)_
 
 > **_Hard question. Requires use of subqueries and CASE WHEN._**
 > 
@@ -1038,85 +1038,85 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Final Exam · Summer 2023 · Final Exam · Spring 2024 · Final Exam · Summer 2024 · Final Exam · Summer 2025 · Final Exam</sub>
 
-**23.** _(7× · Multiple Choice)_
+**23.** _(7× · True/False)_
 
 > An Agent can only list one house at a time.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**24.** _(7× · Multiple Choice)_
+**24.** _(7× · True/False)_
 
 > The HasBuilding relationship signifies that a Lot must have one Building.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**25.** _(7× · Multiple Choice)_
+**25.** _(7× · True/False)_
 
 > A Dwelling is uniquely identified by its UnitNumber attribute.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**26.** _(7× · Multiple Choice)_
+**26.** _(7× · True/False)_
 
 > The SaleTransaction entity must always have a corresponding Listing entity.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**27.** _(7× · Multiple Choice)_
+**27.** _(7× · True/False)_
 
 > Each SaleTransaction can involve multiple Owners who buy the Dwelling
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**28.** _(7× · Multiple Choice)_
+**28.** _(7× · True/False)_
 
 > The Contains relationship between Building and Dwelling is one-to-one.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**29.** _(7× · Multiple Choice)_
+**29.** _(7× · True/False)_
 
 > The ListingSold relationship between SaleTransaction and Listing indicates that not all Listings result in SaleTransactions.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**30.** _(7× · Multiple Choice)_
+**30.** _(7× · True/False)_
 
 > A SaleTransactionOwner must have at least one participating Owner.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**31.** _(7× · Multiple Choice)_
+**31.** _(7× · True/False)_
 
 > An Agent can assist buyers in multiple SaleTransactions, but a SaleTransaction can only involve one buyer Agent.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**32.** _(7× · Multiple Choice)_
+**32.** _(7× · True/False)_
 
 > It is possible to use the LotID to identify a Building entity.
 
 <sub>Used in: Summer 2024 · Final Exam · Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**33.** _(7× · Matching)_
+**33.** _(7× · Long Answer)_
 
 > Write a query that returns the five hobbies that appear in the largest number of profiles, ordered from most to least popular. Show the hobby and the count of distinct `ProfileID`s.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**34.** _(7× · Matching)_
+**34.** _(7× · Long Answer)_
 
 > Produce a table with columns `Sex`, `RelationshipStatus`, and `ProfilesCount`. Count every profile that has an entry in the `Relationship` table. Order by `Sex`, then by the count descending. Do not show results for the profiles with NULL in the Sex column.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**35.** _(6× · Matching)_
+**35.** _(6× · Long Answer)_
 
 > For every distinct value in `PoliticalViews`, report the average number of favorite books its members list.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**36.** _(5× · Matching)_
+**36.** _(5× · Long Answer)_
 
 > In the Facebook database, find the Male students, who are "InterestedIn" Men (according to the Orientation table), and are "LookingFor" Dating (according to the LookingFor table). List the ProfileID of the student, their Name, and their Birthday, eliminating students that have NULL values for their Birthday.
 > 
@@ -1124,7 +1124,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Summer 2022 · Final Exam · Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**37.** _(5× · Matching)_
+**37.** _(5× · Long Answer)_
 
 > For each ProfileID, show the number of music likes, tv show likes, book likes, and movie likes.
 > 
@@ -1132,19 +1132,19 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Winter 2025 · Final Exam · Fall 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**38.** _(4× · Matching)_
+**38.** _(4× · Long Answer)_
 
 > Using `nyu-datasets.flights.m_ticket_prices`, calculate the average fare per mile for each year-quarter, both unweighted and weighted by passenger count. Order results chronologically.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**39.** _(4× · Matching)_
+**39.** _(4× · Long Answer)_
 
 > Using the **nyu-datasets.flights.m\_ticket\_prices** and the **nyu-datasets.flights.m\_airports** tables, find the _distinct_ routes in 2024 (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**40.** _(4× · Matching)_
+**40.** _(4× · Long Answer)_
 
 > Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
 > 
@@ -1152,13 +1152,13 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**41.** _(4× · Matching)_
+**41.** _(4× · Long Answer)_
 
 > Flights: Using the table **flights.m\_ticket\_prices**, for each ticketing carrier and year 2024, report the number of routes they maintain, the number of airports their flights leave from, and their average fare per mile. Report results only for carriers having more than 200,000 passengers across all their flights.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**42.** _(4× · Matching)_
+**42.** _(4× · Long Answer)_
 
 > Using the `nyu-datasets.flights.m_ticket_prices` table, write a query to analyze the performance of each ticketing carrier for the year 2024.
 > 
@@ -1174,20 +1174,20 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**43.** _(4× · Matching)_
+**43.** _(4× · Long Answer)_
 
 > For each `Concentration` in the `Concentrations` table, output the concentration name and the count of distinct profiles who listed it.
 > Include concentrations listed by more than 100 distinct profiles.
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**44.** _(4× · Matching)_
+**44.** _(4× · Long Answer)_
 
 > For each Music entry, calculate the number of ProfileIDs that like each music entry, considering only students that listed Eminem in their FavoriteMusic
 
 <sub>Used in: Winter 2025 · Final Exam · Summer 2026 · Final Exam</sub>
 
-**45.** _(3× · Matching)_
+**45.** _(3× · Long Answer)_
 
 > In the Facebook database, find the most commonly declared double majors/concentrations, and rank them in descending order, based on the number of students. Keep only double majors that have at least 50 students. (Hint: You will need to use the table "Concentration" twice while constructing the query; you also need to ensure that the two concentrations are different, i.e., no "Finance-Finance")
 > 
@@ -1195,7 +1195,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam · Summer 2022 · Final Exam</sub>
 
-**46.** _(2× · Matching)_
+**46.** _(2× · Long Answer)_
 
 > ![](https://www.dropbox.com/s/d5kkd19uh4esw59/water_utility_ER.png?raw=1)
 > 
@@ -1212,7 +1212,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**47.** _(2× · Matching)_
+**47.** _(2× · Long Answer)_
 
 > In the Facebook database, find the Male students, who are "InterestedIn" Women, and are "LookingFor" "Whatever I can get".
 > 
@@ -1220,7 +1220,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**48.** _(2× · Matching)_
+**48.** _(2× · Long Answer)_
 
 > In the Facebook database, for each book, list the number of women that like the book. Limit the list to books that have at least 100 likes from women.
 > 
@@ -1228,13 +1228,13 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**49.** _(2× · Matching)_
+**49.** _(2× · Long Answer)_
 
 > In the IMDb database, find the actors that have starred in at least 5 rated movies. List their first and last names, the first and last year that they starred in a movie (rated or not) and the number of years they have been active. Also list the total number of movies that the actor participated, the number of rated movies they participated, and their average rating of these movies.
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**50.** _(2× · Matching)_
+**50.** _(2× · Long Answer)_
 
 > In the IMDb database, you are asked to analyze the first names of the actors and how they correlate to gender. Limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc), and only consider first names that appear at least 50 times in the actors table.
 > 
@@ -1242,7 +1242,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**51.** _(2× · Matching)_
+**51.** _(2× · Long Answer)_
 
 > In the IMDb database, you are asked to analyze the first names of the actors and how they correlate to gender. Limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc), and only consider first names that appear at least 50 times in the actors table.
 > 
@@ -1250,13 +1250,13 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**52.** _(2× · Matching)_
+**52.** _(2× · Long Answer)_
 
 > Find the number of movies that each actress (i.e., gender being 'F') has played, the number of rated movies that she has played in, and the average rating of their movies. Keep only actresses that have played in at least 40 movies and at least 30 rated movies, and order in descending order based on the average rating of their movies. Restrict your analysis only to non-Adult movies (otherwise, surprise surprise, plenty of pornstars have a rating of 9.9).
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**53.** _(2× · Matching)_
+**53.** _(2× · Long Answer)_
 
 > You are asked to analyze the first names of the actors and how they correlate to gender. Limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc), and only consider first names that appear at least 50 times in the actors table.
 > 
@@ -1264,42 +1264,42 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
-**54.** _(2× · Matching)_
+**54.** _(2× · Long Answer)_
 
 > The film **“The Godfather”** is stored as a value in `FavoriteMovies.Movie`. For each `Orientation.InterestedIn` value, count how many members list that movie.
 
 <sub>Used in: Summer 2025 · Final Exam</sub>
 
-**55.** _(2× · Matching)_
+**55.** _(2× · Long Answer)_
 
 > List the `ProfileID`s of members who have more than 200 different entries in `FavoriteMusic`. Show each qualifying ProfileID and the number of music entries for each profile.
 
 <sub>Used in: Summer 2025 · Final Exam</sub>
 
-**56.** _(2× · Matching)_
+**56.** _(2× · Long Answer)_
 
 > For each ProfileID, show the number of music likes, tv show likes, book likes, and movie likes.
 
 <sub>Used in: Summer 2025 · Final Exam</sub>
 
-**57.** _(2× · Matching)_
+**57.** _(2× · Long Answer)_
 
 > For each `Concentration` in the `Concentration` table, output the concentration name and the count of distinct profiles who listed it.
 > Include concentrations listed by more than 100 distinct profiles.
 
 <sub>Used in: Summer 2025 · Final Exam · Fall 2025 · Final Exam</sub>
 
-**58.** _(1× · Matching)_
+**58.** _(1× · Long Answer)_
 
 > Using the flights.m\_ticket\_prices and the m\_airports table, find the _distinct_ routes (origin-destination pairs) where the origin and the destination are part of the same state; in the output show the origin, dest, and the state of the airports.
 > 
-> Hint: 597 rows in the output
+> Hint: 637 rows in the output
 > 
 > _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
-**59.** _(1× · Matching)_
+**59.** _(1× · Long Answer)_
 
 > For each route (origin-destination pair), list the following statistics:
 > 
@@ -1311,59 +1311,57 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > 
 > Report results only for routes with at least 3 carriers and more than  10,000 total passengers. Use the table flights.m\_ticket\_prices.
 > 
-> Hint: 147 rows in the output
+> Hint: 2336 rows in the output
 > 
 > _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
-**60.** _(1× · Matching)_
+**60.** _(1× · Long Answer)_
 
 > Flights: For each state of the origin airport calculate the following metrics: the number of airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\_ticket\_prices** and the **m\_airports** tables to find the information that you need.
 > 
-> Hint: 52 rows
+> Hint: 53 rows
 > 
 > _For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
-**61.** _(1× · Matching)_
+**61.** _(1× · Long Answer)_
 
 > List the 10 most popular Music entries and the number of students that like them, across students that are concentrating in Finance.
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
-**62.** _(1× · Matching)_
+**62.** _(1× · Long Answer)_
 
 > **(This is a hard question)**
 > 
 > In the Facebook database, calculate the average number of hobbies listed by each person in the database, and report the average number of hobbies broken down by "Sex".
 > 
 > You will need the Profiles table to get the Sex of each person, and the Hobbies table to get the hobbies. You will probably need to use a subquery to compute the averages.
-> 
-> Hint: Remember that some people have listed no hobbies — your average must account for those zero-hobby profiles (and for the profiles with a NULL Sex), otherwise the per-Sex averages come out too high.
 
 <sub>Used in: Summer 2022 · Final Exam</sub>
 
-**63.** _(1× · Matching)_
+**63.** _(1× · Long Answer)_
 
 > Show the date/time of the first order ever date in the Orders table
 
 <sub>Used in: Spring 2023 · Final Exam</sub>
 
-**64.** _(1× · Matching)_
+**64.** _(1× · Long Answer)_
 
 > We would like to see, **for each shipper**, the number of orders they have handled and the number of distinct days that they came to the warehouse to pick the orders (according to the the ShippedDate column in Orders). Show the **ShipperID**, the **CompanyName** of the shipper, the **number of orders** the shipper handled, and the **number of distinct days** that each shipper came to the warehouse.
 
 <sub>Used in: Spring 2023 · Final Exam</sub>
 
-**65.** _(1× · Matching)_
+**65.** _(1× · Long Answer)_
 
 > For each supplier, list the total number of products they supply and the total quantity of these products that have been ordered. Display the SupplierID, CompanyName, TotalProducts, and TotalQuantityOrdered. (7.5pts)
 
 <sub>Used in: Summer 2024 · Final Exam</sub>
 
-**66.** _(1× · Matching)_
+**66.** _(1× · Long Answer)_
 
 > For **every calendar day** present in `MemberSince`, the following metrics:
 > 
@@ -1392,7 +1390,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Summer 2025 · Final Exam</sub>
 
-**67.** _(1× · Matching)_
+**67.** _(1× · Long Answer)_
 
 > This is an OPTIONAL, extra credit query. It builds on the growth calculation question, and expands it to calculate user churn, in addition to growth.
 > 
@@ -1465,7 +1463,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Summer 2025 · Final Exam</sub>
 
-**68.** _(1× · Matching)_
+**68.** _(1× · Long Answer)_
 
 > Use the table **nyu-datasets.flights.m\_ticket\_prices**. For each route (origin-destination pair), list the following statistics:
 > 
@@ -1481,7 +1479,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Fall 2025 · Final Exam</sub>
 
-**69.** _(1× · Matching)_
+**69.** _(1× · Long Answer)_
 
 > Using the **nyu-datasets.flights.m\_ticket\_prices** and the **nyu-datasets.flights.m\_airports** tables, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports.
 > 
