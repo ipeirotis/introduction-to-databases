@@ -146,6 +146,18 @@ Topics that don't yet have a module:
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping
       the line (`download.mjs`); render assignment bodies (not just titles) in
       `by-topic.md` so it works as an assignment bank. (Codex review.)
+- [x] `tools/brightspace/`: parse `--insecure` (and `--headed`) as real booleans.
+      `--insecure=false` / `--insecure false` arrived as the string `"false"`,
+      which `Boolean()` read as truthy — silently disabling TLS verification
+      against the caller's explicit intent. Now only a bare flag or an affirmative
+      (`true`/`1`/`yes`/`on`) enables it; `false`/`0`/`no`/`off`/typo stays off
+      (the safe default). (Codex review, P2.)
+- [x] `tools/brightspace/`: request `content/toc` with
+      `ignoreModuleDateRestrictions=true` so a full instructor export can't
+      silently drop modules/topics hidden by start/end date restrictions. Shared
+      by `audit` and `download`. Verified the 578630 export is unchanged
+      (still 30 modules / 36 topics), so this is future-proofing, not a fix to a
+      live leak. (Codex review, P2.)
 - [x] `.claude/skills/cloud-bootstrap/`: fix two security/safety issues in the
       committed skill docs. `references/gcp.md` recommended `roles/bigquery.dataEditor`
       (write access) for *querying* — split it into a read row (`dataViewer` +

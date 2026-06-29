@@ -130,7 +130,12 @@ export async function quizzes(ctx, ou) {
 
 export async function contentToc(ctx, ou) {
   const { le } = await versions(ctx);
-  return getJson(ctx, `/d2l/api/le/${le}/${ou}/content/toc`);
+  // Ask for modules/topics hidden by start/end date restrictions too. The
+  // default ToC reflects what the session's role can currently see, so a
+  // future- or past-dated module could otherwise be silently absent from a
+  // "full" instructor export. D2L ignores the flag for roles that can't bypass
+  // restrictions, so it's safe to always request it.
+  return getJson(ctx, `/d2l/api/le/${le}/${ou}/content/toc?ignoreModuleDateRestrictions=true`);
 }
 
 export async function news(ctx, ou) {

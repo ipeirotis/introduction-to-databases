@@ -11,6 +11,18 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '..', '..', '..');
 const DEFAULT_OFFERING = 'offerings/2026-summer';
 
+// Interpret a boolean CLI flag. A bare `--insecure` is parsed to boolean `true`,
+// but `--insecure=false` / `--insecure false` arrive as the string "false" —
+// which `Boolean()` would read as truthy and silently disable TLS verification
+// against the caller's explicit intent. Only a bare flag or an explicit
+// affirmative ("true"/"1"/"yes"/"on") enables it; anything else (including
+// "false"/"0"/"no"/"off" or a typo'd value) stays off, the safe default.
+function flagBool(v) {
+  if (typeof v === 'boolean') return v;
+  if (v === undefined || v === null) return false;
+  return ['true', '1', 'yes', 'on'].includes(String(v).trim().toLowerCase());
+}
+
 export function loadConfig(flags = {}) {
   const offeringRel = flags.offering || DEFAULT_OFFERING;
   const offeringDir = resolve(REPO_ROOT, offeringRel);
@@ -46,8 +58,8 @@ export function loadConfig(flags = {}) {
       label: offering?.brightspace?.label || offeringRel,
     },
     storageStatePath: resolve(__dirname, '..', '.auth', 'storageState.json'),
-    headed: Boolean(flags.headed),
+    headed: flagBool(flags.headed),
     // Skip TLS verification — only needed behind a TLS-intercepting proxy.
-    insecure: Boolean(flags.insecure),
+    insecure: flagBool(flags.insecure),
   };
 }
