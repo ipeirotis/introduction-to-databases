@@ -284,7 +284,8 @@ If this fails with a permission error, the credentials may be expired or revoked
 | Manage Cloud Run | `roles/run.developer` |
 | Read/write GCS buckets | `roles/storage.objectAdmin` |
 | Manage Pub/Sub | `roles/pubsub.editor` |
-| Query BigQuery | `roles/bigquery.dataEditor` + `roles/bigquery.jobUser` |
+| Query BigQuery (read) | `roles/bigquery.dataViewer` + `roles/bigquery.jobUser` |
+| Query BigQuery (read + write tables) | `roles/bigquery.dataEditor` + `roles/bigquery.jobUser` |
 | Deploy App Engine | `roles/appengine.deployer` |
 | Manage Cloud SQL | `roles/cloudsql.editor` |
 | View logs | `roles/logging.viewer` |

@@ -46,10 +46,22 @@ Tell them what permissions their personal account needs to create service accoun
 
 ## Step 5: Create Service Account and Encrypt Credentials
 
+This is the **one-time bootstrap exception** to the "never modify IAM yourself"
+rule (see SKILL.md → Rules). It is safe only because every command here runs
+against the **user's own short-lived bootstrap token** — their privileged
+identity, not the service account being created — and only during initial
+setup. The steady-state rule still holds: once the read-only service account
+exists, never use *its* credentials to change IAM.
+
+If the user would rather not hand over a privileged token, give them the create
++ grant commands from the reference file to run themselves, then resume at the
+credential-generation step below with a token scoped only to key creation.
+
 Using the bootstrap token and provider-specific commands from the reference file:
 
 1. Create the service account/identity.
-2. Grant ONLY the approved roles.
+2. Grant ONLY the approved roles (the exact roles the user approved in Step 3 —
+   nothing broader).
 3. Generate credentials (key file or access key pair).
 4. Resolve the encryption key using the logic in SKILL.md.
 5. Encrypt the credentials **with the user's email in the filename**:

@@ -146,6 +146,16 @@ Topics that don't yet have a module:
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping
       the line (`download.mjs`); render assignment bodies (not just titles) in
       `by-topic.md` so it works as an assignment bank. (Codex review.)
+- [x] `.claude/skills/cloud-bootstrap/`: fix two security/safety issues in the
+      committed skill docs. `references/gcp.md` recommended `roles/bigquery.dataEditor`
+      (write access) for *querying* — split it into a read row (`dataViewer` +
+      `jobUser`, the least-privilege default this repo actually uses) and a
+      read+write row. `workflows/first-time-setup.md` Step 5 told the agent to
+      grant IAM roles, which read as a contradiction of SKILL.md's "never modify
+      IAM yourself" rule — named it as the one-time bootstrap exception (runs
+      against the user's own privileged token, not the service account), added a
+      user-run alternative, and scoped the rule in SKILL.md to steady-state.
+      (Codex review.)
 - [ ] `tools/brightspace/`: `question-bank` dedup keys only on `QuestionText`;
       for MC / multi-select / fill-in / short-answer, fold the relevant
       `QuestionInfo` (choices / accepted answers) into the rendered text and the

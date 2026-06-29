@@ -186,7 +186,11 @@ When executing any workflow, follow these communication standards:
 ## Rules
 
 - Never store plaintext credentials in the repo or git history.
-- Never modify IAM policies yourself.
+- Never modify IAM policies yourself in steady-state operation. The sole
+  exception is the one-time first-time-setup bootstrap, where create + role-grant
+  run against the **user's own** short-lived privileged token (never the service
+  account's credentials). After setup, escalation always goes back to the user
+  (see Example 5 and `workflows/permission-escalation.md`).
 - Prefer granular roles over broad roles (e.g., `roles/cloudfunctions.developer` not `roles/editor`; `S3ReadOnlyAccess` not `AdministratorAccess`).
 - Always delete `/tmp/credentials.json` immediately after activation.
 - If the bootstrap token expires before setup is complete, ask the user for a new one.
