@@ -74,7 +74,10 @@ Exports the configured course's content into <out> (default:
     const manifestPath = resolve(outDir, 'manifest.json');
     if (existsSync(manifestPath)) {
       try {
-        priorKinds = JSON.parse(readFileSync(manifestPath, 'utf8')).kinds || {};
+        const prior = JSON.parse(readFileSync(manifestPath, 'utf8'));
+        // Only reuse the prior kinds if they belong to the SAME course — a
+        // changed course_id must not mix two shells into one export/manifest.
+        if (String(prior.course && prior.course.id) === String(ou)) priorKinds = prior.kinds || {};
       } catch {
         /* ignore an unreadable prior manifest */
       }
@@ -101,6 +104,7 @@ Exports the configured course's content into <out> (default:
     // error can't replace a complete export with a partial one. Only the
     // requested kinds are touched, so a `--kinds` subset leaves the rest intact.
     const stashed = [];
+    const created = [];
     try {
       for (const kind of kinds) {
         const runner = runners[kind];
@@ -110,6 +114,8 @@ Exports the configured course's content into <out> (default:
         if (existsSync(kdir)) {
           renameSync(kdir, bak);
           stashed.push([kdir, bak]);
+        } else {
+          created.push(kdir); // didn't exist before — remove it if a later kind fails
         }
         manifest.kinds[kind] = await runner(ctx, ou, outDir, base);
         console.log(`  ${kind}: ${summaryLine(kind, manifest.kinds[kind])}`);
@@ -119,11 +125,13 @@ Exports the configured course's content into <out> (default:
       console.log(`Wrote manifest.json and README.md to ${outDir}`);
       for (const [, bak] of stashed) rmSync(bak, { recursive: true, force: true });
     } catch (err) {
-      // Roll back to the previously complete export.
+      // Roll back to the previously complete export: restore stashed kinds and
+      // drop any kind directories this run newly created.
       for (const [kdir, bak] of stashed) {
         rmSync(kdir, { recursive: true, force: true });
         if (existsSync(bak)) renameSync(bak, kdir);
       }
+      for (const kdir of created) rmSync(kdir, { recursive: true, force: true });
       throw err;
     }
   } finally {
@@ -309,9 +317,10 @@ async function dlContent(ctx, ou, outDir, base) {
             counts.files++;
             lines.push(`${indent}- ${t.Title}${hid} → [files/${fname}](files/${fname})`);
           } catch (err) {
-            if (err instanceof AuthExpiredError) throw err; // expired session ≠ a missing file
-            process.exitCode = 1; // a content file is missing — signal a partial export
-            lines.push(`${indent}- ${t.Title} _(file download failed: ${err.message})_`);
+            if (err instanceof AuthExpiredError) throw err;
+            // A missing content file makes the export partial; throw so the
+            // atomic wrapper rolls back instead of committing an incomplete set.
+            throw new Error(`content file for "${t.Title}" (topic ${t.TopicId}) failed: ${err.message}`);
           }
         } else if (/link/i.test(t.TypeIdentifier || '')) {
           counts.links++;

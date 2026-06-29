@@ -48,9 +48,11 @@ export async function openApi(config) {
 async function getJson(ctx, path) {
   const res = await ctx.get(path);
   const ct = res.headers()['content-type'] || '';
-  // An expired session is rejected with 401/403, or bounced to an HTML login
-  // page (200 but not JSON). Either way, the saved login needs refreshing.
-  if (res.status() === 401 || res.status() === 403 || !ct.includes('json')) {
+  // An expired session is rejected with 401, or bounced to an HTML login page
+  // (HTTP 200 but not JSON). Either way the saved login needs refreshing. A 403
+  // is a permission/visibility denial on an otherwise-valid session, so let it
+  // fall through to a normal request error rather than prompting a re-login.
+  if (res.status() === 401 || (res.ok() && !ct.includes('json'))) {
     throw new AuthExpiredError(
       `Brightspace rejected the request to ${path} (HTTP ${res.status()}). ` +
         'The saved session has likely expired — re-run "brightspace login".'

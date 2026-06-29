@@ -109,8 +109,15 @@ Topics that don't yet have a module:
       from the index. Regenerated the 578630 manifest (it had been left
       announcements-only by a `--kinds announcements` test run). (Codex review.)
 - [x] `tools/brightspace/`: honor `--insecure` in `brightspace login` too (both
-      browser contexts set `ignoreHTTPSErrors`), and set a non-zero exit when a
-      content-file download fails so a partial export is visible. (Codex review.)
+      browser contexts set `ignoreHTTPSErrors`). (Codex review.)
+- [x] `tools/brightspace/`: harden the atomic export and error handling (Codex
+      review, follow-ups on my own changes): a content-file download failure now
+      throws so the atomic wrapper actually rolls back (was only setting an exit
+      code, which still committed a partial export); rollback also removes kind
+      directories the run newly created; manifest seeding only reuses prior kinds
+      when the prior manifest's course id matches (no mixing two shells);
+      `getJson` treats 403 as a normal permission error, not an expired session;
+      and `audit` reports `unlimited` quiz attempts like `download` does.
 - [x] `tools/brightspace/`: pin API calls to D2L's advertised `LatestVersion`
       and ignore non-numeric contracts like `unstable` when inferring the
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping

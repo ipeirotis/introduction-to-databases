@@ -97,7 +97,10 @@ function mapQuizzes(list) {
     startDate: q.StartDate || null,
     endDate: q.EndDate || null,
     active: q.IsActive,
-    attempts: q.AttemptsAllowed && q.AttemptsAllowed.NumberOfAttemptsAllowed,
+    attempts:
+      q.AttemptsAllowed && q.AttemptsAllowed.IsUnlimited
+        ? 'unlimited'
+        : (q.AttemptsAllowed && q.AttemptsAllowed.NumberOfAttemptsAllowed) || null,
   }));
   return { status: 'ok', count: items.length, items };
 }
