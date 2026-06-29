@@ -1,6 +1,6 @@
 # Databases — Question Bank
 
-Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz questions** (from 2774 occurrences) and **54 unique assignments**, organized by topic. Each item lists every semester/quiz it appears in. See `courses.md` for provenance, `bank.csv` for a spreadsheet view.
+Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz questions** (from 2774 occurrences) and **52 unique assignments**, organized by topic. Each item lists every semester/quiz it appears in. See `courses.md` for provenance, `bank.csv` for a spreadsheet view.
 
 ## Quiz questions by topic
 
@@ -1238,7 +1238,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 > In the IMDb database, you are asked to analyze the first names of the actors and how they correlate to gender. Limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc), and only consider first names that appear at least 50 times in the actors table.
 > 
-> Find the names that appear only for male actors but for no female actresses, and report the corresponding frequencies (Hint: the results start with "Richard, 2403", "Mark, 2086", etc)
+> Find the names that appear only for male actors but for no female actresses, and report the corresponding frequencies (Hint: the results start with "…", "…", etc)
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
@@ -1246,7 +1246,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 > In the IMDb database, you are asked to analyze the first names of the actors and how they correlate to gender. Limit your analysis only to first names that do not include a dot "." or parentheses (i.e, ignore "A.", "J.B.", "Alfred (I)" etc), and only consider first names that appear at least 50 times in the actors table.
 > 
-> Find the names that appear only for female actresses but for no male actors, and report the corresponding frequencies (Hint: the results start with "Anna, 1612", "Lisa, 1227", etc)
+> Find the names that appear only for female actresses but for no male actors, and report the corresponding frequencies (Hint: the results start with "…", "…", etc)
 
 <sub>Used in: ~2021 · Final Exam · ~2021 · Published: Final Exam</sub>
 
@@ -1489,7 +1489,71 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 ## Assignments by topic
 
-### Setup & basics — 20 unique
+### Setup & basics — 18 unique
+
+**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(3×)_
+
+> This assignment ensures that you are all set up and ready to follow the material presented in the course and able to submit assignments. I will also ask you to watch the videos from Module 1 and some videos from Module 2, so that we can have more time to focus on in-person activities.
+> 
+> ### Part 1: Install MySQL Workbench
+> 
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> 
+> Once you have MySQL Workbench running, follow these steps:
+> 
+> *   Open the MySQL Workbench
+> *   Select "Database" => "Manage Connections" => "New"
+> *   Give a name to the connection by filling in the "Connection Name" field. You can pick any name you want.
+> *   Put "Hostname: db.ipeirotis.org"
+> *   Keep "Port: 3306"
+> *   Put "Username: student"
+> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
+> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
+> *   Close the dialog
+> 
+> Now, to connect:
+> 
+> *   Select the "Database" menu
+> *   Select your connection
+> *   Press "OK"
+> 
+> To ensure that everything works once you connect to the database:
+> 
+> *   Go to the "Query" window,
+> *   Type: **show databases;**
+> *   Go to the "Query" menu, and select "Execute All or Selection".
+> 
+> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
+> 
+> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
+> 
+> ### Part 2: Connect to the Slack workspace for the class
+> 
+> Please connect to the [Slack workspace for the class.](https://nyustern-msba.slack.com "Slack workspace for the class")
+> 
+> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
+> 
+> ### Part 3: Watch videos
+> 
+> Please watch the videos from Module 1 (also available under Content > Module 1 > Resources)
+> 
+> *   [Entity-Relationship Model, Entities, Attributes, and Primary Keys](https://www.youtube.com/watch?v=m2i4KVXrrEQ&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=3)
+> *   [Relationships and Cardinalities](https://www.youtube.com/watch?v=ecDKgZ9giWs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=4)
+> *   [Entity Relationship Diagrams](https://www.youtube.com/watch?v=MXd1yzEwVYg&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=5)
+> 
+> and the following videos from Module 2 (also available under Content > Module 2 > Resources)
+> 
+> *   [Intro to SQL](https://www.youtube.com/watch?v=XqGKb235IVs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=6)
+> *   [Navigating a Database](https://www.youtube.com/watch?v=pyBN57RvmBE&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=7)
+> *   [SELECT \* Statement](https://www.youtube.com/watch?v=rgWZ51xb3mw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=8)
+> *   [SELECT \* Statement EXTRA](https://www.youtube.com/watch?v=QMfCxGnTTws&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=9)
+> *   [SELECT Attributes & SELECT Attributes As](https://www.youtube.com/watch?v=9vvcCcMcJS4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=10)
+> *   [SELECT DISTINCT](https://www.youtube.com/watch?v=Q38lmyjZPK8&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=11)
+> *   [ORDER BY / LIMIT](https://www.youtube.com/watch?v=UkY1YFi_MT4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=12)
+> 
+> **Deliverable: Please state that you have watched the videos and could follow along**
+
+<sub>Used in: Summer 2023 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos · Summer 2024 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos · Summer 2025 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos</sub>
 
 **Assignment 0: Setup** _(2×)_
 
@@ -1585,19 +1649,19 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2023 · Assignment 0: Setup MySQL Workbench and Slack</sub>
 
-**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(2×)_
+**Assignment 0: Setup MySQL Workbench** _(2×)_
 
-> This assignment ensures that you are all set up and ready to follow the material presented in the course and able to submit assignments. I will also ask you to watch the videos from Module 1 and some videos from Module 2, so that we can have more time to focus on in-person activities.
+> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
 > 
-> ### Part 1: Install MySQL Workbench
+> ### Install MySQL Workbench
 > 
-> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
+> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
 > 
 > Once you have MySQL Workbench running, follow these steps:
 > 
 > *   Open the MySQL Workbench
 > *   Select "Database" => "Manage Connections" => "New"
-> *   Give a name to the connection by filling in the "Connection Name" field. You can pick any name you want.
+> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
 > *   Put "Hostname: db.ipeirotis.org"
 > *   Keep "Port: 3306"
 > *   Put "Username: student"
@@ -1619,35 +1683,19 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > 
 > You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
 > 
+> **Setting to avoid time-out issues**
+> 
+> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds.
+> 
+> **For Mac, you may need to bypass some security restrictions**
+> 
+> *   System Preferences >> Security & Privacy >> Open Anyway
+> 
+> *   To see the results, you can go to view -> Panels -> Output Area
+> 
 > **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
-> 
-> ### Part 2: Connect to the Slack workspace for the class
-> 
-> Please connect to the [Slack workspace for the class.](https://nyustern-msba.slack.com "Slack workspace for the class")
-> 
-> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
-> 
-> ### Part 3: Watch videos
-> 
-> Please watch the videos from Module 1 (also available under Content > Module 1 > Resources)
-> 
-> *   [Entity-Relationship Model, Entities, Attributes, and Primary Keys](https://www.youtube.com/watch?v=m2i4KVXrrEQ&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=3)
-> *   [Relationships and Cardinalities](https://www.youtube.com/watch?v=ecDKgZ9giWs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=4)
-> *   [Entity Relationship Diagrams](https://www.youtube.com/watch?v=MXd1yzEwVYg&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=5)
-> 
-> and the following videos from Module 2 (also available under Content > Module 2 > Resources)
-> 
-> *   [Intro to SQL](https://www.youtube.com/watch?v=XqGKb235IVs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=6)
-> *   [Navigating a Database](https://www.youtube.com/watch?v=pyBN57RvmBE&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=7)
-> *   [SELECT \* Statement](https://www.youtube.com/watch?v=rgWZ51xb3mw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=8)
-> *   [SELECT \* Statement EXTRA](https://www.youtube.com/watch?v=QMfCxGnTTws&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=9)
-> *   [SELECT Attributes & SELECT Attributes As](https://www.youtube.com/watch?v=9vvcCcMcJS4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=10)
-> *   [SELECT DISTINCT](https://www.youtube.com/watch?v=Q38lmyjZPK8&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=11)
-> *   [ORDER BY / LIMIT](https://www.youtube.com/watch?v=UkY1YFi_MT4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=12)
-> 
-> **Deliverable: Please state that you have watched the videos and could follow along**
 
-<sub>Used in: Summer 2023 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos · Summer 2024 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos</sub>
+<sub>Used in: Summer 2024 · Assignment 0: Setup MySQL Workbench · Summer 2025 · Assignment 0: Setup MySQL Workbench</sub>
 
 **Assignment 0: Setup** _(2×)_
 
@@ -2019,54 +2067,6 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 
 <sub>Used in: Spring 2024 · Assignment 0: Setup MySQL Workbench and Slack</sub>
 
-**Assignment 0: Setup MySQL Workbench** _(1×)_
-
-> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
-> 
-> ### Install MySQL Workbench
-> 
-> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
-> 
-> Once you have MySQL Workbench running, follow these steps:
-> 
-> *   Open the MySQL Workbench
-> *   Select "Database" => "Manage Connections" => "New"
-> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
-> *   Put "Hostname: db.ipeirotis.org"
-> *   Keep "Port: 3306"
-> *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
-> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
-> *   Close the dialog
-> 
-> Now, to connect:
-> 
-> *   Select the "Database" menu
-> *   Select your connection
-> *   Press "OK"
-> 
-> To ensure that everything works once you connect to the database:
-> 
-> *   Go to the "Query" window,
-> *   Type: **show databases;**
-> *   Go to the "Query" menu, and select "Execute All or Selection".
-> 
-> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
-> 
-> **Setting to avoid time-out issues**
-> 
-> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds.
-> 
-> **For Mac, you may need to bypass some security restrictions**
-> 
-> *   System Preferences >> Security & Privacy >> Open Anyway
-> 
-> *   To see the results, you can go to view -> Panels -> Output Area
-> 
-> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
-
-<sub>Used in: Summer 2024 · Assignment 0: Setup MySQL Workbench</sub>
-
 **(Pre-module) Assignment 0: Setup MySQL Workbench and Slack** _(1×)_
 
 > This assignment ensures that you are all set up and ready to follow the material presented in the course.
@@ -2222,118 +2222,6 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > **Deliverable: Take a screenshot showing you could connect to the server using MySQL Workbench and see the databases.**
 
 <sub>Used in: Summer 2025 · (Pre-module) Assignment 0: Setup MySQL Workbench</sub>
-
-**Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos** _(1×)_
-
-> This assignment ensures that you are all set up and ready to follow the material presented in the course and able to submit assignments. I will also ask you to watch the videos from Module 1 and some videos from Module 2, so that we can have more time to focus on in-person activities.
-> 
-> ### Part 1: Install MySQL Workbench
-> 
-> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
-> 
-> Once you have MySQL Workbench running, follow these steps:
-> 
-> *   Open the MySQL Workbench
-> *   Select "Database" => "Manage Connections" => "New"
-> *   Give a name to the connection by filling in the "Connection Name" field. You can pick any name you want.
-> *   Put "Hostname: db.ipeirotis.org"
-> *   Keep "Port: 3306"
-> *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
-> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
-> *   Close the dialog
-> 
-> Now, to connect:
-> 
-> *   Select the "Database" menu
-> *   Select your connection
-> *   Press "OK"
-> 
-> To ensure that everything works once you connect to the database:
-> 
-> *   Go to the "Query" window,
-> *   Type: **show databases;**
-> *   Go to the "Query" menu, and select "Execute All or Selection".
-> 
-> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
-> 
-> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
-> 
-> ### Part 2: Connect to the Slack workspace for the class
-> 
-> Please connect to the [Slack workspace for the class.](https://nyustern-msba.slack.com "Slack workspace for the class")
-> 
-> **Deliverable: Take a screenshot showing that you could connect to Slack workspace.**
-> 
-> ### Part 3: Watch videos
-> 
-> Please watch the videos from Module 1 (also available under Content > Module 1 > Resources)
-> 
-> *   [Entity-Relationship Model, Entities, Attributes, and Primary Keys](https://www.youtube.com/watch?v=m2i4KVXrrEQ&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=3)
-> *   [Relationships and Cardinalities](https://www.youtube.com/watch?v=ecDKgZ9giWs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=4)
-> *   [Entity Relationship Diagrams](https://www.youtube.com/watch?v=MXd1yzEwVYg&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=5)
-> 
-> and the following videos from Module 2 (also available under Content > Module 2 > Resources)
-> 
-> *   [Intro to SQL](https://www.youtube.com/watch?v=XqGKb235IVs&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=6)
-> *   [Navigating a Database](https://www.youtube.com/watch?v=pyBN57RvmBE&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=7)
-> *   [SELECT \* Statement](https://www.youtube.com/watch?v=rgWZ51xb3mw&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=8)
-> *   [SELECT \* Statement EXTRA](https://www.youtube.com/watch?v=QMfCxGnTTws&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=9)
-> *   [SELECT Attributes & SELECT Attributes As](https://www.youtube.com/watch?v=9vvcCcMcJS4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=10)
-> *   [SELECT DISTINCT](https://www.youtube.com/watch?v=Q38lmyjZPK8&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=11)
-> *   [ORDER BY / LIMIT](https://www.youtube.com/watch?v=UkY1YFi_MT4&list=PLqAPn_b_yx0QcOgEvAKQQ5yzplFI-FOQI&index=12)
-> 
-> **Deliverable: Please state that you have watched the videos and could follow along**
-
-<sub>Used in: Summer 2025 · Pre-module Assignment 0: Setup MySQL Workbench, Slack, and watch videos</sub>
-
-**Assignment 0: Setup MySQL Workbench** _(1×)_
-
-> This assignment ensures that you are all setup and ready to follow the material presented in the course, and able to submit assignments.
-> 
-> ### Install MySQL Workbench
-> 
-> Go to [http://dev.mysql.com/downloads/workbench/](http://dev.mysql.com/downloads/workbench/) and download the "MySQL Installer" for your machine. (Note that Oracle will try to get you to register before downloading the software. You do not need to register to download the tool: just select the "No thanks, just start my download."). Ensure that you are downloading MySQL _**Workbench**, not some other MySQL product._
-> 
-> Once you have MySQL Workbench running, follow these steps:
-> 
-> *   Open the MySQL Workbench
-> *   Select "Database" => "Manage Connections" => "New"
-> *   Give a name to the connection, by filling in the "Connection Name" field. You can pick any name you want.
-> *   Put "Hostname: db.ipeirotis.org"
-> *   Keep "Port: 3306"
-> *   Put "Username: student"
-> *   Select "Test Connection". When asked for the password, enter "[redacted — connect per the instructions on Brightspace]".
-> *   You should get back a message "_Connected to MySQL at db.ipeirotis.org:3306_"
-> *   Close the dialog
-> 
-> Now, to connect:
-> 
-> *   Select the "Database" menu
-> *   Select your connection
-> *   Press "OK"
-> 
-> To ensure that everything works once you connect to the database:
-> 
-> *   Go to the "Query" window,
-> *   Type: **show databases;**
-> *   Go to the "Query" menu, and select "Execute All or Selection".
-> 
-> You should see a few databases listed, including "**facebook**", "**imdb**", "**flights**", and "**music**".
-> 
-> **Setting to avoid time-out issues**
-> 
-> *   Go to “Edit -> Preferences -> SQL Editor” and change the timeouts from 60 seconds to 600 seconds.
-> 
-> **For Mac, you may need to bypass some security restrictions**
-> 
-> *   System Preferences >> Security & Privacy >> Open Anyway
-> 
-> *   To see the results, you can go to view -> Panels -> Output Area
-> 
-> **Deliverable: Take a screenshot showing that you could connect to the server using MySQL Workbench and see the databases.**
-
-<sub>Used in: Summer 2025 · Assignment 0: Setup MySQL Workbench</sub>
 
 **Assignment 0: Setup** _(1×)_
 
@@ -3127,7 +3015,7 @@ Aggregated from **24 course shells** (~2021 – Fall 2026). **203 unique quiz qu
 > 
 > Limit your analysis only to first names that do not include a dot "." or parentheses (i.e., ignore "A.", "J.B.", "Alfred (I)" etc.), and only consider first names that appear at least 50 times in the actors table (across both genders).
 > 
-> 1.  Find the names that appear only for male actors but for no female actresses, and report the corresponding frequencies (Hint: the results start with "Richard, 2403", "Mark, 2086", etc).
+> 1.  Find the names that appear only for male actors but for no female actresses, and report the corresponding frequencies (Hint: the results start with "…", "…", etc).
 > 2.  Find the names that appear only for female actors but for no male actresses, and report the corresponding frequencies.
 > 3.  For names that appear for both males and females, report the names and the frequencies for males and females. Rank on top the most ambiguous names. We will consider as the most ambiguous names are the ones where the formula **log( male\_freq /female\_freq )** is close to 0.
 >     1.  Hint: Mika, Dany, Devon, Toni are the most ambiguous.

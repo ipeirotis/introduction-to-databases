@@ -6,11 +6,34 @@
 // ones across semesters, tags a topic from the quiz name, and writes Markdown +
 // JSON + CSV. Read-only against Brightspace.
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import TurndownService from 'turndown';
 import { loadConfig } from '../config.mjs';
 import { openApi, enrollments, quizzes, quizQuestions, assignments } from '../api.mjs';
+
+// Instructor overlay (committed beside this tool): scopes the single-snapshot
+// flights prompts to one quarter and applies BigQuery-validated hint counts, so
+// a regeneration keeps the public prompts matching the quarter-scoped private
+// solutions instead of reverting to the raw Brightspace text. Keyed by exact
+// question text; unmatched entries are warned about so stale keys are visible.
+let FLIGHTS_OVERLAY = { scopeClause: '', questions: [] };
+try {
+  FLIGHTS_OVERLAY = JSON.parse(
+    readFileSync(new URL('../../flights-snapshot-overlay.json', import.meta.url), 'utf8')
+  );
+} catch {
+  /* no overlay file → flights prompts stay as fetched */
+}
+const OVERLAY_BY_TEXT = new Map(FLIGHTS_OVERLAY.questions.map((q) => [q.match, q]));
+const overlayMatched = new Set();
+function applyFlightsOverlay(text) {
+  const e = OVERLAY_BY_TEXT.get(text);
+  if (!e) return text;
+  overlayMatched.add(e.match);
+  const fixed = e.hintFrom ? text.replace(e.hintFrom, e.hintTo) : text;
+  return fixed + FLIGHTS_OVERLAY.scopeClause;
+}
 
 const td = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
 
@@ -46,7 +69,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       for (const { q, list } of fetched) {
         const topic = topicFor(q.Name);
         for (const qq of list) {
-          const text = redactSecrets(scrubAnswerKey(plain(qq.QuestionText)));
+          const text = applyFlightsOverlay(redactSecrets(scrubAnswerKey(plain(qq.QuestionText))));
           if (!text) continue;
           nq++;
           qOccur.push({ key: normKey(text), text, type: qType(qq.QuestionTypeId), topic, course: c, term, quiz: q.Name });
@@ -73,6 +96,11 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       assignmentOccurrences: aOccur.length,
       uniqueAssignments: uniqueA.length,
     };
+    for (const e of FLIGHTS_OVERLAY.questions) {
+      if (!overlayMatched.has(e.match)) {
+        console.warn(`  ⚠ flights overlay entry matched no question (text changed?): "${e.match.slice(0, 60)}…"`);
+      }
+    }
     writeFileSync(resolve(outDir, 'by-topic.md'), renderByTopic(uniqueQ, uniqueA, courses, stats));
     writeFileSync(resolve(outDir, 'courses.md'), renderCourses(courses, qOccur, aOccur));
     writeFileSync(resolve(outDir, 'bank.json'), JSON.stringify({ stats, questions: uniqueQ.map(toJson), assignments: uniqueA.map(toJson) }, null, 2) + '\n');
@@ -127,12 +155,18 @@ function safeTurndown(html) {
 // hints ("Hint: 52 rows") and spec text ("... should be null") are left intact.
 // Hand-curated hints may need re-adding after a regeneration.
 function scrubAnswerKey(text) {
-  const s = String(text || '');
-  const m = s.match(/\n+\s*(?:Hint:\s*)?(?:the\s+)?(?:correct\s+)?(?:results?|answer)(?:\s+of\s+the\s+query)?\s+(?:are|is|will\s+be)\b/i);
-  if (!m) return s;
-  const tail = s.slice(m.index);
-  const numlines = (tail.match(/^\s*\$?\d[\d,.]*\s*$/gm) || []).length;
-  if (numlines >= 2 || /\d+\.\d{3,}/.test(tail)) return s.slice(0, m.index).trim();
+  let s = String(text || '');
+  // Inline answer-value examples — e.g. 'the results start with "Name, 1234",
+  // "Other, 567"' — keep the question/hint phrasing but drop the values.
+  s = s.replace(/"[A-Z][A-Za-z .'’-]*,\s?\$?\d[\d,]*"/g, '"…"');
+  // Trailing answer key: a "(the )(correct )results/answer (are|is|will be|start
+  // with)" preamble followed by result data (numbers) — cut from there to the end.
+  const m = s.match(/\n+\s*(?:Hint:\s*)?(?:the\s+)?(?:correct\s+)?(?:results?|answer)(?:\s+of\s+the\s+query)?\s+(?:are|is|will\s+be|starts?\s+with|begins?\s+with)\b/i);
+  if (m) {
+    const tail = s.slice(m.index);
+    const numlines = (tail.match(/^\s*\$?\d[\d,.]*\s*$/gm) || []).length;
+    if (numlines >= 2 || /\d+\.\d{3,}/.test(tail)) return s.slice(0, m.index).trim();
+  }
   return s;
 }
 

@@ -99,6 +99,14 @@ Topics that don't yet have a module:
       via the rendered assignment bodies. Redacted them and added `redactSecrets`
       to both `question-bank` and `download` so regenerations stay clean.
       (Codex review, P1.)
+- [x] `question-bank`: broaden the answer-key scrubber to catch inline answer
+      examples (e.g. `the results start with "Name, 1234", …`) and the
+      "start with" phrasing — a fresh leak in two IMDb final-exam prompts. And
+      make the flights single-quarter scoping + validated hints **durable**:
+      they're now a committed overlay (`flights-snapshot-overlay.json`) applied
+      during generation, so `question-bank --filter databases` reproduces them
+      instead of reverting to raw Brightspace text. Also dedupe `--kinds` in
+      `download` so a repeated kind can't defeat the atomic rollback. (Codex.)
 - [ ] **Instructor decision:** the same shared password also appears, by design,
       in the course notebooks (`module2/3/4`, `unsorted/`) as the student DB
       connection instructions. If it should be private, rotate it and read it

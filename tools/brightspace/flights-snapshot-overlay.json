@@ -1,0 +1,65 @@
+{
+  "_comment": "Instructor overlay applied by `question-bank` after fetching from Brightspace. Scopes the single-snapshot flights prompts to a single quarter and applies BigQuery-validated hint counts, so a regeneration keeps the public prompts matching the quarter-scoped private solutions. Keyed by exact question text; `question-bank` warns if an entry no longer matches.",
+  "scopeClause": "\n\n_For this question, use only the `m_ticket_prices` rows for `Year = 2025` and `Quarter = 2` (one quarterly snapshot)._",
+  "questions": [
+    {
+      "match": "For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination."
+    },
+    {
+      "match": "For each origin-dest pair, calculate the number of carriers, the average fare across carriers, the total number of passengers, and the distance between origin and destination. However, when calculating the average fare, weight each fare according to the number of passengers."
+    },
+    {
+      "match": "Which origin-dest pair has the highest number of passengers?"
+    },
+    {
+      "match": "For each origin-dest pair, list the number of carriers, the max fare, min fare, the difference between the highest and the lowest fare offered by the various carriers, and the ratio of the minimum to the maximum fare. Limit the results only to origin-dest pairs with at least 3 carriers."
+    },
+    {
+      "match": "For each origin airport, list the number of carriers that have flights departing from that airport and the total number of destinations served by the origin airport."
+    },
+    {
+      "match": "For each origin airport, calculate the average fare across all destinations, the average fare per mile, and the average distance from the other airports."
+    },
+    {
+      "match": "Flights: Using the table **flights.m\\_ticket\\_prices**, for each carrier, report the number of routes they maintain, the number of airports their flights leave from, and their average fare per mile. Report results only for carriers having more than 20,000 passengers across all their flights.\n\n_Hint: 11 rows in the outcome_",
+      "hintFrom": "11 rows in the outcome",
+      "hintTo": "14 rows in the outcome"
+    },
+    {
+      "match": "Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\nHint: 52 rows"
+    },
+    {
+      "match": "Create the **passengers\\_per\\_airport** temporary table, which contains  the total number of passengers departing from each airport.  Use the m\\_ticket\\_prices table; we are interested in the origin and the passengers attributes."
+    },
+    {
+      "match": "Using the flights.m\\_ticket\\_prices and the m\\_airports table, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports."
+    },
+    {
+      "match": "Use the table flights.m\\_ticket\\_prices. For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for routes with at least 3 carriers and more than  10,000 total passengers."
+    },
+    {
+      "match": "Flights: For **each state of the origin airport**, calculate the following metrics: the number of origin airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need."
+    },
+    {
+      "match": "Using the flights.m\\_ticket\\_prices and the m\\_airports table, find the _distinct_ routes (origin-destination pairs) where the origin and the destination are part of the same state; in the output show the origin, dest, and the state of the airports.\n\nHint: 597 rows in the output",
+      "hintFrom": "597 rows in the output",
+      "hintTo": "637 rows in the output"
+    },
+    {
+      "match": "For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for routes with at least 3 carriers and more than  10,000 total passengers. Use the table flights.m\\_ticket\\_prices.\n\nHint: 147 rows in the output",
+      "hintFrom": "147 rows in the output",
+      "hintTo": "2336 rows in the output"
+    },
+    {
+      "match": "Flights: For each state of the origin airport calculate the following metrics: the number of airports in the state, the number of carriers operating flights that originate from the state, the total number of passengers originating from the state, and the average fare per mile. Use the **m\\_ticket\\_prices** and the **m\\_airports** tables to find the information that you need.\n\nHint: 52 rows",
+      "hintFrom": "Hint: 52 rows",
+      "hintTo": "Hint: 53 rows"
+    },
+    {
+      "match": "Use the table **nyu-datasets.flights.m\\_ticket\\_prices**. For each route (origin-destination pair), list the following statistics:\n\n*   cheapest fare\n*   most expensive fare\n*   the average fare\n*   number of carriers serving the route\n*   total number of passengers for the route\n\nReport results only for **routes with at least 3 carriers** and **more than  10,000 total passengers**."
+    },
+    {
+      "match": "Using the **nyu-datasets.flights.m\\_ticket\\_prices** and the **nyu-datasets.flights.m\\_airports** tables, find the _distinct_ routes (route is a distinct origin-destination pair) **where the origin and the destination are part of the same state**; in the output show the origin, dest, and the state of the airports."
+    }
+  ]
+}

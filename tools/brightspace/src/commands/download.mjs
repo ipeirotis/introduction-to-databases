@@ -48,10 +48,16 @@ Exports the configured course's content into <out> (default:
     );
   }
 
-  const kinds = (flags.kinds || DEFAULT_KINDS)
-    .split(',')
-    .map((s) => s.trim())
-    .filter(Boolean);
+  // Dedupe so a repeated kind (e.g. `--kinds assignments,assignments`) can't
+  // reuse and delete its own `.bak` stash and defeat the atomic rollback.
+  const kinds = [
+    ...new Set(
+      (flags.kinds || DEFAULT_KINDS)
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+    ),
+  ];
 
   const outDir = flags.out
     ? resolve(config.repoRoot, flags.out)
