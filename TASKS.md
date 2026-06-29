@@ -80,8 +80,10 @@ Topics that don't yet have a module:
       metadata. Also surface, where present: quiz time limits and special-access
       restrictions (`SubmissionTimeLimit`, `AllowOnlyUsersWithSpecialAccess`),
       assignment availability windows (`Availability` start/end, special access),
-      content-module hidden/date-restriction flags, and announcement
-      `IsPublished`. (Codex review; none apply to 578630 today.)
+      content-module hidden/date-restriction flags, announcement `IsPublished`,
+      quiz access controls as presence flags (`Password` set, `RestrictIPAddressRange`
+      — never the raw password), and assignment/announcement **attachments**
+      (download or list them). (Codex review; none apply to 578630 today.)
 - [x] `tools/brightspace/`: qualify root-relative D2L links (`/d2l/...`) inside
       RichText (assignment/quiz/announcement bodies), not just content links;
       auto-redact live group-chat invite links from the public export (so a
@@ -104,7 +106,11 @@ Topics that don't yet have a module:
       intentionally-public read-only teaching credential and can stay.
 - [x] `tools/brightspace/`: `download` seeds `manifest.kinds` from the prior
       manifest so a `--kinds` subset refresh doesn't drop the untouched kinds
-      from the index. (Codex review.)
+      from the index. Regenerated the 578630 manifest (it had been left
+      announcements-only by a `--kinds announcements` test run). (Codex review.)
+- [x] `tools/brightspace/`: honor `--insecure` in `brightspace login` too (both
+      browser contexts set `ignoreHTTPSErrors`), and set a non-zero exit when a
+      content-file download fails so a partial export is visible. (Codex review.)
 - [x] `tools/brightspace/`: pin API calls to D2L's advertised `LatestVersion`
       and ignore non-numeric contracts like `unstable` when inferring the
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping

@@ -310,6 +310,7 @@ async function dlContent(ctx, ou, outDir, base) {
             lines.push(`${indent}- ${t.Title}${hid} → [files/${fname}](files/${fname})`);
           } catch (err) {
             if (err instanceof AuthExpiredError) throw err; // expired session ≠ a missing file
+            process.exitCode = 1; // a content file is missing — signal a partial export
             lines.push(`${indent}- ${t.Title} _(file download failed: ${err.message})_`);
           }
         } else if (/link/i.test(t.TypeIdentifier || '')) {

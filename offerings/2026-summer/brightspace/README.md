@@ -4,6 +4,9 @@ Brightspace export for `offerings/2026-summer` (course id 578630, SU26_TECH-GB_2
 
 ## Contents
 
+- **Assignments:** 2 → `assignments/`
+- **Quizzes:** 16 → `quizzes/`
+- **Content:** 30 modules / 36 topics → `content/`
 - **Announcements:** 3 → `announcements/`
 
 See `manifest.json` for the full machine-readable index.

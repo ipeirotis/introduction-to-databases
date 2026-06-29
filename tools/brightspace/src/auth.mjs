@@ -17,6 +17,7 @@ export async function launchAuthenticatedContext(config) {
   const browser = await chromium.launch({ headless: !config.headed });
   const context = await browser.newContext({
     storageState: config.storageStatePath,
+    ignoreHTTPSErrors: Boolean(config.insecure),
   });
   return { browser, context };
 }
@@ -28,7 +29,9 @@ export async function interactiveLogin(config, { timeoutMs = 5 * 60 * 1000 } = {
   mkdirSync(dirname(config.storageStatePath), { recursive: true });
 
   const browser = await chromium.launch({ headless: false });
-  const context = await browser.newContext();
+  // Honor --insecure here too, so first-time login works behind a
+  // TLS-intercepting proxy (the same environment the flag is meant for).
+  const context = await browser.newContext({ ignoreHTTPSErrors: Boolean(config.insecure) });
   const page = await context.newPage();
 
   const start = `${config.brightspace.baseUrl}${HOME_PATH_FRAGMENT}`;
