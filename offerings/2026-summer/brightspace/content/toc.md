@@ -1,5 +1,9 @@
 # Content
 
+> Content files are downloaded under `files/` but excluded from git
+> (binaries). In a fresh checkout those `files/…` links won't resolve until
+> you re-run `brightspace download`, or open the topic on Brightspace.
+
 - **Introduction to the Course**
   - Syllabus → [files/13221150-Syllabus.html](files/13221150-Syllabus.html)
   - Assignment 0: Setup → https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2424609

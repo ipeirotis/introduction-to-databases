@@ -305,6 +305,7 @@ async function dlContent(ctx, ou, outDir, base) {
   const toc = await contentToc(ctx, ou);
   const lines = [];
   const links = [];
+  const items = []; // flat per-topic index for the manifest
   const counts = { modules: 0, topics: 0, files: 0, links: 0 };
 
   const walk = async (m, depth) => {
@@ -321,6 +322,7 @@ async function dlContent(ctx, ou, outDir, base) {
             const fname = `${t.TopicId}-${basename(t.Url || slug(t.Title))}`.replace(/[^\w.\-]/g, '_');
             writeFileSync(resolve(filesDir, fname), body);
             counts.files++;
+            items.push({ title: t.Title, type: 'file', topicId: t.TopicId, file: `content/files/${fname}`, hidden: !!t.IsHidden });
             lines.push(`${indent}- ${t.Title}${hid} → [files/${fname}](files/${fname})`);
           } catch (err) {
             if (err instanceof AuthExpiredError) throw err;
@@ -332,8 +334,10 @@ async function dlContent(ctx, ou, outDir, base) {
           counts.links++;
           const url = absUrl(t.Url, base);
           links.push({ title: t.Title, url, hidden: !!t.IsHidden });
+          items.push({ title: t.Title, type: 'link', url, hidden: !!t.IsHidden });
           lines.push(`${indent}- ${t.Title}${hid} → ${url}`);
         } else {
+          items.push({ title: t.Title, type: t.TypeIdentifier || 'other', hidden: !!t.IsHidden });
           lines.push(`${indent}- ${t.Title}${hid} _(${t.TypeIdentifier})_`);
         }
       }
@@ -342,12 +346,19 @@ async function dlContent(ctx, ou, outDir, base) {
   };
   await walk(toc || {}, 0);
 
-  writeFileSync(resolve(dir, 'toc.md'), `# Content\n\n${lines.join('\n')}\n`);
+  writeFileSync(
+    resolve(dir, 'toc.md'),
+    `# Content\n\n` +
+      `> Content files are downloaded under \`files/\` but excluded from git\n` +
+      `> (binaries). In a fresh checkout those \`files/…\` links won't resolve until\n` +
+      `> you re-run \`brightspace download\`, or open the topic on Brightspace.\n\n` +
+      `${lines.join('\n')}\n`
+  );
   writeFileSync(
     resolve(dir, 'links.md'),
     `# External links\n\n${links.map((l) => `- [${l.title}](${l.url})`).join('\n')}\n`
   );
-  return counts;
+  return { ...counts, items };
 }
 
 // --- index ------------------------------------------------------------------
