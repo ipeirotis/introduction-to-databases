@@ -107,6 +107,11 @@ Topics that don't yet have a module:
       during generation, so `question-bank --filter databases` reproduces them
       instead of reverting to raw Brightspace text. Also dedupe `--kinds` in
       `download` so a repeated kind can't defeat the atomic rollback. (Codex.)
+- [x] `question-bank`: exclude onboarding/setup assignments from the bank
+      (title `/setup/i` or text referencing the DB host) — they carry the
+      `student@db.ipeirotis.org` connection block, not practice material, and
+      tripped GitGuardian's MySQL-credentials detector even with the password
+      redacted. Bank now has 35 unique assignments (was 52). (GitGuardian.)
 - [ ] **Instructor decision:** the same shared password also appears, by design,
       in the course notebooks (`module2/3/4`, `unsorted/`) as the student DB
       connection instructions. If it should be private, rotate it and read it

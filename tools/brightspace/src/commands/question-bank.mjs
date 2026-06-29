@@ -78,6 +78,10 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       const asg = await assignments(ctx, c.id);
       for (const f of asg) {
         const text = redactSecrets(scrubAnswerKey(plain(f.CustomInstructions)));
+        // Skip onboarding/setup assignments: they carry DB connection details
+        // (host + shared `student` login), not practice material, so they don't
+        // belong in the public bank (and trip secret scanners).
+        if (/\bset\s?up\b/i.test(f.Name) || /db\.ipeirotis\.org/i.test(text)) continue;
         aOccur.push({ key: normKey(f.Name + ' :: ' + text), title: f.Name, text, topic: topicFor(f.Name), course: c, term });
       }
       console.log(
