@@ -146,6 +146,44 @@ Topics that don't yet have a module:
       version (`api.mjs`); record `Unlimited` quiz attempts instead of dropping
       the line (`download.mjs`); render assignment bodies (not just titles) in
       `by-topic.md` so it works as an assignment bank. (Codex review.)
+- [x] `offerings/2026-summer/schedule.md`: convert the published deadlines from
+      raw UTC to the course timezone. Brightspace stores each deadline at 11:59 PM
+      Eastern, which is the next calendar day in UTC (`2026-05-19T03:59:59Z` =
+      11:59 PM ET on **May 18**), so every date in the table was a day late.
+      Re-derived all rows in `America/New_York` (verified with `Intl`), labelled
+      the column "Due (11:59 PM ET)", added a timezone note, and reconciled the
+      stale A6 (Jan 20 ET) and the final-exam/calendar (June 7 quiz close vs.
+      June 8 last class) notes. (Codex review, P2.)
+- [x] `question-bank`: fix dead template links in the public bank. Old assignment/
+      question bodies link to notebooks/practice files under the repo's former
+      `session<N>/` layout (now `module<N>/`), which 404 on a fresh checkout. Added
+      `fixTemplateLinks` + a repo file index: each `session<N>/…` link is rewritten
+      to the file's current location if the basename resolves uniquely (preserving
+      any `#fragment`), else de-linked with a "template moved" note. Join →
+      `module3/`, aggregate → `module4/`, filtering practice → `module2/…#facebook-database`;
+      the 3 templates with no current file (selection/filtering/combined) are
+      de-linked. Bank regenerated: 0 surviving `session*/` links. (Codex review, P2.)
+- [x] `question-bank`: normalize Turndown escaping before deduping. Escaping varies
+      between shells (`\[[available]\] .` vs `[available]`), so `normKey` keyed the
+      same assignment as distinct and inflated `uniqueAssignments`. `normKey` now
+      unescapes backslash-escapes, collapses `[text](url)`→`text`, and drops space
+      before punctuation. Merged 6 same-title escaping-only duplicates (35→29
+      unique assignments); unique questions unchanged at 203 (no question pair was
+      affected), and every new title was already present in the old bank (no
+      over-merge). (Codex review, P2.)
+- [x] `tools/brightspace/`: include quiz availability fields in the manifest. The
+      Markdown captured `Active` but `manifest.json` dropped it, so a manifest-only
+      consumer couldn't tell an inactive/unpublished quiz from a live one (the
+      export's `Assignment 6: Window queries` is `Active: false`). Each quiz item
+      now carries `startDate`, `dueDate`, `endDate`, and `active`; export
+      regenerated (A6 correctly flagged `active: false`). (Codex review, P2.)
+- [x] `tools/brightspace/`: `audit` rejects unknown `--sections` (like `download`
+      does for `--kinds`) and exits non-zero, instead of warning and exiting 0 with
+      an empty report — so a CI/audit wrapper can't appear to have checked
+      Brightspace while a typo'd section checked nothing. (Codex review, P2.)
+- [x] `question-bank`: parse `--all` with the shared `flagBool` helper (now
+      exported from `config.mjs`), so `--all=false` / `--all false` no longer reads
+      as truthy and silently aggregates every enrolled shell. (Codex review, P2.)
 - [x] `tools/brightspace/`: parse `--insecure` (and `--headed`) as real booleans.
       `--insecure=false` / `--insecure false` arrived as the string `"false"`,
       which `Boolean()` read as truthy — silently disabling TLS verification

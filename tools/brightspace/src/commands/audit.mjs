@@ -33,10 +33,20 @@ report of its contents. Read-only.`);
     );
   }
 
-  const sections = (flags.sections || 'assignments,quizzes,content,announcements')
+  const VALID_SECTIONS = ['assignments', 'quizzes', 'content', 'announcements'];
+  const sections = (flags.sections || VALID_SECTIONS.join(','))
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
+  // Reject a mistyped section up front (like `download` does for --kinds) so a
+  // CI/audit wrapper can't appear to have checked Brightspace while checking
+  // nothing: a typo would otherwise just warn and exit 0 with empty sections.
+  const unknownSections = sections.filter((s) => !VALID_SECTIONS.includes(s));
+  if (unknownSections.length) {
+    throw new Error(
+      `Unknown --sections: ${unknownSections.join(', ')}. Valid: ${VALID_SECTIONS.join(', ')}`
+    );
+  }
 
   const ctx = await openApi(config);
   try {

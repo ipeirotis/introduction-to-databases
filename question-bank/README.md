@@ -7,7 +7,7 @@ Cross-semester bank of quiz questions and assignments, aggregated from 23 Bright
 - **`bank.json`** — structured data for further tooling.
 - **`courses.md`** — the source shells and per-course counts.
 
-Stats: 203 unique questions (from 2774 occurrences across semesters), 35 unique assignments.
+Stats: 203 unique questions (from 2774 occurrences across semesters), 29 unique assignments.
 
 ## Answers
 

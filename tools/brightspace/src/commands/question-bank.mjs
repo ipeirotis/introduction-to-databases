@@ -6,10 +6,10 @@
 // ones across semesters, tags a topic from the quiz name, and writes Markdown +
 // JSON + CSV. Read-only against Brightspace.
 
-import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { mkdirSync, writeFileSync, readFileSync, readdirSync } from 'node:fs';
+import { resolve, relative, sep } from 'node:path';
 import TurndownService from 'turndown';
-import { loadConfig } from '../config.mjs';
+import { loadConfig, flagBool } from '../config.mjs';
 import { openApi, enrollments, quizzes, quizQuestions, assignments } from '../api.mjs';
 
 // Instructor overlay (committed beside this tool): scopes the single-snapshot
@@ -54,6 +54,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
     const courses = await resolveCourses(ctx, flags);
     if (!courses.length) throw new Error('No courses matched. Use --filter, --course-ids, or --all.');
     console.log(`Building question bank from ${courses.length} course(s)...`);
+    const tplIndex = buildRepoFileIndex(config.repoRoot);
 
     const qOccur = [];
     const aOccur = [];
@@ -69,7 +70,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       for (const { q, list } of fetched) {
         const topic = topicFor(q.Name);
         for (const qq of list) {
-          const text = applyFlightsOverlay(redactSecrets(scrubAnswerKey(plain(qq.QuestionText))));
+          const text = fixTemplateLinks(applyFlightsOverlay(redactSecrets(scrubAnswerKey(plain(qq.QuestionText)))), tplIndex);
           if (!text) continue;
           nq++;
           qOccur.push({ key: normKey(text), text, type: qType(qq.QuestionTypeId), topic, course: c, term, quiz: q.Name });
@@ -77,7 +78,7 @@ a deduplicated, topic-organized bank under <out> (default: question-bank/).`);
       }
       const asg = await assignments(ctx, c.id);
       for (const f of asg) {
-        const text = redactSecrets(scrubAnswerKey(plain(f.CustomInstructions)));
+        const text = fixTemplateLinks(redactSecrets(scrubAnswerKey(plain(f.CustomInstructions))), tplIndex);
         // Skip onboarding/setup assignments: they carry DB connection details
         // (host + shared `student` login), not practice material, so they don't
         // belong in the public bank (and trip secret scanners).
@@ -151,7 +152,7 @@ async function resolveCourses(ctx, flags) {
     const f = String(flags.filter).toLowerCase();
     return rows.filter((r) => `${r.name} ${r.code}`.toLowerCase().includes(f));
   }
-  if (flags.all) return rows;
+  if (flagBool(flags.all)) return rows;
   throw new Error('Specify --filter <substr>, --course-ids a,b,c, or --all.');
 }
 
@@ -205,9 +206,70 @@ function redactSecrets(text) {
     .replace(/(password,?\s+enter\s+")[^"]{1,40}(")/gi, `$1${REDACTED_PW}$2`);
 }
 
-// Dedup key: collapse whitespace, drop markdown punctuation, lowercase.
+// Index every repo file basename -> repo-relative path(s). Old assignment and
+// question bodies link to files (notebooks, practice .md) under the repo's former
+// session<N>/ layout (now module<N>/); we use this to relocate or de-link those
+// URLs at generation time. A basename that resolves ambiguously (e.g. README.md)
+// gets de-linked rather than guessed.
+function buildRepoFileIndex(repoRoot) {
+  const index = new Map();
+  const SKIP = new Set(['node_modules', '.git']);
+  const walk = (dir) => {
+    let entries = [];
+    try {
+      entries = readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      if (e.isDirectory()) {
+        if (!SKIP.has(e.name)) walk(resolve(dir, e.name));
+      } else {
+        const rel = relative(repoRoot, resolve(dir, e.name)).split(sep).join('/');
+        const arr = index.get(e.name) || [];
+        arr.push(rel);
+        index.set(e.name, arr);
+      }
+    }
+  };
+  walk(repoRoot);
+  return index;
+}
+
+// Rewrite links into the repo's removed session<N>/ paths: point them at the
+// file's current location if its basename still exists exactly once (preserving
+// any #fragment), otherwise de-link (keep the text) so the public bank never
+// ships a 404. Current module<N>/ links don't match and are left untouched.
+// (Codex review.)
+const REPO_SESSION_BLOB =
+  /\[([^\]]*)\]\(https?:\/\/github\.com\/ipeirotis\/introduction-to-databases\/blob\/[^/]+\/session\d+\/([^)\s#]+)(#[^)\s]*)?\)/gi;
+function fixTemplateLinks(text, index) {
+  return String(text || '').replace(REPO_SESSION_BLOB, (_m, label, rest, frag) => {
+    const base = rest.split('/').pop();
+    const shown = label || base; // some links have an empty anchor (e.g. a heading)
+    const hits = index.get(base) || [];
+    if (hits.length === 1) {
+      return `[${shown}](https://github.com/ipeirotis/introduction-to-databases/blob/master/${hits[0]}${frag || ''})`;
+    }
+    return `${shown} _(template moved — see the module folders)_`;
+  });
+}
+
+// Dedup key: collapse whitespace, undo markdown escaping/link punctuation, drop
+// markdown punctuation, lowercase. Turndown escapes vary between shells (one may
+// emit `\[available]\]` where another emits `[available]`), so without
+// normalizing escapes the same assignment would key differently and inflate the
+// unique count. Collapse `[text](url)` to `text` for the same reason.
 function normKey(s) {
-  return String(s).replace(/\s+/g, ' ').replace(/[`*_>#~]/g, '').trim().toLowerCase().replace(/[.,;:!?]+$/, '');
+  return String(s)
+    .replace(/\\([^A-Za-z0-9\s])/g, '$1') // undo Turndown backslash-escapes (\[ \] \. \( ...)
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // [text](url) -> text
+    .replace(/[`*_>#~[\]()]/g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([.,;:!?])/g, '$1') // drop space before punctuation (an escaping artifact)
+    .trim()
+    .toLowerCase()
+    .replace(/[.,;:!?]+$/, '');
 }
 
 const SEASON = { SP: ['Spring', 2], SU: ['Summer', 3], FA: ['Fall', 4], WI: ['Winter', 1], JA: ['January', 1] };

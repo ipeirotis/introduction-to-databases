@@ -1,6 +1,6 @@
 # Databases — Question Bank
 
-Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz questions** (from 2774 occurrences) and **35 unique assignments**, organized by topic. Each item lists every semester/quiz it appears in. See `courses.md` for provenance, `bank.csv` for a spreadsheet view.
+Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz questions** (from 2774 occurrences) and **29 unique assignments**, organized by topic. Each item lists every semester/quiz it appears in. See `courses.md` for provenance, `bank.csv` for a spreadsheet view.
 
 ## Quiz questions by topic
 
@@ -206,7 +206,7 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 > Output all the names of all the Bronx restaurants with the average prices greater than $100.00
 > 
-> ## [](https://github.com/ipeirotis/introduction-to-databases/blob/master/session3/practice_questions_filtering.md#facebook-database)
+> ## [practice_questions_filtering.md](https://github.com/ipeirotis/introduction-to-databases/blob/master/module2/practice_questions_filtering.md#facebook-database)
 
 <sub>Used in: Summer 2022 · Lesson 3 Practice: Filtering queries · Spring 2023 · Module 2 Practice: Filtering queries · Summer 2023 · Module 2 Practice: Filtering queries · Spring 2024 · Module 2 Practice: Filtering queries · Summer 2024 · Module 2 Practice: Filtering queries · Winter 2025 · Module 2 Practice: Filtering queries · Summer 2025 · Module 2 Practice: Filtering queries · Fall 2025 · Module 2 Practice: Filtering queries · Summer 2026 · Module 2 Practice: Filtering queries</sub>
 
@@ -1527,7 +1527,7 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: Spring 2023 · Assignment 2: Database Navigation, Selection, and Filtering Queries</sub>
 
-### ER & schemas — 10 unique
+### ER & schemas — 9 unique
 
 **Assignment 1: ER Diagrams and Relational Schemas** _(6×)_
 
@@ -1593,39 +1593,7 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: Spring 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas</sub>
 
-**Post-module Assignment 1: ER Diagrams and Relational Schemas** _(3×)_
-
-> You are asked to design an ER diagram for a system that keeps track of real estate properties and listings. Below you can find the specifications given by a domain expert.
-> 
-> *   We have a set of lots in an area. Each **lot** has an id that is unique and does not change over time. It also has an address and square footage that are stable and do not change over time.
-> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.)
-> *   The building can contain one or more **dwellings**. For example, a single-family house contains one dwelling, and a multi-family building contains multiple dwellings (i.e., multiple condo housing units).
-> *   Each **dwelling** has a property type (single-family house, condo, coop, etc.), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it that is unique for that particular multi-family building. In single-family units, the unit number is not as useful, but we assume that the unit number exists and always gets a default value.  We assume that the number of bedrooms, bathrooms and square footage remain unchanged over the life of the dwelling.
-> *   Each dwelling has one or more **owners.** The owners buy the dwelling through a **sales transaction**. (Correspondingly, sell the unit when they transfer ownership to new owners.) We want to keep the historic ownership information, so the design should allow keeping the information for both the past and the current owners without confusion.
-> *   The dwelling can be bought and sold, which transfers ownership from the sellers to the buyers. Each sale is stored as a transaction with a unique transaction id, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property is always the person(s) that were the owner(s) of the property at that time_. The buyer(s) correspondingly become the new owners of the house/unit.
-> *   When an owner wants to sell a dwelling, they often (but not always) work with a **real estate agent** so that the agent creates a **sale listing** for their dwelling, advertising the dwelling and the asking price.  The agent acts as a seller's agent. Sometimes, the listing results in a sale (and a corresponding sale transaction), and sometimes the listing does not result in a sale (and the ownership remains with the current owners).
-> *   The buyers may also have an agent who helps them find a dwelling and complete the transaction. The agent acts as a buyer's agent.
-> *   Note that a buyer's agent is associated with a sale transaction, as we only want to record information for the buyer agent only when the buyer buys a dwelling. On the other hand, a seller's agent is associated with a listing, which may or may not end up in a transaction.
-> 
-> Your goal is to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into relational tables using the correct primary and foreign keys to implement the relationships.
-> 
-> Remember that the goal of a good design is to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appearing in two lots, the same building having conflicting ownership information, and so on.) In this scenario, the earlier parts are pretty easy to model, but things become more complex once you get to modeling and storing the transactions.
-> 
-> **Deliverables**
-> 
-> *   Create an ER diagram illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities.
-> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
-> *   You can submit your diagram and the tables as a Word or PDF file or in any format we can easily read.
-> 
-> **Tools**
-> 
-> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
-> 
-> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema: Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well but is not always perfect.
-
-<sub>Used in: Summer 2023 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Post-module Assignment 1: ER Diagrams and Relational Schemas</sub>
-
-**Assignment 1a: ER Diagrams and Relational Schemas** _(3×)_
+**Assignment 1a: ER Diagrams and Relational Schemas** _(4×)_
 
 > #### Business Scenario
 > 
@@ -1699,11 +1667,43 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 > 
 > **Tools**
 > 
-> The [ERD Plus website](https://erdplus-old.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
 > 
 > The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema. Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well, but is not always perfect.
 
-<sub>Used in: Winter 2025 · Assignment 1a: ER Diagrams and Relational Schemas · Summer 2026 · Assignment 1a: ER Diagrams and Relational Schemas</sub>
+<sub>Used in: Winter 2025 · Assignment 1a: ER Diagrams and Relational Schemas · Fall 2025 · Assignment 1a: ER Diagrams and Relational Schemas · Summer 2026 · Assignment 1a: ER Diagrams and Relational Schemas</sub>
+
+**Post-module Assignment 1: ER Diagrams and Relational Schemas** _(3×)_
+
+> You are asked to design an ER diagram for a system that keeps track of real estate properties and listings. Below you can find the specifications given by a domain expert.
+> 
+> *   We have a set of lots in an area. Each **lot** has an id that is unique and does not change over time. It also has an address and square footage that are stable and do not change over time.
+> *   The lot _may (or may not)_ have one **building** on it. (We do not allow lots to have more than one building.)
+> *   The building can contain one or more **dwellings**. For example, a single-family house contains one dwelling, and a multi-family building contains multiple dwellings (i.e., multiple condo housing units).
+> *   Each **dwelling** has a property type (single-family house, condo, coop, etc.), number of bedrooms, bathrooms, and square footage. In multi-family buildings, each dwelling (housing unit) will have a unit number assigned to it that is unique for that particular multi-family building. In single-family units, the unit number is not as useful, but we assume that the unit number exists and always gets a default value.  We assume that the number of bedrooms, bathrooms and square footage remain unchanged over the life of the dwelling.
+> *   Each dwelling has one or more **owners.** The owners buy the dwelling through a **sales transaction**. (Correspondingly, sell the unit when they transfer ownership to new owners.) We want to keep the historic ownership information, so the design should allow keeping the information for both the past and the current owners without confusion.
+> *   The dwelling can be bought and sold, which transfers ownership from the sellers to the buyers. Each sale is stored as a transaction with a unique transaction id, a sale date, and a price. Each sale transaction has a seller and buyer, and _the seller(s) of the property is always the person(s) that were the owner(s) of the property at that time_. The buyer(s) correspondingly become the new owners of the house/unit.
+> *   When an owner wants to sell a dwelling, they often (but not always) work with a **real estate agent** so that the agent creates a **sale listing** for their dwelling, advertising the dwelling and the asking price.  The agent acts as a seller's agent. Sometimes, the listing results in a sale (and a corresponding sale transaction), and sometimes the listing does not result in a sale (and the ownership remains with the current owners).
+> *   The buyers may also have an agent who helps them find a dwelling and complete the transaction. The agent acts as a buyer's agent.
+> *   Note that a buyer's agent is associated with a sale transaction, as we only want to record information for the buyer agent only when the buyer buys a dwelling. On the other hand, a seller's agent is associated with a listing, which may or may not end up in a transaction.
+> 
+> Your goal is to create an ER diagram indicating the relationships between entities and their cardinalities. You should also translate the ER diagram into relational tables using the correct primary and foreign keys to implement the relationships.
+> 
+> Remember that the goal of a good design is to minimize (ideally, eliminate) data quality anomalies that can complicate reporting and analysis later on. (For example, the same building appearing in two lots, the same building having conflicting ownership information, and so on.) In this scenario, the earlier parts are pretty easy to model, but things become more complex once you get to modeling and storing the transactions.
+> 
+> **Deliverables**
+> 
+> *   Create an ER diagram illustrating the entities, their attributes, the relationship among entities, and the cardinalities of the entities.
+> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
+> *   You can submit your diagram and the tables as a Word or PDF file or in any format we can easily read.
+> 
+> **Tools**
+> 
+> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
+> 
+> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema: Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well but is not always perfect.
+
+<sub>Used in: Summer 2023 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2024 · Post-module Assignment 1: ER Diagrams and Relational Schemas · Summer 2025 · Post-module Assignment 1: ER Diagrams and Relational Schemas</sub>
 
 **Assignment 1: ER Diagram and Database Design for Time Card Application** _(2×)_
 
@@ -1862,86 +1862,6 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: Summer 2025 · Assignment 1: ER Diagrams and Relational Schemas</sub>
 
-**Assignment 1a: ER Diagrams and Relational Schemas** _(1×)_
-
-> #### Business Scenario
-> 
-> You have been hired by **CarConnect**, an online marketplace that links private vehicle owners, franchised dealers, and buyers nationwide. The data team needs an operational database that:
-> 
-> *   preserves the complete ownership history of every vehicle,
-> 
-> *   supports listings that may or may not convert into sales, and
-> 
-> *   captures the roles of professionals (“agents”) who assist the parties.
-> 
-> The domain expert supplied the following specifications.
-> 
-> 1.  **Vehicle**
-> 
->     *   Every car is identified by its **VIN** (Vehicle Identification Number) — globally unique and immutable.
-> 
->     *   Fixed attributes: make, model, model-year, factory color, factory trim.
-> 
->     *   Each vehicle is physically stored at one **Dealership** lot at any point in time. (A dealership may store zero or many vehicles; a vehicle is always stored at exactly one lot.)
-> 
-> 2.  **Ownership & Transfers**
-> 
->     *   At any moment a vehicle has one or more **Owner**(s).
-> 
->     *   A change of ownership occurs exclusively through a **SaleTransaction**.
-> 
->     *   A sale records `TransactionID`, `SaleDate`, and `SalePrice`.
-> 
->     *   Each sale lists the **buyer**(s) only; the seller(s) are inferred from the immediately preceding sale.
-> 
->     *   Multiple buyers may purchase jointly, and a buyer may participate in many transactions over time (collectors, leasing companies, etc.).
-> 
-> 3.  **Listings**
-> 
->     *   Before selling, an owner can create a **Listing** that advertises the vehicle.
-> 
->     *   A vehicle may have zero, one, or many listings over its life.
-> 
->     *   A listing stores `ListingID`, `DatePosted`, `AskingPrice`, and a status flag (`Active`, `Withdrawn`, `Expired`, `Sold`).
-> 
->     *   Exactly one **seller-side Agent** (a licensed dealer or private broker) manages each listing.
-> 
->     *   A listing may, optionally, lead to a SaleTransaction. If it does, there is a one-to-one link between that listing and the resulting sale.
-> 
-> 4.  **Agents**
-> 
->     *   **Buyer-side Agent**: an (optional) professional who assists buyers; recorded only when a sale is completed.
-> 
->     *   **Seller-side Agent**: described above; tied to listings, never directly to transactions.
-> 
->     *   A single person or firm may take both roles in different deals, but never both roles in the same sale.
-> 
-> 5.  **Dealership**
-> 
->     *   Identified by `DealershipID`, with static attributes: legal name, lot address, and franchise brand (if any).
-> 
-> **Design objectives**
-> 
-> *   Produce an **ER diagram** that shows all entities, attributes, and relationship cardinalities.
-> 
-> *   Translate the diagram into relational tables with primary keys and foreign keys that enforce those cardinalities.
-> 
-> *   Ensure the design eliminates redundancy and guards against anomalies (e.g., a vehicle simultaneously stored in two lots, conflicting owner histories, orphan listings).
-> 
-> **Deliverables**
-> 
-> *   Create an ER diagram illustrating the entities, their attributes, the relationships among entities, and the cardinalities of the entities.
-> *   Create the relational schema (i.e., tables with attributes, primary keys, and foreign keys) that implements the ER diagram as a relational schema.
-> *   You can submit your diagram and the tables as a Word or PDF file, or in any format we can easily read.
-> 
-> **Tools**
-> 
-> The [ERD Plus website](https://erdplus.com/) offers an easy-to-use tool for creating diagrams and schemas.
-> 
-> The ERD Plus website allows the easy transformation of an ER Diagram to a relational schema. Once you create the ER diagram, on the main screen, click on "options" (the three vertical dots) and then "Convert to Relational Schema." If you encounter problems in this step, something is missing from your ER Diagram; probably, you did not add a primary key for some entity, or you have not finished setting up the cardinalities of the relationships. Please ensure that the generated schema is correct; ERD Plus works well, but is not always perfect.
-
-<sub>Used in: Fall 2025 · Assignment 1a: ER Diagrams and Relational Schemas</sub>
-
 **Post-Module Assignment 1: ER Diagrams and Relational Schemas** _(1×)_
 
 > #### Business Scenario
@@ -2022,24 +1942,11 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: Summer 2026 · Post-Module Assignment 1: ER Diagrams and Relational Schemas</sub>
 
-### Selection — 2 unique
+### Selection — 1 unique
 
-**Assignment 2: Navigating a database and selection queries** _(2×)_
+**Assignment 2: Navigating a database and selection queries** _(4×)_
 
-> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session2/assignment_selection_queries.ipynb)
-> 
-> **Deliverables**
-> 
-> *   Open the template notebook on Google Colab.
-> *   Write your SQL queries that answer the questions
-> *   Save the notebook on your Google Drive and share it with me and the TA
-> *   Paste the shared link also here
-
-<sub>Used in: ~2021 · Assignment 2: Navigating a database and selection queries</sub>
-
-**Assignment 2: Navigating a database and selection queries** _(2×)_
-
-> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session2/assignment_selection_queries.ipynb)\]
+> The template for the assignment is available on Github _(template moved — see the module folders)_
 > 
 > **Deliverables**
 > 
@@ -2050,30 +1957,11 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: ~2021 · Assignment 2: Navigating a database and selection queries · Summer 2022 · Assignment 2: Navigating a database and selection queries</sub>
 
-### Filtering — 4 unique
+### Filtering — 3 unique
 
-**Post-module Assignment 2: Selection and Filtering Queries** _(3×)_
+**Assignment 3: Filtering Queries** _(4×)_
 
-> Complete Assignment 2A, Assignment 2B, and Assignment 2C under "Quizzes".
-
-<sub>Used in: Summer 2023 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2024 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2025 · Post-module Assignment 2: Selection and Filtering Queries</sub>
-
-**Assignment 3: Filtering Queries** _(2×)_
-
-> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session3/assignment_filtering_queries.ipynb)
-> 
-> **Deliverables**
-> 
-> *   Open the template notebook on Google Colab.
-> *   Write your SQL queries that answer the questions
-> *   Save the notebook on your Google Drive and share it with me and the TA
-> *   Paste the shared link also here
-
-<sub>Used in: ~2021 · Assignment 3: Filtering Queries</sub>
-
-**Assignment 3: Filtering Queries** _(2×)_
-
-> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session3/assignment_filtering_queries.ipynb)\]
+> The template for the assignment is available on Github _(template moved — see the module folders)_
 > 
 > **Deliverables**
 > 
@@ -2084,36 +1972,23 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: ~2021 · Assignment 3: Filtering Queries · Summer 2022 · Assignment 3: Filtering Queries</sub>
 
+**Post-module Assignment 2: Selection and Filtering Queries** _(3×)_
+
+> Complete Assignment 2A, Assignment 2B, and Assignment 2C under "Quizzes".
+
+<sub>Used in: Summer 2023 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2024 · Post-module Assignment 2: Selection and Filtering Queries · Summer 2025 · Post-module Assignment 2: Selection and Filtering Queries</sub>
+
 **Assignment 2: Selection and Filtering Queries** _(2×)_
 
 > Complete Assignment 2A, Assignment 2B, and Assignment 2C under "Quizzes".
 
 <sub>Used in: Summer 2025 · Assignment 2: Selection and Filtering Queries</sub>
 
-### Joins — 5 unique
+### Joins — 4 unique
 
-**Post-module Assignment 3: Joins** _(3×)_
+**Assignment 4: Join queries** _(4×)_
 
-> Complete Assignment 3 under "Quizzes".
-
-<sub>Used in: Summer 2023 · Post-module Assignment 3: Joins · Summer 2024 · Post-module Assignment 3: Joins · Summer 2025 · Post-module Assignment 3: Joins</sub>
-
-**Assignment 4: Join queries** _(2×)_
-
-> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session4/assignment_join_queries.ipynb)
-> 
-> **Deliverables**
-> 
-> *   Open the template notebook on Google Colab.
-> *   Write your SQL queries that answer the questions
-> *   Save the notebook on your Google Drive and share it with me and the TA
-> *   Paste the shared link also here
-
-<sub>Used in: ~2021 · Assignment 4: Join queries</sub>
-
-**Assignment 4: Join queries** _(2×)_
-
-> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session4/assignment_join_queries.ipynb)\]
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/module3/assignment_join_queries.ipynb)
 > 
 > **Deliverables**
 > 
@@ -2123,6 +1998,12 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 > *   Paste the shared link also here
 
 <sub>Used in: ~2021 · Assignment 4: Join queries · Summer 2022 · Assignment 4: Join queries</sub>
+
+**Post-module Assignment 3: Joins** _(3×)_
+
+> Complete Assignment 3 under "Quizzes".
+
+<sub>Used in: Summer 2023 · Post-module Assignment 3: Joins · Summer 2024 · Post-module Assignment 3: Joins · Summer 2025 · Post-module Assignment 3: Joins</sub>
 
 **Assignment 3: Joins** _(2×)_
 
@@ -2141,30 +2022,11 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: Spring 2023 · Assignment 3: Joins</sub>
 
-### Aggregations — 6 unique
+### Aggregations — 5 unique
 
-**Post-module Assignment 4: Aggregations** _(3×)_
+**Assignment 5: Aggregation Queries** _(4×)_
 
-> Complete Assignment 4 under "Quizzes".
-
-<sub>Used in: Summer 2023 · Post-module Assignment 4: Aggregations · Summer 2024 · Post-module Assignment 4: Aggregations · Summer 2025 · Post-module Assignment 4: Aggregations</sub>
-
-**Assignment 5: Aggregation Queries** _(2×)_
-
-> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session5/assignment_aggregate_queries.ipynb).
-> 
-> **Deliverables**
-> 
-> *   Open the template notebook on Google Colab.
-> *   Write your SQL queries that answer the questions
-> *   Save the notebook on your Google Drive and share it with me and the TA
-> *   Paste the shared link also here
-
-<sub>Used in: ~2021 · Assignment 5: Aggregation Queries</sub>
-
-**Assignment 5: Aggregation Queries** _(2×)_
-
-> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session5/assignment_aggregate_queries.ipynb)\] .
+> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/module4/assignment_aggregate_queries.ipynb).
 > 
 > **Deliverables**
 > 
@@ -2174,6 +2036,12 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 > *   Paste the shared link also here
 
 <sub>Used in: ~2021 · Assignment 5: Aggregation Queries · Summer 2022 · Assignment 5: Aggregation Queries</sub>
+
+**Post-module Assignment 4: Aggregations** _(3×)_
+
+> Complete Assignment 4 under "Quizzes".
+
+<sub>Used in: Summer 2023 · Post-module Assignment 4: Aggregations · Summer 2024 · Post-module Assignment 4: Aggregations · Summer 2025 · Post-module Assignment 4: Aggregations</sub>
 
 **Assignment 4: Aggregations** _(1×)_
 
@@ -2250,24 +2118,11 @@ Aggregated from **23 course shells** (~2021 – Summer 2026). **203 unique quiz 
 
 <sub>Used in: Spring 2023 · Assignment 6: Window Queries (OPTIONAL: We did not cover the material)</sub>
 
-### General / other — 2 unique
+### General / other — 1 unique
 
-**Assignment 6: Putting everything together** _(2×)_
+**Assignment 6: Putting everything together** _(4×)_
 
-> The template for the assignment is [available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session6/assignment_combined.ipynb).
-> 
-> **Deliverables**
-> 
-> *   Open the template notebook on Google Colab.
-> *   Write your SQL queries that answer the questions
-> *   Save the notebook on your Google Drive and share it with me and the TA
-> *   Paste the shared link also here
-
-<sub>Used in: ~2021 · Assignment 6: Putting everything together</sub>
-
-**Assignment 6: Putting everything together** _(2×)_
-
-> The template for the assignment is \[[available on Github](https://github.com/ipeirotis/introduction-to-databases/blob/master/session6/assignment_combined.ipynb)\] .
+> The template for the assignment is available on Github _(template moved — see the module folders)_.
 > 
 > **Deliverables**
 > 

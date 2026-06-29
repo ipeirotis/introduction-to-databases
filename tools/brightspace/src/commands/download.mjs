@@ -274,7 +274,16 @@ async function dlQuizzes(ctx, ou, outDir, base) {
       block('Footer', q.Footer) +
       `## Questions (${questions.length})\n\n${qmd || '_(no questions retrieved)_'}\n`;
     writeFileSync(resolve(outDir, file), md);
-    items.push({ id: q.QuizId, title: q.Name, dueDate: q.DueDate || null, questions: questions.length, file });
+    items.push({
+      id: q.QuizId,
+      title: q.Name,
+      startDate: q.StartDate || null,
+      dueDate: q.DueDate || null,
+      endDate: q.EndDate || null,
+      active: q.IsActive ?? null,
+      questions: questions.length,
+      file,
+    });
   }
   return { count: items.length, items };
 }

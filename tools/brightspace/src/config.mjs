@@ -17,7 +17,7 @@ const DEFAULT_OFFERING = 'offerings/2026-summer';
 // against the caller's explicit intent. Only a bare flag or an explicit
 // affirmative ("true"/"1"/"yes"/"on") enables it; anything else (including
 // "false"/"0"/"no"/"off" or a typo'd value) stays off, the safe default.
-function flagBool(v) {
+export function flagBool(v) {
   if (typeof v === 'boolean') return v;
   if (v === undefined || v === null) return false;
   return ['true', '1', 'yes', 'on'].includes(String(v).trim().toLowerCase());
