@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const COMMANDS = new Set(['login', 'audit', 'download']);
+const COMMANDS = new Set(['login', 'whoami', 'courses', 'audit', 'download', 'question-bank']);
 
 function parseArgs(argv) {
   const args = { _: [], flags: {} };
@@ -46,14 +46,18 @@ function usage() {
 
 Commands:
   login         Interactive SSO login; saves storageState.
+  whoami        Verify the saved session is still valid (connection check).
+  courses       List your course shells (to find a course_id).
   audit         Read-only audit of the configured Brightspace shell.
   download      Download assignments/quizzes/announcements.
+  question-bank Aggregate quizzes/assignments across courses into one bank.
 
 Common flags:
-  --offering <path>   Path to offering dir (default: offerings/2026-spring)
-  --headed            Show the browser window.
+  --offering <path>   Path to offering dir (default: offerings/2026-summer)
   --course-id <id>    Override brightspace.course_id from offering.yaml.
   --base-url <url>    Override brightspace.base_url from offering.yaml.
+  --insecure          Skip TLS verification (only for a TLS-intercepting proxy).
+  --headed            Show the browser window (login only).
 
 Run "brightspace <command> --help" for command-specific flags.`);
 }

@@ -1,18 +1,19 @@
 # brightspace — read-only Brightspace tooling
 
-A small Playwright-based CLI for **read-only** inspection of NYU Brightspace
-course shells for *Databases for Business Analytics*. It can:
+A small CLI for **read-only** inspection of NYU Brightspace course shells for
+*Databases for Business Analytics*. It can:
 
 - Sign in via NYU SSO and persist the session (so you only do MFA once per
-  expiration window).
+  expiration window). This is the only step that uses a browser (Playwright).
+- List your **courses** to find a course id.
 - **Audit** a course shell: list assignments, quizzes, content modules, and
-  announcements; compare them against the repo for consistency.
-- **Download** assignments, quizzes, and announcements that exist on
-  Brightspace but are not in git.
+  announcements.
+- **Download** assignments, quizzes, and announcements (planned).
 
-The tool **never writes to Brightspace.** Updating deadlines, hiding items,
-or pushing content from the repo is intentionally out of scope. See
-`CLAUDE.md` for the policy.
+Reads go through the official **D2L (Valence) JSON API** using the cookies from
+your saved login — no scraping, no browser. The tool **never writes to
+Brightspace.** Updating deadlines, hiding items, or pushing content from the
+repo is intentionally out of scope. See `CLAUDE.md` for the policy.
 
 ## Install
 
@@ -27,7 +28,7 @@ npx playwright install chromium
 ## Configure
 
 Point the tool at an offering by passing `--offering` (path relative to the
-repo root, default `offerings/2026-spring`). The offering's
+repo root, default `offerings/2026-summer`). The offering's
 `brightspace.course_id` and `brightspace.base_url` are read from
 `offering.yaml`.
 
@@ -54,37 +55,91 @@ npm run brightspace -- login
 After that, subsequent commands run headlessly until the session expires;
 re-run `login` when they start failing.
 
+> **Run `login` on your own machine.** It opens a visible browser and waits
+> for you to complete NYU SSO + MFA by hand, so it can't be done in a
+> headless/CI/cloud session. Once `storageState.json` exists locally the
+> read-only commands work headlessly. Confirm the session any time with:
+>
+> ```bash
+> npm run brightspace -- whoami
+> ```
+
 ## Commands
 
 ```bash
-# Audit Brightspace state against the repo (read-only, prints a report).
-npm run brightspace -- audit --offering offerings/2026-spring
+# Verify the saved session is still valid (connection check).
+npm run brightspace -- whoami
 
-# Download assignments, quizzes, announcements not present in the repo.
-npm run brightspace -- download \
-    --offering offerings/2026-spring \
-    --kinds assignments,quizzes,announcements \
-    --out offerings/2026-spring/_downloaded
+# List your course shells to find the course_id (optionally filter).
+npm run brightspace -- courses --filter databases
+
+# List what's posted on Brightspace (read-only, prints a JSON report).
+npm run brightspace -- audit --offering offerings/2026-summer
+
+# Limit to some sections.
+npm run brightspace -- audit --sections assignments,quizzes
+
+# Export the course content into the repo (Markdown + native files).
+npm run brightspace -- download
+npm run brightspace -- download --kinds assignments,content --out some/dir
+
+# Build a cross-semester question bank from every matching course.
+npm run brightspace -- question-bank --filter databases
+npm run brightspace -- question-bank --course-ids 578630,471597 --out question-bank
 ```
 
-Add `--headed` to any command to watch the browser.
+Typical first run: `login`, then `courses` to find your id, set
+`brightspace.course_id` in the offering's `offering.yaml`, then `whoami` and
+`audit`. Use `--course-id <id>` to point any command at a shell without editing
+`offering.yaml`.
+
+> **Status.** `login`, `whoami`, `courses`, `audit`, `download`, and
+> `question-bank` are implemented and read the live D2L JSON API. `audit` does
+> not yet diff its listing against the repo — see `TASKS.md`.
+
+The `question-bank` command pulls quizzes (with questions) and assignments
+across every matching course, dedupes identical questions across semesters,
+tags a topic from the quiz name, and writes `by-topic.md`, `bank.csv`,
+`bank.json`, and `courses.md` to `<out>` (default `question-bank/`).
+
+> **Before committing a `download`:** if the repo is public, review the export
+> first. Quiz questions are live assessment material, and content files can be
+> large binaries (PDFs, images) — `CLAUDE.md` says to ask before committing
+> those. Consider `.gitignore`-ing `quizzes/` and/or `content/files/`.
 
 ## What "audit" reports
 
-For the configured offering, the audit walks the course shell and emits:
+For the configured course, `audit` emits a JSON report with:
 
-- **Assignments:** title, due date, points, visibility, submission count
-  available.
-- **Quizzes:** title, due date, attempts allowed, visibility.
-- **Content modules / topics:** title, file type, hidden/visible.
-- **Announcements:** title, posted date, body length.
+- **Assignments:** id, title, due date, hidden flag, submission counts.
+- **Quizzes:** id, title, start/due/end dates, active flag, attempts allowed.
+- **Content modules / topics:** nested module tree with topic titles, type,
+  and hidden flag; plus module/topic counts.
+- **Announcements:** id, title, posted date, hidden/published flags.
 
-It then diffs that listing against the repo (module READMEs, schedule.md,
-offerings/<term>/announcements/) and reports drift:
+Diffing this listing against the repo (module READMEs, schedule,
+`offerings/<term>/announcements/`) is planned but not yet implemented.
 
-- *Brightspace has X that repo doesn't.* (Candidate for `download`.)
-- *Repo claims X with date D, Brightspace has date D'.* (Schedule drift.)
-- *Repo references module N, Brightspace has no matching content module.*
+## What "download" writes
+
+`download` exports the course into `<offering>/brightspace/` (override with
+`--out`):
+
+```
+brightspace/
+  README.md          Human-readable index.
+  manifest.json      Machine-readable index (ids, titles, dates, file paths).
+  assignments/<id>-<slug>.md
+  quizzes/<id>-<slug>.md          Properties + questions.
+  announcements/<date>-<slug>.md
+  content/
+    toc.md           Module/topic tree with links.
+    links.md         External (Link-type) topics.
+    files/           Native content files (HTML, PDF, images, ...).
+```
+
+HTML (instructions, announcement bodies, questions) is converted to Markdown
+with Turndown; content files are saved in their original format.
 
 ## Layout
 
@@ -93,14 +148,18 @@ tools/brightspace/
   package.json
   .env.example
   .gitignore                 Ignores .auth/ and downloaded artifacts.
-  bin/brightspace.mjs        CLI entry (login | audit | download).
+  bin/brightspace.mjs        CLI entry (login | whoami | courses | audit | download).
   src/
     config.mjs               Loads offering.yaml + env + flags.
     auth.mjs                 Playwright login + storageState helpers.
+    api.mjs                  D2L JSON API client (cookie auth from storageState).
     commands/
       login.mjs              Interactive SSO login, saves storageState.
-      audit.mjs              Read-only audit (stubbed; see TASKS.md).
-      download.mjs           Read-only download (stubbed; see TASKS.md).
+      whoami.mjs             Connection check against the saved session.
+      courses.mjs            List enrolled course shells (find a course_id).
+      audit.mjs              Read-only audit via the D2L API.
+      download.mjs           Export course content to Markdown + native files.
+      question-bank.mjs      Cross-course question/assignment aggregation.
   .auth/                     Gitignored. Holds storageState.json.
 ```
 

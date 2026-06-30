@@ -1,3 +1,4 @@
+# Cloud — never commit plaintext credentials
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -109,3 +110,14 @@ node_modules/
 tools/brightspace/.auth/
 # Brightspace download outputs.
 **/_downloaded/
+credentials.json
+credentials_clean.json
+/tmp/gcp-adc-credentials.json
+
+# Answer-side question-bank artifacts live ONLY in the private repo
+# (ipeirotis/introduction-to-databases-private). The generator may write them
+# here as a working location, but they must never be committed to this public
+# repo. See CLAUDE.md "Question bank and private answers".
+/question-bank/bank-validated.json
+/question-bank/FLAGGED.md
+/question-bank/solutions/

@@ -1,0 +1,450 @@
+{
+  "course": {
+    "id": "578630",
+    "name": "Databases for Business Analytics, TechMBA, May 2026",
+    "code": "SU26_TECH-GB_2147_DU1_52_crse"
+  },
+  "offering": "offerings/2026-summer",
+  "kinds": {
+    "announcements": {
+      "count": 3,
+      "items": [
+        {
+          "id": 2032939,
+          "title": "TA Openings for AY2026-27",
+          "posted": "2026-06-11T18:25:00.000Z",
+          "file": "announcements/2026-06-11-2032939-ta-openings-for-ay2026-27.md"
+        },
+        {
+          "id": 2023688,
+          "title": "WhatsApp group for the class",
+          "posted": "2026-05-16T19:44:00.000Z",
+          "file": "announcements/2026-05-16-2023688-whatsapp-group-for-the-class.md"
+        },
+        {
+          "id": 1987658,
+          "title": "Welcome to the \"Databases for Business Analytics\" class!",
+          "posted": "2026-05-14T16:00:00.000Z",
+          "file": "announcements/2026-05-14-1987658-welcome-to-the-databases-for-business-analytics-class.md"
+        }
+      ]
+    },
+    "assignments": {
+      "count": 2,
+      "items": [
+        {
+          "id": 1177596,
+          "title": "Assignment 0: Setup",
+          "dueDate": "2026-05-19T03:59:59.000Z",
+          "hidden": false,
+          "file": "assignments/1177596-assignment-0-setup.md"
+        },
+        {
+          "id": 1177597,
+          "title": "Assignment 1a: ER Diagrams and Relational Schemas",
+          "dueDate": "2026-05-19T03:59:59.000Z",
+          "hidden": false,
+          "file": "assignments/1177597-assignment-1a-er-diagrams-and-relational-schemas.md"
+        }
+      ]
+    },
+    "quizzes": {
+      "count": 16,
+      "items": [
+        {
+          "id": 499798,
+          "title": "Assignment 1b: Understanding a Database",
+          "startDate": null,
+          "dueDate": "2026-05-19T03:59:59.000Z",
+          "endDate": null,
+          "active": true,
+          "questions": 5,
+          "file": "quizzes/499798-assignment-1b-understanding-a-database.md"
+        },
+        {
+          "id": 499799,
+          "title": "Assignment 2a: Selection Queries",
+          "startDate": null,
+          "dueDate": "2026-05-23T03:59:59.000Z",
+          "endDate": null,
+          "active": true,
+          "questions": 6,
+          "file": "quizzes/499799-assignment-2a-selection-queries.md"
+        },
+        {
+          "id": 499800,
+          "title": "Assignment 2b: Filtering Queries",
+          "startDate": null,
+          "dueDate": "2026-05-25T03:59:59.000Z",
+          "endDate": null,
+          "active": true,
+          "questions": 8,
+          "file": "quizzes/499800-assignment-2b-filtering-queries.md"
+        },
+        {
+          "id": 499801,
+          "title": "Assignment 3: Joins",
+          "startDate": null,
+          "dueDate": "2026-05-28T03:59:59.000Z",
+          "endDate": null,
+          "active": true,
+          "questions": 6,
+          "file": "quizzes/499801-assignment-3-joins.md"
+        },
+        {
+          "id": 499802,
+          "title": "Assignment 4: Aggregations",
+          "startDate": null,
+          "dueDate": "2026-06-01T03:59:59.000Z",
+          "endDate": null,
+          "active": true,
+          "questions": 10,
+          "file": "quizzes/499802-assignment-4-aggregations.md"
+        },
+        {
+          "id": 499803,
+          "title": "Assignment 5: Subqueries",
+          "startDate": null,
+          "dueDate": "2026-06-05T03:59:59.000Z",
+          "endDate": null,
+          "active": true,
+          "questions": 4,
+          "file": "quizzes/499803-assignment-5-subqueries.md"
+        },
+        {
+          "id": 499804,
+          "title": "Assignment 6: Window queries",
+          "startDate": null,
+          "dueDate": "2026-01-21T04:59:59.000Z",
+          "endDate": null,
+          "active": false,
+          "questions": 7,
+          "file": "quizzes/499804-assignment-6-window-queries.md"
+        },
+        {
+          "id": 499805,
+          "title": "Final Exam",
+          "startDate": "2026-06-02T19:30:00.000Z",
+          "dueDate": "2026-06-08T03:59:59.000Z",
+          "endDate": "2026-06-08T03:59:59.000Z",
+          "active": true,
+          "questions": 22,
+          "file": "quizzes/499805-final-exam.md"
+        },
+        {
+          "id": 499806,
+          "title": "Module 1 Practice: Cellular Operator Database Questions",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 12,
+          "file": "quizzes/499806-module-1-practice-cellular-operator-database-questions.md"
+        },
+        {
+          "id": 499807,
+          "title": "Module 2 Practice: Filtering queries",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 17,
+          "file": "quizzes/499807-module-2-practice-filtering-queries.md"
+        },
+        {
+          "id": 499808,
+          "title": "Module 3 Practice: Join practice queries.",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 7,
+          "file": "quizzes/499808-module-3-practice-join-practice-queries.md"
+        },
+        {
+          "id": 499809,
+          "title": "Module 4 Practice: Group by practice queries",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 7,
+          "file": "quizzes/499809-module-4-practice-group-by-practice-queries.md"
+        },
+        {
+          "id": 499810,
+          "title": "Module 4 Practice: Flights Database Questions",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 6,
+          "file": "quizzes/499810-module-4-practice-flights-database-questions.md"
+        },
+        {
+          "id": 499811,
+          "title": "Module 4 Practice: Group by together with JOIN queries",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 7,
+          "file": "quizzes/499811-module-4-practice-group-by-together-with-join-queries.md"
+        },
+        {
+          "id": 499812,
+          "title": "General Data Analytics Practice: NYPD Collisions Dataset",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 9,
+          "file": "quizzes/499812-general-data-analytics-practice-nypd-collisions-dataset.md"
+        },
+        {
+          "id": 499813,
+          "title": "General Practice: Northwind Dataset",
+          "startDate": null,
+          "dueDate": null,
+          "endDate": null,
+          "active": true,
+          "questions": 8,
+          "file": "quizzes/499813-general-practice-northwind-dataset.md"
+        }
+      ]
+    },
+    "content": {
+      "modules": 30,
+      "topics": 36,
+      "files": 9,
+      "links": 27,
+      "items": [
+        {
+          "title": "Syllabus",
+          "type": "file",
+          "topicId": 13221150,
+          "file": "content/files/13221150-Syllabus.html",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 0: Setup",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2424609",
+          "hidden": false
+        },
+        {
+          "title": "Ask questions about the material",
+          "type": "link",
+          "url": "https://notebooklm.google.com/notebook/d1427854-a24a-48b4-9a56-5cd6cb99e7de",
+          "hidden": false
+        },
+        {
+          "title": "Gallery-Painter-Painting",
+          "type": "file",
+          "topicId": 13221176,
+          "file": "content/files/13221176-Gallery-Painter-Painting.png",
+          "hidden": false
+        },
+        {
+          "title": "Modeling and Designing Databases",
+          "type": "file",
+          "topicId": 13221191,
+          "file": "content/files/13221191-Chapter_4-Modeling_and_Designing_Databases.pdf",
+          "hidden": false
+        },
+        {
+          "title": "Quick Reference",
+          "type": "file",
+          "topicId": 13221190,
+          "file": "content/files/13221190-Untitled_-_Copy.html",
+          "hidden": false
+        },
+        {
+          "title": "Module 1 Practice: Cellular Operator Database Questions",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1720213",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 1a: ER Diagrams and Relational Schemas",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2424635",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 1b: Understanding a Database",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2579051",
+          "hidden": false
+        },
+        {
+          "title": "CarConnect ER Diagram",
+          "type": "file",
+          "topicId": 13221197,
+          "file": "content/files/13221197-CarConnect.png",
+          "hidden": false
+        },
+        {
+          "title": "CarConnect-RelationalSchema",
+          "type": "file",
+          "topicId": 13221198,
+          "file": "content/files/13221198-CarConnect-RelationalSchema.png",
+          "hidden": false
+        },
+        {
+          "title": "Schema of Music database",
+          "type": "file",
+          "topicId": 13221200,
+          "file": "content/files/13221200-Music-database-schema.png",
+          "hidden": false
+        },
+        {
+          "title": "Ask questions about the material",
+          "type": "link",
+          "url": "https://notebooklm.google.com/notebook/885602f5-b71f-4837-a9ab-6c4536047116",
+          "hidden": false
+        },
+        {
+          "title": "Module 2 Practice: Filtering queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1722420",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 2a: Selection Queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2579005",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 2b: Filtering Queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2579644",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 2: Database Navigation, Selection, and Filtering Queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-636105",
+          "hidden": false
+        },
+        {
+          "title": "Module 3 Practice: Join practice queries.",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1738540",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 3: Joins",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2580453",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 3: Joins",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2434904",
+          "hidden": false
+        },
+        {
+          "title": "Module 4 Practice: Group by practice queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1726514",
+          "hidden": false
+        },
+        {
+          "title": "Module 4 Practice: Group by together with JOIN queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1737776",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 4: Aggregations",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2580626",
+          "hidden": false
+        },
+        {
+          "title": "Module 4 Practice: Flights Database Questions",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2528895",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 5: Subqueries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2582295",
+          "hidden": false
+        },
+        {
+          "title": "Assignment 6: Window Queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=dropbox&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2442501",
+          "hidden": true
+        },
+        {
+          "title": "Assignment 6: Window queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2587887",
+          "hidden": true
+        },
+        {
+          "title": "Learning MySQL",
+          "type": "file",
+          "topicId": 13221148,
+          "file": "content/files/13221148-Learning_MySQL.pdf",
+          "hidden": false
+        },
+        {
+          "title": "SQL Zine: Become a Select Star",
+          "type": "file",
+          "topicId": 13221149,
+          "file": "content/files/13221149-sql-zine.pdf",
+          "hidden": false
+        },
+        {
+          "title": "Github repo for class material",
+          "type": "link",
+          "url": "https://github.com/ipeirotis/introduction-to-databases/",
+          "hidden": false
+        },
+        {
+          "title": "Pointers to Online SQL Courses",
+          "type": "link",
+          "url": "https://github.com/ipeirotis/introduction-to-databases/blob/master/README.md#additional-resources-for-learning-sql",
+          "hidden": false
+        },
+        {
+          "title": "General Data Analytics Practice: NYPD Collisions Dataset",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-2439816",
+          "hidden": false
+        },
+        {
+          "title": "Restaurants Database: Simple Practice Queries",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=quiz&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-1785677",
+          "hidden": false
+        },
+        {
+          "title": "StrataScratch: SQL questions asked in interviews",
+          "type": "link",
+          "url": "https://platform.stratascratch.com/coding?code_type=3",
+          "hidden": false
+        },
+        {
+          "title": "Leetcode: Practice SQL questions for interviews",
+          "type": "link",
+          "url": "https://leetcode.com/problemset/database/",
+          "hidden": false
+        },
+        {
+          "title": "Mediasite Channel (Stern)",
+          "type": "link",
+          "url": "https://brightspace.nyu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=578630&type=lti&rcode=438126FB-CB7E-4012-84DC-B926D628DF2A-4610469&srcou=578630",
+          "hidden": false
+        }
+      ]
+    }
+  }
+}

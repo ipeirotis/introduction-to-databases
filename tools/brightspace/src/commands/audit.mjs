@@ -1,94 +1,158 @@
 // `brightspace audit` — read-only audit of the configured course shell.
 //
-// STATUS: scaffold. The Playwright navigation + Brightspace selectors
-// still need to be filled in for each section (assignments, quizzes,
-// content, announcements). Tracked in TASKS.md under "Tooling".
+// Lists what's posted on Brightspace — assignments, quizzes, content modules,
+// and announcements — by reading the D2L JSON API (see ../api.mjs). Prints a
+// JSON report plus a short summary. Never writes to Brightspace.
 
 import { loadConfig } from '../config.mjs';
-import { launchAuthenticatedContext } from '../auth.mjs';
+import {
+  openApi,
+  assignments,
+  quizzes,
+  contentToc,
+  news,
+  AuthExpiredError,
+} from '../api.mjs';
 
 export async function run(flags) {
   if (flags.help) {
-    console.log(`brightspace audit [--offering <path>] [--headed]
+    console.log(`brightspace audit [--offering <path>] [--insecure]
        [--sections assignments,quizzes,content,announcements]
 
-Walks the configured Brightspace course shell and prints a report of its
-contents, then diffs against the repo. Read-only.`);
+Reads the configured Brightspace course via the D2L API and prints a JSON
+report of its contents. Read-only.`);
     return;
   }
 
   const config = loadConfig(flags);
-  if (!config.brightspace.courseId) {
+  const ou = config.brightspace.courseId;
+  if (!ou) {
     throw new Error(
       `brightspace.course_id is not set in ${config.offeringRel}/offering.yaml. ` +
-        `Set it or pass --course-id <id>.`
+        `Run "brightspace courses" to find it, or pass --course-id <id>.`
     );
   }
 
-  const sections = (flags.sections || 'assignments,quizzes,content,announcements')
+  const VALID_SECTIONS = ['assignments', 'quizzes', 'content', 'announcements'];
+  const sections = (flags.sections || VALID_SECTIONS.join(','))
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
+  // Reject a mistyped section up front (like `download` does for --kinds) so a
+  // CI/audit wrapper can't appear to have checked Brightspace while checking
+  // nothing: a typo would otherwise just warn and exit 0 with empty sections.
+  const unknownSections = sections.filter((s) => !VALID_SECTIONS.includes(s));
+  if (unknownSections.length) {
+    throw new Error(
+      `Unknown --sections: ${unknownSections.join(', ')}. Valid: ${VALID_SECTIONS.join(', ')}`
+    );
+  }
 
-  const { browser, context } = await launchAuthenticatedContext(config);
+  const ctx = await openApi(config);
   try {
-    const page = await context.newPage();
-    const courseHome = `${config.brightspace.baseUrl}/d2l/home/${config.brightspace.courseId}`;
-    console.log(`Auditing ${config.brightspace.label} (${courseHome})`);
-    await page.goto(courseHome, { waitUntil: 'domcontentloaded' });
-
-    const report = { offering: config.offeringRel, sections: {} };
+    const report = { offering: config.offeringRel, courseId: ou, sections: {} };
 
     for (const section of sections) {
-      switch (section) {
-        case 'assignments':
-          report.sections.assignments = await auditAssignments(page, config);
-          break;
-        case 'quizzes':
-          report.sections.quizzes = await auditQuizzes(page, config);
-          break;
-        case 'content':
-          report.sections.content = await auditContent(page, config);
-          break;
-        case 'announcements':
-          report.sections.announcements = await auditAnnouncements(page, config);
-          break;
-        default:
-          console.warn(`Skipping unknown section: ${section}`);
+      try {
+        switch (section) {
+          case 'assignments':
+            report.sections.assignments = mapAssignments(await assignments(ctx, ou));
+            break;
+          case 'quizzes':
+            report.sections.quizzes = mapQuizzes(await quizzes(ctx, ou));
+            break;
+          case 'content':
+            report.sections.content = mapContent(await contentToc(ctx, ou));
+            break;
+          case 'announcements':
+            report.sections.announcements = mapNews(await news(ctx, ou));
+            break;
+          default:
+            console.warn(`Skipping unknown section: ${section}`);
+        }
+      } catch (err) {
+        if (err instanceof AuthExpiredError) throw err; // stop early; session dead
+        process.exitCode = 1; // a requested section failed — signal non-zero exit
+        report.sections[section] = { status: 'error', reason: String(err?.message || err) };
       }
     }
 
     console.log(JSON.stringify(report, null, 2));
+    summarize(report);
   } finally {
-    await browser.close();
+    await ctx.dispose();
   }
 }
 
-// Each auditor returns a list of { title, dueDate?, visibility?, ... }.
-// Implementations are intentionally left as TODOs — the Brightspace DOM
-// changes often enough that selectors should be written against the live
-// course, not guessed from documentation.
+// --- field mappers ----------------------------------------------------------
 
-async function auditAssignments(_page, _config) {
-  // TODO: navigate to /d2l/lms/dropbox/admin/folders_manage.d2l?ou=<courseId>
-  // and scrape the folder list (title, due date, points, visibility).
-  return { status: 'not_implemented' };
+function mapAssignments(folders) {
+  const items = (folders || []).map((f) => ({
+    id: f.Id,
+    title: f.Name,
+    dueDate: f.DueDate || null,
+    hidden: f.IsHidden,
+    submissions: f.TotalUsersWithSubmissions,
+    totalUsers: f.TotalUsers,
+    attachments: (f.Attachments || []).length,
+  }));
+  return { status: 'ok', count: items.length, items };
 }
 
-async function auditQuizzes(_page, _config) {
-  // TODO: navigate to /d2l/lms/quizzing/admin/quizzes_manage.d2l?ou=<courseId>
-  // and scrape the quiz list.
-  return { status: 'not_implemented' };
+function mapQuizzes(list) {
+  const items = (list || []).map((q) => ({
+    id: q.QuizId,
+    title: q.Name,
+    dueDate: q.DueDate || null,
+    startDate: q.StartDate || null,
+    endDate: q.EndDate || null,
+    active: q.IsActive,
+    attempts:
+      q.AttemptsAllowed && q.AttemptsAllowed.IsUnlimited
+        ? 'unlimited'
+        : (q.AttemptsAllowed && q.AttemptsAllowed.NumberOfAttemptsAllowed) || null,
+  }));
+  return { status: 'ok', count: items.length, items };
 }
 
-async function auditContent(_page, _config) {
-  // TODO: navigate to /d2l/le/content/<courseId>/Home and walk the module
-  // tree (title, type, hidden/visible).
-  return { status: 'not_implemented' };
+function mapNews(list) {
+  const items = (list || []).map((n) => ({
+    id: n.Id,
+    title: n.Title,
+    posted: n.StartDate || n.CreatedDate || null,
+    hidden: n.IsHidden,
+    published: n.IsPublished,
+  }));
+  return { status: 'ok', count: items.length, items };
 }
 
-async function auditAnnouncements(_page, _config) {
-  // TODO: navigate to /d2l/lms/news/main.d2l?ou=<courseId> and list
-  // announcements (title, posted date, body length).
-  return { status: 'not_implemented' };
+function mapContent(toc) {
+  let moduleCount = 0;
+  let topicCount = 0;
+  const walk = (m) =>
+    (m.Modules || []).map((sub) => {
+      moduleCount++;
+      const topics = (sub.Topics || []).map((t) => {
+        topicCount++;
+        return { title: t.Title, type: t.TypeIdentifier, hidden: t.IsHidden, url: t.Url || null };
+      });
+      return { title: sub.Title, hidden: sub.IsHidden, topics, modules: walk(sub) };
+    });
+  const modules = walk(toc || {});
+  return { status: 'ok', moduleCount, topicCount, modules };
+}
+
+// --- output -----------------------------------------------------------------
+
+function summarize(report) {
+  console.error('\n--- summary ---');
+  for (const [section, data] of Object.entries(report.sections)) {
+    if (data.status !== 'ok') {
+      console.error(`  ${section}: ${data.status}${data.reason ? ` (${data.reason})` : ''}`);
+    } else if (section === 'content') {
+      console.error(`  content: ${data.moduleCount} module(s), ${data.topicCount} topic(s)`);
+    } else {
+      console.error(`  ${section}: ${data.count} item(s)`);
+    }
+  }
 }

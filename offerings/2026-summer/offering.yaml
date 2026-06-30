@@ -3,19 +3,22 @@
 # for a new offering. See offerings/README.md.
 
 course:
-  code: TECH-GB.2336      # adjust if the official course code differs
+  code: TECH-GB.2147      # matches the SU26_TECH-GB_2147 Brightspace shell
   title: Databases for Business Analytics
   institution: NYU Stern
 
 term:
   year: 2026
-  season: spring          # spring | summer | fall | winter
+  season: summer          # spring | summer | fall | winter
   section: "01"
 
+# Dates below are inferred from the SU26 Brightspace shell (welcome
+# announcement 2026-05-14; final exam window ends 2026-06-08). Adjust if the
+# official term calendar differs.
 dates:
-  classes_start: 2026-01-26
-  classes_end:   2026-05-08
-  final_exam:    null     # set when scheduled
+  classes_start: 2026-05-14
+  classes_end:   2026-06-08
+  final_exam:    2026-06-08
   drop_deadline: null
 
 instructor:
@@ -27,6 +30,6 @@ instructor:
 # (the long number after /d2l/home/).
 brightspace:
   base_url: https://brightspace.nyu.edu
-  course_id: null         # e.g. 123456
+  course_id: 578630       # SU26_TECH-GB_2147_DU1_52
   # Optional: human label shown in audit output.
-  label: Spring 2026 — Section 01
+  label: Databases for Business Analytics — TechMBA, May 2026
