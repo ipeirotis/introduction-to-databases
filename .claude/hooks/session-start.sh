@@ -1,7 +1,8 @@
 #!/bin/bash
 # SessionStart hook for Claude Code on the Web.
 # Installs Node deps and Playwright Chromium for tools/brightspace/ so the
-# Brightspace CLI is runnable inside web sessions.
+# Brightspace CLI is runnable inside web sessions, and a Python venv with the
+# BigQuery client for tools/bq/.
 #
 # Idempotent: npm install is a no-op on a warm cache, and Playwright's
 # `install` reuses already-downloaded browsers.
@@ -27,5 +28,11 @@ npm install --no-audit --no-fund --loglevel=error
 
 echo "session-start: installing Playwright Chromium..."
 npx --yes playwright install chromium
+
+echo "session-start: provisioning BigQuery helper venv (~/.venv-bq)..."
+if [ ! -x "$HOME/.venv-bq/bin/python" ]; then
+  python3 -m venv "$HOME/.venv-bq"
+fi
+"$HOME/.venv-bq/bin/pip" install --quiet --disable-pip-version-check google-cloud-bigquery
 
 echo "session-start: done."

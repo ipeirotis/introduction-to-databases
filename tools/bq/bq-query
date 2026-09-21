@@ -1,0 +1,8 @@
+#!/bin/bash
+# Wrapper: run tools/bq/query.py with the venv that session-start.sh provisions,
+# falling back to the system python3 (which then needs google-cloud-bigquery).
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PY="${HOME}/.venv-bq/bin/python"
+[ -x "$PY" ] || PY="$(command -v python3)"
+exec "$PY" "$HERE/query.py" "$@"
