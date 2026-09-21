@@ -43,6 +43,7 @@ By the end of this lesson, you will be able to:
 
 ## Notebooks
 
+- B0 — [Slides: SQL Selection Queries](https://docs.google.com/presentation/d/10btjBE23y5trUdo9fmGbPtDkKagdh_O9zn1CfwWWw7M/edit) — read before the selection-queries notebook
 - [SQL: Selection Queries](B-Selection_Queries.ipynb) — SELECT, AS, DISTINCT, ORDER BY, LIMIT
 - [SQL: Filtering Queries](B3-Filtering_Queries.ipynb) — WHERE, Boolean operators, IN, LIKE, NULL, CASE
 
