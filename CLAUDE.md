@@ -186,6 +186,12 @@ This repo is connected to **Google BigQuery** for the course datasets via the
   auto-authenticates regardless.
 - **Adding a teammate / rotating a key:** ask the agent — it runs the skill's
   `add-team-member` / `credential-rotation` workflows.
+- **Querying from a web session:** use `tools/bq/bq-query` (see
+  `tools/bq/README.md`), not the `bq` or `gcloud` CLIs. The web sandbox's
+  egress proxy replaces gcloud's access token with a placeholder, so `bq` and
+  `gcloud` fail with "Invalid Credentials" even though the service account is
+  active. The helper uses the Python client with the same ADC file and works;
+  it is read-only (SELECT/WITH only) and allow-listed in `.claude/settings.json`.
 - **Security:** this repo is public, so the encrypted key is world-readable;
   its safety rests entirely on the passphrase. Keep `GCP_CREDENTIALS_KEY` long
   and random, and the service account read-only.
