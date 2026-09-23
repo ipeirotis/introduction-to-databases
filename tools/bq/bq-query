@@ -1,8 +1,12 @@
 #!/bin/bash
 # Wrapper: run tools/bq/query.py with the venv that session-start.sh provisions,
 # falling back to the system python3 (which then needs google-cloud-bigquery).
+# The venv is used only if the BigQuery client actually imports there, so a
+# venv whose package install failed part-way does not shadow the fallback.
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PY="${HOME}/.venv-bq/bin/python"
-[ -x "$PY" ] || PY="$(command -v python3)"
+if ! { [ -x "$PY" ] && "$PY" -c 'import google.cloud.bigquery' 2>/dev/null; }; then
+  PY="$(command -v python3)"
+fi
 exec "$PY" "$HERE/query.py" "$@"
