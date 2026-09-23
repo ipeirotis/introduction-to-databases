@@ -8,7 +8,7 @@
 All queries are for the `nyu-datasets.carconnect_teaching` database. The
 schema is documented in [`schemas/carconnect_teaching.md`](../schemas/carconnect_teaching.md).
 
-**How to work.** The tables are tiny (4 vehicles, 8 listings, 8 sales), so
+**How to work.** The tables are tiny (fewer than a dozen rows each), so
 before you run each query, write down how many rows you expect and why. Then
 run it. If the count differs, figure out which of the two was wrong before
 moving on. You may use any AI assistant to help write queries, but you are
@@ -175,6 +175,8 @@ model year descending."
 
 ## What's next
 
-Module 3 uses the same database for joins: reconstructing a vehicle's
-ownership history from `sale_transactions` and `transaction_buyers`, and
-matching listings to the sales they produced.
+Module 3 introduces joins. Its current exercises use the `music`, IMDb, and
+Facebook databases. CarConnect lends itself to join exercises too, such as
+reconstructing a vehicle's ownership history from `sale_transactions` and
+`transaction_buyers`, or matching listings to the sales they produced, and
+those may be added to Module 3 in a future offering.

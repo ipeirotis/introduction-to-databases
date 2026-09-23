@@ -5,7 +5,7 @@ BigQuery dataset: `nyu-datasets.carconnect_teaching`
 This is the implemented version of the **CarConnect** business scenario used
 in Assignment 1a (ER diagrams and relational schemas). Students design the
 schema in Module 1 and then query this implementation in Module 2 onward.
-The data is small (a handful of rows per table) and fully fictional, so
+The data is small (fewer than a dozen rows per table) and fully fictional, so
 queries can be checked by hand.
 
 ```mermaid
@@ -84,24 +84,20 @@ erDiagram
 - **Two agent roles, one table.** `listings.seller_agent_id` is required (every
   listing has exactly one seller-side agent). `sale_transactions.buyer_agent_id`
   is optional and often NULL.
-- **Status values** are constrained by the `listing_statuses` lookup table
-  rather than an enum, so `SELECT * FROM listing_statuses` lists the valid
-  values.
+- **Status values** are documented by the `listing_statuses` lookup table, so
+  `SELECT * FROM listing_statuses` lists the valid values. The foreign key
+  from `listings.status` to it is declared but, like all BigQuery key
+  constraints, not enforced: BigQuery would accept a listing with a status
+  outside the lookup table. The lookup records the valid domain; enforcing it
+  would be the job of whatever loads the data.
 - **Differences from the Assignment 1a spec** worth pointing out to students:
   `transaction_buyers` is the bridge table that implements "multiple buyers
   may purchase jointly"; `listings.created_by_owner_id` is an explicit
   extension recording who posted the listing; `vehicles.current_dealership_id`
   stores only the *current* lot, so lot history is not recoverable.
 
-## Table sizes (as of the 2026 load)
+## Size
 
-| Table | Rows |
-|-------|------|
-| `vehicles` | 4 |
-| `dealerships` | 3 |
-| `owners` | 6 |
-| `agents` | 3 |
-| `listing_statuses` | 4 |
-| `listings` | 8 |
-| `sale_transactions` | 8 |
-| `transaction_buyers` | 10 |
+Every table holds fewer than a dozen rows, so any query result can be checked
+by hand. Exact row counts are answer-side material and live in the private
+answers repo (see `CLAUDE.md`).

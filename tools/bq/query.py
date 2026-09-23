@@ -19,24 +19,59 @@ import re
 import sys
 
 PROJECT = "nyu-datasets"
-READ_ONLY = re.compile(r"^\s*(--[^\n]*\n\s*)*(SELECT|WITH)\b", re.IGNORECASE)
-_LITERALS = re.compile(r"'(?:[^'\\]|\\.)*'|\"(?:[^\"\\]|\\.)*\"|`[^`]*`")
-_COMMENTS = re.compile(r"--[^\n]*|#[^\n]*|/\*.*?\*/", re.S)
+READ_ONLY = re.compile(r"^\s*(SELECT|WITH)\b", re.IGNORECASE)
+
+
+def strip_literals_and_comments(sql):
+    """Blank out string literals and comments in one left-to-right pass.
+
+    A single scan that tracks the current lexical state (line comment, block
+    comment, quoted or triple-quoted literal) so that a quote inside a comment
+    or a comment marker inside a string cannot mislead the check. Two
+    independent regex passes could be tricked (e.g. quotes placed in two line
+    comments that a literal regex then joins into one "string").
+    """
+    out = []
+    i, n = 0, len(sql)
+    while i < n:
+        ch = sql[i]
+        two = sql[i : i + 2]
+        three = sql[i : i + 3]
+        if two == "--" or ch == "#":
+            j = sql.find("\n", i)
+            i = n if j == -1 else j  # keep the newline itself
+            out.append(" ")
+        elif two == "/*":
+            j = sql.find("*/", i + 2)
+            i = n if j == -1 else j + 2
+            out.append(" ")
+        elif three in ("'''", '"""'):
+            j = sql.find(three, i + 3)
+            i = n if j == -1 else j + 3
+            out.append("''")
+        elif ch in ("'", '"', "`"):
+            j = i + 1
+            while j < n and sql[j] != ch:
+                j += 2 if (sql[j] == "\\" and ch != "`") else 1
+            i = j + 1 if j < n else n
+            out.append("''")
+        else:
+            out.append(ch)
+            i += 1
+    return "".join(out)
 
 
 def is_single_read_only_statement(sql):
-    """True only for one SELECT/WITH statement.
+    """Client-side check: one SELECT/WITH statement, no other semicolons.
 
-    BigQuery accepts multi-statement scripts, so checking the first keyword
-    alone would let ``SELECT 1; DROP TABLE ...`` through. Strip string
-    literals and comments, then refuse any semicolon other than a single
-    trailing terminator. A semicolon hidden in an unusual literal form still
-    causes a refusal, which errs on the safe side.
+    BigQuery accepts multi-statement scripts, so the first keyword alone is
+    not enough. This is a cheap first filter; ``cmd_sql`` also asks BigQuery
+    itself (dry run) what statement type it parsed, which is authoritative.
     """
-    if not READ_ONLY.match(sql):
+    code = strip_literals_and_comments(sql)
+    if not READ_ONLY.match(code):
         return False
-    stripped = _COMMENTS.sub(" ", _LITERALS.sub("''", sql))
-    return ";" not in stripped.rstrip().rstrip(";")
+    return ";" not in code.rstrip().rstrip(";")
 
 
 def client():
@@ -71,6 +106,12 @@ def cmd_sql(args):
     if not is_single_read_only_statement(sql):
         sys.exit("refused: only a single SELECT / WITH statement is allowed by this helper")
     bq, c = client()
+    # Authoritative check: let BigQuery parse it (dry run executes nothing) and
+    # refuse anything it does not classify as a plain SELECT, e.g. SCRIPT for
+    # multi-statement input or DDL/DML types.
+    dry = c.query(sql, job_config=bq.QueryJobConfig(dry_run=True, use_query_cache=False))
+    if dry.statement_type != "SELECT":
+        sys.exit(f"refused: BigQuery parsed this as {dry.statement_type}, not a single SELECT")
     job = c.query(sql, job_config=bq.QueryJobConfig(maximum_bytes_billed=10 * 1024**3))
     rows = job.result(max_results=args.max_rows)
     cols = [f.name for f in rows.schema]
