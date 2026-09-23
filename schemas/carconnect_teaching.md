@@ -64,7 +64,7 @@ erDiagram
     vehicles ||--o{ sale_transactions : "sold in"
     owners ||--o{ listings : "posts"
     agents ||--o{ listings : "seller-side agent"
-    agents ||--o{ sale_transactions : "buyer-side agent"
+    agents |o--o{ sale_transactions : "buyer-side agent (optional)"
     listing_statuses ||--o{ listings : "status of"
     listings |o--o| sale_transactions : "may lead to"
     sale_transactions ||--|{ transaction_buyers : "bought by"

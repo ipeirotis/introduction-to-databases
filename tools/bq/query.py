@@ -20,6 +20,23 @@ import sys
 
 PROJECT = "nyu-datasets"
 READ_ONLY = re.compile(r"^\s*(--[^\n]*\n\s*)*(SELECT|WITH)\b", re.IGNORECASE)
+_LITERALS = re.compile(r"'(?:[^'\\]|\\.)*'|\"(?:[^\"\\]|\\.)*\"|`[^`]*`")
+_COMMENTS = re.compile(r"--[^\n]*|#[^\n]*|/\*.*?\*/", re.S)
+
+
+def is_single_read_only_statement(sql):
+    """True only for one SELECT/WITH statement.
+
+    BigQuery accepts multi-statement scripts, so checking the first keyword
+    alone would let ``SELECT 1; DROP TABLE ...`` through. Strip string
+    literals and comments, then refuse any semicolon other than a single
+    trailing terminator. A semicolon hidden in an unusual literal form still
+    causes a refusal, which errs on the safe side.
+    """
+    if not READ_ONLY.match(sql):
+        return False
+    stripped = _COMMENTS.sub(" ", _LITERALS.sub("''", sql))
+    return ";" not in stripped.rstrip().rstrip(";")
 
 
 def client():
@@ -51,8 +68,8 @@ def cmd_schema(args):
 
 def cmd_sql(args):
     sql = sys.stdin.read() if args.query == "-" else args.query
-    if not READ_ONLY.match(sql):
-        sys.exit("refused: only SELECT / WITH statements are allowed by this helper")
+    if not is_single_read_only_statement(sql):
+        sys.exit("refused: only a single SELECT / WITH statement is allowed by this helper")
     bq, c = client()
     job = c.query(sql, job_config=bq.QueryJobConfig(maximum_bytes_billed=10 * 1024**3))
     rows = job.result(max_results=args.max_rows)

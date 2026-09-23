@@ -21,8 +21,13 @@ responsible for checking that the query answers the question that was asked.
 ### A1
 
 List the tables in the `carconnect_teaching` dataset and, for each table,
-name its primary key. Use the BigQuery console or query
-`carconnect_teaching.INFORMATION_SCHEMA.COLUMNS`.
+name its primary key. The tables declare their keys, so you can read them
+from the metadata views: `carconnect_teaching.INFORMATION_SCHEMA.TABLE_CONSTRAINTS`
+lists each constraint and its type (`PRIMARY KEY` or `FOREIGN KEY`), and
+`carconnect_teaching.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` lists the columns
+that make up each constraint. One table has a primary key made of two
+columns; make sure your answer shows both. (`INFORMATION_SCHEMA.COLUMNS`
+shows column names and types but not which columns are keys.)
 
 ### A2
 
