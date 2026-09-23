@@ -6,7 +6,6 @@
       "Bash(bq ls:*)",
       "Bash(bq show:*)",
       "Bash(bq head:*)",
-      "Bash(bq query:*)",
       "Bash(gcloud auth list:*)",
       "Bash(gcloud config list:*)",
       "Bash(gcloud projects describe:*)",
