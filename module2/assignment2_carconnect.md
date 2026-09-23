@@ -58,8 +58,8 @@ newest first. Call the year column `year`."
 
 ### B3
 
-"What are our three cheapest listings right now? Show the listing id, the
-VIN, and the asking price."
+"What are the three cheapest listings we have ever posted, whatever their
+status today? Show the listing id, the VIN, and the asking price."
 
 ### B4
 

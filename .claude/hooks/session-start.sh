@@ -18,9 +18,15 @@ fi
 # Provisioned first and non-fatally: it is independent of the Brightspace
 # tooling below, and a failure in either one must not take out the other.
 echo "session-start: provisioning BigQuery helper venv (~/.venv-bq)..."
+VENV="$HOME/.venv-bq"
+# A venv whose creation was interrupted can have bin/python but no bin/pip;
+# treat anything short of a usable interpreter *and* pip as absent and rebuild.
+if [ ! -x "$VENV/bin/python" ] || [ ! -x "$VENV/bin/pip" ]; then
+  rm -rf "$VENV"
+fi
 if {
-  { [ -x "$HOME/.venv-bq/bin/python" ] || python3 -m venv "$HOME/.venv-bq"; } &&
-  "$HOME/.venv-bq/bin/pip" install --quiet --disable-pip-version-check google-cloud-bigquery
+  { [ -x "$VENV/bin/python" ] || python3 -m venv "$VENV"; } &&
+  "$VENV/bin/pip" install --quiet --disable-pip-version-check google-cloud-bigquery
 }; then
   echo "session-start: BigQuery helper venv ready."
 else
