@@ -1,4 +1,17 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(tools/bq/bq-query:*)",
+      "Bash(./tools/bq/bq-query:*)",
+      "Bash(bq ls:*)",
+      "Bash(bq show:*)",
+      "Bash(bq head:*)",
+      "Bash(gcloud auth list:*)",
+      "Bash(gcloud config list:*)",
+      "Bash(gcloud projects describe:*)",
+      "Bash(bash .claude/hooks/cloud-auth.sh)"
+    ]
+  },
   "hooks": {
     "SessionStart": [
       {

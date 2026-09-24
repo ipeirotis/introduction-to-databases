@@ -37,12 +37,14 @@ By the end of this lesson, you will be able to:
 
 ## Slides
 
+- [B0: CarConnect Before SQL](https://docs.google.com/presentation/d/10btjBE23y5trUdo9fmGbPtDkKagdh_O9zn1CfwWWw7M/edit?usp=sharing)
 - [Introduction to SQL and IMDb & Facebook schemas](https://docs.google.com/presentation/d/1I9-rvitpP2bXNFoIKZWlWHTkxUuqxZLMEu44efcsvYY/edit?usp=sharing)
-- [SQL: Selection Queries](https://docs.google.com/presentation/d/13FdfbHb8HMmDJ2VB_IVOGaDjQqvvQfv2/edit?usp=sharing&ouid=103666871486129948108&rtpof=true&sd=true)
+- [SQL: Selection Queries](https://docs.google.com/presentation/d/1rMO86s009Z5K8IdEhU9rrhpFrLixdojUnzgg8jejNyY/edit?usp=sharing)
 - [SQL: Filtering Queries](https://docs.google.com/presentation/d/1338Tdn3jhicTjiF7c1yQ_W1rH145rKGLwvxUlrAuxhU/edit?usp=sharing)
 
 ## Notebooks
 
+- B0 — [Slides: CarConnect Before SQL](https://docs.google.com/presentation/d/10btjBE23y5trUdo9fmGbPtDkKagdh_O9zn1CfwWWw7M/edit?usp=sharing) — read before the selection-queries notebook
 - [SQL: Selection Queries](B-Selection_Queries.ipynb) — SELECT, AS, DISTINCT, ORDER BY, LIMIT
 - [SQL: Filtering Queries](B3-Filtering_Queries.ipynb) — WHERE, Boolean operators, IN, LIKE, NULL, CASE
 

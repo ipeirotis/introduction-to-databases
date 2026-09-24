@@ -40,11 +40,18 @@ By the end of this lesson, you will be able to:
 
 ## Slides
 
-- [Aggregation Queries](https://docs.google.com/presentation/d/1uyd1lEi1DVJxCRa6b_6Yn3SF_KENT4Zk8FKRmyZ_XJE/edit?usp=sharing)
+- [D1: Aggregation Queries](https://docs.google.com/presentation/d/1uyd1lEi1DVJxCRa6b_6Yn3SF_KENT4Zk8FKRmyZ_XJE/edit?usp=sharing)
+- [D2: Joins and Aggregations — Engagement and Political Views](https://drive.google.com/file/d/1Gha-_amFDorDDqLEgvRRYlct4Bn8gtgO/view?usp=sharing) (PDF) — worked example combining `JOIN` and `GROUP BY` on the Facebook data; companion to [number_of_likes_and_politicalviews.md](number_of_likes_and_politicalviews.md)
 
 ## Notebooks
 
 - [SQL GROUP BY Queries](D-SQL_Aggregation_Queries.ipynb) — All aggregation examples from the slides
+
+## Practice
+
+- [D3: SQL Aggregation Exercises — Flights](https://docs.google.com/document/d/1eMFYT0HIhyHPLeNvkjy6QqVWBSM7JLkAphYoJjDNubU/edit?usp=sharing) (Google Doc)
+- [Aggregation practice queries](practice_queries_aggregation.md)
+- [Join and aggregation practice queries](practice_queries_join_and_aggregation.md)
 
 ## Topics Covered
 

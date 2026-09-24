@@ -33,6 +33,17 @@ Topics that don't yet have a module:
 - [ ] Split out separate slide decks for NULL functions, date functions, and
       string functions (currently bundled).
 - [ ] Record videos for `CASE WHEN`, NULL functions, and date functions.
+- [ ] **Instructor review:** `module2/assignment2_carconnect.md` is a draft
+      replacement for Assignments 2a + 2b on `nyu-datasets.carconnect_teaching`
+      (schema in `schemas/carconnect_teaching.md`). Same SELECT/WHERE scope,
+      but framed as manager requests plus a "review the assistant's query"
+      section with seeded bugs. Solutions and validated row counts go in the
+      private repo. If adopted: load it into Brightspace, retire 2a/2b, and
+      link it from `module2/README.md`.
+- [ ] Decide whether Module 3 (joins) should also move from `music` to
+      `carconnect_teaching` — ownership history via `sale_transactions` +
+      `transaction_buyers` and listing-to-sale matching are natural join
+      exercises.
 
 ### Module 3 — JOINs
 
