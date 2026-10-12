@@ -5,12 +5,15 @@
 -- books_and_political_views.sql, but with four groups instead of two.
 --
 -- Each profile lists a Sex (Profiles.Sex) and who they are interested in
--- (Orientation.InterestedIn). Combining the two gives four groups:
+-- (Orientation.InterestedIn: 'Men', 'Women', or 'Men & Women'). Combining
+-- the two gives four groups:
 --
---   MF = men interested in women      FM = women interested in men
---   MM = men interested in men        FF = women interested in women
+--   MF = men interested in women only
+--   FM = women interested in men only
+--   MM = men interested in men (including 'Men & Women')
+--   FF = women interested in women (including 'Men & Women')
 --
--- Profiles that list "Men & Women", or that leave Sex blank, are left out.
+-- Profiles that leave Sex blank are left out.
 --
 -- Why compare within the same sex? Comparing MM against everyone else mostly
 -- rediscovers gender differences (e.g., "men like Scarface more than women").
@@ -25,7 +28,7 @@ DECLARE n_fm INT64;
 
 -- Step 1: Label each profile with its group.
 -- Orientation has exactly one row per ProfileID, so a plain JOIN works.
--- The CASE returns NULL for "Men & Women" and for blank Sex. We can't filter
+-- The CASE returns NULL when Sex is blank. We can't filter
 -- on the alias `grp` in the same SELECT, so we wrap it in a derived table
 -- and filter outside.
 CREATE TEMP TABLE profile_groups AS
@@ -34,10 +37,10 @@ CREATE TEMP TABLE profile_groups AS
     SELECT
       P.ProfileID,
       CASE
-        WHEN P.Sex = 'Male'   AND O.InterestedIn = 'Women' THEN 'MF'
-        WHEN P.Sex = 'Male'   AND O.InterestedIn = 'Men'   THEN 'MM'
-        WHEN P.Sex = 'Female' AND O.InterestedIn = 'Men'   THEN 'FM'
-        WHEN P.Sex = 'Female' AND O.InterestedIn = 'Women' THEN 'FF'
+        WHEN P.Sex = 'Male'   AND O.InterestedIn = 'Women'                 THEN 'MF'
+        WHEN P.Sex = 'Male'   AND O.InterestedIn IN ('Men', 'Men & Women')   THEN 'MM'
+        WHEN P.Sex = 'Female' AND O.InterestedIn = 'Men'                   THEN 'FM'
+        WHEN P.Sex = 'Female' AND O.InterestedIn IN ('Women', 'Men & Women') THEN 'FF'
       END AS grp
     FROM `nyu-datasets.facebook.Profiles` P
       JOIN `nyu-datasets.facebook.Orientation` O ON O.ProfileID = P.ProfileID
@@ -49,9 +52,9 @@ SET n_mf = (SELECT COUNT(*) FROM profile_groups WHERE grp = 'MF');
 SET n_ff = (SELECT COUNT(*) FROM profile_groups WHERE grp = 'FF');
 SET n_fm = (SELECT COUNT(*) FROM profile_groups WHERE grp = 'FM');
 
--- Expect roughly: MF 5,320 | FM 7,053 | MM 476 | FF 71
--- FF is tiny. Any FF result below rests on a handful of people; treat it as
--- suggestive, not conclusive.
+-- Expect: MF 5,320 | FM 7,053 | MM 719 | FF 593
+-- MM and FF are small groups (12% of men, 8% of women), so we require a
+-- minimum count per item in the lift queries below.
 SELECT n_mf, n_fm, n_mm, n_ff;
 
 
@@ -123,9 +126,8 @@ ORDER BY lift_mm_vs_mf ASC
 LIMIT 15;
 
 
--- Step 6: Lift for women interested in women vs. women interested in men.
--- With only ~71 FF profiles we lower the threshold to 6, and we should be
--- cautious: 6 people out of 71 is already 8%.
+-- Step 6: Lift for women interested in women vs. women interested in men only.
+-- Same minimum of 15 profiles as for men.
 SELECT
   kind,
   item,
@@ -135,14 +137,14 @@ SELECT
   ROUND(100 * cnt_fm / n_fm, 1) AS pct_fm,
   ROUND(((cnt_ff + 0.5) / (n_ff + 1)) / ((cnt_fm + 0.5) / (n_fm + 1)), 1) AS lift_ff_vs_fm
 FROM item_counts
-WHERE cnt_ff >= 6
+WHERE cnt_ff >= 15
 ORDER BY lift_ff_vs_fm DESC
 LIMIT 15;
 
 
 -- Step 7: Profile fields, not just favorites.
--- Political views, LookingFor, and relationship status by group, as the
--- percentage of each group. Reading across a row compares the groups.
+-- Political views and LookingFor by group, as the percentage of each group.
+-- Reading across a row compares the groups.
 SELECT
   'politics' AS field,
   COALESCE(P.PoliticalViews, '(blank)') AS value,
@@ -164,15 +166,4 @@ SELECT
 FROM profile_groups G
   JOIN `nyu-datasets.facebook.LookingFor` L ON L.ProfileID = G.ProfileID
 GROUP BY L.LookingFor
-UNION ALL
-SELECT
-  'relationship',
-  R.Status,
-  ROUND(100 * COUNTIF(G.grp = 'MM') / n_mm, 1),
-  ROUND(100 * COUNTIF(G.grp = 'MF') / n_mf, 1),
-  ROUND(100 * COUNTIF(G.grp = 'FF') / n_ff, 1),
-  ROUND(100 * COUNTIF(G.grp = 'FM') / n_fm, 1)
-FROM profile_groups G
-  JOIN `nyu-datasets.facebook.Relationship` R ON R.ProfileID = G.ProfileID
-GROUP BY R.Status
 ORDER BY field, value;
