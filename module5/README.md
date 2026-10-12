@@ -51,3 +51,10 @@ The "books and political views" example shows how we can go from "book likes" to
 The books and gender analysis shows how we can correlate gender and book preferences.
 
 - [SQL Code](book_vs_gender.sql)
+
+### Orientation and Preferences (with a small ML model)
+
+This example applies the same lift recipe to four groups formed from `Sex` and `InterestedIn` (men interested in women, men interested in men, women interested in men, women interested in women). The SQL script compares groups within the same sex, so the results reflect orientation rather than gender. The notebook then uses SQL to build a feature table from books, music, movies, TV shows, hobbies, major, and profile fields, trains a logistic regression, and uses Shapley values (SHAP) to show which attributes drive the predictions. It is also a privacy lesson: a few dozen likes predict an attribute that people did not choose to share.
+
+- [SQL Code](orientation_and_preferences.sql)
+- [Notebook: classifier + Shapley values](orientation_model_shap.ipynb)
