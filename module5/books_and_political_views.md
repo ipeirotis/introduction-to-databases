@@ -19,6 +19,46 @@ We'll quantify these associations using **lift**—a measure of how much more li
 
 ---
 
+## A First Look at Lift
+
+Before writing any SQL, here is what lift looks like on this data. Take the book "Bible": 1.07% of conservatives list it as a favorite book, compared with 0.15% of everyone else. So conservatives are about **7 times** more likely to list it:
+
+> lift = 1.07% / 0.15% ≈ 7
+
+A lift of 1 means "no difference." Above 1, the group over-indexes; below 1, it under-indexes.
+
+**Books that conservatives over-index on:**
+
+| Book              | % of conservatives | % of non-conservatives | lift_cons |
+|-------------------|--------------------|------------------------|-----------|
+| Liar S Poker      | 1.92%              | 0.20%                  | 9.75      |
+| Mere Christianity | 0.64%              | 0.08%                  | 8.38      |
+| Bible             | 1.07%              | 0.15%                  | 6.99      |
+| The Bible         | 2.24%              | 0.52%                  | 4.36      |
+| Atlas Shrugged    | 1.71%              | 0.64%                  | 2.69      |
+
+**Books that liberals over-index on:**
+
+| Book             | % of liberals | % of non-liberals | lift_libs |
+|------------------|---------------|-------------------|-----------|
+| The Hours        | 0.90%         | 0.28%             | 3.15      |
+| America The Book | 0.77%         | 0.25%             | 3.12      |
+| Middlesex        | 1.38%         | 0.48%             | 2.86      |
+| On The Road      | 2.10%         | 0.88%             | 2.39      |
+
+(Titles appear as stored in the data, where apostrophes were removed: "Liar S Poker" is *Liar's Poker*.)
+
+What to notice:
+
+- **"Bible" and "The Bible" are the same book, typed two ways.** Both rank high for conservatives, so the signal shows up twice. But SQL treats them as two different books, because `GROUP BY Book` groups exact strings. Cleaning up variants like these is a big part of real analytics work.
+- **The lists make sense.** The conservative side mixes religion (the Bible, C.S. Lewis's *Mere Christianity*), Wall Street (*Liar's Poker*), and Ayn Rand. The liberal side includes Jon Stewart's *America (The Book)* and Kerouac's *On The Road*.
+- **Lift is not popularity.** Only 1–2% of conservatives list any of these books. Harry Potter is far more popular among conservatives (7.05%), but its lift is only 1.40, because everyone else likes it too.
+- **Watch the counts.** Only 6 conservatives list *Mere Christianity*. With 936 conservatives in total, one or two people more or fewer would move that lift a lot. Always look at the counts behind a lift, not just the lift.
+
+The rest of this tutorial builds these numbers step by step in SQL.
+
+---
+
 ## Step 1: Establish Baseline Counts
 
 First, we need to know how many students fall into each category. BigQuery requires us to declare variables at the start of our script.
@@ -247,6 +287,8 @@ FROM book_comparison;
 | Crime And Punishment | 1.52 | 1.95 | 0.68 | Conservatives over-index here |
 | The Fountainhead | 1.43 | 1.65 | 0.75 | Slight conservative lean (Ayn Rand) |
 | Harry Potter | 2.17 | 1.40 | 1.20 | Popular with both, slight liberal lean |
+| The Bible | 0.60 | 4.36 | 0.17 | Strong conservative signal |
+| Bible | 0.51 | 6.99 | 0.09 | Same book, different spelling, same signal |
 
 **Why add 0.001?** This prevents division by zero. If no conservatives liked a book, `perc_cons` would be 0, and division would fail.
 
